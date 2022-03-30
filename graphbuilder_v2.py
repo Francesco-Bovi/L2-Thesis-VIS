@@ -31,9 +31,9 @@ def add_transition(transitions,parent):
 
 def traverse_json(node,parent):
     global states_aux
+    if(node.get('on') is not None):
+        add_transition(node.get('on'),parent)
     if(node.get('states') is None):
-        if(node.get('on') is not None):
-            add_transition(node.get('on'),parent)
         return
     else:
         #If is not a parent node add it
