@@ -5,19 +5,18 @@ def add_state(s,graph):
     sub_dict={}
     graph[s]=sub_dict
 
-    print("Graph representation: ",graph)
+    #print("Graph representation: ",graph)
 
 
-def add_transition(transitions,parent):
-    global graph
-    print("PARENT-",parent)
+def add_transitions(transitions,graph):
+    graph['transitions']=[]
     for t in transitions:
-        print("DEBUG ACTION -",t,"-",transitions.get(t))
+        #print("DEBUG ACTION -",t,"-",transitions.get(t))
         target_array=transitions.get(t)
         for elem in target_array:
-            print("TARGET-->",elem['target'])
+            #print("TARGET-->",elem['target'])
             transition_array=[t,elem['target']]
-            graph[parent].append(transition_array)
+            graph['transitions'].append(transition_array)
 
 #Function to build the graph
 def traverse_inner(states,graph):
@@ -29,9 +28,12 @@ def traverse_inner(states,graph):
         add_state(child,graph)
 
         #Add child states
-        #traverse_json(statechart_dict.get('states').get(i),i)
         if(states.get(child).get('states') is not None):
             traverse_inner(states.get(child).get('states'),graph[child])
+
+        #Add transition
+        if(states.get(child).get('on') is not None):
+            add_transitions(states.get(child).get('on'),graph[child])
 
 if(__name__=="__main__"):
     #open the statechart json file
