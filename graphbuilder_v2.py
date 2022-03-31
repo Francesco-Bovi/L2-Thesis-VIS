@@ -1,71 +1,51 @@
 import json
 from textwrap import indent
 
-graph={}
+def add_state(s,graph):
+    sub_dict=[]
+    graph[s]=sub_dict
 
-""""
-def add_node_parent(s):
-    global graph
-    #print("----Adding node:",s,"----")
-    if(s!='rest'):
-        graph[s+"_hover"]=[]
-    else:
-        graph[s]=[]
-"""
+    #print("Graph representation: ",graph)
 
-def add_state(s):
-    global graph
-    #print("----Adding node:",s,"----")
-    graph[s]=[]
 
-def add_transition(transitions,parent):
-    global graph
-    print("PARENT-",parent)
+def add_transitions(transitions,graph):
+    #graph['transitions']=[]
     for t in transitions:
-        print("DEBUG ACTION -",t,"-",transitions.get(t))
         target_array=transitions.get(t)
         for elem in target_array:
-            print("TARGET-->",elem['target'])
             transition_array=[t,elem['target']]
-            graph[parent].append(transition_array)
+            graph.append(transition_array)
 
-def traverse_json(node,parent):
-    global states_aux
-    if(node.get('on') is not None):
-        add_transition(node.get('on'),parent)
-    if(node.get('states') is None):
-        return
-    else:
-        #If is not a parent node add it
-        if(node.get('id') not in states_aux):
-            add_state(node.get('id'))
-        #Explore other childs
-        for i in node.get('states'):
-            traverse_json(node.get('states').get(i),node.get('id'))
+#Function to build the graph
+def traverse_inner(states,graph):
+    for child in states:
 
-#open the statechart json file
-statechart_j=open('xstate_visualization_statechart.json')
+        #Add principal states with hovering
+        add_state(child,graph)
 
-#returns the JSON object as a dictionary
-statechart_dict=json.load(statechart_j)
+        #Add child states
+        if(states.get(child).get('states') is not None):
+            traverse_inner(states.get(child).get('states'),graph)
 
-#List with all states except for rest
-states_aux=[]
+        #Add transition
+        if(states.get(child).get('on') is not None):
+            add_transitions(states.get(child).get('on'),graph[child])
 
-for i in statechart_dict['states']:
-    #Print name of all the states/interactions
-    print(i)
+if(__name__=="__main__"):
+    #open the statechart json file
+    statechart_j=open('xstate_visualization_statechart.json')
 
-    #Aux vector in order to not insert again parent nodes
-    states_aux.append(i)
+    #returns the JSON object as a dictionary
+    statechart_dict=json.load(statechart_j)
 
-    #Add principal states with hovering
-    add_state(i)
+    #Data structure for that will contain the graph
+    graph={}
 
-    #Add child states
-    traverse_json(statechart_dict.get('states').get(i),i)
+    traverse_inner(statechart_dict.get('states'),graph)
 
-#Print graph representation
-print("----------------------------")
-print("Graph representation: ",graph)
-print("Graph:",json.dumps(graph,indent=4))
+    #Print graph representation
+    print("----------------------------")
+    #print("Graph representation: ",graph)
+    print("Graph:",json.dumps(graph,indent=4))
+
+    print("---EXPLORE THE GRAPH---")

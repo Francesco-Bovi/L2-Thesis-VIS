@@ -1,4 +1,5 @@
 import json
+import random
 from textwrap import indent
 
 def add_state(s,graph):
@@ -11,29 +12,43 @@ def add_state(s,graph):
 def add_transitions(transitions,graph):
     graph['transitions']=[]
     for t in transitions:
-        #print("DEBUG ACTION -",t,"-",transitions.get(t))
         target_array=transitions.get(t)
         for elem in target_array:
-            #print("TARGET-->",elem['target'])
             transition_array=[t,elem['target']]
             graph['transitions'].append(transition_array)
 
 #Function to build the graph
-def traverse_inner(states,graph):
+def create_graph(states,graph):
     for child in states:
-        #Print name of all the states/interactions
-        print(child)
 
         #Add principal states with hovering
         add_state(child,graph)
 
         #Add child states
         if(states.get(child).get('states') is not None):
-            traverse_inner(states.get(child).get('states'),graph[child])
+            create_graph(states.get(child).get('states'),graph[child])
 
         #Add transition
         if(states.get(child).get('on') is not None):
             add_transitions(states.get(child).get('on'),graph[child])
+
+
+def explore_graph(graph,parent=None):
+    start=random.randint(0,len(graph)-1)
+    print(start)
+    list_states=list(graph)
+    initial_state=list_states[start]
+    print(initial_state)
+    if(initial_state=='transitions'):
+        start=random.randint(0,len(graph['transitions'])-1)
+        print("TRANSITION FOUND:",start)
+        list_states=list(graph['transitions'][start])
+        print(list_states[1])
+        explore_graph(parent[list_states[1]],parent)
+    else:
+        explore_graph(graph[initial_state],graph)
+
+
 
 if(__name__=="__main__"):
     #open the statechart json file
@@ -45,9 +60,13 @@ if(__name__=="__main__"):
     #Data structure for that will contain the graph
     graph={}
 
-    traverse_inner(statechart_dict.get('states'),graph)
+    create_graph(statechart_dict.get('states'),graph)
 
     #Print graph representation
     print("----------------------------")
-    print("Graph representation: ",graph)
+    #print("Graph representation: ",graph)
     print("Graph:",json.dumps(graph,indent=4))
+
+    print("---EXPLORE THE GRAPH---")
+    
+    explore_graph(graph)
