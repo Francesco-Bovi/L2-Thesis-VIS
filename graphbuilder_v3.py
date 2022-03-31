@@ -69,4 +69,4 @@ if(__name__=="__main__"):
 
     print("---EXPLORE THE GRAPH---")
     
-    explore_graph(graph)
+    #explore_graph(graph)
