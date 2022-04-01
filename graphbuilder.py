@@ -20,8 +20,6 @@ def add_transitions(transitions,graph,parent=None):
                 transition_array=[t,parent]
                 graph.append(transition_array)
 
-count=0
-
 #Function to build the graph
 def create_graph(states,graph,parent=None):
     global count
@@ -39,6 +37,14 @@ def create_graph(states,graph,parent=None):
         
         if(states.get(child).get('states') is not None):
             create_graph(states.get(child).get('states'),graph,child)
+
+def explore_graph(graph,parent=None):
+    start=random.randint(0,len(graph)-1)
+    print(start)
+    list_states=list(graph)
+    initial_state=list_states[start]
+    print(initial_state)
+    explore_graph(graph,initial_state)
 
 if(__name__=="__main__"):
     #open the statechart json file
@@ -58,3 +64,5 @@ if(__name__=="__main__"):
     print("Graph:",json.dumps(graph,indent=4))
 
     print("---EXPLORE THE GRAPH---")
+
+    #explore_graph(graph)

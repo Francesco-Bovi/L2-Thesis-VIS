@@ -33,20 +33,25 @@ def create_graph(states,graph):
             add_transitions(states.get(child).get('on'),graph[child])
 
 
-def explore_graph(graph,parent=None):
+def explore_graph(graph,parent):
+    #Explore a random state from the ones at the same hierarchical level
     start=random.randint(0,len(graph)-1)
-    print(start)
     list_states=list(graph)
     initial_state=list_states[start]
-    print(initial_state)
-    if(initial_state=='transitions'):
-        start=random.randint(0,len(graph['transitions'])-1)
-        print("TRANSITION FOUND:",start)
-        list_states=list(graph['transitions'][start])
-        print(list_states[1])
-        explore_graph(parent[list_states[1]],parent)
-    else:
+    
+    #Print the state
+    print("STATE->",initial_state)
+    if(initial_state!='transitions'):
         explore_graph(graph[initial_state],graph)
+    else:
+        #Choose randomly one transitions
+        start=random.randint(0,len(graph[initial_state])-1)
+        transition=graph[initial_state][start]
+        
+        #Go inside other nodes at same level or subnode
+        print("NEXT STATE->",transition[1])
+        explore_graph(parent[transition[1]],parent)
+
 
 
 
@@ -65,8 +70,8 @@ if(__name__=="__main__"):
     #Print graph representation
     print("----------------------------")
     #print("Graph representation: ",graph)
-    print("Graph:",json.dumps(graph,indent=4))
+    #print("Graph:",json.dumps(graph,indent=4))
 
     print("---EXPLORE THE GRAPH---")
     
-    #explore_graph(graph)
+    explore_graph(graph,graph)
