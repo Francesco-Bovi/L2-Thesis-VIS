@@ -9,4 +9,4 @@ The first action needed is to extract the JSON file representing the statechart 
 Given the output of the program, representing an ordered sequence of interactions, I reproduce it in the real browser visualization, in order to use the LOGs of the framework to understand where there can be latency problems.
 
 ### Statechart
-The statechart is composed by state nodes organized hierarchically, indeed there are some nodes like ```python range ``` 
+The statechart is composed by state nodes organized hierarchically, indeed there are some nodes like ```range ``` that contains subnodes representing the possible interactions executable in ```range ```, for example ```hover```, ```handleR```, ```handleL``` and ```handleLR```. 
