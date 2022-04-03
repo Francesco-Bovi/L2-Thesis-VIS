@@ -14,6 +14,7 @@ class Container:
         self.Transitions  = []
         self.Subsets = []
         self.Parent = None
+        self.Score=0
 
 def CreateGraph(states,container):
     for child in states:
@@ -65,6 +66,15 @@ def findTransaction(state,id):
             return i
 
 def ExploreGraph(state):
+    global log
+    log.append(state.ID)
+
+    #Update score of the state
+    state.Score=state.Score+1
+
+    if(state.Score==10):
+        return
+
     PrintNode(state,0)
 
     #Possible next states
@@ -165,6 +175,9 @@ def ExploreGraph(state):
             print("NEXT_STATE->",next_state.ID)
             ExploreGraph(next_state)
 
+
+log=[]
+
 if(__name__=="__main__"):
 
     #open the statechart json file
@@ -194,3 +207,6 @@ if(__name__=="__main__"):
     #PrintGraph(root_node)
 
     ExploreGraph(root_node)
+
+    print("LOG:")
+    print(log)
