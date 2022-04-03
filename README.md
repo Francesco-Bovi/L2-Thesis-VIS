@@ -34,5 +34,13 @@ In this second version the output of the program is a sort of clean version of t
 
 ![image](https://user-images.githubusercontent.com/81032317/161440339-bf90cf5a-e654-456b-9078-e293f994141e.png)
 
-I noticed that in this case, during the exploration, problems arise when we arrive to a node that have no transitions and no substates, remaining stuck in that node.
+I noticed that in this case, during the exploration, problems arise when we arrive to a node that have no transitions and no substates, remaining stuck in that node. Even in this casa a possible solution could be to add a transition to the "parent node" when we arrive to this kind of states.
 
+### v2
+In this version of the program I create a class ```State``` with the following attributes:
+- ID: The identifier of the state node;
+- Transitions: An array containing the set of all possible transitions to a state at the same hierachical level;
+- Subsets: An array containing the set of references to sub-states of the state node;
+- Container: The reference to the container (if exists, otherwise None), so to the node that has the current state as one of its substates;
+- Score: A score used in the exploration phase;
+I create an istance of the class ```State``` with the proper attributes every time I need to add a node during the exploration of the JSON. It's important to higlight that in the attributes Subsets and Container I don't have a string but a real reference to the istances representing the states. 
