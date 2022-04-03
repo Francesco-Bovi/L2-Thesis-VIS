@@ -27,4 +27,13 @@ At the beginning my idea was to represent all the states at the same level, usin
 
 ![image](https://user-images.githubusercontent.com/81032317/161439724-39943927-14de-42d2-a6c1-632567bac9dc.png)
 
-Obviously this representation is not good at all for many reason, the first is that many states have the same substate ```hover``` and we know that in a dictionary have unique keys, then another relevant problem is that during the exploration of this dictionary we can remain stuck in nodes that haven't a set of transactions or in loops, even if a possible solution can be adding a transaction to the "parent node".
+Obviously this representation is not good at all for many reason, the first is that many states have the same substate ```hover``` and we know that in a dictionary have unique keys, then another problem is that during the exploration of this dictionary we can remain stuck in nodes that haven't a set of transactions or in loops, even if a possible solution can be adding a transaction to the "parent node". The more relevant problem of this configuration is that we don't have an hierarchy, so I since the beginning I can go to any state and I will never move in deep.
+
+### v1
+In this second version the output of the program is a sort of clean version of the original JSON file where, for each state, we have only the list of possible substates and transactions:
+
+![image](https://user-images.githubusercontent.com/81032317/161440339-bf90cf5a-e654-456b-9078-e293f994141e.png)
+
+
+
+
