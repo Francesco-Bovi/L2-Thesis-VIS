@@ -44,3 +44,9 @@ In this version of the program I create a class ```State``` with the following a
 - Container: The reference to the container (if exists, otherwise None), so to the node that has the current state as one of its substates;
 - Score: A score used in the exploration phase;
 I create an istance of the class ```State``` with the proper attributes every time I need to add a node during the exploration of the JSON. It's important to higlight that in the attributes Subsets and Container I don't have a string but a real reference to the istances representing the states. 
+
+This configuration helps a lot during a random scanning of the statechart's graph, indeed for each node I choose randomly, taking a number from zero to two, how to proceed:
+0. Continue the exploration going to a state in the set of Subsets;
+1. Continue the exploration going to a state in the set of Transitions;
+2. Continue the exploration going back to the Container;
+If some nodes has one of those attributes empty, the choice will obviously be to one of the others, in order to avoid remaining stuck.
