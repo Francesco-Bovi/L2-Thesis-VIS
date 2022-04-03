@@ -53,4 +53,4 @@ This configuration helps a lot during a random scanning of the statechart's grap
 
 2: Continue the exploration going back to the Container;
 
-If some nodes has one of those attributes empty, the choice will obviously be to one of the others, in order to avoid remaining stuck.
+If a node has some of those attributes empty, the choice will obviously be to one of the others, in order to avoid remaining stuck.
