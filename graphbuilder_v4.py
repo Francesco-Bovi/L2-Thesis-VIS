@@ -1,4 +1,5 @@
 import json
+from turtle import st
 
 
 class StateMachine:
@@ -27,17 +28,18 @@ def create_graph(states,container):
     for child in states:
         
         new_container=Container(child)
-        print(new_container.ID)
+        new_container.Parent=container
+        #print(new_container.ID)
 
         if(states.get(child).get("on") is not None):
             new_container.Transitions=add_transitions(states.get(child).get('on'))
 
-        container.append(new_container)
-        print(container)
+        container.Subsets.append(new_container)
+        #print(container)
 
         #Explore rest of graph
         if(states.get(child).get("states") is not None):
-            create_graph(states.get(child).get("states"),new_container.Subsets)
+            create_graph(states.get(child).get("states"),new_container)
 
 def add_transitions(transitions):
     transition_array=[]
@@ -50,6 +52,8 @@ def add_transitions(transitions):
 def PrintGraph(state,level=0):
     indentation = '\t' * level
     print(indentation,state.ID)
+    if(level!=0):
+        print(indentation,"PARENT:", state.Parent.ID)
     print(indentation,"TRANSITIONS",state.Transitions)
     for item in state.Subsets:
         PrintGraph(item,level+1)
@@ -72,7 +76,9 @@ if(__name__=="__main__"):
     root_node=Container("vis")
     state_machine=StateMachine(root_node)
 
-    create_graph(statechart_dict.get('states'),root_node.Subsets)
+    root_node.Parent=state_machine
+
+    create_graph(statechart_dict.get('states'),root_node)
    
     #root_container.Subsets.append(Container("scatter"))
     #root_container.Subsets.append(Container("barchart"))
