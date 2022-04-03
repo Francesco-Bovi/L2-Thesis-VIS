@@ -18,3 +18,10 @@ A screenshot of the JSON file where there can be seen clearly transitions and su
 
 where from ```range``` we can go to ```rest``` through MOUSEOUT in the ```on``` field, and in the field ```states``` we have the list of subnodes.
 
+Among the problem that can arises using this file there are the fact that:
+-Not all the field are present in all the state nodes (like the id, set of substates and set of transitions)
+-Subnotes doesn't have a transition back to their "parent node", since they are not really child but represent the set of possible values (interactions) that the "parent node" can assume;
+
+### v0
+
+
