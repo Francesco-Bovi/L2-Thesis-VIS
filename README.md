@@ -16,3 +16,5 @@ A state node can have a set of transitions that could be performed to reach anot
 A screenshot of the JSON file where there can be seen clearly transitions and subnodes is the following:
 ![image](https://user-images.githubusercontent.com/81032317/161439165-edb081fd-6e6f-43d8-b22a-6207119522e6.png)
 
+where from ```range``` we can go to ```rest``` through MOUSEOUT in the ```on``` field, and in the field ```states``` we have the list of subnodes.
+
