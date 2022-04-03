@@ -72,10 +72,12 @@ def ExploreGraph(state):
     #Update score of the state
     state.Score=state.Score+1
 
-    if(state.Score==10):
+    if(state.Score==20):
         return
 
+    print("------------------------------------------------------------")
     PrintNode(state,0)
+    print("------------------------------------------------------------")
 
     #Possible next states
     substates=state.Subsets
@@ -208,5 +210,5 @@ if(__name__=="__main__"):
 
     ExploreGraph(root_node)
 
-    print("LOG:")
+    print("\n-------------LOG:-----------")
     print(log)
