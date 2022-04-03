@@ -25,7 +25,7 @@ Among the problem that can arises using this file there are the fact that:
 ### v0
 At the beginning my idea was to represent all the states at the same level, using a python dictionary where each key is the ID of the state and as value it contains an array with all possbile transitions. The output of the program is something like:
 
-![image](https://user-images.githubusercontent.com/81032317/161439724-39943927-14de-42d2-a6c1-632567bac9dc.png)
+![image](https://user-images.githubusercontent.com/81032317/161448000-4d361bcc-f252-4569-a404-8c4c4a589074.png)
 
 Obviously this representation is not good at all for many reason, the first is that many states have the same substate ```hover``` and we know that in a dictionary have unique keys, then another problem is that during the exploration of this dictionary we can remain stuck in nodes that haven't a set of transactions or in loops, even if a possible solution can be adding a transaction to the "parent node". The more relevant problem of this configuration is that we don't have an hierarchy, so I since the beginning I can go to any state and I will never move in deep.
 
