@@ -40,7 +40,7 @@ def create_graph(states,graph,parent=None):
 
 def explore_graph(graph,parent=None):
     start=random.randint(0,len(graph)-1)
-    print(start)
+    #print(start)
     list_states=list(graph)
     initial_state=list_states[start]
     print(initial_state)
@@ -65,4 +65,4 @@ if(__name__=="__main__"):
 
     print("---EXPLORE THE GRAPH---")
 
-    #explore_graph(graph)
+    explore_graph(graph)
