@@ -70,8 +70,8 @@ if(__name__=="__main__"):
     #Print graph representation
     print("----------------------------")
     #print("Graph representation: ",graph)
-    #print("Graph:",json.dumps(graph,indent=4))
+    print("Graph:",json.dumps(graph,indent=4))
 
     print("---EXPLORE THE GRAPH---")
     
-    explore_graph(graph,graph)
+    #explore_graph(graph,graph)
