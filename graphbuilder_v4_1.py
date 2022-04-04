@@ -7,24 +7,24 @@ from torch import initial_seed
 def AddState(state,graph,parent=None):
 
     #Check if already exists a ley with that value
-    if(state not in graph):
+    if(parent!=None):
+        sub_dict=[]
+        graph[state+"_"+parent]=sub_dict
+
+        return state+"_"+parent
+
+    else:
+
         sub_dict=[]
         graph[state]=sub_dict
 
         return state
-    
-    else:
-        if(parent!=None):
-            sub_dict=[]
-            graph[state+"_"+parent]=sub_dict
-
-            return state+"_"+parent
 
 
     #print("Graph representation: ",graph)
 
 
-def AddTransitions(transitions,parent=None):
+def AddTransitions(transitions,parent=None,child=None):
     transition_array=[]
     for t in transitions:
         target_array=transitions.get(t)
@@ -34,7 +34,10 @@ def AddTransitions(transitions,parent=None):
             if(elem["target"]=="hover" or elem["target"]=="idle"):
                 transition_array.append([t,parent])
             else:
-                transition_array.append([t,elem["target"]])
+                if(parent!=None):
+                    transition_array.append([t,elem["target"]+"_"+parent])
+                else:
+                    transition_array.append([t,elem["target"]+"_"+child])
 
     return transition_array
 
@@ -55,9 +58,14 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
                 child_name=AddState(child,graph,parent)
 
                 if(states.get(child).get("on") is not None):
-                    transitions=AddTransitions(states.get(child).get("on"),parent)
+                    transitions=AddTransitions(states.get(child).get("on"),parent,child_name)
                     print(transitions)
                     for t in transitions:
+                        graph[child_name].append(t)
+
+                #Inheritance of transitions from container nodes
+                if(parent_tranistions!=None):
+                    for t in parent_tranistions:
                         graph[child_name].append(t)
 
                 print("TRANSITIONS:",transitions)
@@ -77,13 +85,13 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
                 child_name=AddState(child,graph,parent)
 
                 if(states.get(child).get("on") is not None):
-                    transitions=AddTransitions(states.get(child).get("on"),parent)
+                    transitions=AddTransitions(states.get(child).get("on"),parent,child_name)
                     print(transitions)
                     for t in transitions:
                         graph[child_name].append(t)
 
                 if(states.get(child).get("states").get(initial_state).get("on") is not None):
-                    transition_initial_state=AddTransitions(states.get(child).get("states").get(initial_state).get("on"),parent)
+                    transition_initial_state=AddTransitions(states.get(child).get("states").get(initial_state).get("on"),None,child_name)
                     for t in transition_initial_state:
                         graph[child_name].append(t)
             
@@ -112,7 +120,7 @@ if(__name__=="__main__"):
     #Data structure for that will contain the graph
     graph={}
 
-    create_graph(statechart_dict.get('states'),graph)
+    create_graph(statechart_dict.get('states'),graph,"vis")
 
     #Print graph representation
     print("------------------------------------------------------------------------------")

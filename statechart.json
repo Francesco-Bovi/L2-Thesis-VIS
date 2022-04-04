@@ -2,73 +2,82 @@
     "rest": [
         [
             "MOUSEOVER",
-            "range"
+            "range_rest"
         ],
         [
             "MOUSEOVER",
-            "scatter"
+            "scatter_rest"
         ],
         [
             "MOUSEOVER",
-            "barchart"
-        ]
+            "barchart_rest"
+        ],
+        "v",
+        "i",
+        "s"
     ],
     "range": [
         [
             "MOUSEOUT",
-            "rest"
+            "rest_range"
         ],
         [
             "MOUSEOVER",
-            "handleR"
+            "handleR_range"
         ],
         [
             "MOUSEOVER",
-            "handleL"
+            "handleL_range"
         ],
         [
             "MOUSEOVER",
-            "handleLR"
-        ]
+            "handleLR_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "handleR": [
+    "handleR_range": [
         [
             "MOUSEOUT",
             "range"
         ],
         [
             "MOUSEDOWN",
-            "dragR"
+            "dragR_handleR_range"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "dragR": [
+    "dragR_handleR_range": [
         [
             "MOUSEUP",
-            "handleR"
+            "handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "min"
+            "min_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "max"
+            "max_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "left"
+            "left_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "right"
+            "right_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "idle"
+            null
         ],
         [
             "MOUSEOUT",
@@ -76,141 +85,201 @@
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "idle": [
+    "left_dragR_handleR_range": [
         [
-            "BRUSHMOVE",
-            "idle"
+            "MOUSEMOVE",
+            "min_dragR_handleR_range"
         ],
         [
-            "BRUSHMOVE",
-            "up"
+            "MOUSEMOVE",
+            "max_dragR_handleR_range"
         ],
         [
-            "BRUSHMOVE",
-            "down"
-        ]
+            "MOUSEMOVE",
+            "left_dragR_handleR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragR_handleR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragR_handleR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "left": [
+    "right_dragR_handleR_range": [
         [
-            "BRUSHMOVE",
-            "idle"
+            "MOUSEMOVE",
+            "min_dragR_handleR_range"
         ],
         [
-            "BRUSHMOVE",
-            "left"
+            "MOUSEMOVE",
+            "max_dragR_handleR_range"
         ],
         [
-            "BRUSHMOVE",
-            "right"
-        ]
+            "MOUSEMOVE",
+            "left_dragR_handleR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragR_handleR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragR_handleR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "right": [
+    "min_dragR_handleR_range": [
         [
-            "BRUSHMOVE",
-            "idle"
+            "MOUSEMOVE",
+            "min_dragR_handleR_range"
         ],
         [
-            "BRUSHMOVE",
-            "left"
+            "MOUSEMOVE",
+            "max_dragR_handleR_range"
         ],
         [
-            "BRUSHMOVE",
-            "right"
-        ]
+            "MOUSEMOVE",
+            "left_dragR_handleR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragR_handleR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragR_handleR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "min": [
+    "max_dragR_handleR_range": [
         [
             "MOUSEMOVE",
-            "min-max"
+            "min_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "min"
+            "max_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "max"
+            "left_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "left"
+            "right_dragR_handleR_range"
         ],
         [
             "MOUSEMOVE",
-            "right"
+            "dragR_handleR_range"
         ],
         [
-            "MOUSEMOVE",
-            "idle"
-        ]
+            "MOUSEUP",
+            "handleR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "max": [
-        [
-            "MOUSEMOVE",
-            "min-max"
-        ],
-        [
-            "MOUSEMOVE",
-            "min"
-        ],
-        [
-            "MOUSEMOVE",
-            "max"
-        ],
-        [
-            "MOUSEMOVE",
-            "left"
-        ],
-        [
-            "MOUSEMOVE",
-            "right"
-        ],
-        [
-            "MOUSEMOVE",
-            "idle"
-        ]
-    ],
-    "handleL": [
+    "handleL_range": [
         [
             "MOUSEOUT",
             "range"
         ],
         [
             "MOUSEDOWN",
-            "dragL"
+            "dragL_handleL_range"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "dragL": [
+    "dragL_handleL_range": [
         [
             "MOUSEUP",
-            "handleL"
+            "handleL_range"
         ],
         [
             "MOUSEMOVE",
-            "min"
+            "min_dragL_handleL_range"
         ],
         [
             "MOUSEMOVE",
-            "max"
+            "max_dragL_handleL_range"
         ],
         [
             "MOUSEMOVE",
-            "left"
+            "left_dragL_handleL_range"
         ],
         [
             "MOUSEMOVE",
-            "right"
+            "right_dragL_handleL_range"
         ],
         [
             "MOUSEMOVE",
-            "idle"
+            null
         ],
         [
             "MOUSEOUT",
@@ -218,51 +287,205 @@
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "handleLR": [
+    "left_dragL_handleL_range": [
+        [
+            "MOUSEMOVE",
+            "min_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragL_handleL_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleL_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "right_dragL_handleL_range": [
+        [
+            "MOUSEMOVE",
+            "min_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragL_handleL_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleL_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "min_dragL_handleL_range": [
+        [
+            "MOUSEMOVE",
+            "min_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragL_handleL_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleL_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "max_dragL_handleL_range": [
+        [
+            "MOUSEMOVE",
+            "min_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragL_handleL_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragL_handleL_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleL_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "handleLR_range": [
         [
             "MOUSEOUT",
             "range"
         ],
         [
             "MOUSEDOWN",
-            "dragLR"
+            "dragLR_handleLR_range"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "dragLR": [
+    "dragLR_handleLR_range": [
         [
             "MOUSEUP",
-            "handleLR"
+            "handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "min-max"
+            "min-max_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "min"
+            "min_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "max"
+            "max_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "left"
+            "left_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "right"
+            "right_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "idle"
+            null
         ],
         [
             "MOUSEOUT",
@@ -270,229 +493,763 @@
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "min-max": [
+    "left_dragLR_handleLR_range": [
         [
             "MOUSEMOVE",
-            "min-max"
+            "min-max_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "min"
+            "min_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "max"
+            "max_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "left"
+            "left_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "right"
+            "right_dragLR_handleLR_range"
         ],
         [
             "MOUSEMOVE",
-            "idle"
-        ]
+            "dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleLR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "right_dragLR_handleLR_range": [
+        [
+            "MOUSEMOVE",
+            "min-max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "min_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleLR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "min_dragLR_handleLR_range": [
+        [
+            "MOUSEMOVE",
+            "min-max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "min_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleLR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "max_dragLR_handleLR_range": [
+        [
+            "MOUSEMOVE",
+            "min-max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "min_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleLR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "min-max_dragLR_handleLR_range": [
+        [
+            "MOUSEMOVE",
+            "min-max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "min_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "max_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "left_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "right_dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEMOVE",
+            "dragLR_handleLR_range"
+        ],
+        [
+            "MOUSEUP",
+            "handleLR_range"
+        ],
+        [
+            "MOUSEOUT",
+            "range"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_range"
+        ],
+        "v",
+        "i",
+        "s"
     ],
     "scatter": [
         [
             "MOUSEOUT",
-            "rest"
+            "rest_scatter"
         ],
         [
             "WHEEL",
-            "zoom"
+            "zoom_scatter"
         ],
         [
             "MOUSEDOWN",
-            "panning"
+            "panning_scatter"
         ],
         [
             "BRUSHSTART",
-            "brush"
+            "brush_scatter"
         ],
         [
             "MOUSEOVER",
-            "brushRegion"
+            "brushRegion_scatter"
         ],
         [
             "MOUSEOVER",
-            "brushBorder"
-        ]
+            "brushBorder_scatter"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "zoom": [],
-    "panning": [
+    "zoom_scatter": [
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "panning_scatter": [
         [
             "MOUSEUP",
             "scatter"
-        ]
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "brush": [
+    "brush_scatter": [
         [
             "BRUSHEND",
             "scatter"
-        ]
-    ],
-    "x": [
-        [
-            "BRUSHMOVE",
-            "idle"
-        ],
-        [
-            "BRUSHMOVE",
-            "left"
-        ],
-        [
-            "BRUSHMOVE",
-            "right"
-        ],
-        [
-            "BRUSHEND",
-            "brushBorder"
         ],
         [
             "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "x_brush_scatter": [
+        [
+            "BRUSHMOVE",
+            null
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brush_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brush_scatter"
+        ],
+        [
+            "BRUSHEND",
             "scatter"
         ],
         [
             "MOUSEOUT",
-            "rest"
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "left_x_brush_scatter": [
+        [
+            "BRUSHMOVE",
+            "x_brush_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brush_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brush_scatter"
         ]
     ],
-    "y": [
+    "right_x_brush_scatter": [
         [
             "BRUSHMOVE",
-            "idle"
+            "x_brush_scatter"
         ],
         [
             "BRUSHMOVE",
-            "up"
+            "left_x_brush_scatter"
         ],
         [
             "BRUSHMOVE",
-            "down"
+            "right_x_brush_scatter"
+        ]
+    ],
+    "y_brush_scatter": [
+        [
+            "BRUSHMOVE",
+            null
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brush_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brush_scatter"
         ],
         [
             "BRUSHEND",
-            "brushBorder"
-        ],
-        [
-            "MOUSEOUT",
             "scatter"
         ],
         [
             "MOUSEOUT",
-            "rest"
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "up_y_brush_scatter": [
+        [
+            "BRUSHMOVE",
+            "y_brush_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brush_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brush_scatter"
         ]
     ],
-    "up": [
+    "down_y_brush_scatter": [
         [
             "BRUSHMOVE",
-            "idle"
+            "y_brush_scatter"
         ],
         [
             "BRUSHMOVE",
-            "up"
+            "up_y_brush_scatter"
         ],
         [
             "BRUSHMOVE",
-            "down"
+            "down_y_brush_scatter"
         ]
     ],
-    "down": [
-        [
-            "BRUSHMOVE",
-            "idle"
-        ],
-        [
-            "BRUSHMOVE",
-            "up"
-        ],
-        [
-            "BRUSHMOVE",
-            "down"
-        ]
-    ],
-    "brushRegion": [
+    "brushRegion_scatter": [
         [
             "MOUSEOUT",
             "scatter"
         ],
         [
             "BRUSHSTART",
-            "brushInsideRegion"
+            "brushInsideRegion_brushRegion_scatter"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "brushInsideRegion": [
+    "brushInsideRegion_brushRegion_scatter": [
         [
             "BRUSHEND",
-            "brushRegion"
+            "brushRegion_scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "x_brushInsideRegion_brushRegion_scatter": [
+        [
+            "BRUSHMOVE",
+            null
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHEND",
+            "brushRegion_scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "left_x_brushInsideRegion_brushRegion_scatter": [
+        [
+            "BRUSHMOVE",
+            "x_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brushInsideRegion_brushRegion_scatter"
         ]
     ],
-    "brushBorder": [
+    "right_x_brushInsideRegion_brushRegion_scatter": [
+        [
+            "BRUSHMOVE",
+            "x_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brushInsideRegion_brushRegion_scatter"
+        ]
+    ],
+    "y_brushInsideRegion_brushRegion_scatter": [
+        [
+            "BRUSHMOVE",
+            null
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHEND",
+            "brushRegion_scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "up_y_brushInsideRegion_brushRegion_scatter": [
+        [
+            "BRUSHMOVE",
+            "y_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brushInsideRegion_brushRegion_scatter"
+        ]
+    ],
+    "down_y_brushInsideRegion_brushRegion_scatter": [
+        [
+            "BRUSHMOVE",
+            "y_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brushInsideRegion_brushRegion_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brushInsideRegion_brushRegion_scatter"
+        ]
+    ],
+    "brushBorder_scatter": [
         [
             "MOUSEOUT",
             "scatter"
         ],
         [
             "BRUSHSTART",
-            "brushOnBorder"
+            "brushOnBorder_brushBorder_scatter"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "brushOnBorder": [
+    "brushOnBorder_brushBorder_scatter": [
         [
             "BRUSHEND",
-            "brushBorder"
+            "brushBorder_scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "x_brushOnBorder_brushBorder_scatter": [
+        [
+            "BRUSHMOVE",
+            null
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHEND",
+            "brushBorder_scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "left_x_brushOnBorder_brushBorder_scatter": [
+        [
+            "BRUSHMOVE",
+            "x_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brushOnBorder_brushBorder_scatter"
+        ]
+    ],
+    "right_x_brushOnBorder_brushBorder_scatter": [
+        [
+            "BRUSHMOVE",
+            "x_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "left_x_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "right_x_brushOnBorder_brushBorder_scatter"
+        ]
+    ],
+    "y_brushOnBorder_brushBorder_scatter": [
+        [
+            "BRUSHMOVE",
+            null
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHEND",
+            "brushBorder_scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "scatter"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_scatter"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "up_y_brushOnBorder_brushBorder_scatter": [
+        [
+            "BRUSHMOVE",
+            "y_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brushOnBorder_brushBorder_scatter"
+        ]
+    ],
+    "down_y_brushOnBorder_brushBorder_scatter": [
+        [
+            "BRUSHMOVE",
+            "y_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "up_y_brushOnBorder_brushBorder_scatter"
+        ],
+        [
+            "BRUSHMOVE",
+            "down_y_brushOnBorder_brushBorder_scatter"
         ]
     ],
     "barchart": [
         [
             "MOUSEOUT",
-            "rest"
+            "rest_barchart"
         ],
         [
             "MOUSEOVER",
-            "bin"
-        ]
+            "bin_barchart"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "bin": [
+    "bin_barchart": [
         [
             "MOUSEOUT",
             "barchart"
         ],
         [
             "CLICK",
-            "clickBin"
+            "clickBin_bin_barchart"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_barchart"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "clickBin": [
+    "clickBin_bin_barchart": [
         [
             "MOUSEOUT",
             "barchart"
         ],
         [
             "MOUSEOUT",
-            "rest"
-        ]
+            "rest_barchart"
+        ],
+        "v",
+        "i",
+        "s"
     ],
-    "itemClick": [],
-    "itemSelected": [],
-    "itemDeselected": []
+    "itemClick_clickBin_bin_barchart": [
+        [
+            "MOUSEOUT",
+            "barchart"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_barchart"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "itemSelected_clickBin_bin_barchart": [
+        [
+            "MOUSEOUT",
+            "barchart"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_barchart"
+        ],
+        "v",
+        "i",
+        "s"
+    ],
+    "itemDeselected_clickBin_bin_barchart": [
+        [
+            "MOUSEOUT",
+            "barchart"
+        ],
+        [
+            "MOUSEOUT",
+            "rest_barchart"
+        ],
+        "v",
+        "i",
+        "s"
+    ]
 }
