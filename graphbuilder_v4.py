@@ -11,54 +11,62 @@ def AddState(state,graph):
     #print("Graph representation: ",graph)
 
 
-def AddTransitions(transitions):
+def AddTransitions(transitions,parent=None):
     transition_array=[]
     for t in transitions:
         target_array=transitions.get(t)
         for elem in target_array:
-            transition_array.append([t,elem["target"]])
+
+            #Reference to parent if we found a transition to hover
+            if(elem["target"]=="hover"):
+                transition_array.append([t,parent])
+            else:
+                transition_array.append([t,elem["target"]])
     return transition_array
 
 #Function to build the graph
-def create_graph(states,graph,parent_tranistions=None):
+def create_graph(states,graph,parent_tranistions=None,parent=None):
     transitions=None
     for child in states:
 
-        #Add state checking if it's a real state
-        if(states.get(child).get("initial") is None):
+        #We are not interested in hover since we have considered it previoulsy
+        if(child!="hover"):
 
-            AddState(child,graph)
+            #Add state checking if it's a real state
+            if(states.get(child).get("initial") is None):
 
-            if(states.get(child).get("on") is not None):
-                transitions=AddTransitions(states.get(child).get("on"))
-                graph[child]=transitions
+                AddState(child,graph)
 
-            #Inheritance of transitions from container nodes
-            if(parent_tranistions!=None):
-                for transition in parent_tranistions:
-                    graph[child].append(transition)
-        
-        #Case when the state is a container
-        else:
-            initial_state=states.get(child).get("initial")
-            AddState(child,graph)
+                if(states.get(child).get("on") is not None):
+                    transitions=AddTransitions(states.get(child).get("on"),parent)
+                    graph[child]=transitions
 
-            if(states.get(child).get("on") is not None):
-                transitions=AddTransitions(states.get(child).get("on"))
-                graph[child]=transitions
+                #Inheritance of transitions from container nodes
+                if(parent_tranistions!=None):
+                    for transition in parent_tranistions:
+                        graph[child].append(transition)
+            
+            #Case when the state is a container
+            else:
+                initial_state=states.get(child).get("initial")
+                AddState(child,graph)
 
-            if(states.get(child).get("states").get(initial_state).get("on") is not None):
-                transition_initial_state=AddTransitions(states.get(child).get("states").get(initial_state).get("on"))
-                for transition in transition_initial_state:
-                    graph[child].append(transition)
+                if(states.get(child).get("on") is not None):
+                    transitions=AddTransitions(states.get(child).get("on"),parent)
+                    graph[child]=transitions
 
-            #Inheritance of transitions from container nodes
-            if(parent_tranistions!=None):
-                for transition in parent_tranistions:
-                    graph[child].append(transition)
+                if(states.get(child).get("states").get(initial_state).get("on") is not None):
+                    transition_initial_state=AddTransitions(states.get(child).get("states").get(initial_state).get("on"),parent)
+                    for transition in transition_initial_state:
+                        graph[child].append(transition)
 
-        if(states.get(child).get("states") is not None):
-            create_graph(states.get(child).get("states"),graph,transitions)
+                #Inheritance of transitions from container nodes
+                if(parent_tranistions!=None):
+                    for transition in parent_tranistions:
+                        graph[child].append(transition)
+
+            if(states.get(child).get("states") is not None):
+                create_graph(states.get(child).get("states"),graph,transitions,child)
 
 if(__name__=="__main__"):
     #open the statechart json file
