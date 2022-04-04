@@ -22,12 +22,16 @@ def AddTransitions(transitions,parent=None):
                 transition_array.append([t,parent])
             else:
                 transition_array.append([t,elem["target"]])
+
     return transition_array
 
 #Function to build the graph
 def create_graph(states,graph,parent_tranistions=None,parent=None):
     transitions=None
     for child in states:
+        print("CHILD:",child)
+        print("PARENT:",parent)
+        print("PARENT TRANS:",parent_tranistions)
 
         #We are not interested in hover since we have considered it previoulsy
         if(child!="hover"):
@@ -39,12 +43,9 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
 
                 if(states.get(child).get("on") is not None):
                     transitions=AddTransitions(states.get(child).get("on"),parent)
-                    graph[child]=transitions
-
-                #Inheritance of transitions from container nodes
-                if(parent_tranistions!=None):
-                    for transition in parent_tranistions:
-                        graph[child].append(transition)
+                    print(transitions)
+                    for t in transitions:
+                        graph[child].append(t)
             
             #Case when the state is a container
             else:
@@ -53,18 +54,28 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
 
                 if(states.get(child).get("on") is not None):
                     transitions=AddTransitions(states.get(child).get("on"),parent)
-                    graph[child]=transitions
+                    print(transitions)
+                    for t in transitions:
+                        graph[child].append(t)
 
                 if(states.get(child).get("states").get(initial_state).get("on") is not None):
                     transition_initial_state=AddTransitions(states.get(child).get("states").get(initial_state).get("on"),parent)
-                    for transition in transition_initial_state:
-                        graph[child].append(transition)
-
-                #Inheritance of transitions from container nodes
+                    for t in transition_initial_state:
+                        graph[child].append(t)
+            
+            #Inheritance of transitions from container nodes
                 if(parent_tranistions!=None):
-                    for transition in parent_tranistions:
-                        graph[child].append(transition)
+                    for t in parent_tranistions:
+                        graph[child].append(t)
+        
+            print("TRANSITIONS:",transitions)
 
+            if(transitions!=None and parent_tranistions!=None):
+                for t in parent_tranistions:
+                    transitions.append(t)
+            
+            print("TRANSITION UPDATE",transitions)
+            print("------------------------------------------------------------------------------")
             if(states.get(child).get("states") is not None):
                 create_graph(states.get(child).get("states"),graph,transitions,child)
 
@@ -81,6 +92,9 @@ if(__name__=="__main__"):
     create_graph(statechart_dict.get('states'),graph)
 
     #Print graph representation
-    print("----------------------------")
+    print("------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------------------")
     #print("Graph representation: ",graph)
     print("Graph:",json.dumps(graph,indent=4))
+    with open('statechart.json', 'w') as fp:
+        json.dump(graph, fp,  indent=4)
