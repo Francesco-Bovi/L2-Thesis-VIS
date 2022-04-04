@@ -1,5 +1,4 @@
 import json
-from queue import Empty
 import random
 
 
@@ -55,8 +54,8 @@ def PrintNode(state,level=1):
     if(level!=0):
         print("PARENT:", state.Container.ID)
     print("TRANSITIONS",state.Transitions)
-    print("SUBSET:")
-    print("\t",state.Subsets)
+    #print("SUBSET:")
+    #print("\t",state.Subsets)
     for item in state.Subsets:
         print("\t",item.ID)
 
@@ -65,14 +64,29 @@ def findTransaction(state,id):
         if(i.ID==id):
             return i
 
+#Function that update the LOG of the states
+def addToLog(state):
+    current_state=""
+    while state!=None:
+
+        #I am in VIS in this case
+        if(state.Container==None):
+            current_state=state.ID+current_state
+        else:
+            current_state=":{"+state.ID+current_state
+        state=state.Container
+
+    return current_state
+
 def ExploreGraph(state):
     global log
+    global log2
     log.append(state.ID)
 
     #Update score of the state
     state.Score=state.Score+1
 
-    if(state.Score==20):
+    if(state.Score==30):
         return
 
     print("------------------------------------------------------------")
@@ -97,6 +111,9 @@ def ExploreGraph(state):
             #Print the state
             print("SUBSTATE")
             print("NEXT_STATE->",next_state.ID)
+
+            #log2.append(log2[-1]+":{"+next_state.ID)
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
         
         elif(transactions!=[]):
@@ -108,6 +125,8 @@ def ExploreGraph(state):
             #Print the state
             print("TRANSACTIONS")
             print("NEXT_STATE->",next_state.ID)
+
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
 
         else:
@@ -115,6 +134,8 @@ def ExploreGraph(state):
             #Print the state
             print("PARENT")
             print("NEXT_STATE->",next_state.ID)
+
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)          
     
     elif(start==1):
@@ -129,6 +150,8 @@ def ExploreGraph(state):
             #Print the state
             print("TRANSACTIONS")
             print("NEXT_STATE->",next_state.ID)
+            
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
 
         elif(substates!=[]):
@@ -139,12 +162,17 @@ def ExploreGraph(state):
             #Print the state
             print("SUBSTATE")
             print("NEXT_STATE->",next_state.ID)
+
+            #log2.append(log2[-1]+":{"+next_state.ID)
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
         else:
             next_state=state.Container
             #Print the state
             print("PARENT")
             print("NEXT_STATE->",next_state.ID)
+
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
     
     else:
@@ -153,6 +181,8 @@ def ExploreGraph(state):
             #Print the state
             print("PARENT")
             print("NEXT_STATE->",next_state.ID)
+
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
 
         elif(transactions!=[]):
@@ -165,6 +195,8 @@ def ExploreGraph(state):
             #Print the state
             print("TRANSACTIONS")
             print("NEXT_STATE->",next_state.ID)
+
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
         
         elif(substates!=[]):
@@ -175,10 +207,15 @@ def ExploreGraph(state):
             #Print the state
             print("SUBSTATE")
             print("NEXT_STATE->",next_state.ID)
+
+            #log2.append(log2[-1]+":{"+next_state.ID)
+            log2.append(addToLog(next_state))
             ExploreGraph(next_state)
 
 
 log=[]
+
+log2=[]
 
 if(__name__=="__main__"):
 
@@ -208,7 +245,11 @@ if(__name__=="__main__"):
     print("Graph representation: ")
     PrintGraph(root_node)
 
-    #ExploreGraph(root_node)
+    log2.append(root_node.ID)
+    ExploreGraph(root_node)
 
     print("\n-------------LOG:-----------")
     print(log)
+
+    print("\n-------------LOG2:-----------")
+    print(log2)
