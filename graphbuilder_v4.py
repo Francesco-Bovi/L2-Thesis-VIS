@@ -119,5 +119,5 @@ if(__name__=="__main__"):
     print("------------------------------------------------------------------------------")
     #print("Graph representation: ",graph)
     print("Graph:",json.dumps(graph,indent=4))
-    with open('statechart.json', 'w') as fp:
+    with open('statechartv4.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)

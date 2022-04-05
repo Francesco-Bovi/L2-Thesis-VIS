@@ -116,7 +116,7 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
 
 
 #Function that help choosing next state based on the score
-def ChooseNextState(graph_s,random_number,transactions):
+def ChooseNextState(graph_s,graph,transactions):
 
     #I give priority to transactions with 0 score
     for t in transactions:
@@ -125,8 +125,18 @@ def ChooseNextState(graph_s,random_number,transactions):
         if(graph_s[possible_state]==0):
             return t
 
-    #Otherwise I go random
-    return transactions[random_number]
+    #If I have already visit all I will choose the one with minimum score
+    minimum=100000
+    next_transaction=None
+    for t in transactions:
+        possible_state=t[1]
+        if(graph_s[possible_state]<minimum):
+            minimum=graph_s[possible_state]
+            next_transaction=t
+
+    return next_transaction
+    
+    
 
 #Check if all states have been visited
 def CheckScore(graph_s):
@@ -141,7 +151,7 @@ def ExploreGraph(graph,graph_s,state):
     #Update score of a state
     graph_s[state]+=1
 
-    print("Score Graph:",json.dumps(graph_s,indent=4))
+    #print("Score Graph:",json.dumps(graph_s,indent=4))
 
     #Check if we have vistied all states at least once
     if not CheckScore(graph_s):
@@ -151,7 +161,7 @@ def ExploreGraph(graph,graph_s,state):
 
         ran_number=random.randint(0,len_list)
 
-        next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions)
+        next_transaction=ChooseNextState(graph_s,graph,list_possible_transitions)
         print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
 
         ExploreGraph(graph,graph_s,next_transaction[1])

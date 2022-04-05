@@ -15,7 +15,7 @@ class State:
         self.Container = None
         self.Score=0
 
-def CreateGraph(substates,state):
+def CreateGraph(substates,state,parent_transitions=None):
     for child in substates:
         
         new_state=State(child)
@@ -25,12 +25,17 @@ def CreateGraph(substates,state):
         if(substates.get(child).get("on") is not None):
             new_state.Transitions=AddTransitions(substates.get(child).get('on'))
 
+        #Inheritance of transitions by Container
+        if(parent_transitions!=None):
+            for t in parent_transitions:
+                new_state.Transitions.append(t)
+
         state.Subsets.append(new_state)
         #print(state)
 
         #Explore rest of graph
         if(substates.get(child).get("states") is not None):
-            CreateGraph(substates.get(child).get("states"),new_state)
+            CreateGraph(substates.get(child).get("states"),new_state,new_state.Transitions)
 
 def AddTransitions(transitions):
     transition_array=[]
@@ -245,11 +250,11 @@ if(__name__=="__main__"):
     print("Graph representation: ")
     PrintGraph(root_node)
 
-    log2.append(root_node.ID)
-    ExploreGraph(root_node)
+    #log2.append(root_node.ID)
+    #ExploreGraph(root_node)
 
-    print("\n-------------LOG:-----------")
-    print(log)
+    #print("\n-------------LOG:-----------")
+    #print(log)
 
-    print("\n-------------LOG2:-----------")
-    print(log2)
+    #print("\n-------------LOG2:-----------")
+    #print(log2)
