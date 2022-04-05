@@ -691,6 +691,14 @@
         [
             "MOUSEOUT",
             "rest_vis"
+        ],
+        [
+            "MOUSEMOVE",
+            "x_brush_scatter_vis"
+        ],
+        [
+            "MOUSEMOVE",
+            "y_brush_scatter_vis"
         ]
     ],
     "x_brush_scatter_vis": [
@@ -867,6 +875,14 @@
         [
             "MOUSEOUT",
             "rest_vis"
+        ],
+        [
+            "MOUSEMOVE",
+            "x_brushInsideRegion_brushRegion_scatter_vis"
+        ],
+        [
+            "MOUSEMOVE",
+            "y_brushInsideRegion_brushRegion_scatter_vis"
         ]
     ],
     "x_brushInsideRegion_brushRegion_scatter_vis": [
@@ -1075,6 +1091,14 @@
         [
             "MOUSEOUT",
             "rest_vis"
+        ],
+        [
+            "MOUSEMOVE",
+            "x_brushOnBorder_brushBorder_scatter_vis"
+        ],
+        [
+            "MOUSEMOVE",
+            "y_brushOnBorder_brushBorder_scatter_vis"
         ]
     ],
     "x_brushOnBorder_brushBorder_scatter_vis": [

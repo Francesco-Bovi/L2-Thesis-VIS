@@ -76,14 +76,11 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
                 print("TRANSITION UPDATE",transitions)
                 print("------------------------------------------------------------------------------")
 
-
-                """"
                 #Check if it has parallels
-                if(states.get(child).get("parallel") is not None):
+                if(states.get(child).get("type") is not None):
                     for node in states.get(child).get("states"):
 
-                        create_graph(states.get(node).get("states"),graph,transitions,parent)
-                """
+                        graph[child_name].append(["MOUSEMOVE",node+"_"+child_name])
 
                 if(states.get(child).get("states") is not None):
                     create_graph(states.get(child).get("states"),graph,transitions,child_name)
@@ -117,6 +114,13 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
                 
                 print("TRANSITION UPDATE",transitions)
                 print("------------------------------------------------------------------------------")
+                
+                #Check if it has parallels
+                if(states.get(child).get("type") is not None):
+                    for node in states.get(child).get("states"):
+
+                        graph[child_name].append(["MOUSEMOVE",node+"_"+child_name])
+                
                 if(states.get(child).get("states") is not None):
                     create_graph(states.get(child).get("states"),graph,transitions,child_name)
 
