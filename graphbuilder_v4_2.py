@@ -42,7 +42,7 @@ def AddTransitions(transitions,parent=None,child=None):
 
 #Function to build the graph
 def create_graph(states,graph,parent_tranistions=None,parent=None):
-    transitions=None
+    transitions=[]
     for child in states:
         print("CHILD:",child)
         print("PARENT:",parent)
@@ -69,7 +69,7 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
 
                 print("TRANSITIONS:",transitions)
 
-                if(transitions!=None and parent_tranistions!=None):
+                if(parent_tranistions!=None):
                     for t in parent_tranistions:
                         transitions.append(t)
                 
@@ -111,7 +111,7 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
         
                 print("TRANSITIONS:",transitions)
 
-                if(transitions!=None and parent_tranistions!=None):
+                if(parent_tranistions!=None):
                     for t in parent_tranistions:
                         transitions.append(t)
                 
@@ -189,10 +189,8 @@ if(__name__=="__main__"):
     #print("Graph:",json.dumps(graph,indent=4))
 
     #Save graph on a file
-    """"
-    with open('statechartv4_1.json', 'w') as fp:
+    with open('statechartv4_2.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
-    """
 
     #Create auxiliar dictionary to store the score for each state
     graph_score=graph.copy()
@@ -209,7 +207,7 @@ if(__name__=="__main__"):
     initial_state=list_graph[start]+"_vis"
     print("FIRST STATE:",initial_state)
 
-    #ExploreGraph(graph,graph_score,initial_state)
+    ExploreGraph(graph,graph_score,initial_state)
 
     print("------------------------------------------------------------------------------")
     print("All states visited at least once")
