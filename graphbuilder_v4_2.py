@@ -176,7 +176,7 @@ def ExploreGraph(graph,graph_s,state):
 
 if(__name__=="__main__"):
     #open the statechart json file
-    statechart_j=open('xstate_visualization_statechart.json')
+    statechart_j=open('xstate_visualization_statechart_aux.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)

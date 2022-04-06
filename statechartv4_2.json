@@ -647,8 +647,8 @@
             "rest_vis"
         ],
         [
-            "WHEEL",
-            "zoom_scatter_vis"
+            "ZOOM",
+            "scatter_vis"
         ],
         [
             "MOUSEDOWN",
@@ -665,12 +665,6 @@
         [
             "MOUSEOVER",
             "brushBorder_scatter_vis"
-        ]
-    ],
-    "zoom_scatter_vis": [
-        [
-            "MOUSEOUT",
-            "rest_vis"
         ]
     ],
     "panning_scatter_vis": [
@@ -1298,47 +1292,7 @@
         ],
         [
             "CLICK",
-            "clickBin_bin_barchart_vis"
-        ],
-        [
-            "MOUSEOUT",
-            "rest_vis"
-        ]
-    ],
-    "clickBin_bin_barchart_vis": [
-        [
-            "MOUSEOUT",
-            "barchart_vis"
-        ],
-        [
-            "MOUSEOUT",
-            "rest_vis"
-        ]
-    ],
-    "itemClick_clickBin_bin_barchart_vis": [
-        [
-            "MOUSEOUT",
-            "barchart_vis"
-        ],
-        [
-            "MOUSEOUT",
-            "rest_vis"
-        ]
-    ],
-    "itemSelected_clickBin_bin_barchart_vis": [
-        [
-            "MOUSEOUT",
-            "barchart_vis"
-        ],
-        [
-            "MOUSEOUT",
-            "rest_vis"
-        ]
-    ],
-    "itemDeselected_clickBin_bin_barchart_vis": [
-        [
-            "MOUSEOUT",
-            "barchart_vis"
+            "bin_barchart_vis"
         ],
         [
             "MOUSEOUT",
