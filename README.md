@@ -8,7 +8,7 @@ The first action needed is to extract the JSON file representing the statechart 
 
 Given the output of the program, representing an ordered sequence of interactions, I reproduce it in the real browser visualization, in order to use the LOGs of the framework to understand where there can be latency problems.
 
-### Statechart [link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/xstate_visualization_statechart.json)
+### Statechart ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/xstate_visualization_statechart.json))
 The statechart is composed by state nodes organized hierarchically, indeed there are some nodes like ```range``` that contains subnodes representing the possible interactions executable in it, for example ```hover```, ```handleR```, ```handleL``` and ```handleLR```.
 
 A state node can have a set of transitions that could be performed to reach another state on the same hierarchical level, so that state ```hover``` (substate of ```range```) has three possible transitions to reach ```handleR```, ```handleL``` and ```handleLR```.
