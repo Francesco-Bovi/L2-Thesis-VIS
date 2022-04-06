@@ -22,12 +22,16 @@ Among the problem that can arises using this file there are the fact that:
 - Not all the field are present in all the state nodes (like the id, set of substates and set of transitions)
 - Subnotes doesn't have a transition back to their "parent node", since they are not really child but represent the set of possible values (interactions) that the "parent node" can assume;
 
+---
+
 ### v0
 At the beginning my idea was to represent all the states at the same level, using a python dictionary where each key is the ID of the state and as value it contains an array with all possbile transitions. The output of the program is something like:
 
 ![image](https://user-images.githubusercontent.com/81032317/161448000-4d361bcc-f252-4569-a404-8c4c4a589074.png)
 
 Obviously this representation is not good at all for many reason, the first is that many states have the same substate ```hover``` and we know that in a dictionary have unique keys, then another problem is that during the exploration of this dictionary we can remain stuck in nodes that haven't a set of transactions or in loops, even if a possible solution can be adding a transaction to the "parent node". The more relevant problem of this configuration is that we don't have an hierarchy, so I since the beginning I can go to any state and I will never move in deep.
+
+---
 
 ### v1
 In this second version the output of the program is a sort of clean version of the original JSON file where, for each state, we have only the list of possible substates and transactions:
@@ -54,3 +58,23 @@ This configuration helps a lot during a random scanning of the statechart's grap
 2: Continue the exploration going back to the Container;
 
 If a node has some of those attributes empty, the choice will obviously be to one of the others, in order to avoid remaining stuck.
+
+---
+
+### Meet 04/04
+
+During the Meet of April 4th what emerged is that hierarchy only complicates the structure, since it was just a convenience for the JSON but it's not fundamental, in fact as we have seen previously there are sono states, that we call **Container** that are not real states since they enter directly in an initial state representing its initial value, like  ```Range``` that goes directly in ```hover```. Given these premises the best idea would be to unroll the hierarchy of the JSON representing the statechart, in this way we would have all the states at the same level. The implementation of this structure has been done in the 3rd version of the program described in the next paragraph.
+
+---
+
+### v3
+This version of the program aims to produce as output a dictionary in which all the states are at the same hierarchical level, the differences between this version and v0 arise from the fact that:
+- Since we are using a python dictionary it cannot contains duplicates, so in order to avoid overwriting states with the same name, but belonging to different containers, we save each state with key:  ```state_name + _ + container_name```, where ```state_name``` represents the name of the current state and ```container_name``` represents the name of the Container in which the state belongs;
+- **Container** states, which have always an initial state (usually *hover* or *idle*), represents automatically this initial state, incorporating its transitions. Indeed if we enter, for example, the state ```Range```, we can consider ourselves as in ```Range:{hover```.
+- In this version all the internal states inherit transitions from their Containers, in this way we can avoid using an hierarchy. As an example we want to have the possibility to move from any internal state to the state ```Rest```, since all principal Containers like ```Range, Scatter and Barchart``` have a transition **MOUSEOUT** to ```Rest```;
+
+Once this structure (represented as a dictionary) has been created, we create another dictionary with the same keys in which we will store a score that we will increment, when we traverse that node, during the exploration (so we initialize all the keys with value 0 at the beginning).
+
+In the exploration of this structure of the statechart, at first a random number representing the possible initila states is used (this number must be between 0 and 3 in our case, since we have 4 possible initial states: ```Rest, Range, Scatter or Barchart```), then we give priority to states which have 0 as score (which means they have not been visited yet) and, if all the possible next states already have been visited, we choose randomly. In this way out program will visit all the states at least once and will stop when all the states have been visited, obviously at the end of the execution the states with the highest score will be the Container nodes, considering the fact that they are the ones from which we can visit the majority of other states.
+
+

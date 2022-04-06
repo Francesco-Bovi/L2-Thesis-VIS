@@ -1,0 +1,957 @@
+{
+    "rest": {
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "range"
+            ],
+            [
+                "MOUSEOVER",
+                "scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "barchart"
+            ]
+        ]
+    },
+    "range": {
+        "hover": {
+            "transitions": [
+                [
+                    "MOUSEOVER",
+                    "handleR"
+                ],
+                [
+                    "MOUSEOVER",
+                    "handleL"
+                ],
+                [
+                    "MOUSEOVER",
+                    "handleLR"
+                ]
+            ]
+        },
+        "handleR": {
+            "hover": {
+                "transitions": [
+                    [
+                        "MOUSEDOWN",
+                        "dragR"
+                    ]
+                ]
+            },
+            "dragR": {
+                "idle": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "left": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "right": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "min": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "max": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "transitions": [
+                    [
+                        "MOUSEUP",
+                        "hover"
+                    ]
+                ]
+            },
+            "transitions": [
+                [
+                    "MOUSEOUT",
+                    "hover"
+                ]
+            ]
+        },
+        "handleL": {
+            "hover": {
+                "transitions": [
+                    [
+                        "MOUSEDOWN",
+                        "dragL"
+                    ]
+                ]
+            },
+            "dragL": {
+                "idle": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "left": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "right": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "min": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "max": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "transitions": [
+                    [
+                        "MOUSEUP",
+                        "hover"
+                    ]
+                ]
+            },
+            "transitions": [
+                [
+                    "MOUSEOUT",
+                    "hover"
+                ]
+            ]
+        },
+        "handleLR": {
+            "hover": {
+                "transitions": [
+                    [
+                        "MOUSEDOWN",
+                        "dragLR"
+                    ]
+                ]
+            },
+            "dragLR": {
+                "idle": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min-max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "left": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min-max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "right": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min-max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "min": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min-max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "max": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min-max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "min-max": {
+                    "transitions": [
+                        [
+                            "MOUSEMOVE",
+                            "min-max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "min"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "max"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "left"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "right"
+                        ],
+                        [
+                            "MOUSEMOVE",
+                            "idle"
+                        ]
+                    ]
+                },
+                "transitions": [
+                    [
+                        "MOUSEUP",
+                        "hover"
+                    ]
+                ]
+            },
+            "transitions": [
+                [
+                    "MOUSEOUT",
+                    "hover"
+                ]
+            ]
+        },
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ]
+    },
+    "scatter": {
+        "hover": {
+            "transitions": [
+                [
+                    "WHEEL",
+                    "zoom"
+                ],
+                [
+                    "MOUSEDOWN",
+                    "panning"
+                ],
+                [
+                    "BRUSHSTART",
+                    "brush"
+                ],
+                [
+                    "MOUSEOVER",
+                    "brushRegion"
+                ],
+                [
+                    "MOUSEOVER",
+                    "brushBorder"
+                ]
+            ]
+        },
+        "zoom": {},
+        "panning": {
+            "transitions": [
+                [
+                    "MOUSEUP",
+                    "hover"
+                ]
+            ]
+        },
+        "brush": {
+            "x": {
+                "idle": {
+                    "transitions": [
+                        [
+                            "BRUSHMOVE",
+                            "idle"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "left"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "right"
+                        ]
+                    ]
+                },
+                "left": {
+                    "transitions": [
+                        [
+                            "BRUSHMOVE",
+                            "idle"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "left"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "right"
+                        ]
+                    ]
+                },
+                "right": {
+                    "transitions": [
+                        [
+                            "BRUSHMOVE",
+                            "idle"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "left"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "right"
+                        ]
+                    ]
+                }
+            },
+            "y": {
+                "idle": {
+                    "transitions": [
+                        [
+                            "BRUSHMOVE",
+                            "idle"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "up"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "down"
+                        ]
+                    ]
+                },
+                "up": {
+                    "transitions": [
+                        [
+                            "BRUSHMOVE",
+                            "idle"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "up"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "down"
+                        ]
+                    ]
+                },
+                "down": {
+                    "transitions": [
+                        [
+                            "BRUSHMOVE",
+                            "idle"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "up"
+                        ],
+                        [
+                            "BRUSHMOVE",
+                            "down"
+                        ]
+                    ]
+                }
+            },
+            "transitions": [
+                [
+                    "BRUSHEND",
+                    "hover"
+                ]
+            ]
+        },
+        "brushRegion": {
+            "hover": {
+                "transitions": [
+                    [
+                        "BRUSHSTART",
+                        "brushInsideRegion"
+                    ]
+                ]
+            },
+            "brushInsideRegion": {
+                "x": {
+                    "idle": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "left"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "right"
+                            ]
+                        ]
+                    },
+                    "left": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "left"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "right"
+                            ]
+                        ]
+                    },
+                    "right": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "left"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "right"
+                            ]
+                        ]
+                    }
+                },
+                "y": {
+                    "idle": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "up"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "down"
+                            ]
+                        ]
+                    },
+                    "up": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "up"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "down"
+                            ]
+                        ]
+                    },
+                    "down": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "up"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "down"
+                            ]
+                        ]
+                    }
+                },
+                "transitions": [
+                    [
+                        "BRUSHEND",
+                        "hover"
+                    ]
+                ]
+            },
+            "transitions": [
+                [
+                    "MOUSEOUT",
+                    "hover"
+                ]
+            ]
+        },
+        "brushBorder": {
+            "hover": {
+                "transitions": [
+                    [
+                        "BRUSHSTART",
+                        "brushOnBorder"
+                    ]
+                ]
+            },
+            "brushOnBorder": {
+                "x": {
+                    "idle": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "left"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "right"
+                            ]
+                        ]
+                    },
+                    "left": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "left"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "right"
+                            ]
+                        ]
+                    },
+                    "right": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "left"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "right"
+                            ]
+                        ]
+                    }
+                },
+                "y": {
+                    "idle": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "up"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "down"
+                            ]
+                        ]
+                    },
+                    "up": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "up"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "down"
+                            ]
+                        ]
+                    },
+                    "down": {
+                        "transitions": [
+                            [
+                                "BRUSHMOVE",
+                                "idle"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "up"
+                            ],
+                            [
+                                "BRUSHMOVE",
+                                "down"
+                            ]
+                        ]
+                    }
+                },
+                "transitions": [
+                    [
+                        "BRUSHEND",
+                        "hover"
+                    ]
+                ]
+            },
+            "transitions": [
+                [
+                    "MOUSEOUT",
+                    "hover"
+                ]
+            ]
+        },
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ]
+    },
+    "barchart": {
+        "hover": {
+            "transitions": [
+                [
+                    "MOUSEOVER",
+                    "bin"
+                ]
+            ]
+        },
+        "bin": {
+            "hover": {
+                "transitions": [
+                    [
+                        "CLICK",
+                        "clickBin"
+                    ]
+                ]
+            },
+            "clickBin": {
+                "itemClick": {},
+                "itemSelected": {},
+                "itemDeselected": {},
+                "transitions": []
+            },
+            "transitions": [
+                [
+                    "MOUSEOUT",
+                    "hover"
+                ]
+            ]
+        },
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ]
+    }
+}

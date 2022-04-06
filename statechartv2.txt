@@ -1,0 +1,216 @@
+Graph representation: 
+ vis
+ TRANSITIONS []
+	 rest
+	 PARENT: vis
+	 TRANSITIONS [['MOUSEOVER', 'range'], ['MOUSEOVER', 'scatter'], ['MOUSEOVER', 'barchart']]
+	 range
+	 PARENT: vis
+	 TRANSITIONS [['MOUSEOUT', 'rest']]
+		 hover
+		 PARENT: range
+		 TRANSITIONS [['MOUSEOVER', 'handleR'], ['MOUSEOVER', 'handleL'], ['MOUSEOVER', 'handleLR'], ['MOUSEOUT', 'rest']]
+		 handleR
+		 PARENT: range
+		 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 hover
+			 PARENT: handleR
+			 TRANSITIONS [['MOUSEDOWN', 'dragR'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 dragR
+			 PARENT: handleR
+			 TRANSITIONS [['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 idle
+				 PARENT: dragR
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 left
+				 PARENT: dragR
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 right
+				 PARENT: dragR
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 min
+				 PARENT: dragR
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 max
+				 PARENT: dragR
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+		 handleL
+		 PARENT: range
+		 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 hover
+			 PARENT: handleL
+			 TRANSITIONS [['MOUSEDOWN', 'dragL'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 dragL
+			 PARENT: handleL
+			 TRANSITIONS [['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 idle
+				 PARENT: dragL
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 left
+				 PARENT: dragL
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 right
+				 PARENT: dragL
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 min
+				 PARENT: dragL
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 max
+				 PARENT: dragL
+				 TRANSITIONS [['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+		 handleLR
+		 PARENT: range
+		 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 hover
+			 PARENT: handleLR
+			 TRANSITIONS [['MOUSEDOWN', 'dragLR'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 dragLR
+			 PARENT: handleLR
+			 TRANSITIONS [['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 idle
+				 PARENT: dragLR
+				 TRANSITIONS [['MOUSEMOVE', 'min-max'], ['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 left
+				 PARENT: dragLR
+				 TRANSITIONS [['MOUSEMOVE', 'min-max'], ['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 right
+				 PARENT: dragLR
+				 TRANSITIONS [['MOUSEMOVE', 'min-max'], ['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 min
+				 PARENT: dragLR
+				 TRANSITIONS [['MOUSEMOVE', 'min-max'], ['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 max
+				 PARENT: dragLR
+				 TRANSITIONS [['MOUSEMOVE', 'min-max'], ['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 min-max
+				 PARENT: dragLR
+				 TRANSITIONS [['MOUSEMOVE', 'min-max'], ['MOUSEMOVE', 'min'], ['MOUSEMOVE', 'max'], ['MOUSEMOVE', 'left'], ['MOUSEMOVE', 'right'], ['MOUSEMOVE', 'idle'], ['MOUSEUP', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+	 scatter
+	 PARENT: vis
+	 TRANSITIONS [['MOUSEOUT', 'rest']]
+		 hover
+		 PARENT: scatter
+		 TRANSITIONS [['WHEEL', 'zoom'], ['MOUSEDOWN', 'panning'], ['BRUSHSTART', 'brush'], ['MOUSEOVER', 'brushRegion'], ['MOUSEOVER', 'brushBorder'], ['MOUSEOUT', 'rest']]
+		 zoom
+		 PARENT: scatter
+		 TRANSITIONS [['MOUSEOUT', 'rest']]
+		 panning
+		 PARENT: scatter
+		 TRANSITIONS [['MOUSEUP', 'hover'], ['MOUSEOUT', 'rest']]
+		 brush
+		 PARENT: scatter
+		 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+			 x
+			 PARENT: brush
+			 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+				 idle
+				 PARENT: x
+				 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+				 left
+				 PARENT: x
+				 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+				 right
+				 PARENT: x
+				 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+			 y
+			 PARENT: brush
+			 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+				 idle
+				 PARENT: y
+				 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+				 up
+				 PARENT: y
+				 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+				 down
+				 PARENT: y
+				 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'rest']]
+		 brushRegion
+		 PARENT: scatter
+		 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 hover
+			 PARENT: brushRegion
+			 TRANSITIONS [['BRUSHSTART', 'brushInsideRegion'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 brushInsideRegion
+			 PARENT: brushRegion
+			 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 x
+				 PARENT: brushInsideRegion
+				 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 idle
+					 PARENT: x
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 left
+					 PARENT: x
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 right
+					 PARENT: x
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 y
+				 PARENT: brushInsideRegion
+				 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 idle
+					 PARENT: y
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 up
+					 PARENT: y
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 down
+					 PARENT: y
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+		 brushBorder
+		 PARENT: scatter
+		 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 hover
+			 PARENT: brushBorder
+			 TRANSITIONS [['BRUSHSTART', 'brushOnBorder'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 brushOnBorder
+			 PARENT: brushBorder
+			 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 x
+				 PARENT: brushOnBorder
+				 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 idle
+					 PARENT: x
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 left
+					 PARENT: x
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 right
+					 PARENT: x
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'left'], ['BRUSHMOVE', 'right'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 y
+				 PARENT: brushOnBorder
+				 TRANSITIONS [['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 idle
+					 PARENT: y
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 up
+					 PARENT: y
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+					 down
+					 PARENT: y
+					 TRANSITIONS [['BRUSHMOVE', 'idle'], ['BRUSHMOVE', 'up'], ['BRUSHMOVE', 'down'], ['BRUSHEND', 'hover'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+	 barchart
+	 PARENT: vis
+	 TRANSITIONS [['MOUSEOUT', 'rest']]
+		 hover
+		 PARENT: barchart
+		 TRANSITIONS [['MOUSEOVER', 'bin'], ['MOUSEOUT', 'rest']]
+		 bin
+		 PARENT: barchart
+		 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 hover
+			 PARENT: bin
+			 TRANSITIONS [['CLICK', 'clickBin'], ['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+			 clickBin
+			 PARENT: bin
+			 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 itemClick
+				 PARENT: clickBin
+				 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 itemSelected
+				 PARENT: clickBin
+				 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]
+				 itemDeselected
+				 PARENT: clickBin
+				 TRANSITIONS [['MOUSEOUT', 'hover'], ['MOUSEOUT', 'rest']]

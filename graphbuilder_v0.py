@@ -63,6 +63,10 @@ if(__name__=="__main__"):
     #print("Graph representation: ",graph)
     print("Graph:",json.dumps(graph,indent=4))
 
+    #Save graph on a file
+    with open('statechartv0.json', 'w') as fp:
+        json.dump(graph, fp,  indent=4)
+
     print("---EXPLORE THE GRAPH---")
 
     #explore_graph(graph)
