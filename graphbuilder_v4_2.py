@@ -155,8 +155,6 @@ def ExploreGraph(graph,graph_s,state):
     #Update score of a state
     graph_s[state]+=1
 
-    print("Score Graph:",json.dumps(graph_s,indent=4))
-
     #Check if we have vistied all states at least once
     if not CheckScore(graph_s):
 
@@ -166,7 +164,7 @@ def ExploreGraph(graph,graph_s,state):
         ran_number=random.randint(0,len_list)
 
         next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions)
-        print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
+        #print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
 
         ExploreGraph(graph,graph_s,next_transaction[1])
     
@@ -215,3 +213,4 @@ if(__name__=="__main__"):
 
     print("------------------------------------------------------------------------------")
     print("All states visited at least once")
+    print("Score Graph:",json.dumps(graph_score,indent=4))
