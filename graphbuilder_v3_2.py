@@ -42,7 +42,7 @@ def AddTransitions(transitions,parent=None,child=None):
 
 #Function to build the graph
 def create_graph(states,graph,parent_tranistions=None,parent=None):
-    transitions=None
+    transitions=[]
     for child in states:
         print("CHILD:",child)
         print("PARENT:",parent)
@@ -69,21 +69,18 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
 
                 print("TRANSITIONS:",transitions)
 
-                if(transitions!=None and parent_tranistions!=None):
+                if(parent_tranistions!=None):
                     for t in parent_tranistions:
                         transitions.append(t)
                 
                 print("TRANSITION UPDATE",transitions)
                 print("------------------------------------------------------------------------------")
 
-
-                """"
                 #Check if it has parallels
-                if(states.get(child).get("parallel") is not None):
+                if(states.get(child).get("type") is not None):
                     for node in states.get(child).get("states"):
 
-                        create_graph(states.get(node).get("states"),graph,transitions,parent)
-                """
+                        graph[child_name].append(["MOUSEMOVE",node+"_"+child_name])
 
                 if(states.get(child).get("states") is not None):
                     create_graph(states.get(child).get("states"),graph,transitions,child_name)
@@ -111,12 +108,19 @@ def create_graph(states,graph,parent_tranistions=None,parent=None):
         
                 print("TRANSITIONS:",transitions)
 
-                if(transitions!=None and parent_tranistions!=None):
+                if(parent_tranistions!=None):
                     for t in parent_tranistions:
                         transitions.append(t)
                 
                 print("TRANSITION UPDATE",transitions)
                 print("------------------------------------------------------------------------------")
+                
+                #Check if it has parallels
+                if(states.get(child).get("type") is not None):
+                    for node in states.get(child).get("states"):
+
+                        graph[child_name].append(["MOUSEMOVE",node+"_"+child_name])
+                
                 if(states.get(child).get("states") is not None):
                     create_graph(states.get(child).get("states"),graph,transitions,child_name)
 
@@ -151,8 +155,6 @@ def ExploreGraph(graph,graph_s,state):
     #Update score of a state
     graph_s[state]+=1
 
-    print("Score Graph:",json.dumps(graph_s,indent=4))
-
     #Check if we have vistied all states at least once
     if not CheckScore(graph_s):
 
@@ -162,7 +164,7 @@ def ExploreGraph(graph,graph_s,state):
         ran_number=random.randint(0,len_list)
 
         next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions)
-        print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
+        #print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
 
         ExploreGraph(graph,graph_s,next_transaction[1])
     
@@ -172,7 +174,7 @@ def ExploreGraph(graph,graph_s,state):
 
 if(__name__=="__main__"):
     #open the statechart json file
-    statechart_j=open('xstate_visualization_statechart.json')
+    statechart_j=open('xstate_visualization_statechart_aux.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -189,10 +191,8 @@ if(__name__=="__main__"):
     #print("Graph:",json.dumps(graph,indent=4))
 
     #Save graph on a file
-    """"
-    with open('statechartv4_1.json', 'w') as fp:
+    with open('statechartv3_2.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
-    """
 
     #Create auxiliar dictionary to store the score for each state
     graph_score=graph.copy()
@@ -209,7 +209,8 @@ if(__name__=="__main__"):
     initial_state=list_graph[start]+"_vis"
     print("FIRST STATE:",initial_state)
 
-    #ExploreGraph(graph,graph_score,initial_state)
+    ExploreGraph(graph,graph_score,initial_state)
 
     print("------------------------------------------------------------------------------")
     print("All states visited at least once")
+    print("Score Graph:",json.dumps(graph_score,indent=4))
