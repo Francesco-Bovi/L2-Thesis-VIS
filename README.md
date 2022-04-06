@@ -24,7 +24,7 @@ Among the problem that can arises using this file there are the fact that:
 
 ---
 
-### v0
+### v0 ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v0.py))
 At the beginning my idea was to represent all the states at the same level, using a python dictionary where each key is the ID of the state and as value it contains an array with all possbile transitions. The output of the program is something like:
 
 [Output of version 0](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/statechartv0.json)
@@ -33,14 +33,14 @@ Obviously this representation is not good at all for many reason, the first is t
 
 ---
 
-### v1
+### v1 ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v1.py))
 In this second version the output of the program is a sort of clean version of the original JSON file where, for each state, we have only the list of possible substates and transactions:
 
 [Output of version 1](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/statechartv1.json)
 
 I noticed that in this case, during the exploration, problems arise when we arrive to a node that have no transitions and no substates, remaining stuck in that node. Even in this casa a possible solution could be to add a transition to the "parent node" when we arrive to this kind of states.
 
-### v2
+### v2 ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v2.py))
 In this version of the program I create a class ```State``` with the following attributes:
 - ID: The identifier of the state node;
 - Transitions: An array containing the set of all possible transitions to a state at the same hierachical level;
@@ -69,7 +69,7 @@ During the Meet of April 4th what emerged is that hierarchy only complicates the
 
 ---
 
-### v3
+### v3 ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v3_2.py))
 This version of the program aims to produce as output a dictionary in which all the states are at the same hierarchical level, the differences between this version and v0 arise from the fact that:
 - Since we are using a python dictionary it cannot contains duplicates, so in order to avoid overwriting states with the same name, but belonging to different containers, we save each state with key:  ```state_name + _ + container_name```, where ```state_name``` represents the name of the current state and ```container_name``` represents the name of the Container in which the state belongs;
 - **Container** states, which have always an initial state (usually *hover* or *idle*), represents automatically this initial state, incorporating its transitions. Indeed if we enter, for example, the state ```Range```, we can consider ourselves as in ```Range:{hover```.
