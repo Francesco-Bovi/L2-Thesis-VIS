@@ -2,23 +2,27 @@ import json
 import random
 from textwrap import indent
 
-#Function to give priority to some transitions
-def PrioritySet(transition_list,graph_transition):
-    print("The set of all transactions is:")
-    for tran in graph_transition:
-        print("|"+tran+"|",end="")
-    input_tran=input("\nChoose to which transaction give priority and press ENTER (otherwise press N): ")
+#Function to give priority to some states
+def PrioritySetStates(priority_states,graph_s):
+    print("The set of all states is:")
+    for s in graph_s:
+        print("|"+s+"|",end="")
+    input_tran=input("\nChoose to which state give priority and press ENTER (otherwise press N): ")
     print(input_tran)
     if(input_tran=="N"):
         return
-    elif(input_tran not in graph_transition):
-        print("------TRANSITION INSERTED DOESN'T EXIST, TRY AGAIN------")
-        PrioritySet(transition_list,graph_transition)
+    elif(input_tran not in graph_s):
+        print("------STATES INSERTED DOESN'T EXIST, TRY AGAIN------")
+        PrioritySetStates(priority_states,graph_s)
     else:
-        print("------TRANSITION INSERTED------")
-        if(input_tran not in transition_list):
-            transition_list.append(input_tran)
-        PrioritySet(transition_list,graph_transition)
+        input_num=input("\nEnter how many times you want to visit that state: ")
+        print(input_num)
+
+        priority_states[input_tran]=int(input_num)
+        
+        print("------STATES UPDATE------")
+
+        PrioritySetStates(priority_states,graph_s)
 
 #Function used to add a key in the dictionary
 def AddState(state,graph,parent):
@@ -170,7 +174,7 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
 
 
 #Function that help choosing next state based on the score
-def ChooseNextState(graph_s,random_number,transactions,priority_tran):
+def ChooseNextState(graph_s,random_number,transactions):
 
     #I give priority to transactions with 0 score
     for t in transactions:
@@ -179,33 +183,31 @@ def ChooseNextState(graph_s,random_number,transactions,priority_tran):
         if(graph_s[possible_state]==0):
             return t
 
-    #If there are no transitions among the one chosen by user
-    #Go to the node not visited yet
-    for t in transactions:
-        possible_transition=t[0]
-
-        #Give priority to transitions set by users
-        if(possible_transition in priority_tran):
-            return t
-
     #Otherwise I go random
     return transactions[random_number]
 
 #Check if all states have been visited
-def CheckScore(graph_s):
+def CheckScore(graph_s,priority_states):
+
+    #First check if all have been visited at least once
     for elem in graph_s:
         if(graph_s[elem]==0):
+            return False
+
+    #Then check if the ones with a given priority have been traversed the right number of times
+    for elem in priority_states:
+        if(graph_s[elem]<=priority_states[elem]):
             return False
     return True
 
 #Exploration of the Graph
-def ExploreGraph(graph,graph_s,state,priority_tran):
+def ExploreGraph(graph,graph_s,state,priority_state):
 
     #Update score of a state
     graph_s[state]+=1
 
     #Check if we have vistied all states at least once
-    if not CheckScore(graph_s):
+    if not CheckScore(graph_s,priority_state):
 
         #List of all possible transitions from the current state
         list_possible_transitions=graph[state]
@@ -214,11 +216,11 @@ def ExploreGraph(graph,graph_s,state,priority_tran):
         #Randon number for the possible next state (if all have been visited yet)
         ran_number=random.randint(0,len_list)
 
-        next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions,priority_tran)
+        next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions)
         print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
 
         #Continue the exploration
-        ExploreGraph(graph,graph_s,next_transaction[1],priority_tran)
+        ExploreGraph(graph,graph_s,next_transaction[1],priority_state)
     
     else:
 
@@ -274,8 +276,8 @@ if(__name__=="__main__"):
     priority_states={}
 
     #Give priority to some states
-    PrioritySet(priority_transaction,graph_transition)
-    print(priority_transaction)
+    PrioritySetStates(priority_states,graph_score)
+    print(priority_states)
 
     #Choosa randomly the first state to visit
     start=random.randint(0,len(statechart_dict.get('states'))-1)
@@ -286,7 +288,7 @@ if(__name__=="__main__"):
     print("FIRST STATE:",initial_state)
 
     #Start the exploration of the graph
-    ExploreGraph(graph,graph_score,initial_state,priority_transaction)
+    ExploreGraph(graph,graph_score,initial_state,priority_states)
 
     print("------------------------------------------------------------------------------")
     print("Score Graph:",json.dumps(graph_score,indent=4))
