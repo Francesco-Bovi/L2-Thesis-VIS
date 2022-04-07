@@ -174,11 +174,14 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
 
 
 #Function that help choosing next state based on the score
-def ChooseNextState(graph_s,random_number,transactions):
+def ChooseNextState(graph_s,random_number,transactions,priority_state):
 
     #I give priority to transactions with 0 score
     for t in transactions:
         possible_state=t[1]
+
+        if(possible_state in priority_state and graph_s[possible_state]<priority_state[possible_state]):
+            return t
 
         if(graph_s[possible_state]==0):
             return t
@@ -196,7 +199,7 @@ def CheckScore(graph_s,priority_states):
 
     #Then check if the ones with a given priority have been traversed the right number of times
     for elem in priority_states:
-        if(graph_s[elem]<=priority_states[elem]):
+        if(graph_s[elem]<priority_states[elem]):
             return False
     return True
 
@@ -216,7 +219,7 @@ def ExploreGraph(graph,graph_s,state,priority_state):
         #Randon number for the possible next state (if all have been visited yet)
         ran_number=random.randint(0,len_list)
 
-        next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions)
+        next_transaction=ChooseNextState(graph_s,ran_number,list_possible_transitions,priority_state)
         print("NEXT TRANSITION:",next_transaction[0]," TO:",next_transaction[1])
 
         #Continue the exploration
