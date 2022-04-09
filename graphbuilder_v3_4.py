@@ -1,6 +1,8 @@
 import json
 import random
 from textwrap import indent
+from typing import List
+from collections import deque
 
 
 #Function for choosing the state from which begin
@@ -168,16 +170,10 @@ def ChooseNextState(graph_s,random_number,transactions):
 
     #Otherwise I go random
     return transactions[random_number]
-
-#Exploration of the Graph
-# Python3 program to print all paths of
-# source to destination in given graph
-from typing import List
-from collections import deque
  
 # Utility function for printing
-# the found path in graph
-def printpath(path: List[int]) -> None:
+# the found path
+def PrintPath(path):
      
     size = len(path)
     for i in range(size):
@@ -185,9 +181,8 @@ def printpath(path: List[int]) -> None:
          
     print()
  
-# Utility function for finding paths in graph
-# from source to destination
-def findpaths(graph,src,input_n):
+# Utility function for finding all the paths
+def FindPaths(graph,src,input_n):
                    
     # Create a queue which stores
     # the paths
@@ -202,8 +197,9 @@ def findpaths(graph,src,input_n):
         path = q.popleft()
         last = path[len(path) - 1]
         
+        #If a path has length N prints it
         if (len(path) == input_n):
-            printpath(path)
+            PrintPath(path)
 
         else:
  
@@ -259,10 +255,7 @@ if(__name__=="__main__"):
     #Insert how long we want the path to be during the exploration
     input_n=int(input("\nChoose the length of the path and press ENTER (otherwise press N): "))
 
-    #Structure to save all paths of length N
-    possible_paths=[]
-
-    findpaths(graph,initial_state,input_n)
+    FindPaths(graph,initial_state,input_n)
 
     print("------------------------------------------------------------------------------")
     #print("Score Graph:",json.dumps(graph_score,indent=4))
