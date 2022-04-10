@@ -102,4 +102,4 @@ Version 3 of the program has two different subversions, one for the states and t
 ---
 
 ### v3.4 ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v3_4.py))
-This version of the program creates the same structure of the version 3 for representing the JSON statechart, but in this case we have a different type of exploration. In fact given from user's input a state ```initial_state``` and a number ```N```, the program will print on screen all the possible paths of length ```N``` with source node ```initial_state```.
+This version of the program uses the same structure of the version 3 for representing the JSON statechart, but in this case we have a different type of exploration. In fact, given from user's input a state ```initial_state``` and a number ```input_n```, the program will print on screen all the possible paths of length ```input_n``` with source node ```initial_state```. In order to achieve this goal we use a queue data structure in which we store a list with all the states for each possible path, so at each iteration we update the lists, we will stop and print them when they reach length ```input_n```.

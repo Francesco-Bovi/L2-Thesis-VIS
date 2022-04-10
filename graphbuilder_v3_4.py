@@ -56,9 +56,9 @@ def AddTransitions(transitions,parent=None,child=None):
 def CreateGraph(states,graph,parent_tranistions=None,parent=None):
     transitions=[]
     for child in states:
-        print("CHILD:",child)
-        print("PARENT:",parent)
-        print("PARENT TRANS:",parent_tranistions)
+        #print("CHILD:",child)
+        #print("PARENT:",parent)
+        #print("PARENT TRANS:",parent_tranistions)
 
         #We are not interested in hover or idle since we have considered them previoulsy
         if(child!="hover" and child!="idle"):
@@ -81,7 +81,7 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
                     for t in parent_tranistions:
                         graph[child_name].append(t)
 
-                print("TRANSITIONS:",transitions)
+                #print("TRANSITIONS:",transitions)
 
                 #Add parent transitions to the transitions of the new state
                 #Those will be inherited by the substates
@@ -89,8 +89,8 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
                     for t in parent_tranistions:
                         transitions.append(t)
                 
-                print("TRANSITION UPDATE",transitions)
-                print("------------------------------------------------------------------------------")
+                #print("TRANSITION UPDATE",transitions)
+                #print("------------------------------------------------------------------------------")
 
                 #Check if it has parallels
                 if(states.get(child).get("type") is not None):
@@ -130,7 +130,7 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
                     for t in parent_tranistions:
                         graph[child_name].append(t)
         
-                print("TRANSITIONS:",transitions)
+                #print("TRANSITIONS:",transitions)
 
                 #Add parent transitions to the transitions of the new state
                 #Those will be inherited by the substates
@@ -138,8 +138,8 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
                     for t in parent_tranistions:
                         transitions.append(t)
                 
-                print("TRANSITION UPDATE",transitions)
-                print("------------------------------------------------------------------------------")
+                #print("TRANSITION UPDATE",transitions)
+                #print("------------------------------------------------------------------------------")
                 
                 #Check if it has parallels
                 if(states.get(child).get("type") is not None):
@@ -194,6 +194,7 @@ def FindPaths(graph,src,input_n):
     q.append(path.copy())
      
     while q:
+        print("QUEUE:",q)
         path = q.popleft()
         last = path[len(path) - 1]
         
@@ -229,9 +230,12 @@ if(__name__=="__main__"):
     print("------------------------------------------------------------------------------")
     print("Graph:",json.dumps(graph,indent=4))
 
+    """"
     #Save graph on a file
     with open('statechartv3_2.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
+    """
+
 
     #Create auxiliar dictionary to store the score for each state
     graph_score=graph.copy()
@@ -239,12 +243,12 @@ if(__name__=="__main__"):
         graph_score[key]=0
 
     #Print graph with scores
-    print(graph_score)
+    #print(graph_score)
 
     #Choose a state from which start the exploration
     initial_state=StartState(graph_score)
     if(initial_state==None):
-        #Choosa randomly the first state to visit
+        #Choosa randomly the first state to visit if none has been inserted by the user
         start=random.randint(0,len(statechart_dict.get('states'))-1)
         list_graph=list(statechart_dict.get('states'))
 
