@@ -3,7 +3,7 @@
   "initial": "rest",
   "context": {
     "item": null,
-    "slider": {
+    "range": {
       "handleL": 0,
       "handleR": 7,
       "maxValue": 7,

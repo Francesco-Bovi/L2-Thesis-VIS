@@ -194,7 +194,7 @@ def FindPaths(graph,src,input_n):
     q.append(path.copy())
      
     while q:
-        print("QUEUE:",q)
+        #print("QUEUE:",q)
         path = q.popleft()
         last = path[len(path) - 1]
         
