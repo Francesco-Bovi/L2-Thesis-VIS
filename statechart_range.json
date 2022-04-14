@@ -1,0 +1,906 @@
+{
+    "rest": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "range"
+            ],
+            [
+                "MOUSEOVER",
+                "scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "barchart"
+            ]
+        ],
+        "values": []
+    },
+    "range": {
+        "initial": "hover_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_range",
+            "handleR_range",
+            "handleL_range",
+            "handleLR_range"
+        ],
+        "context": {
+            "type": "range",
+            "handleL": 0,
+            "handleR": 7,
+            "min": 0,
+            "max": 7
+        }
+    },
+    "hover_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOVER",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOVER",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "handleR_range": {
+        "initial": "hover_handleR_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_handleR_range",
+            "dragR_handleR_range"
+        ],
+        "context": {
+            "type": "range",
+            "position": 7,
+            "max": 7,
+            "min": 0
+        }
+    },
+    "hover_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEDOWN",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "dragR_handleR_range": {
+        "initial": "idle_dragR_handleR_range",
+        "transitions": [
+            [
+                "MOUSEUP",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_dragR_handleR_range",
+            "left_dragR_handleR_range",
+            "right_dragR_handleR_range",
+            "min_dragR_handleR_range",
+            "max_dragR_handleR_range"
+        ]
+    },
+    "idle_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "left_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "right_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "min_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "max_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "handleL_range": {
+        "initial": "hover_handleL_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_handleL_range",
+            "dragL_handleL_range"
+        ],
+        "context": {
+            "type": "range",
+            "position": 0,
+            "max": 7,
+            "min": 0
+        }
+    },
+    "hover_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEDOWN",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "dragL_handleL_range": {
+        "initial": "idle_dragL_handleL_range",
+        "transitions": [
+            [
+                "MOUSEUP",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_dragL_handleL_range",
+            "left_dragL_handleL_range",
+            "right_dragL_handleL_range",
+            "min_dragL_handleL_range",
+            "max_dragL_handleL_range"
+        ],
+        "context": {
+            "type": "range",
+            "position": 0,
+            "max": 7,
+            "min": 0
+        }
+    },
+    "idle_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "left_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "right_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "min_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "max_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "handleLR_range": {
+        "initial": "hover_handleLR_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_handleLR_range",
+            "dragLR_handleLR_range"
+        ],
+        "context": {
+            "type": "double_range",
+            "positionR": 7,
+            "positionL": 0,
+            "max": 7,
+            "min": 0
+        }
+    },
+    "hover_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEDOWN",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "dragLR_handleLR_range": {
+        "initial": "idle_dragLR_handleLR_range",
+        "transitions": [
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_dragLR_handleLR_range",
+            "left_dragLR_handleLR_range",
+            "right_dragLR_handleLR_range",
+            "min_dragLR_handleLR_range",
+            "max_dragLR_handleLR_range",
+            "min-max_dragLR_handleLR_range"
+        ],
+        "context": {
+            "type": "double_range",
+            "positionL": 0,
+            "positionR": 7,
+            "max": 7,
+            "min": 0
+        }
+    },
+    "idle_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "left_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "right_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "min_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "max_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "min-max_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    }
+}

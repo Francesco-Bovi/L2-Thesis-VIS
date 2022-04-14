@@ -1,0 +1,1203 @@
+{
+  "id": "vis",
+  "initial": "rest",
+  "context": {
+    "item": null,
+    "range": {
+      "handleL": 0,
+      "handleR": 7,
+      "maxValue": 7,
+      "minValue": 0
+    }
+  },
+  "states": {
+    "rest": {
+      "id": "rest",
+      "on": {
+        "MOUSEOVER": [
+          {
+            "target": "range",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          },
+          {
+            "target": "scatter",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          },
+          {
+            "target": "barchart",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          }
+        ]
+      }
+    },
+    "range": {
+      "id": "range",
+      "initial": "hover",
+	  "context":{
+		  "type":"range",
+		  "handleL":0,
+		  "handleR":7,
+		  "min":0,
+		  "max":7
+	  },
+      "states": {
+        "hover": {
+          "on": {
+            "MOUSEOVER": [
+              {
+                "target": "handleR",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              },
+              {
+                "target": "handleL",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              },
+              {
+                "target": "handleLR",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              }
+            ]
+          }
+        },
+        "handleR": {
+          "id": "handleR",
+          "initial": "hover",
+		  "context":{
+				  "type":"range",
+				  "position":7,
+				  "max":7,
+				  "min":0
+			},
+          "states": {
+            "hover": {
+              "on": {
+                "MOUSEDOWN": [
+                  {
+                    "target": "dragR",
+                    "actions": {
+                      "type": "xstate.assign",
+                      "assignment": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "dragR": {
+              "id": "dragR",
+              "initial": "idle",
+              "states": {
+                "idle": {
+                  "id": "idle",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "left": {
+                  "id": "left",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  },
+                  "meta": {
+                    "labels": [
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          }
+                        ],
+                        "selectFields": [
+                          "sepalLength",
+                          "sepalWidth"
+                        ],
+                        "type": {
+                          "name": "range"
+                        }
+                      },
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          },
+                          {
+                            "name": "petalWidth",
+                            "use": false
+                          }
+                        ],
+                        "selectFields": [
+                          "petalWidth"
+                        ],
+                        "type": {
+                          "name": "range_histogram"
+                        }
+                      }
+                    ],
+                    "sign": "-",
+                    "handle": "right"
+                  }
+                },
+                "right": {
+                  "id": "right",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  },
+                  "meta": {
+                    "labels": [
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          }
+                        ],
+                        "selectFields": [
+                          "sepalLength",
+                          "sepalWidth"
+                        ],
+                        "type": {
+                          "name": "range"
+                        }
+                      },
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          },
+                          {
+                            "name": "petalWidth",
+                            "use": false
+                          }
+                        ],
+                        "selectFields": [
+                          "petalWidth"
+                        ],
+                        "type": {
+                          "name": "range_histogram"
+                        }
+                      }
+                    ],
+                    "sign": "+",
+                    "handle": "right"
+                  }
+                },
+                "min": {
+                  "id": "min",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "max": {
+                  "id": "max",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "on": {
+                "MOUSEUP": [
+                  {
+                    "target": "hover"
+                  }
+                ]
+              }
+            }
+          },
+          "on": {
+            "MOUSEOUT": [
+              {
+                "target": "hover",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              }
+            ]
+          }
+        },
+        "handleL": {
+          "id": "handleL",
+          "initial": "hover",
+		  "context":{
+				  "type":"range",
+				  "position":0,
+				  "max":7,
+				  "min":0
+			  },
+          "states": {
+            "hover": {
+              "on": {
+                "MOUSEDOWN": [
+                  {
+                    "target": "dragL",
+                    "actions": {
+                      "type": "xstate.assign",
+                      "assignment": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "dragL": {
+              "id": "dragL",
+              "initial": "idle",
+			  "context":{
+				  "type":"range",
+				  "position":0,
+				  "max":7,
+				  "min":0
+			  },
+              "states": {
+                "idle": {
+                  "id": "idle",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "left": {
+                  "id": "left",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  },
+                  "meta": {
+                    "labels": [
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          }
+                        ],
+                        "selectFields": [
+                          "sepalLength",
+                          "sepalWidth"
+                        ],
+                        "type": {
+                          "name": "range"
+                        }
+                      },
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          },
+                          {
+                            "name": "petalWidth",
+                            "use": false
+                          }
+                        ],
+                        "selectFields": [
+                          "petalWidth"
+                        ],
+                        "type": {
+                          "name": "range_histogram"
+                        }
+                      }
+                    ],
+                    "sign": "-",
+                    "handle": "left"
+                  }
+                },
+                "right": {
+                  "id": "right",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  },
+                  "meta": {
+                    "labels": [
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          }
+                        ],
+                        "selectFields": [
+                          "sepalLength",
+                          "sepalWidth"
+                        ],
+                        "type": {
+                          "name": "range"
+                        }
+                      },
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          },
+                          {
+                            "name": "petalWidth",
+                            "use": false
+                          }
+                        ],
+                        "selectFields": [
+                          "petalWidth"
+                        ],
+                        "type": {
+                          "name": "range_histogram"
+                        }
+                      }
+                    ],
+                    "sign": "+",
+                    "handle": "left"
+                  }
+                },
+                "min": {
+                  "id": "min",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "max": {
+                  "id": "max",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "on": {
+                "MOUSEUP": [
+                  {
+                    "target": "hover"
+                  }
+                ]
+              }
+            }
+          },
+          "on": {
+            "MOUSEOUT": [
+              {
+                "target": "hover",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              }
+            ]
+          }
+        },
+        "handleLR": {
+          "id": "handleLR",
+          "initial": "hover",
+		  "context":{
+				  "type":"double_range",
+				  "positionR":7,
+				  "positionL":0,
+				  "max":7,
+				  "min":0
+			  },
+          "states": {
+            "hover": {
+              "on": {
+                "MOUSEDOWN": [
+                  {
+                    "target": "dragLR",
+                    "actions": {
+                      "type": "xstate.assign",
+                      "assignment": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "dragLR": {
+              "id": "dragLR",
+              "initial": "idle",
+			  "context":{
+				  "type":"double_range",
+				  "positionL":0,
+				  "positionR":7,
+				  "max":7,
+				  "min":0
+			  },
+              "states": {
+                "idle": {
+                  "id": "idle",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min-max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "left": {
+                  "id": "left",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min-max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  },
+                  "meta": {
+                    "labels": [
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          }
+                        ],
+                        "selectFields": [
+                          "sepalLength",
+                          "sepalWidth"
+                        ],
+                        "type": {
+                          "name": "range"
+                        }
+                      },
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          },
+                          {
+                            "name": "petalWidth",
+                            "use": false
+                          }
+                        ],
+                        "selectFields": [
+                          "petalWidth"
+                        ],
+                        "type": {
+                          "name": "range_histogram"
+                        }
+                      }
+                    ],
+                    "sign": "-",
+                    "handle": "uniform"
+                  }
+                },
+                "right": {
+                  "id": "right",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min-max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  },
+                  "meta": {
+                    "labels": [
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          }
+                        ],
+                        "selectFields": [
+                          "sepalLength",
+                          "sepalWidth"
+                        ],
+                        "type": {
+                          "name": "range"
+                        }
+                      },
+                      {
+                        "whereFields": [
+                          {
+                            "name": "petalLength",
+                            "use": true
+                          },
+                          {
+                            "name": "petalWidth",
+                            "use": false
+                          }
+                        ],
+                        "selectFields": [
+                          "petalWidth"
+                        ],
+                        "type": {
+                          "name": "range_histogram"
+                        }
+                      }
+                    ],
+                    "sign": "+",
+                    "handle": "uniform"
+                  }
+                },
+                "min": {
+                  "id": "min",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min-max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "max": {
+                  "id": "max",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min-max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "min-max": {
+                  "id": "min-max",
+                  "on": {
+                    "MOUSEMOVE": [
+                      {
+                        "target": "min-max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "min",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "max",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "left",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "right",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      },
+                      {
+                        "target": "idle",
+                        "actions": {
+                          "type": "xstate.assign",
+                          "assignment": {}
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "on": {
+                "MOUSEUP": [
+                  {
+                    "target": "hover"
+                  }
+                ]
+              }
+            }
+          },
+          "on": {
+            "MOUSEOUT": [
+              {
+                "target": "hover",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              }
+            ]
+          }
+        }
+      },
+      "on": {
+        "MOUSEOUT": [
+          {
+            "target": "rest",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          }
+        ]
+      }
+    }
+  }
+}
