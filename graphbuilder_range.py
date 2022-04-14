@@ -183,8 +183,24 @@ def Range(graph,state):
         #Here if we are dragging
         if("drag" in state):
 
+            if("left" in state and "dragLR" in state):
+
+                if(handleL==min):
+                    print("You are already at the MIN")
+                else:
+                    handleL-=0.1
+                    handleR-=0.1
+
+            elif("right" in state and "dragLR" in state):
+
+                if(handleR==max):
+                    print("You are already at the MIN")
+                else:
+                    handleL+=0.1
+                    handleR+=0.1
+
             #Check if we are going to LEFT with DRAGL
-            if("left" in state and "dragL" in state):
+            elif("left" in state and "dragL" in state):
             
                 if(handleL==min):
                     print("You are already at the MIN")

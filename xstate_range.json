@@ -44,10 +44,10 @@
       "initial": "hover",
 	  "context":{
 		  "type":"range",
-		  "handleL":0,
-		  "handleR":7,
-		  "min":0,
-		  "max":7
+		  "handleL":0.0,
+		  "handleR":7.0,
+		  "min":0.0,
+		  "max":7.0
 	  },
       "states": {
         "hover": {
