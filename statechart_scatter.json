@@ -1,0 +1,953 @@
+{
+    "rest": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "scatter"
+            ]
+        ],
+        "values": []
+    },
+    "scatter": {
+        "initial": "hover_scatter",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_scatter",
+            "panning_scatter",
+            "brush_scatter",
+            "brushRegion_scatter",
+            "brushBorder_scatter"
+        ],
+        "context": {
+            "type": "scatter",
+            "zoomLevel": 0,
+            "panningLR": 0,
+            "panningUD": 0,
+            "minLR": -10,
+            "maxLR": 10,
+            "minUD": -10,
+            "maxUD": 10,
+            "x": null,
+            "y": null
+        }
+    },
+    "hover_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "ZOOMIN",
+                "hover_scatter"
+            ],
+            [
+                "ZOOMOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEDOWN",
+                "panning_scatter"
+            ],
+            [
+                "BRUSHSTART",
+                "brush_scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "brushRegion_scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "panning_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEUP",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "x_brush_scatter",
+            "y_brush_scatter"
+        ]
+    },
+    "x_brush_scatter": {
+        "initial": "idle_x_brush_scatter",
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_x_brush_scatter",
+            "left_x_brush_scatter",
+            "right_x_brush_scatter"
+        ]
+    },
+    "idle_x_brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brush_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "left_x_brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brush_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "right_x_brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brush_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "y_brush_scatter": {
+        "initial": "idle_y_brush_scatter",
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_y_brush_scatter",
+            "up_y_brush_scatter",
+            "down_y_brush_scatter"
+        ]
+    },
+    "idle_y_brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brush_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "up_y_brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brush_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "down_y_brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brush_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brush_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "brushRegion_scatter": {
+        "initial": "hover_brushRegion_scatter",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_brushRegion_scatter",
+            "brushInsideRegion_brushRegion_scatter"
+        ]
+    },
+    "hover_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHSTART",
+                "brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "x_brushInsideRegion_brushRegion_scatter",
+            "y_brushInsideRegion_brushRegion_scatter"
+        ]
+    },
+    "x_brushInsideRegion_brushRegion_scatter": {
+        "initial": "idle_x_brushInsideRegion_brushRegion_scatter",
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_x_brushInsideRegion_brushRegion_scatter",
+            "left_x_brushInsideRegion_brushRegion_scatter",
+            "right_x_brushInsideRegion_brushRegion_scatter"
+        ]
+    },
+    "idle_x_brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "left_x_brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "right_x_brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "y_brushInsideRegion_brushRegion_scatter": {
+        "initial": "idle_y_brushInsideRegion_brushRegion_scatter",
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_y_brushInsideRegion_brushRegion_scatter",
+            "up_y_brushInsideRegion_brushRegion_scatter",
+            "down_y_brushInsideRegion_brushRegion_scatter"
+        ]
+    },
+    "idle_y_brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "up_y_brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "down_y_brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "brushBorder_scatter": {
+        "initial": "hover_brushBorder_scatter",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_brushBorder_scatter",
+            "brushOnBorder_brushBorder_scatter"
+        ]
+    },
+    "hover_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHSTART",
+                "brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "x_brushOnBorder_brushBorder_scatter",
+            "y_brushOnBorder_brushBorder_scatter"
+        ]
+    },
+    "x_brushOnBorder_brushBorder_scatter": {
+        "initial": "idle_x_brushOnBorder_brushBorder_scatter",
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_x_brushOnBorder_brushBorder_scatter",
+            "left_x_brushOnBorder_brushBorder_scatter",
+            "right_x_brushOnBorder_brushBorder_scatter"
+        ]
+    },
+    "idle_x_brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "left_x_brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "right_x_brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "left_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "right_x_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "y_brushOnBorder_brushBorder_scatter": {
+        "initial": "idle_y_brushOnBorder_brushBorder_scatter",
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_y_brushOnBorder_brushBorder_scatter",
+            "up_y_brushOnBorder_brushBorder_scatter",
+            "down_y_brushOnBorder_brushBorder_scatter"
+        ]
+    },
+    "idle_y_brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "up_y_brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "down_y_brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHMOVE",
+                "idle_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "up_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHMOVE",
+                "down_y_brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ],
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    }
+}
