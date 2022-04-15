@@ -137,6 +137,9 @@ def ExtractContextInfo(states,graph,parent,parent_context=None):
         
 
 def Range(graph,state):
+    global exploration_sequence
+
+    #Check if we are not in Range interaction anymore
     out=0
     print("Now you are in the range slider")
 
@@ -144,13 +147,11 @@ def Range(graph,state):
     handleL=None
     handleR=None
 
-    #If not range
-    handle=None
-
     #Save max and min values
     max=None
     min=None
 
+    #Get the context information
     context=graph[state]["context"]
     if(context["type"]=="range"):
         handleL=context["handleL"]
@@ -158,9 +159,18 @@ def Range(graph,state):
         min=context["min"]
         max=context["max"]
 
+    prev=None
+
+    #Loop until you go out of the RANGE interaction
     while(out!=1):
         if(graph[state]["initial"] is not None):
             state=graph[state]["initial"]
+        
+        exploration_sequence.append(state)
+
+        if("idle" in state):
+            #Save the previous state
+            prev=state
 
         print(f"Values are:\nhandleL:{handleL} - handleR:{handleR}")
 
@@ -177,6 +187,8 @@ def Range(graph,state):
         next_tran=int(input("Insert number: "))
         state=list_tran[next_tran][1]
 
+        exploration_sequence.append(state)
+
         if("range" not in state):
             out=1
 
@@ -184,8 +196,8 @@ def Range(graph,state):
         if("drag" in state):
 
             if("left" in state and "dragLR" in state):
-
-                if(handleL==min):
+        
+                if(handleL<=min):
                     print("You are already at the MIN")
                 else:
                     handleL-=0.1
@@ -193,7 +205,7 @@ def Range(graph,state):
 
             elif("right" in state and "dragLR" in state):
 
-                if(handleR==max):
+                if(handleR>=max):
                     print("You are already at the MIN")
                 else:
                     handleL+=0.1
@@ -201,16 +213,16 @@ def Range(graph,state):
 
             #Check if we are going to LEFT with DRAGL
             elif("left" in state and "dragL" in state):
-            
-                if(handleL==min):
+                
+                if(handleL<=min):
                     print("You are already at the MIN")
                 else:
                     handleL-=0.1
-            
+                
             #Check if we are going to LEFT with DRAGR
             elif("left" in state and "dragR" in state):
 
-                if(handleR==min):
+                if(handleR<=min):
                     print("You are already at the MIN")
                 else:
                     handleR-=0.1
@@ -218,7 +230,7 @@ def Range(graph,state):
             #Check if we are going to RIGHT with DRAGL
             elif("right" in state and "dragL" in state):
 
-                if(handleL==max):
+                if(handleL>=max):
                     print("You are already at the MAX")
                 else:
                     handleL+=0.1
@@ -226,21 +238,31 @@ def Range(graph,state):
             #Check if we are going to RIGHT with DRAGR
             else:
 
-                if(handleR==max):
+                if(handleR>=max):
                     print("You are already at the MAX")
                 else:
                     handleR+=0.1
+        
+            #Update the statechart
+            graph["range"]["context"]["handleR"]=handleR
+            graph["range"]["context"]["handleL"]=handleL
 
-
-
+            if(prev!=None):
+                state=prev
+            
     return state
 
 
 def Exploration(graph,state):
+    global exploration_sequence
+
     print()
     print("---CURRENT STATE: "+state+"---")
     print("Choose transitions to execute using numbers:")
 
+
+    #Add to state
+    exploration_sequence.append(state)
 
     #CHECK IF YOU ARE IN DRAGGING
     if("drag" in state):
@@ -257,12 +279,22 @@ def Exploration(graph,state):
 
     #Insert transition to execute from the current state
     next_tran=int(input("Insert number: "))
+
+    #Return with -1 from input
+    if(next_tran==-1):
+        return
+    
     next_state=list_tran[next_tran][1]
 
     if(next_state=="range"):
         next_state=Range(graph,next_state)
 
     Exploration(graph,next_state)
+
+
+
+exploration_sequence=[]
+
 
 if(__name__=="__main__"):
 
@@ -288,5 +320,7 @@ if(__name__=="__main__"):
 
 
     Exploration(graph,"rest")
+
+    print(exploration_sequence)
 
     print("------------------------------------------------------------------------------")

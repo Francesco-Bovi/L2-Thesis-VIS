@@ -76,13 +76,7 @@
         "values": [
             "hover_handleR_range",
             "dragR_handleR_range"
-        ],
-        "context": {
-            "type": "range",
-            "position": 7,
-            "max": 7,
-            "min": 0
-        }
+        ]
     },
     "hover_handleR_range": {
         "initial": null,
@@ -331,13 +325,7 @@
         "values": [
             "hover_handleL_range",
             "dragL_handleL_range"
-        ],
-        "context": {
-            "type": "range",
-            "position": 0,
-            "max": 7,
-            "min": 0
-        }
+        ]
     },
     "hover_handleL_range": {
         "initial": null,
@@ -379,13 +367,7 @@
             "right_dragL_handleL_range",
             "min_dragL_handleL_range",
             "max_dragL_handleL_range"
-        ],
-        "context": {
-            "type": "range",
-            "position": 0,
-            "max": 7,
-            "min": 0
-        }
+        ]
     },
     "idle_dragL_handleL_range": {
         "initial": null,
@@ -592,14 +574,7 @@
         "values": [
             "hover_handleLR_range",
             "dragLR_handleLR_range"
-        ],
-        "context": {
-            "type": "double_range",
-            "positionR": 7,
-            "positionL": 0,
-            "max": 7,
-            "min": 0
-        }
+        ]
     },
     "hover_handleLR_range": {
         "initial": null,
@@ -642,14 +617,7 @@
             "min_dragLR_handleLR_range",
             "max_dragLR_handleLR_range",
             "min-max_dragLR_handleLR_range"
-        ],
-        "context": {
-            "type": "double_range",
-            "positionL": 0,
-            "positionR": 7,
-            "max": 7,
-            "min": 0
-        }
+        ]
     },
     "idle_dragLR_handleLR_range": {
         "initial": null,
