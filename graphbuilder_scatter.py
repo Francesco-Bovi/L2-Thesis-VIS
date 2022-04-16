@@ -61,7 +61,7 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
 
         if(states.get(child).get("on") is not None):
             transitions=AddTransitions(states.get(child).get("on"),parent,child_name)
-            print(transitions)
+            #print(transitions)
             for t in transitions:
                 graph[child_name]["transitions"].append(t)
 
@@ -96,24 +96,36 @@ def Scatter(graph,state):
     #By default 0 zoom levels, positive if ZoomIn, negative if ZoomOut
     zoomLevels=0
 
-    #PanningLR for left/right, then panningUD for up/down
-    #Positive: right-up
-    #Negative: left-down
-    panningLR=0
-    panningUD=0
-    min=-10
-    max=10
+    #Default values of cartesian plane 
+    #For "x" and "y" axes
+    x_min_current = 4.0
+    x_max_current = 8.0
 
-    #variables for the brushing transition
-    # Both start with None
-    x=None
-    y=None
+    y_min_current = 2.0
+    y_max_current = 4.5
+
+    #Maximum and minimum value of cartesian
+    #Max width of axes
+    width_x = 4.0
+    width_y = 2.4
+
+    x_min = 2.0
+    x_min_max = 6.0
+
+    y_min = 0.8
+    y_min_max = 3.2
+
+
+    #Brushing variables
+    x_brush=0.0
+    y_brush=0.0
 
     #Variable used to exit Scatter interaction
     out=0
     while(out!=1):
 
-        print(f"Values are:\n zoomLevel:{zoomLevels}\npanningLR:{panningLR}\npanningUD:{panningUD}\nx:{x}\ny:{y}")
+        print(f"Values are:\n zoomLevel:{zoomLevels}\nX_MIN_CURR:{x_min_current}\nX_MAX_CURR:{x_max_current}",end="") 
+        print(f"\nY_MIN_CURRENT:{y_min_current}\nY_MAX_CURRENT:{y_max_current}\nBRUSH_X:{x_brush}\nBRUSH_Y:{y_brush}")
 
         #Print all possible transitions
         counter=0
@@ -144,15 +156,26 @@ def Scatter(graph,state):
 
         #Here we are in panning
         elif(action=="MOUSEDOWN"):
-            panningLR=random.randint(min,max)
-            panningUD=random.randint(min,max)
-            #Do MOUSEUP SINCE ATOMIC
-            state=graph[state]["transitions"][0]
-            exploration_sequence.append(state[0])
-            exploration_sequence.append(state[1])
-            state=state[1]
+            x_min_current = random.uniform(x_min,x_min_max)
+            y_min_current = random.uniform(y_min,y_min_max)
 
-        #TODO:BRUSHING
+            x_max_current = x_min_current + width_x
+
+            y_max_current = y_min_current + width_y 
+
+        elif(action=="BRUSHSTART"):
+
+            #In order to choose the dimensione of the brushing rectangle
+            x_brush = random.uniform(x_min_current,x_max_current)
+
+            y_brush = random.uniform(y_min_current,y_max_current)
+
+            #Back to the hover state after the brushing
+            state="hover_scatter"
+            exploration_sequence.append("BRUSHEND")
+            exploration_sequence.append("hover_scatter")
+
+
 
 
     return state
@@ -212,7 +235,7 @@ if(__name__=="__main__"):
     #Print graph representation
     print("------------------------------------------------------------------------------")
     print("------------------------------------------------------------------------------")
-    print("Graph:",json.dumps(graph,indent=4))
+    #print("Graph:",json.dumps(graph,indent=4))
 
     #Save graph on a file
     with open('statechart_scatter.json', 'w') as fp:
