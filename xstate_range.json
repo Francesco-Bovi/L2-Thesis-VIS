@@ -1,15 +1,6 @@
 {
   "id": "vis",
   "initial": "rest",
-  "context": {
-    "item": null,
-    "range": {
-      "handleL": 0,
-      "handleR": 7,
-      "maxValue": 7,
-      "minValue": 0
-    }
-  },
   "states": {
     "rest": {
       "id": "rest",
@@ -17,20 +8,6 @@
         "MOUSEOVER": [
           {
             "target": "range",
-            "actions": {
-              "type": "xstate.assign",
-              "assignment": {}
-            }
-          },
-          {
-            "target": "scatter",
-            "actions": {
-              "type": "xstate.assign",
-              "assignment": {}
-            }
-          },
-          {
-            "target": "barchart",
             "actions": {
               "type": "xstate.assign",
               "assignment": {}

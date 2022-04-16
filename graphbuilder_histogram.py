@@ -112,12 +112,13 @@ def Barchart(graph,state):
     out=0
     while(out!=1):
 
-        print(f"Values are:\nbinSize:{binsize}\nbin_width:{bin_width}\nbin_selected:{bin_selected}")
+        print(f"Values are:\nbinSize:{binsize}\nbin_width:{bin_width}\nbin_selected:{bin_selected}\n")
 
         #Check if the current state has an initial state
         if(graph[state]["initial"]!=None):
             state=graph[state]["initial"]
 
+        print("CHOOSE NEXT TRANSITION:")
         #Print all possible transitions
         counter=0
         list_tran=[]
@@ -136,7 +137,7 @@ def Barchart(graph,state):
             out=1
 
         if(action=="CLICK"):
-            new_bin = random.randint(0,number_bins)
+            new_bin = random.randint(0,number_bins-1)
             if(bin_selected==None):
 
                 bin_selected = new_bin

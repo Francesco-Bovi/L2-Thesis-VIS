@@ -88,32 +88,29 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
 def Scatter(graph,state):
     print("------You are now in the scatter-------")
 
-    #At first I will be in hovering
-    state=graph[state]["initial"]
-
-    exploration_sequence.append(state)
+    context = graph[state]["context"]
 
     #By default 0 zoom levels, positive if ZoomIn, negative if ZoomOut
-    zoomLevels=0
+    zoomLevels = context["zoomLevel"]
 
     #Default values of cartesian plane 
     #For "x" and "y" axes
-    x_min_current = 4.0
-    x_max_current = 8.0
+    x_min_current = context["x_min_default"]
+    x_max_current = context["x_max_default"]
 
-    y_min_current = 2.0
-    y_max_current = 4.5
+    y_min_current = context["y_min_default"]
+    y_max_current = context["y_max_default"]
 
     #Maximum and minimum value of cartesian
     #Max width of axes
-    width_x = 4.0
-    width_y = 2.4
+    width_x = x_max_current - x_min_current
+    width_y = y_max_current - y_min_current
 
-    x_min = 2.0
-    x_min_max = 6.0
+    x_min = context["x_min"]
+    x_min_max = context["x_min_max"]
 
-    y_min = 0.8
-    y_min_max = 3.2
+    y_min = context["y_min"]
+    y_min_max = context["y_min_max"]
 
 
     #Brushing variables
@@ -121,6 +118,11 @@ def Scatter(graph,state):
     x2_brush = 0.0
     y1_brush = 0.0
     y2_brush = 0.0
+
+    #At first I will be in hovering
+    state=graph[state]["initial"]
+
+    exploration_sequence.append(state)
 
     #Variable used to exit Scatter interaction
     out=0
@@ -150,6 +152,7 @@ def Scatter(graph,state):
         exploration_sequence.append(state)
 
         #Check the transitions we are performing
+        #TODO: See how zoom change the axes
         if(action=="ZOOMIN"):
             zoomLevels+=1
 
@@ -182,8 +185,7 @@ def Scatter(graph,state):
             exploration_sequence.append("BRUSHEND")
             exploration_sequence.append("hover_scatter")
 
-
-
+        #TODO: UPDATE THE CONTEXT IN THE STATECHART
 
     return state
 

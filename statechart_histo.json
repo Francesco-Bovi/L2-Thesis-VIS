@@ -4,14 +4,6 @@
         "transitions": [
             [
                 "MOUSEOVER",
-                "range"
-            ],
-            [
-                "MOUSEOVER",
-                "scatter"
-            ],
-            [
-                "MOUSEOVER",
                 "barchart"
             ]
         ],

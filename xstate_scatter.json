@@ -1,31 +1,6 @@
 {
   "id": "vis",
   "initial": "rest",
-  "context": {
-    "item": null,
-    "range": {
-      "handleL": 0,
-      "handleR": 7,
-      "maxValue": 7,
-      "minValue": 0
-    },
-    "scatter": {
-      "scale": 0,
-      "deltaY": 0,
-      "deltaMode": 0,
-      "anchor": [],
-      "isZoomIn": false,
-      "isZoomOut": false,
-      "x": null,
-      "y": null
-    },
-    "barchart": {
-      "binSize": 0.2,
-      "binPrecision": 1,
-      "floor": true,
-      "value": null
-    }
-  },
   "states": {
     "rest": {
       "id": "rest",
@@ -47,14 +22,14 @@
 	  "context":{
 		  "type":"scatter",
 		  "zoomLevel":0,
-		  "panningLR":0,
-		  "panningUD":0,
-		  "minLR":-10,
-		  "maxLR":10,
-		  "minUD":-10,
-		  "maxUD":10,
-		  "x":null,
-		  "y":null
+		  "x_min_default":4.0,
+		  "x_max_default":8.0,
+		  "y_min_default":2.0,
+		  "y_max_default":4.5,
+		  "x_min":2.0,
+		  "x_min_max":6.0,
+		  "y_min":0.8,
+		  "y_min_max":3.2
 	  },
       "states": {
         "hover": {

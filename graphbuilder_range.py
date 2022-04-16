@@ -153,11 +153,10 @@ def Range(graph,state):
 
     #Get the context information
     context=graph[state]["context"]
-    if(context["type"]=="range"):
-        handleL=context["handleL"]
-        handleR=context["handleR"]
-        min=context["min"]
-        max=context["max"]
+    handleL=context["handleL"]
+    handleR=context["handleR"]
+    min=context["min"]
+    max=context["max"]
 
     prev=None
 
