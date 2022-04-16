@@ -29,13 +29,20 @@ def AddTransitions(transitions,parent=None,child=None):
     for t in transitions:
         target_array=transitions.get(t)
         for elem in target_array:
-            #If is a substate
-            if(parent!=None):
-                transition_array.append([t,elem["target"]+"_"+parent])
-            
-            #If is not a substate
+
+            #Reference to parent if we found a transition to hover or idle
+            if(elem["target"]=="hover" or elem["target"]=="idle"):
+                if(parent!=None):
+                    transition_array.append([t,parent])
             else:
-                transition_array.append([t,elem["target"]])
+
+                #If is a substate
+                if(parent!=None):
+                    transition_array.append([t,elem["target"]+"_"+parent])
+                
+                #If is not a substate
+                else:
+                    transition_array.append([t,elem["target"]])
 
     return transition_array
 
@@ -61,7 +68,7 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
 
         if(states.get(child).get("on") is not None):
             transitions=AddTransitions(states.get(child).get("on"),parent,child_name)
-            print(transitions)
+            #print(transitions)
             for t in transitions:
                 graph[child_name]["transitions"].append(t)
 
@@ -83,37 +90,50 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
         #Go inside the substates
         if(states.get(child).get("states") is not None):
             CreateGraph(states.get(child).get("states"),graph,transitions,child_name)
+        
 
+def Range(graph,state):
+    global exploration_sequence
 
-def Scatter(graph,state):
-    print("------You are now in the scatter-------")
+    print("------You are now in the RANGE-------")
+
+    #Check if we are not in Range interaction anymore
+    out=0
+
+    #In case the slider is range
+    handleL=None
+    handleR=None
+
+    #Save max and min values
+    max=None
+    min=None
+
+    #Get the context information
+    context=graph[state]["context"]
+    if(context["type"]=="range"):
+        handleL=context["handleL"]
+        handleR=context["handleR"]
+        min=context["min"]
+        max=context["max"]
 
     #At first I will be in hovering
     state=graph[state]["initial"]
 
     exploration_sequence.append(state)
 
-    #By default 0 zoom levels, positive if ZoomIn, negative if ZoomOut
-    zoomLevels=0
+    prev=None
 
-    #PanningLR for left/right, then panningUD for up/down
-    #Positive: right-up
-    #Negative: left-down
-    panningLR=0
-    panningUD=0
-    min=-10
-    max=10
-
-    #variables for the brushing transition
-    # Both start with None
-    x=None
-    y=None
-
-    #Variable used to exit Scatter interaction
-    out=0
+    #Loop until you go out of the RANGE interaction
     while(out!=1):
+        print(f"Values are:\nhandleL:{handleL}\nhandleR:{handleR}\nmin:{min}\nmax:{max}")
 
-        print(f"Values are:\n zoomLevel:{zoomLevels}\npanningLR:{panningLR}\npanningUD:{panningUD}\nx:{x}\ny:{y}")
+        #Check if the current state has an initial state
+        if(graph[state]["initial"]!=None):
+            state=graph[state]["initial"]
+
+        #Save the state "idle" so we can go back here
+        if("idle" in state):
+            prev=state
 
         #Print all possible transitions
         counter=0
@@ -129,32 +149,83 @@ def Scatter(graph,state):
         state=list_tran[next_tran][1]
         action=list_tran[next_tran][0]
 
-        if(next_tran==-1):
+        if(state=="rest"):
             out=1
 
-        exploration_sequence.append(action)
-        exploration_sequence.append(state)
+        if(action=="MOUSEMOVE"):
 
-        #Check the transitions we are performing
-        if(action=="ZOOMIN"):
-            zoomLevels+=1
+            exploration_sequence.append(action)
+            exploration_sequence.append(state)
 
-        elif(action=="ZOOMOUT"):
-            zoomLevels-=1
+            if("left" in state and "dragLR" in state):
+            
+                if(handleL<=min):
+                    print("You are already at the MIN")
+                    exploration_sequence.append("MOUSEMOVE")
+                    exploration_sequence.append("min")
 
-        #Here we are in panning
-        elif(action=="MOUSEDOWN"):
-            panningLR=random.randint(min,max)
-            panningUD=random.randint(min,max)
-            #Do MOUSEUP SINCE ATOMIC
-            state=graph[state]["transitions"][0]
-            exploration_sequence.append(state[0])
-            exploration_sequence.append(state[1])
-            state=state[1]
+                else:
+                    handleL-=0.1
+                    handleR-=0.1
 
-        #TODO:BRUSHING
+            elif("right" in state and "dragLR" in state):
 
+                if(handleR>=max):
+                    print("You are already at the MAX")
+                    exploration_sequence.append("MOUSEMOVE")
+                    exploration_sequence.append("max")
+                else:
+                    handleL+=0.1
+                    handleR+=0.1
 
+            #Check if we are going to LEFT with DRAGL
+            elif("left" in state and "dragL" in state):
+                
+                if(handleL<=min):
+                    print("You are already at the MIN")
+                    exploration_sequence.append("MOUSEMOVE")
+                    exploration_sequence.append("min")
+                else:
+                    handleL-=0.1
+                
+            #Check if we are going to LEFT with DRAGR
+            elif("left" in state and "dragR" in state):
+
+                if(handleR<=min):
+                    print("You are already at the MIN")
+                    exploration_sequence.append("MOUSEMOVE")
+                    exploration_sequence.append("min")
+                else:
+                    handleR-=0.1
+
+            #Check if we are going to RIGHT with DRAGL
+            elif("right" in state and "dragL" in state):
+
+                if(handleL>=max):
+                    print("You are already at the MAX")
+                    exploration_sequence.append("MOUSEMOVE")
+                    exploration_sequence.append("max")
+                else:
+                    handleL+=0.1
+
+            #Check if we are going to RIGHT with DRAGR
+            else:
+
+                if(handleR>=max):
+                    print("You are already at the MAX")
+                    exploration_sequence.append("MOUSEMOVE")
+                    exploration_sequence.append("max")
+                else:
+                    handleR+=0.1
+        
+            #Update the statechart
+            graph["range"]["context"]["handleR"]=handleR
+            graph["range"]["context"]["handleL"]=handleL
+
+            #Return to state "idle"
+            state=prev
+            exploration_sequence.append(state)
+            
     return state
 
 
@@ -186,11 +257,13 @@ def Exploration(graph,state):
         return
     
     next_state=list_tran[next_tran][1]
+    action=list_tran[next_tran][0]
 
-    if(next_state=="scatter"):
-        next_state=Scatter(graph,next_state)
+    if(next_state=="range"):
+        next_state=Range(graph,next_state)
 
     Exploration(graph,next_state)
+
 
 
 exploration_sequence=[]
@@ -199,7 +272,7 @@ exploration_sequence=[]
 if(__name__=="__main__"):
 
     #open the statechart json file
-    statechart_j=open('xstate_scatter.json')
+    statechart_j=open('xstate_range.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -212,10 +285,10 @@ if(__name__=="__main__"):
     #Print graph representation
     print("------------------------------------------------------------------------------")
     print("------------------------------------------------------------------------------")
-    print("Graph:",json.dumps(graph,indent=4))
+    #print("Graph:",json.dumps(graph,indent=4))
 
     #Save graph on a file
-    with open('statechart_scatter.json', 'w') as fp:
+    with open('statechart_range.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
 

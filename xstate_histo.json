@@ -1,0 +1,119 @@
+{
+  "id": "vis",
+  "initial": "rest",
+  "context": {
+    "item": null,
+    "range": {
+      "handleL": 0,
+      "handleR": 7,
+      "maxValue": 7,
+      "minValue": 0
+    },
+    "scatter": {
+      "scale": 0,
+      "deltaY": 0,
+      "deltaMode": 0,
+      "anchor": [],
+      "isZoomIn": false,
+      "isZoomOut": false,
+      "x": null,
+      "y": null
+    },
+    "barchart": {
+      "binSize": 0.2,
+      "binPrecision": 1,
+      "floor": true,
+      "value": null
+    }
+  },
+  "states": {
+    "rest": {
+      "id": "rest",
+      "on": {
+        "MOUSEOVER": [
+          {
+            "target": "range",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          },
+          {
+            "target": "scatter",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          },
+          {
+            "target": "barchart",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          }
+        ]
+      }
+    },
+    "barchart": {
+      "id": "barchart",
+      "initial": "hover",
+      "states": {
+        "hover": {
+          "on": {
+            "MOUSEOVER": [
+              {
+                "target": "bin",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              }
+            ]
+          }
+        },
+        "bin": {
+          "id": "bin",
+          "initial": "hover",
+          "states": {
+            "hover": {
+              "on": {
+                "CLICK": [
+                  {
+                    "target": "hover",
+                    "actions": {
+                      "type": "xstate.assign",
+                      "assignment": {}
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "on": {
+            "MOUSEOUT": [
+              {
+                "target": "hover",
+                "actions": {
+                  "type": "xstate.assign",
+                  "assignment": {}
+                }
+              }
+            ]
+          }
+        }
+      },
+      "on": {
+        "MOUSEOUT": [
+          {
+            "target": "rest",
+            "actions": {
+              "type": "xstate.assign",
+              "assignment": {}
+            }
+          }
+        ]
+      }
+    }
+  }
+}

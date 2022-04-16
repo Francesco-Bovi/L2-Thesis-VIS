@@ -85,35 +85,19 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
             CreateGraph(states.get(child).get("states"),graph,transitions,child_name)
 
 
-def Scatter(graph,state):
-    print("------You are now in the scatter-------")
+def Barchart(graph,state):
+    print("------You are now in the BARCHART-------")
 
     #At first I will be in hovering
     state=graph[state]["initial"]
 
     exploration_sequence.append(state)
 
-    #By default 0 zoom levels, positive if ZoomIn, negative if ZoomOut
-    zoomLevels=0
-
-    #PanningLR for left/right, then panningUD for up/down
-    #Positive: right-up
-    #Negative: left-down
-    panningLR=0
-    panningUD=0
-    min=-10
-    max=10
-
-    #variables for the brushing transition
-    # Both start with None
-    x=None
-    y=None
-
     #Variable used to exit Scatter interaction
     out=0
     while(out!=1):
 
-        print(f"Values are:\n zoomLevel:{zoomLevels}\npanningLR:{panningLR}\npanningUD:{panningUD}\nx:{x}\ny:{y}")
+        print(f"Values are:\n ")
 
         #Print all possible transitions
         counter=0
@@ -135,24 +119,7 @@ def Scatter(graph,state):
         exploration_sequence.append(action)
         exploration_sequence.append(state)
 
-        #Check the transitions we are performing
-        if(action=="ZOOMIN"):
-            zoomLevels+=1
-
-        elif(action=="ZOOMOUT"):
-            zoomLevels-=1
-
-        #Here we are in panning
-        elif(action=="MOUSEDOWN"):
-            panningLR=random.randint(min,max)
-            panningUD=random.randint(min,max)
-            #Do MOUSEUP SINCE ATOMIC
-            state=graph[state]["transitions"][0]
-            exploration_sequence.append(state[0])
-            exploration_sequence.append(state[1])
-            state=state[1]
-
-        #TODO:BRUSHING
+        #TODO CHECK ACTIONS
 
 
     return state
@@ -187,8 +154,8 @@ def Exploration(graph,state):
     
     next_state=list_tran[next_tran][1]
 
-    if(next_state=="scatter"):
-        next_state=Scatter(graph,next_state)
+    if(next_state=="barchart"):
+        next_state=Barchart(graph,next_state)
 
     Exploration(graph,next_state)
 
@@ -199,7 +166,7 @@ exploration_sequence=[]
 if(__name__=="__main__"):
 
     #open the statechart json file
-    statechart_j=open('xstate_scatter.json')
+    statechart_j=open('xstate_histo.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -215,7 +182,7 @@ if(__name__=="__main__"):
     print("Graph:",json.dumps(graph,indent=4))
 
     #Save graph on a file
-    with open('statechart_scatter.json', 'w') as fp:
+    with open('statechart_histo.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
 
