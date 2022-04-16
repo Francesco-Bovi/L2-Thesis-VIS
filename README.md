@@ -103,3 +103,13 @@ Version 3 of the program has two different subversions, one for the states and t
 
 ### v3.4 ([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v3_4.py))
 This version of the program uses the same structure of the version 3 for representing the JSON statechart, but in this case we have a different type of exploration. In fact, given from user's input a state ```initial_state``` and a number ```input_n```, the program will print on screen all the possible paths of length ```input_n``` with source node ```initial_state```. In order to achieve this goal we use a queue data structure in which we store a list with all the states for each possible path, so at each iteration we update the lists, we will stop and print them when they reach length ```input_n```.
+
+---
+
+### Meet 11/04
+
+April 11th meet was held with the presence of Professor Angelini, who clarified the path for the realization of the project, including which steps to tackle individually and which together Matteo and I, the workflow can be analyzed [here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/WorkFlow.jpg).
+
+About the exploration what emerged is that currently we have an uninformed one, so we can visit all the states once randomly, or we can find all the possible paths of length N starting from a state, but we don't use any information about the context of the interactions that we are performing on the visualization, in this way we can find only some ciritical issues of latency. What we want now is to have an informed exploration in such a way that it can be more realistic, in a smarter way, in order to find other kind of critical points, based on the type of interaction performed. We can categorize the interactions into three orders of magnitude: low, medium and big, in order to understand, which parts of the data can create latency problems. 
+
+Once this phase is over, the next phase consists in creating an automatic program that performs the exploration directly on the browser, so to collect the information arising from the framework and then applying the optimization techniques for improving performances.
