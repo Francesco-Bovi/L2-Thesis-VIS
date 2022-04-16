@@ -58,6 +58,11 @@
     "barchart": {
       "id": "barchart",
       "initial": "hover",
+	  "context":{
+		  "type":"barchartx",
+		  "binsize":0.2,
+		  "width":2.6
+	  },
       "states": {
         "hover": {
           "on": {

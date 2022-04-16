@@ -5,6 +5,7 @@ from typing import List
 from collections import deque
 
 from cv2 import magnitude
+from zmq import EVENT_CLOSE_FAILED
 
 
 
@@ -88,8 +89,22 @@ def CreateGraph(states,graph,parent_tranistions=None,parent=None):
 def Barchart(graph,state):
     print("------You are now in the BARCHART-------")
 
+    #context variables
+    binsize = None
+    bin_width = None
+    bin_selected = None
+
+    #Get the context information
+    context = graph[state]["context"]
+    bin_width = context["width"]
+    binsize = context["binsize"]
+
+    #Number of bins
+    number_bins = bin_width/binsize
+
+
     #At first I will be in hovering
-    state=graph[state]["initial"]
+    state = graph[state]["initial"]
 
     exploration_sequence.append(state)
 
@@ -97,7 +112,11 @@ def Barchart(graph,state):
     out=0
     while(out!=1):
 
-        print(f"Values are:\n ")
+        print(f"Values are:\nbinSize:{binsize}\nbin_width:{bin_width}\nbin_selected:{bin_selected}")
+
+        #Check if the current state has an initial state
+        if(graph[state]["initial"]!=None):
+            state=graph[state]["initial"]
 
         #Print all possible transitions
         counter=0
@@ -113,13 +132,25 @@ def Barchart(graph,state):
         state=list_tran[next_tran][1]
         action=list_tran[next_tran][0]
 
-        if(next_tran==-1):
+        if(state=="rest"):
             out=1
+
+        if(action=="CLICK"):
+            new_bin = random.randint(0,number_bins)
+            if(bin_selected==None):
+
+                bin_selected = new_bin
+
+            elif(new_bin==bin_selected):
+
+                bin_selected = None
+
+            else:
+
+                bin_selected = new_bin
 
         exploration_sequence.append(action)
         exploration_sequence.append(state)
-
-        #TODO CHECK ACTIONS
 
 
     return state

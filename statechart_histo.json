@@ -1,0 +1,86 @@
+{
+    "rest": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "range"
+            ],
+            [
+                "MOUSEOVER",
+                "scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "barchart"
+            ]
+        ],
+        "values": []
+    },
+    "barchart": {
+        "initial": "hover_barchart",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_barchart",
+            "bin_barchart"
+        ],
+        "context": {
+            "type": "barchartx",
+            "binsize": 0.2,
+            "width": 2.6
+        }
+    },
+    "hover_barchart": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "bin_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    },
+    "bin_barchart": {
+        "initial": "hover_bin_barchart",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_bin_barchart"
+        ]
+    },
+    "hover_bin_barchart": {
+        "initial": null,
+        "transitions": [
+            [
+                "CLICK",
+                "hover_bin_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": []
+    }
+}
