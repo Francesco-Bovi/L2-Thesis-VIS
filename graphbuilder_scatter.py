@@ -117,15 +117,17 @@ def Scatter(graph,state):
 
 
     #Brushing variables
-    x_brush=0.0
-    y_brush=0.0
+    x1_brush=  0.0
+    x2_brush = 0.0
+    y1_brush = 0.0
+    y2_brush = 0.0
 
     #Variable used to exit Scatter interaction
     out=0
     while(out!=1):
 
-        print(f"Values are:\n zoomLevel:{zoomLevels}\nX_MIN_CURR:{x_min_current}\nX_MAX_CURR:{x_max_current}",end="") 
-        print(f"\nY_MIN_CURRENT:{y_min_current}\nY_MAX_CURRENT:{y_max_current}\nBRUSH_X:{x_brush}\nBRUSH_Y:{y_brush}")
+        print(f"Values are:\nzoomLevel:{zoomLevels}\nX_MIN_CURR:{x_min_current}\nX_MAX_CURR:{x_max_current}",end="") 
+        print(f"\nY_MIN_CURRENT:{y_min_current}\nY_MAX_CURRENT:{y_max_current}\nBRUSH_X1:{x1_brush}\nBRUSH_Y1:{y1_brush}\nBRUSH_X2:{x2_brush}\nBRUSH_Y2:{y2_brush}")
 
         #Print all possible transitions
         counter=0
@@ -141,7 +143,7 @@ def Scatter(graph,state):
         state=list_tran[next_tran][1]
         action=list_tran[next_tran][0]
 
-        if(next_tran==-1):
+        if(state=="rest"):
             out=1
 
         exploration_sequence.append(action)
@@ -156,8 +158,9 @@ def Scatter(graph,state):
 
         #Here we are in panning
         elif(action=="MOUSEDOWN"):
-            x_min_current = random.uniform(x_min,x_min_max)
-            y_min_current = random.uniform(y_min,y_min_max)
+            x_min_current = round(random.uniform(x_min,x_min_max) * 2) / 2
+            y_min_current = round(random.uniform(y_min,y_min_max) * 2) / 2
+
 
             x_max_current = x_min_current + width_x
 
@@ -166,9 +169,13 @@ def Scatter(graph,state):
         elif(action=="BRUSHSTART"):
 
             #In order to choose the dimensione of the brushing rectangle
-            x_brush = random.uniform(x_min_current,x_max_current)
+            x1_brush = random.uniform(x_min_current,x_max_current)
 
-            y_brush = random.uniform(y_min_current,y_max_current)
+            y1_brush = random.uniform(y_min_current,y_max_current)
+
+            x2_brush = random.uniform(x1_brush,x_max_current)
+
+            y2_brush = random.uniform(y1_brush,y_max_current)
 
             #Back to the hover state after the brushing
             state="hover_scatter"
