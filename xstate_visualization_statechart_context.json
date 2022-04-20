@@ -1,31 +1,6 @@
 {
   "id": "vis",
   "initial": "rest",
-  "context": {
-    "item": null,
-    "range": {
-      "handleL": 0,
-      "handleR": 7,
-      "maxValue": 7,
-      "minValue": 0
-    },
-    "scatter": {
-      "scale": 0,
-      "deltaY": 0,
-      "deltaMode": 0,
-      "anchor": [],
-      "isZoomIn": false,
-      "isZoomOut": false,
-      "x": null,
-      "y": null
-    },
-    "barchart": {
-      "binSize": 0.2,
-      "binPrecision": 1,
-      "floor": true,
-      "value": null
-    }
-  },
   "states": {
     "rest": {
       "id": "rest",
@@ -58,6 +33,23 @@
     "range": {
       "id": "range",
       "initial": "hover",
+	  "context":{
+		  "xwidth":7,
+			"ywidth":null,
+			"xstart":0,
+			"ystart":null,
+			"panstep":null,
+			"zoomlevel":null,
+			"rangezoomlevels":null,
+			"zoomstep":null,
+			"binsize":null,
+			"itemselected":null,
+			"numitems":null,
+			"handleL":0,
+			"handleR":7,
+			"brushx":null,
+			"brushy":null
+	  },
       "states": {
         "hover": {
           "on": {
@@ -89,11 +81,6 @@
         "handleR": {
           "id": "handleR",
           "initial": "hover",
-		  "context":{
-				"position":7,
-				"max":7,
-				"min":0
-			},
           "states": {
             "hover": {
               "on": {
@@ -111,11 +98,6 @@
             "dragR": {
               "id": "dragR",
               "initial": "idle",
-			  "context":{
-				"position":7,
-				"max":7,
-				"min":0
-				},
               "states": {
                 "idle": {
                   "id": "idle",
@@ -430,11 +412,6 @@
         "handleL": {
           "id": "handleL",
           "initial": "hover",
-		  "context":{
-				"position":0,
-				"max":7,
-				"min":0
-			},
           "states": {
             "hover": {
               "on": {
@@ -452,11 +429,6 @@
             "dragL": {
               "id": "dragL",
               "initial": "idle",
-			  "context":{
-				"position":0,
-				"max":7,
-				"min":0
-				},
               "states": {
                 "idle": {
                   "id": "idle",
@@ -1199,6 +1171,23 @@
     "scatter": {
       "id": "scatter",
       "initial": "hover",
+	  "context":{
+		  "xwidth":4.0,
+			"ywidth":2.4,
+			"xstart":4.0,
+			"ystart":2.0,
+			"panstep":0.5,
+			"zoomlevel":0,
+			"rangezoomlevels":[-5,5],
+			"zoomstep":0.2,
+			"binsize":null,
+			"itemselected":null,
+			"numitems":null,
+			"handleL":null,
+			"handleR":null,
+			"brushx":[0,0],
+			"brushy":[0,0]
+	  },
       "states": {
         "hover": {
           "on": {
@@ -1257,339 +1246,6 @@
         },
         "brush": {
           "id": "brush",
-          "type": "parallel",
-          "states": {
-            "x": {
-              "id": "x",
-              "initial": "idle",
-              "states": {
-                "idle": {
-                  "on": {
-                    "BRUSHMOVE": [
-                      {
-                        "target": "idle",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "left",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "right",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      }
-                    ]
-                  }
-                },
-                "left": {
-                  "on": {
-                    "BRUSHMOVE": [
-                      {
-                        "target": "idle",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "left",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "right",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      }
-                    ]
-                  },
-                  "meta": {
-                    "labels": [
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalLength",
-                            "use": true
-                          }
-                        ],
-                        "selectFields": [
-                          "sepalLength",
-                          "sepalWidth"
-                        ],
-                        "type": {
-                          "name": "range"
-                        }
-                      },
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalLength",
-                            "use": true
-                          },
-                          {
-                            "name": "petalWidth",
-                            "use": false
-                          }
-                        ],
-                        "selectFields": [
-                          "petalWidth"
-                        ],
-                        "type": {
-                          "name": "range_histogram"
-                        }
-                      }
-                    ],
-                    "sign": "-",
-                    "handle": "uniform"
-                  }
-                },
-                "right": {
-                  "on": {
-                    "BRUSHMOVE": [
-                      {
-                        "target": "idle",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "left",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "right",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      }
-                    ]
-                  },
-                  "meta": {
-                    "labels": [
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalLength",
-                            "use": true
-                          }
-                        ],
-                        "selectFields": [
-                          "sepalLength",
-                          "sepalWidth"
-                        ],
-                        "type": {
-                          "name": "range"
-                        }
-                      },
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalLength",
-                            "use": true
-                          },
-                          {
-                            "name": "petalWidth",
-                            "use": false
-                          }
-                        ],
-                        "selectFields": [
-                          "petalWidth"
-                        ],
-                        "type": {
-                          "name": "range_histogram"
-                        }
-                      }
-                    ],
-                    "sign": "+",
-                    "handle": "uniform"
-                  }
-                }
-              }
-            },
-            "y": {
-              "id": "y",
-              "initial": "idle",
-              "states": {
-                "idle": {
-                  "on": {
-                    "BRUSHMOVE": [
-                      {
-                        "target": "idle",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "up",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "down",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      }
-                    ]
-                  }
-                },
-                "up": {
-                  "on": {
-                    "BRUSHMOVE": [
-                      {
-                        "target": "idle",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "up",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "down",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      }
-                    ]
-                  },
-                  "meta": {
-                    "labels": [
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalWidth",
-                            "use": true
-                          }
-                        ],
-                        "selectFields": [
-                          "sepalLength",
-                          "sepalWidth"
-                        ],
-                        "type": {
-                          "name": "range"
-                        }
-                      },
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalWidth",
-                            "use": true
-                          },
-                          {
-                            "name": "petalWidth",
-                            "use": false
-                          }
-                        ],
-                        "selectFields": [
-                          "petalWidth"
-                        ],
-                        "type": {
-                          "name": "range_histogram"
-                        }
-                      }
-                    ],
-                    "sign": "+",
-                    "handle": "uniform"
-                  }
-                },
-                "down": {
-                  "on": {
-                    "BRUSHMOVE": [
-                      {
-                        "target": "idle",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "up",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      },
-                      {
-                        "target": "down",
-                        "actions": {
-                          "type": "xstate.assign",
-                          "assignment": {}
-                        }
-                      }
-                    ]
-                  },
-                  "meta": {
-                    "labels": [
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalWidth",
-                            "use": true
-                          }
-                        ],
-                        "selectFields": [
-                          "sepalLength",
-                          "sepalWidth"
-                        ],
-                        "type": {
-                          "name": "range"
-                        }
-                      },
-                      {
-                        "whereFields": [
-                          {
-                            "name": "sepalWidth",
-                            "use": true
-                          },
-                          {
-                            "name": "petalWidth",
-                            "use": false
-                          }
-                        ],
-                        "selectFields": [
-                          "petalWidth"
-                        ],
-                        "type": {
-                          "name": "range_histogram"
-                        }
-                      }
-                    ],
-                    "sign": "-",
-                    "handle": "uniform"
-                  }
-                }
-              }
-            }
-          },
           "on": {
             "BRUSHEND": [
               {
@@ -1621,339 +1277,6 @@
             },
             "brushInsideRegion": {
               "id": "brush",
-              "type": "parallel",
-              "states": {
-                "x": {
-                  "id": "x",
-                  "initial": "idle",
-                  "states": {
-                    "idle": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "left",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "right",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "left": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "left",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "right",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "-",
-                        "handle": "uniform"
-                      }
-                    },
-                    "right": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "left",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "right",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "+",
-                        "handle": "uniform"
-                      }
-                    }
-                  }
-                },
-                "y": {
-                  "id": "y",
-                  "initial": "idle",
-                  "states": {
-                    "idle": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "up",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "down",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "up": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "up",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "down",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "+",
-                        "handle": "uniform"
-                      }
-                    },
-                    "down": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "up",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "down",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "-",
-                        "handle": "uniform"
-                      }
-                    }
-                  }
-                }
-              },
               "on": {
                 "BRUSHEND": [
                   {
@@ -1998,339 +1321,6 @@
             },
             "brushOnBorder": {
               "id": "brush",
-              "type": "parallel",
-              "states": {
-                "x": {
-                  "id": "x",
-                  "initial": "idle",
-                  "states": {
-                    "idle": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "left",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "right",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "left": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "left",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "right",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "-",
-                        "handle": "uniform"
-                      }
-                    },
-                    "right": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "left",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "right",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalLength",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "+",
-                        "handle": "uniform"
-                      }
-                    }
-                  }
-                },
-                "y": {
-                  "id": "y",
-                  "initial": "idle",
-                  "states": {
-                    "idle": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "up",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "down",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "up": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "up",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "down",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "+",
-                        "handle": "uniform"
-                      }
-                    },
-                    "down": {
-                      "on": {
-                        "BRUSHMOVE": [
-                          {
-                            "target": "idle",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "up",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          },
-                          {
-                            "target": "down",
-                            "actions": {
-                              "type": "xstate.assign",
-                              "assignment": {}
-                            }
-                          }
-                        ]
-                      },
-                      "meta": {
-                        "labels": [
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              }
-                            ],
-                            "selectFields": [
-                              "sepalLength",
-                              "sepalWidth"
-                            ],
-                            "type": {
-                              "name": "range"
-                            }
-                          },
-                          {
-                            "whereFields": [
-                              {
-                                "name": "sepalWidth",
-                                "use": true
-                              },
-                              {
-                                "name": "petalWidth",
-                                "use": false
-                              }
-                            ],
-                            "selectFields": [
-                              "petalWidth"
-                            ],
-                            "type": {
-                              "name": "range_histogram"
-                            }
-                          }
-                        ],
-                        "sign": "-",
-                        "handle": "uniform"
-                      }
-                    }
-                  }
-                }
-              },
               "on": {
                 "BRUSHEND": [
                   {
@@ -2372,6 +1362,23 @@
     "barchart": {
       "id": "barchart",
       "initial": "hover",
+	  "context":{
+		"xwidth":2.6,
+		"ywidth":40,
+		"xstart":0,
+		"ystart":0,
+		"panstep":null,
+		"zoomlevel":null,
+		"rangezoomlevels":null,
+		"zoomstep":null,
+		"binsize":0.2,
+		"itemselected":-1,
+		"numitems":13,
+		"handleL":null,
+		"handleR":null,
+		"brushx":null,
+		"brushy":null
+    },
       "states": {
         "hover": {
           "on": {

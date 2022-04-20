@@ -1,0 +1,1896 @@
+{
+    "rest": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "range"
+            ],
+            [
+                "MOUSEOVER",
+                "scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "barchart"
+            ]
+        ],
+        "values": [],
+        "context": null
+    },
+    "range": {
+        "initial": "hover_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_range",
+            "handleR_range",
+            "handleL_range",
+            "handleLR_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "hover_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "handleR_range"
+            ],
+            [
+                "MOUSEOVER",
+                "handleL_range"
+            ],
+            [
+                "MOUSEOVER",
+                "handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "handleR_range": {
+        "initial": "hover_handleR_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_handleR_range",
+            "dragR_handleR_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "hover_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEDOWN",
+                "dragR_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "dragR_handleR_range": {
+        "initial": "idle_dragR_handleR_range",
+        "transitions": [
+            [
+                "MOUSEUP",
+                "hover_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_dragR_handleR_range",
+            "left_dragR_handleR_range",
+            "right_dragR_handleR_range",
+            "min_dragR_handleR_range",
+            "max_dragR_handleR_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "idle_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "left_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "right_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "min_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "max_dragR_handleR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragR_handleR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragR_handleR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "handleL_range": {
+        "initial": "hover_handleL_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_handleL_range",
+            "dragL_handleL_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "hover_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEDOWN",
+                "dragL_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "dragL_handleL_range": {
+        "initial": "idle_dragL_handleL_range",
+        "transitions": [
+            [
+                "MOUSEUP",
+                "hover_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_dragL_handleL_range",
+            "left_dragL_handleL_range",
+            "right_dragL_handleL_range",
+            "min_dragL_handleL_range",
+            "max_dragL_handleL_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "idle_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "left_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "right_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "min_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "max_dragL_handleL_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragL_handleL_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragL_handleL_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleL_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "handleLR_range": {
+        "initial": "hover_handleLR_range",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_handleLR_range",
+            "dragLR_handleLR_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "hover_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEDOWN",
+                "dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "dragLR_handleLR_range": {
+        "initial": "idle_dragLR_handleLR_range",
+        "transitions": [
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "idle_dragLR_handleLR_range",
+            "left_dragLR_handleLR_range",
+            "right_dragLR_handleLR_range",
+            "min_dragLR_handleLR_range",
+            "max_dragLR_handleLR_range",
+            "min-max_dragLR_handleLR_range"
+        ],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "idle_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "left_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "right_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "min_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "max_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "min-max_dragLR_handleLR_range": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEMOVE",
+                "min-max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "min_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "max_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "left_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "right_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEMOVE",
+                "idle_dragLR_handleLR_range"
+            ],
+            [
+                "MOUSEUP",
+                "hover_handleLR_range"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_range"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 7,
+            "ywidth": null,
+            "xstart": 0,
+            "ystart": null,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": 0,
+            "handleR": 7,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "scatter": {
+        "initial": "hover_scatter",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_scatter",
+            "panning_scatter",
+            "brush_scatter",
+            "brushRegion_scatter",
+            "brushBorder_scatter"
+        ],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "hover_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "ZOOM",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEDOWN",
+                "panning_scatter"
+            ],
+            [
+                "BRUSHSTART",
+                "brush_scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "brushRegion_scatter"
+            ],
+            [
+                "MOUSEOVER",
+                "brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "panning_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEUP",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "brush_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "brushRegion_scatter": {
+        "initial": "hover_brushRegion_scatter",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_brushRegion_scatter",
+            "brushInsideRegion_brushRegion_scatter"
+        ],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "hover_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHSTART",
+                "brushInsideRegion_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "brushInsideRegion_brushRegion_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushRegion_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "brushBorder_scatter": {
+        "initial": "hover_brushBorder_scatter",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_brushBorder_scatter",
+            "brushOnBorder_brushBorder_scatter"
+        ],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "hover_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHSTART",
+                "brushOnBorder_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "brushOnBorder_brushBorder_scatter": {
+        "initial": null,
+        "transitions": [
+            [
+                "BRUSHEND",
+                "hover_brushBorder_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_scatter"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 4.0,
+            "ywidth": 2.4,
+            "xstart": 4.0,
+            "ystart": 2.0,
+            "panstep": 0.5,
+            "zoomlevel": 0,
+            "rangezoomlevels": [
+                -5,
+                5
+            ],
+            "zoomstep": 0.2,
+            "binsize": null,
+            "itemselected": null,
+            "numitems": null,
+            "handleL": null,
+            "handleR": null,
+            "brushx": [
+                0,
+                0
+            ],
+            "brushy": [
+                0,
+                0
+            ]
+        }
+    },
+    "barchart": {
+        "initial": "hover_barchart",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_barchart",
+            "bin_barchart"
+        ],
+        "context": {
+            "xwidth": 2.6,
+            "ywidth": 40,
+            "xstart": 0,
+            "ystart": 0,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": 0.2,
+            "itemselected": -1,
+            "numitems": 13,
+            "handleL": null,
+            "handleR": null,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "hover_barchart": {
+        "initial": null,
+        "transitions": [
+            [
+                "MOUSEOVER",
+                "bin_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 2.6,
+            "ywidth": 40,
+            "xstart": 0,
+            "ystart": 0,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": 0.2,
+            "itemselected": -1,
+            "numitems": 13,
+            "handleL": null,
+            "handleR": null,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "bin_barchart": {
+        "initial": "hover_bin_barchart",
+        "transitions": [
+            [
+                "MOUSEOUT",
+                "hover_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [
+            "hover_bin_barchart"
+        ],
+        "context": {
+            "xwidth": 2.6,
+            "ywidth": 40,
+            "xstart": 0,
+            "ystart": 0,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": 0.2,
+            "itemselected": -1,
+            "numitems": 13,
+            "handleL": null,
+            "handleR": null,
+            "brushx": null,
+            "brushy": null
+        }
+    },
+    "hover_bin_barchart": {
+        "initial": null,
+        "transitions": [
+            [
+                "CLICK",
+                "hover_bin_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "hover_barchart"
+            ],
+            [
+                "MOUSEOUT",
+                "rest"
+            ]
+        ],
+        "values": [],
+        "context": {
+            "xwidth": 2.6,
+            "ywidth": 40,
+            "xstart": 0,
+            "ystart": 0,
+            "panstep": null,
+            "zoomlevel": null,
+            "rangezoomlevels": null,
+            "zoomstep": null,
+            "binsize": 0.2,
+            "itemselected": -1,
+            "numitems": 13,
+            "handleL": null,
+            "handleR": null,
+            "brushx": null,
+            "brushy": null
+        }
+    }
+}
