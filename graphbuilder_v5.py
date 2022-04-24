@@ -214,7 +214,6 @@ def ExplorationState(graph,state):
                     #Update value<<<
                     graph[state]["value"] = newValue
 
-
         elif(event == "input"):
 
             tagElement = graph[state]["tag"]
