@@ -1,6 +1,19 @@
 {
-	"rest":null,
+	"rest":{
+		"brushable":null,
+		"zoomable":null,
+		"events":[],
+		"child":null,
+		"class":null,
+		"tag":null
+	},
 	"range":{
+		"brushable":null,
+		"zoomable":null,
+		"events":[],
+		"child":null,
+		"class":null,
+		"tag":null
 	},
 	"scatter":{
 		"brushable":{
@@ -14,28 +27,31 @@
 			"translate_x":0,
 			"translate_y":0
 		},
-		"events":{
+		"events":[
 			"mousedown",
 			"wheel",
 			"dbclick",
 			"touchstart"
-		},
+		],
+		"child":null,
 		"class":"brush",
 		"tag":"g"
 	},
 	"barchart":{
 		"brushable":null,
 		"zoomable":null,
+		"events":[],
 		"child":{
 			"rect0":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -44,12 +60,13 @@
 			"rect1":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -58,12 +75,13 @@
 			"rect2":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -72,12 +90,13 @@
 			"rect3":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -86,12 +105,13 @@
 			"rect4":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -100,12 +120,13 @@
 			"rect5":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -114,12 +135,13 @@
 			"rect6":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -128,12 +150,13 @@
 			"rect7":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -142,12 +165,13 @@
 			"rect8":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -156,12 +180,13 @@
 			"rect9":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -170,12 +195,13 @@
 			"rect10":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -184,12 +210,13 @@
 			"rect11":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -198,12 +225,13 @@
 			"rect12":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -212,12 +240,13 @@
 			"rect13":{
 				"brushable":null,
 				"zoomable":null,
-				"events":{
+				"events":[
 					"mouseover",
 					"click",
 					"mousemove",
 					"mouseleave"
-				},
+				],
+				"child":null,
 				"class":null,
 				"tag":"rect",
 				"height":200,
@@ -226,5 +255,5 @@
 		},
 		"class":"?",
 		"tag":"?"
-	},
+	}
 }

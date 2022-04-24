@@ -34,12 +34,15 @@ def retTypeAction():
 def ExplorationState(graph,state):
     global explorationSequence
 
+    print("State: ",state)
+
     events = graph[state]["events"]
+    #print("Events: ",events)
 
     for event in events:
 
         explorationSequence.append(state)
-        explorationSequence.append(events)
+        explorationSequence.append(event)
 
         if(event == "mousedown" or event=="touchstart"):
 
@@ -81,7 +84,8 @@ def ExplorationState(graph,state):
                     xStartBrush = random.uniform(0,xDimension - xBrushDimension)
                     yStartBrush = random.uniform(0,yDimension - yBrushDimension)
 
-                    graph[state]["brushable"]["brush_extent"] = [[xStartBrush,yStartBrush],[xStartBrush + xBrushDimension,yStartBrush + yBrushDimension]]
+                    #Update the area of brushing
+                    graph[state]["brushable"]["selection_extent"] = [[xStartBrush,yStartBrush],[xStartBrush + xBrushDimension,yStartBrush + yBrushDimension]]
 
                 elif(brushInfo["directions"] == "x"):
 
@@ -112,7 +116,7 @@ def ExplorationState(graph,state):
                     xStartBrush = random.uniform(0,xDimension - xBrushDimension)
 
                     #In this case we take all the "y area"
-                    graph[state]["brushable"]["brush_extent"] = [[xStartBrush,0],[xStartBrush + xBrushDimension,yBrushDimension]]
+                    graph[state]["brushable"]["selection_extent"] = [[xStartBrush,0],[xStartBrush + xBrushDimension,yBrushDimension]]
 
                 else:
 
@@ -143,10 +147,10 @@ def ExplorationState(graph,state):
                     yStartBrush = random.uniform(0,yDimension - yBrushDimension)
 
                     #In this case we take all the "y area"
-                    graph[state]["brushable"]["brush_extent"] = [[0,yStartBrush],[xBrushDimension,yStartBrush + yBrushDimension]]
+                    graph[state]["brushable"]["selection_extent"] = [[0,yStartBrush],[xBrushDimension,yStartBrush + yBrushDimension]]
 
             #In this case we are doing a panning
-            elif(graph[state]["zoombale"]!=None):
+            elif(graph[state]["zoomable"]!=None):
                 #TODO: Check if zoomable and brushable together
                 #with mousedown exists
                 wait(1)
@@ -243,21 +247,28 @@ def ExplorationState(graph,state):
                     #Update value
                     graph[state]["value"] = newValue
 
-
+    return
 
                     
+def Exploration(graph):
 
+    for state in graph:
+        ExplorationState(graph,state)
+
+        if(graph[state]["child"]!=None):
+            Exploration(graph[state]["child"])
 
 if(__name__=="__main__"):
     
     #open the statechart json file
-    statechart_j=open('xstate_visualization_statechart_context.json')
+    statechart_j=open('xstate_visualization_statechart_htmlinfo.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
 
     #Data structure for that will contain the graph
     graph={}
+    graph=statechart_dict
 
     #Print graph representation
     print("------------------------------------------------------------------------------")
@@ -265,14 +276,16 @@ if(__name__=="__main__"):
     #print("Graph:",json.dumps(graph,indent=4))
 
     #Save graph on a file
-    with open('statechart_v4.json', 'w') as fp:
+    with open('statechart_v5.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
     print(transitionsList)
     print(eventsList)
 
-    Exploration(graph,"rest")
+    #Exploration of th graph
+    Exploration(graph)
 
     print(explorationSequence)
+    print("Graph:",json.dumps(graph,indent=4))
 
     print("------------------------------------------------------------------------------")
