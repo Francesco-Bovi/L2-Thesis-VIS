@@ -38,6 +38,9 @@ def ExplorationState(graph,state):
 
     for event in events:
 
+        explorationSequence.append(state)
+        explorationSequence.append(events)
+
         if(event == "mousedown" or event=="touchstart"):
 
             #Check if the element is brushable
@@ -175,6 +178,74 @@ def ExplorationState(graph,state):
 
                 #Update info
                 graph[state]["zoomable"] = zoomInfo
+        
+        elif(event == "change"):
+
+            tagElement = graph[state]["tag"]
+
+            #When we have the select dropdown
+            if(tagElement == "select"):
+
+                possibleValues = []
+                for elem in graph[state]["node"]:
+                    possibleValues.append(elem["__data__"])
+
+                newValue = possibleValues[random.randint(0,len(possibleValues)-1)]
+
+                graph[state]["value"] = newValue
+
+            #Maybe chan be radio button (?)
+            elif(tagElement == "div"):
+                #TODO: If there's a method since in div we have
+                #a list of <input type="radio">
+                wait(1)
+
+            elif(tagElement == "input"):
+
+                typeElement = graph[state]["type"]
+
+                if(typeElement == "range"):
+
+                    minValue = graph[state]["min"]
+                    maxValue = graph[state]["max"]
+
+                    newValue = random.randint(minValue,maxValue)
+
+                    #Update value<<<
+                    graph[state]["value"] = newValue
+
+
+        elif(event == "input"):
+
+            tagElement = graph[state]["tag"]
+
+            if(tagElement == "input"):
+
+                typeElement = graph[state]["type"]
+
+                if(typeElement == "number"):
+
+                    value = graph[state]["value"]
+
+                    actionType = retTypeAction()
+
+                    if(actionType == "L"):
+
+                        newValue = value + 1
+
+                    elif(actionType == "M"):
+
+                        newValue = value + 2
+                    
+                    else: 
+
+                        newValue = value + 3
+
+                    #Update value
+                    graph[state]["value"] = newValue
+
+
+
                     
 
 
