@@ -7,271 +7,116 @@
         "class": null,
         "tag": null
     },
-    "range": {
-        "brushable": null,
-        "zoomable": null,
-        "events": [],
-        "child": null,
-        "class": null,
-        "tag": null
-    },
-    "scatter": {
+    "histo1": {
         "brushable": {
             "handles": [
-                "n",
                 "e",
-                "s",
-                "w",
-                "mw",
-                "ne",
-                "se",
-                "sw"
+                "w"
             ],
-            "directions": "xy",
+            "directions": "x",
             "brush_extent": [
                 [
                     0,
                     0
                 ],
                 [
-                    390,
-                    300
+                    240,
+                    100
                 ]
             ],
             "selection_extent": null
         },
-        "zoomable": {
-            "scale": 1,
-            "translate_x": 0,
-            "translate_y": 0
-        },
+        "zoomable": null,
         "events": [
             "mousedown",
-            "wheel",
-            "dbclick",
             "touchstart"
         ],
         "child": null,
         "class": "brush",
         "tag": "g"
     },
-    "barchart": {
-        "brushable": null,
-        "zoomable": null,
-        "events": [],
-        "child": {
-            "rect0": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
+    "histo2": {
+        "brushable": {
+            "handles": [
+                "e",
+                "w"
+            ],
+            "directions": "x",
+            "brush_extent": [
+                [
+                    0,
+                    0
                 ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect1": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect2": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect3": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect4": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect5": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect6": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect7": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect8": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect9": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect10": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect11": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect12": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            },
-            "rect13": {
-                "brushable": null,
-                "zoomable": null,
-                "events": [
-                    "mouseover",
-                    "click",
-                    "mousemove",
-                    "mouseleave"
-                ],
-                "child": null,
-                "class": null,
-                "tag": "rect",
-                "height": 200,
-                "width": 10
-            }
+                [
+                    210,
+                    100
+                ]
+            ],
+            "selection_extent": null
         },
-        "class": "?",
-        "tag": "?"
+        "zoomable": null,
+        "events": [
+            "mousedown",
+            "touchstart"
+        ],
+        "child": null,
+        "class": "brush",
+        "tag": "g"
+    },
+    "histo3": {
+        "brushable": {
+            "handles": [
+                "e",
+                "w"
+            ],
+            "directions": "x",
+            "brush_extent": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    400,
+                    100
+                ]
+            ],
+            "selection_extent": null
+        },
+        "zoomable": null,
+        "events": [
+            "mousedown",
+            "touchstart"
+        ],
+        "child": null,
+        "class": "brush",
+        "tag": "g"
+    },
+    "histo4": {
+        "brushable": {
+            "handles": [
+                "e",
+                "w"
+            ],
+            "directions": "x",
+            "brush_extent": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    900,
+                    100
+                ]
+            ],
+            "selection_extent": null
+        },
+        "zoomable": null,
+        "events": [
+            "mousedown",
+            "touchstart"
+        ],
+        "child": null,
+        "class": "brush",
+        "tag": "g"
     }
 }

@@ -123,3 +123,24 @@ I create 3 custom JSON, each containing only one main state other than that of `
 - **barchart**: This is maybe the easiest interaction, what we need is the length of the x or y axes (depends on how the rectangles are oriented) and the width of each rectangle, in order to know how many are them. During the CLICK interaction when a bin is selected it's index is saved in a variable, so when a new bin is selected this variable is updated or when one is deselected the value will be None;
 - **scatter**: The scatter plot is probably the most difficult one to handle, in fact we need a lot of information: the default values on the x and y axes, their minimum and maximum values and the default zoomLevel. During the panning I change the current values on the x and y axes, in such a way that if I perform a BRUSHING I can selected the intervals for the points of the rectangle I'm brushing corretly (the value of these point must be in the interval of the x and y axes). While for the ZOOM is used a variable that increments its value if zooming in or decrements if zooming out.
 
+---
+
+### v4([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v4.py))
+
+In this version I create another custom JSON, in which for each Container node a new field ```context``` is added, in which a set of predefined information is presented, same for all the nodes. Those information are:
+
+- *xwidth*: Width of the x-axis;
+- *ywidth*: Width of the y-axis;
+- *xstart*: Value of the origin of the x-axis;
+- *xstart*: Value of the origin of the y-axis;
+- *panstep*: How much the axis move during a panning;
+- *zoomlevel*: Current level of zoom (default is 0);
+- *rangezoomlevels*: Range of values that the zoomlevel can assume [min,max] (it can go from negative to positive, representing zoomout and zoomin);
+- *zoomstep*: How much the axes shrink or widen (in the case of zoomout) at each step;
+- *binsize*: Width of a bin (in this case we probably have a bin chart);
+- *itemselected*: Integer or ID of the bin selected (if selection with click is possible);
+- *numitems*: Number of bins;
+- *handleL*: Position of the left handle in a slider;
+- *handleR*: Position of the right handle in a slider (if it's not a range slider this field is null);
+- *brushx*: Starting and ending point in the x-axis of a brush area ([xstart,xend]);
+- *brushy*: Starting and ending point in the y-axis of a brush area ([ystart,yend]);

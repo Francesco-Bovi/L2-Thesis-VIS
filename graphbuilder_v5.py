@@ -30,6 +30,14 @@ def retTypeAction():
     typeActions = ["L","M","H"]
 
     return typeActions[random.randint(0,2)]
+    
+def updateValue(graph,state,newValue):
+
+    attributesList = graph[state]["attributes"]
+
+    for elem in attributesList:
+        if(elem["name"] == "value"):
+            elem["value"] = newValue
 
 def ExplorationState(graph,state):
     global explorationSequence
@@ -116,7 +124,7 @@ def ExplorationState(graph,state):
                     xStartBrush = random.uniform(0,xDimension - xBrushDimension)
 
                     #In this case we take all the "y area"
-                    graph[state]["brushable"]["selection_extent"] = [[xStartBrush,0],[xStartBrush + xBrushDimension,yBrushDimension]]
+                    graph[state]["brushable"]["selection_extent"] = [[xStartBrush,0],[xStartBrush + xBrushDimension,yDimension]]
 
                 else:
 
@@ -147,7 +155,7 @@ def ExplorationState(graph,state):
                     yStartBrush = random.uniform(0,yDimension - yBrushDimension)
 
                     #In this case we take all the "y area"
-                    graph[state]["brushable"]["selection_extent"] = [[0,yStartBrush],[xBrushDimension,yStartBrush + yBrushDimension]]
+                    graph[state]["brushable"]["selection_extent"] = [[0,yStartBrush],[xDimension,yStartBrush + yBrushDimension]]
 
             #In this case we are doing a panning
             elif(graph[state]["zoomable"]!=None):
@@ -191,14 +199,25 @@ def ExplorationState(graph,state):
             if(tagElement == "select"):
 
                 possibleValues = []
-                for elem in graph[state]["node"]:
-                    possibleValues.append(elem["__data__"])
+                for elem in graph[state]["attributes"]:
+
+                    if(elem["name"] == "select"):
+                        for nestedElem in elem["value"]:
+                            
+                            possibleValues.append(nestedElem["value"])
 
                 newValue = possibleValues[random.randint(0,len(possibleValues)-1)]
 
-                graph[state]["value"] = newValue
+                #Update value in graph
+                for elem in graph[state]["attribute"][0]:
+                    if(elem["value"] == newValue):
+                        elem["selected"] = True
 
-            #Maybe chan be radio button (?)
+                    else:
+
+                        elem["selected"] = False
+
+            #Maybe can be radio button (?) (https://d3-graph-gallery.com/graph/interactivity_button.html)
             elif(tagElement == "div"):
                 #TODO: If there's a method since in div we have
                 #a list of <input type="radio">
@@ -215,7 +234,7 @@ def ExplorationState(graph,state):
 
                     newValue = random.randint(minValue,maxValue)
 
-                    #Update value<<<
+                    #Update value
                     graph[state]["value"] = newValue
 
         elif(event == "input"):
@@ -224,29 +243,69 @@ def ExplorationState(graph,state):
 
             if(tagElement == "input"):
 
-                typeElement = graph[state]["type"]
+                attributeValues = graph[state]["attributes"]
 
+                typeElement = None
+                currentValue = None
+
+                for elem in attributeValues:
+                    if(elem["name"] == "type"):
+                        typeElement = elem["value"]
+
+                    elif(elem["name"] == "value"):
+                        currentValue = elem["value"]
+
+                #Specific time when we have a number
                 if(typeElement == "number"):
-
-                    value = graph[state]["value"]
 
                     actionType = retTypeAction()
 
                     if(actionType == "L"):
 
-                        newValue = value + 1
+                        newValue = float(currentValue) + 1
 
                     elif(actionType == "M"):
 
-                        newValue = value + 2
+                        newValue = float(currentValue) + 2
                     
                     else: 
 
-                        newValue = value + 3
+                        newValue = float(currentValue) + 3
 
                     #Update value
-                    graph[state]["value"] = newValue
+                    updateValue(graph,state,newValue)
 
+        #This is the case for example in the sliders (https://bl.ocks.org/johnwalley/raw/e1d256b81e51da68f7feb632a53c3518/?raw=true)
+        elif(event == "keydown"):
+
+            tagElement = graph[state]["tag"]
+
+            #This is probably the case in which we have a slider and the path is an handler
+            if(tagElement == "path"):
+
+                attributeValues = graph[state]["attributes"]
+
+                minValue = None
+                maxValue = None
+                currentValue = None
+
+                for field in attributeValues:
+
+                    if(field["name"] == "aria-valuemax"):
+
+                        maxValue = float(field["value"])
+
+                    elif(field["name"] == "aria-valuemin"):
+
+                        minValue = float(field["value"])
+                    
+                    elif(field["name"] == "aria-valuenow"):
+
+                        currentValue = float(field["value"])
+
+                    #TODO: Handle case when values are not float, like dates
+
+                
     return
 
                     
@@ -261,7 +320,7 @@ def Exploration(graph):
 if(__name__=="__main__"):
     
     #open the statechart json file
-    statechart_j=open('xstate_visualization_statechart_htmlinfo.json')
+    statechart_j=open('crossfilter_visualization_statechart_htmlinfo.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
