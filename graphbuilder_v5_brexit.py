@@ -52,7 +52,7 @@ def ExplorationState(stateName,state,driver):
     events = state["events"]
     #print("Events: ",events)
 
-    element = driver.find_element(by=By.CSS_SELECTOR, value = stateName)
+    element = driver.find_element(by=By.CSS_SELECTOR, value = state["tag"]+stateName)
 
     explorationSequence.append(stateName)
     time.sleep(2)
@@ -81,7 +81,7 @@ def ExplorationState(stateName,state,driver):
             actions = ActionChains(driver)
             actions.move_to_element(element).perform()
 
-        time.sleep(2)
+        time.sleep(1)
                     
 def Exploration(graph,driver):
 
