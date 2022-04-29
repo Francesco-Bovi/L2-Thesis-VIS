@@ -73,7 +73,7 @@ if __name__ == "__main__":
         print(xPoint,yPoint)
         #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
         #actions.move_to_element_with_offset(element,xPoint,yPoint).scroll(0,0,0,100).perform()
-        actions.move_to_element_with_offset(element,xPoint,yPoint).click().scroll(0,0,0,-100).release().perform()
+        actions.move_to_element(element).click().scroll(200,200,0,-110).release().perform()
 
         """
         #Per il panning potremmo fare move by offset
@@ -93,6 +93,16 @@ if __name__ == "__main__":
         #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
         #actions.move_to_element_with_offset(element,xPoint,yPoint).scroll(0,0,0,100).perform()
         actions.move_to_element(element).scroll(0,0,0,-100).release().perform()
+
+    elif(inputString == "zoom3"):
+
+        driver.get("https://bl.ocks.org/deristnochda/raw/1ffe16ccf8bed2035ea5091ab9bb53fb/?raw=true")
+        time.sleep(5)
+        actions = ActionChains(driver)
+        element = driver.find_element(by=By.CSS_SELECTOR,value="body > div > svg")
+        #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
+        #actions.move_to_element_with_offset(element,xPoint,yPoint).scroll(0,0,0,100).perform()
+        actions.move_to_element(element).scroll(450,200,0,-110).release().perform()
 
 
     elif(inputString == "crossfilter"):
