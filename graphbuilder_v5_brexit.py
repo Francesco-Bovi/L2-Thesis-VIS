@@ -30,6 +30,14 @@ eventsList = [
 transitionsList = []
 explorationSequence = []
 
+consoleScript = "eventsList = ['click', 'dbclick','change','keydown','mousemove','mousedown','mouseup', 'mouseover','mouseleave','wheel'];\n\
+                eventsList.forEach(event => {\n\
+                    document.addEventListener(event, function handleClick(event) {\n\
+                        console.time(event);\n\
+                        console.timeEnd(event)\n\
+                    });\n\
+                });"
+
 
 def retTypeAction():
     typeActions = ["L","M","H"]
@@ -69,18 +77,31 @@ def ExplorationState(stateName,state,driver):
         if(event == "click"):
 
             actions = ActionChains(driver)
+
+            start = time.time()
+            driver.execute_script('console.time("c123")')
             actions.move_to_element(element).click().release().perform()
+            driver.execute_script('console.timeEnd("c123")')
+            end = time.time()
 
         elif(event == "contextmenu"):
 
             actions = ActionChains(driver)
+
+            start = time.time()
             actions.move_to_element(element).context_click().release().perform()
-        
+            end = time.time()
+
         elif(event == "mouseover"):
 
             actions = ActionChains(driver)
-            actions.move_to_element(element).perform()
 
+            start = time.time()
+            actions.move_to_element(element).perform()
+            end = time.time()
+
+        print(start)
+        print("Time to execute event: ",end-start)
         time.sleep(1)
                     
 def Exploration(graph,driver):
