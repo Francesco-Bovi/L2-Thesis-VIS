@@ -176,7 +176,7 @@ After that meet I decided to use Matteo's script to start looking at all the fie
 - **zoombale**: Object {scale, translate_x, translate_y} with zoom informations (null if the event is not zoom-related);
 - **leadsToState**:Integer indicating to which state triggering this event will bring you, with respect to the ids used in the states global list (at first they are all initialized to 0, the rest state id);
 
-Testing this script on different d3.js visualizations ([listed here]()) many interesting aspects emerged:
+Testing this script on different d3.js visualizations ([listed here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/d3Visualizations.txt)) many interesting aspects emerged:
 
 - When an element is brushable, the events triggered can be "mousedown", "touchstart" (but we can exlude this case, since we are not working with touch screen devices);
 - Once a brush area is created, in order to move it the event triggered is a "mousedown" performed inside that area and then move the cursor;
