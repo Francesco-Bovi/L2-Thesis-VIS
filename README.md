@@ -178,8 +178,28 @@ After that meet I decided to use Matteo's script to start looking at all the fie
 
 Testing this script on different d3.js visualizations ([listed here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/d3Visualizations.txt)) many interesting aspects emerged:
 
-- When an element is brushable, the events triggered can be "mousedown", "touchstart" (but we can exlude this case, since we are not working with touch screen devices);
+- When an element is brushable, the events triggered can be "mousedown" or "touchstart" (but we can exlude this case, since we are not working with touch screen devices);
 - Once a brush area is created, in order to move it the event triggered is a "mousedown" performed inside that area and then move the cursor;
 - The events that manage the zoom on an element are "wheel", "dbclick" (that double the zoom scale every time is performed, while with wheel we have a high granularity);
 - A zoomable element is also pannable and it's handled by the "mousedown" events that changes the translate_x and translate_y values;
 - It's not possible that a brushable element is also zoomable, because the "mousedown" event creates collision, the only solution would be change the default configuration of brushing or zooming using another event instead of the "mousedown";
+- A slider can be modelled in very different ways (html type input, d3.slider, customized or with brushing for example);
+- When a slider is modelled using d3.sliderBottom (or sliderVertical) we can use the information in the styles fields "aria-valuemax", "aria-valuemin" and "aria-valuenow";
+- With high probability we can assume that when the "mousedown" event is present on an element, but the latter is not brushable or zoomable, then the action that is performed is a dragging. In this case a problem can be the fact that I have to know what interactor is to move in the correct direction;
+
+### Meet 28/04
+
+Prior to this meet the problems encountered were:
+
+1. Since Selenium (the framework through which the automatic exploration of the browser is performed) moves the element in the screen by using pixels coordinate, a problem could be moving the sliders by a certain amount of values;
+2. How handle the cases in which the events are not the default ones but they're customized (like the "contextmenu" for panning);
+3. Is it possible to simulate the zoom only by using the double click interaction during the automatic exploration? Since I was struggling to simulate the wheel for zooming;
+4. Problem when a slider has a predefined step and/or when the value it can assume are not numeric (like dates);
+
+After the meet those problems were solved using the following methods:
+
+1. Using a function that, given the width of the slider, the max and min values it can assume, makes the proportion to find by how many pixels the handler needs to be moved to achieve a certain value;
+2. For now we try to handle only the default event, unless a certain configuration even if it's not the default one is very popular;
+3. It's better to simulate the wheel since it has a greater granularity and is the most used by the users (porblem solved);
+4. That cases don't need to be handled since they don't create dynamic queries that can affect the performances of the visualization;
+
