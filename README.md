@@ -127,20 +127,59 @@ I create 3 custom JSON, each containing only one main state other than that of `
 
 ### v4([link here](https://github.com/Francesco-Bovi/L2-Thesis-VIS/blob/main/graphbuilder_v4.py))
 
-In this version I create another custom JSON, in which for each Container node a new field ```context``` is added, in which a set of predefined information is presented, same for all the nodes. Those information are:
+In this version I create another custom JSON, in which for each Container node a new field ```context``` is added, where a set of predefined information is presented, same for all the nodes. Those information are:
 
-- *xwidth*: Width of the x-axis;
-- *ywidth*: Width of the y-axis;
-- *xstart*: Value of the origin of the x-axis;
-- *xstart*: Value of the origin of the y-axis;
-- *panstep*: How much the axis move during a panning;
-- *zoomlevel*: Current level of zoom (default is 0);
-- *rangezoomlevels*: Range of values that the zoomlevel can assume [min,max] (it can go from negative to positive, representing zoomout and zoomin);
-- *zoomstep*: How much the axes shrink or widen (in the case of zoomout) at each step;
-- *binsize*: Width of a bin (in this case we probably have a bin chart);
-- *itemselected*: Integer or ID of the bin selected (if selection with click is possible);
-- *numitems*: Number of bins;
-- *handleL*: Position of the left handle in a slider;
-- *handleR*: Position of the right handle in a slider (if it's not a range slider this field is null);
-- *brushx*: Starting and ending point in the x-axis of a brush area ([xstart,xend]);
-- *brushy*: Starting and ending point in the y-axis of a brush area ([ystart,yend]);
+- **xwidth**: Width of the x-axis;
+- **ywidth**: Width of the y-axis;
+- **xstart**: Value of the origin of the x-axis;
+- **ystart**: Value of the origin of the y-axis;
+- **panstep**: How much the axis move during a panning;
+- **zoomlevel**: Current level of zoom (default is 0);
+- **rangezoomlevels**: Range of values that the zoomlevel can assume [min,max] (it can go from negative to positive, representing zoomout and zoomin);
+- **zoomstep**: How much the axes shrink or widen (in the case of zoomout) at each step;
+- **binsize**: Width of a bin (in this case we probably have a bin chart);
+- **itemselected**: Integer or ID of the bin selected (if selection with click is possible);
+- **numitems**: Number of bins;
+- **handleL**: Position of the left handle in a slider;
+- **handleR**: Position of the right handle in a slider (if it's not a range slider this field is null);
+- **brushx**: Starting and ending point in the x-axis of a brush area ([xstart,xend]);
+- **brushy**: Starting and ending point in the y-axis of a brush area ([ystart,yend]);
+
+Those are all the information needed to execute all the different transitions in a statchart, for example given a state in which the only information are **xwidth**, **handleL** and/or **handleR**, we can consider that state a slider, if the information are instead **binsize**, **itemselected**, **numitems**, **handleL** and **handleR** we are in a scatterplot where we can perform brushing and zooming. 
+
+In this way during the exploration of the statechart, when performing a transition we have to update the value of the variables in the context presented above, simulating a real exploration, like one performed by an user.
+
+---
+
+### Meet 21/04
+
+The most interesting aspects that emerged during this meet are:
+- The possibility that the designer of the visualization tells us what kind of interactors are present;
+- Differentiate the interactors using a field **type** in the statechart;
+- All the information that will be used for the informed exploration are passed in the statchart by Matteo's program;
+
+---
+
+After that meet I decided to use Matteo's script to start looking at all the fields it returns and how to use them in my program during the informed exploration. What Matteo's script returns is a list of fields describes as follow:
+
+- **node**: The object for the current node;
+- **tag**: String of the element tag name;
+- **id**: String of the element id (null if absent);
+- **class**: List of the strings of the element classes (null if no class is there);
+- **parents**: List of objects {tag, id, class} for each container node going outwards from the current one, stopping right before the 'body' tag (null if no eligible one is there);
+- **attributes**: List of objects {name, value} for each element attribute (excluded 'id', 'class' and 'style');
+- **styles**: List of objects {name, value} for each element style (including default ones though);
+- **data**: List of objects {name, value} for each element attached data (null if there is none);
+- **event**: String of the currently considered event of the element;
+- **eventFunction**: String of the function triggered by the aforementioned event;
+- **brushable**: Object {handles, directions, brush_extent, selection_extent} with brush informations (null if the event is not brush-related);
+- **zoombale**: Object {scale, translate_x, translate_y} with zoom informations (null if the event is not zoom-related);
+- **leadsToState**:Integer indicating to which state triggering this event will bring you, with respect to the ids used in the states global list (at first they are all initialized to 0, the rest state id);
+
+Testing this script on different d3.js visualizations ([listed here]()) many interesting aspects emerged:
+
+- When an element is brushable, the events triggered can be "mousedown", "touchstart" (but we can exlude this case, since we are not working with touch screen devices);
+- Once a brush area is created, in order to move it the event triggered is a "mousedown" performed inside that area and then move the cursor;
+- The events that manage the zoom on an element are "wheel", "dbclick" (that double the zoom scale every time is performed, while with wheel we have a high granularity);
+- A zoomable element is also pannable and it's handled by the "mousedown" events that changes the translate_x and translate_y values;
+- It's not possible that a brushable element is also zoomable, because the "mousedown" event creates collision, the only solution would be change the default configuration of brushing or zooming using another event instead of the "mousedown";

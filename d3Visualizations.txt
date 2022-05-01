@@ -1,0 +1,14 @@
+Crossfilter : https://bl.ocks.org/micahstubbs/raw/66db7c01723983ff028584b6f304a54a/?raw=true
+Brushable scatterplot : https://bl.ocks.org/cmgiven/raw/abca90f6ba5f0a14c54d1eb952f8949c/?raw=true
+Zoomable scatterplot : https://bl.ocks.org/aleereza/raw/d2be3d62a09360a770b79f4e5527eea8/?raw=true and https://bl.ocks.org/kkdd/raw/c13a7d51b2f2afe297dbd7712853ebbb/?raw=true
+Slider html (input type="range") : https://bl.ocks.org/d3noob/raw/147791d51cf6516715914c49cb869f57/?raw=true
+Slider with path cursor : https://bl.ocks.org/johnwalley/raw/e1d256b81e51da68f7feb632a53c3518/?raw=true
+Tree with click on nodes : https://bl.ocks.org/d3noob/raw/8375092/?raw=true
+Map with clickable regions : https://namra00.github.io/Lending_Tree_Visualization/
+Dario Benvenuti's brexitVisualization : localhost:8000/brexitVisualization.html
+
+-----------D3 GRAPH GALLERY---------------------
+
+Zooming : https://d3-graph-gallery.com/graph/interactivity_zoom.html#axisZoom
+Brush : https://d3-graph-gallery.com/graph/interactivity_brush.html
+Buttons : https://d3-graph-gallery.com/graph/interactivity_button.html
