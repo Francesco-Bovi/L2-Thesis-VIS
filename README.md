@@ -203,3 +203,4 @@ After the meet those problems were solved using the following methods:
 3. It's better to simulate the wheel since it has a greater granularity and is the most used by the users (porblem solved);
 4. That cases don't need to be handled since they don't create dynamic queries that can affect the performances of the visualization;
 
+One of the goals that emerged from this meet is to be able to isolate the latency due to the automation of Selenium during the browser exploration of the visualization
