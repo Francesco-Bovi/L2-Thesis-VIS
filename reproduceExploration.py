@@ -5,6 +5,8 @@ import random
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 
@@ -18,11 +20,15 @@ consoleScript = "eventsList = ['click', 'dbclick','change','keydown','mousemove'
 
 def GetPixelsToMove(Slider,Amount,SliderMax,SliderMin):
     pixels = 0
-    print(Slider.size)
-    tempPixels = 300
+    tempPixels = 129
+
+    """
     tempPixels = tempPixels / (SliderMax - SliderMin)
     tempPixels = tempPixels * (Amount - SliderMin)
-    pixels = int(tempPixels)
+    pixels = tempPixels
+    """
+
+    pixels = (tempPixels*Amount)/SliderMax
     return pixels
 
 
@@ -35,36 +41,80 @@ if __name__ == "__main__":
         #BRUSH
 
         driver.get("https://bl.ocks.org/cmgiven/raw/abca90f6ba5f0a14c54d1eb952f8949c/?raw=true") 
-        time.sleep(2)
-        element = driver.find_element(by=By.CSS_SELECTOR, value="#scatterplot svg g g.brush") #Id unique
-        dimElement = [390,300]
 
-        xStart = random.uniform(0,dimElement[0])
-        xEnd = random.uniform(0,dimElement[0] - xStart)
+        #Explicit wait
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR,"#scatterplot > svg > g > g.brush"))
+            )
+        except:
+            print("Element not found")
+        else:
 
-        yStart = random.uniform(0,dimElement[1])
-        yEnd = random.uniform(0,dimElement[1] - yStart)
+            element = driver.find_element(by=By.CSS_SELECTOR, value="#scatterplot > svg > g > g.brush") #Id unique
+            dimElement = [390,300]
 
-        actions = ActionChains(driver)
-        actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().move_by_offset(xEnd,yEnd).release().perform()
+            xStart = random.uniform(0,dimElement[0])
+            xEnd = random.uniform(0,dimElement[0] - xStart)
+
+            yStart = random.uniform(0,dimElement[1])
+            yEnd = random.uniform(0,dimElement[1] - yStart)
+
+            actions = ActionChains(driver)
+
+            """
+            actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().move_by_offset(xEnd,yEnd).release().perform()
+
+            time.sleep(1)
+
+            #Now perform panning
+            actions.move_to_element_with_offset(element,xStart +xEnd/2,yStart +yEnd/2).click_and_hold().move_by_offset(20,0).release().perform()
+            """
+            driver.execute_script('console.time("c123")')
+            actions.move_to_element_with_offset(element,100,100).click_and_hold().move_by_offset(50,50).release().perform()
+            driver.execute_script('console.timeEnd("c123")')
+
+            #Now perform panning
+            actions.move_to_element_with_offset(element,125,125).click_and_hold().move_by_offset(50,0).release().perform()
 
     elif(inputString == "slider"):
         #SLIDER
 
         driver.get("https://bl.ocks.org/johnwalley/raw/e1d256b81e51da68f7feb632a53c3518/?raw=true")
-        time.sleep(2)
-        element = driver.find_element_by_css_selector("#slider-fill > svg > g > g.slider > g > path")
+        element = driver.find_element(by=By.CSS_SELECTOR, value="#slider-fill > svg > g > g.slider > g > path")
 
-        pixelsToMove = GetPixelsToMove(element,0.0125,0.025,0)
+        #pixelsToMove = GetPixelsToMove(element,0.0125,0.025,0)
 
         actions = ActionChains(driver)
-        actions.move_to_element(element).click_and_hold().move_by_offset((-180),0).move_by_offset(pixelsToMove,0).release().perform()
+
+        driver.execute_script('console.time("c123")')
+        actions.move_to_element(element).click_and_hold().move_by_offset((-300),0).move_by_offset(300,0).release().perform()
+        driver.execute_script('console.timeEnd("c123")')
+
+    elif(inputString == "slider2"):
+        #SLIDER2
+
+        driver.get("https://bl.ocks.org/d3noob/raw/147791d51cf6516715914c49cb869f57/?raw=true")
+        element = driver.find_element(by=By.CSS_SELECTOR, value="#nRadius")
+
+        pixelsToMove = GetPixelsToMove(element,72,150,1)
+        print(pixelsToMove)
+
+        pixelsToMove2 = GetPixelsToMove(element,120,150,1)
+        print(pixelsToMove2)
+
+        actions = ActionChains(driver)
+        #actions.move_to_element(element).click_and_hold().move_by_offset((-pixelsToMove2),0).move_by_offset(pixelsToMove,0).release().perform()
+
+        driver.execute_script('console.time("c123")')
+        actions.move_to_element_with_offset(element,pixelsToMove2,0).click_and_hold().move_by_offset((-pixelsToMove2),0).move_by_offset(pixelsToMove,0).release().perform()
+        driver.execute_script('console.timeEnd("c123")')
+
 
     elif(inputString == "zoom1"):
         #ZOOM
     
         driver.get("https://bl.ocks.org/aleereza/raw/d2be3d62a09360a770b79f4e5527eea8/?raw=true")
-        time.sleep(5)
         element = driver.find_element(by=By.CSS_SELECTOR,value="body > svg > rect")
         dimElement = [400,400]
         actions = ActionChains(driver)
@@ -73,7 +123,10 @@ if __name__ == "__main__":
         print(xPoint,yPoint)
         #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
         #actions.move_to_element_with_offset(element,xPoint,yPoint).scroll(0,0,0,100).perform()
+
+        driver.execute_script('console.time("c123")')
         actions.move_to_element(element).click().scroll(200,200,0,-110).release().perform()
+        driver.execute_script('console.timeEnd("c123")')
 
         """
         #Per il panning potremmo fare move by offset
@@ -87,30 +140,32 @@ if __name__ == "__main__":
         #ZOOM2
 
         driver.get("https://bl.ocks.org/kkdd/raw/c13a7d51b2f2afe297dbd7712853ebbb/?raw=true")
-        time.sleep(5)
         actions = ActionChains(driver)
         element = driver.find_element(by=By.CSS_SELECTOR,value="#canvas > svg")
         #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
         #actions.move_to_element_with_offset(element,xPoint,yPoint).scroll(0,0,0,100).perform()
+
+        driver.execute_script('console.time("c123")')
         actions.move_to_element(element).scroll(0,0,0,-100).release().perform()
+        driver.execute_script('console.timeEnd("c123")')
 
     elif(inputString == "zoom3"):
 
         driver.get("https://bl.ocks.org/deristnochda/raw/1ffe16ccf8bed2035ea5091ab9bb53fb/?raw=true")
-        time.sleep(5)
         actions = ActionChains(driver)
         element = driver.find_element(by=By.CSS_SELECTOR,value="body > div > svg")
         #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
         #actions.move_to_element_with_offset(element,xPoint,yPoint).scroll(0,0,0,100).perform()
-        actions.move_to_element(element).scroll(450,200,0,-110).release().perform()
 
+        driver.execute_script('console.time("c123")')
+        actions.move_to_element(element).scroll(450,200,0,-110).release().perform()
+        driver.execute_script('console.timeEnd("c123")')
 
     elif(inputString == "crossfilter"):
 
         #CROSSFILTER
 
         driver.get("https://bl.ocks.org/micahstubbs/raw/66db7c01723983ff028584b6f304a54a/?raw=true")
-        time.sleep(2)
         elements_selector = ["#hour-chart > svg > g > g.brush","#delay-chart > svg > g > g.brush","#distance-chart > svg > g > g.brush","#date-chart > svg > g > g.brush"]
         dimensions_histo = {
             "#hour-chart > svg > g > g.brush":240,
@@ -123,6 +178,12 @@ if __name__ == "__main__":
             actions = ActionChains(driver)
             xStart = random.uniform(0,dimensions_histo[element])
             xEnd = random.uniform(0,dimensions_histo[element]-xStart)
-            actions.move_to_element_with_offset(elementReference,xStart,0).click_and_hold().move_by_offset(xEnd,0).release().perform()
+
+            driver.execute_script('console.time("c123")')
+            actions.move_to_element_with_offset(elementReference,xStart,50).click_and_hold().move_by_offset(xEnd,0).release().perform()
+            driver.execute_script('console.timeEnd("c123")')
+
+            #Panning
+            actions.move_to_element_with_offset(elementReference,xStart+xEnd/2,50).click_and_hold().move_by_offset(-xStart/2,0).release().perform()
 
     #driver.close()
