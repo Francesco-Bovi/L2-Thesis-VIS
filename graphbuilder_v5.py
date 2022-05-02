@@ -182,11 +182,11 @@ def retBrush_PanBrush(actionType,width,height,xStartBrush,xEndBrush,yStartBrush,
     
     elif(actionType == "M"):
 
-        divisior = 1/4
+        divisor = 1/4
 
     else:
 
-        divisior = 2/3
+        divisor = 2/3
 
     if(xDirections == "right"):
     
@@ -327,6 +327,38 @@ def PanZoom(height,width):
 
 """
 
+#SLIDER CHANGE HTML
+#This is the case when class = "input" and type = "range"
+"""
+
+def SliderHtml(sliderInfo):
+
+    minValue = sliderInfo["min"]
+    maxValue = sliderInfo["max"]
+    currentValue = sliderInfo["value"]
+
+    width = sliderInfo["width"]
+
+    actionType = retTypeAction()
+
+    return [actionType,minValue,maxValue,currentValue,width]
+
+"""
+
+#SELECT DROPDOWN HTML
+"""
+
+def selectDropdownHtml(selectInfo):
+
+    possibleValues = selectInfo["value"]
+
+    nextValueIndex = random.randint(0,len(possibleValues)-1)
+
+    nextValue = possibleValues[nextValueIndex]["value"]
+
+    return nextValue
+
+"""
 def retTypeAction():
     typeActions = ["L","M","H"]
 

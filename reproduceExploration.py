@@ -186,4 +186,21 @@ if __name__ == "__main__":
             #Panning
             actions.move_to_element_with_offset(elementReference,xStart+xEnd/2,50).click_and_hold().move_by_offset(-xStart/2,0).release().perform()
 
+    elif(inputString == "select_dd"):
+
+        driver.get("https://bl.ocks.org/patiencehaggin/raw/ffc6522a844cea9f0712282ba6d3cbeb/?raw=true")
+
+        #Explicit wait
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR,"#ddSel"))
+            )
+        except:
+            print("Element not found")
+        else:
+            element = driver.find_element(by=By.CSS_SELECTOR, value="#ddSel")
+
+            driver.execute_script('element = document.querySelector("#ddSel")')
+            driver.execute_script('element.value = "Kenya"')
+
     #driver.close()
