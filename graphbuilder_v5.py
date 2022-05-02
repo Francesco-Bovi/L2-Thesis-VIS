@@ -25,6 +25,307 @@ eventsList = [
 transitionsList = []
 explorationSequence = []
 
+#BRUSH FUNCTION
+"""
+def Brush(brushableInfo):
+    
+    actionType = retTypeAction()
+
+    directions = brushableInfo["directions"]
+
+    brushExtent = brushableInfo["brushExtent"]
+
+    selectionExtent = brushableInfo["selectionExtent"]
+
+    #Object to return with the new selection extent
+    newSelectionExtent = None
+
+    #Case when the brushing can be done in all the dimensions
+    if(directions == "xy"):
+
+        #Dimension of the brushable area
+        widthBrush = brushExtent[1][0] - brushExtent[0][0]
+        heightBrush = brushExtent[1][1] - brushExtent[0][1]
+
+        if(actionType == "L"):
+
+            #In this case the area is 1/4 of the original
+
+            #Find the starting points
+            xStartBrush = random.uniform(0,widthBrush - widthBrush/4)
+            yStartBrush = random.uniform(0,heightBrush - heightBrush/4)
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/4,yStartBrush + heightBrush/4]]
+    
+
+        elif(actionType == "M"):
+
+            #In this case the area is 1/2 of the original
+
+            #Find the starting points
+            xStartBrush = random.uniform(0,widthBrush - widthBrush/2)
+            yStartBrush = random.uniform(0,heightBrush - heightBrush/2)
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/2,yStartBrush + heightBrush/2]]
+        
+        else:
+
+            #In this case the area is 2/3 of the original
+
+            #Find the starting points
+            xStartBrush = random.uniform(0,widthBrush - widthBrush*(2/3))
+            yStartBrush = random.uniform(0,heightBrush - heightBrush*(2/3))
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush*(2/3),yStartBrush + heightBrush*(2/3)]]
+
+    elif(directions == "x"):
+
+        #Dimension of the brushable area
+        widthBrush = brushExtent[1][0] - brushExtent[0][0]
+        heightBrush = brushExtent[1][1] - brushExtent[0][1]
+
+        if(actionType == "L"):
+
+            #In this case the area is 1/4 of the original
+
+            #Find the starting points
+            xStartBrush = random.uniform(0,widthBrush - widthBrush/4)
+            yStartBrush = heightBrush/2
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/4,yStartBrush]]
+    
+
+        elif(actionType == "M"):
+
+            #In this case the area is 1/2 of the original
+
+            #Find the starting points
+            xStartBrush = random.uniform(0,widthBrush - widthBrush/2)
+            yStartBrush = heightBrush/2
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/2,yStartBrush]]
+        
+        else:
+
+            #In this case the area is 2/3 of the original
+
+            #Find the starting points
+            xStartBrush = random.uniform(0,widthBrush - widthBrush*(2/3))
+            yStartBrush = heightBrush/2
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush*(2/3),yStartBrush]]
+
+    else:
+
+        #Dimension of the brushable area
+        widthBrush = brushExtent[1][0] - brushExtent[0][0]
+        heightBrush = brushExtent[1][1] - brushExtent[0][1]
+
+        if(actionType == "L"):
+
+            #In this case the area is 1/4 of the original
+
+            #Find the starting points
+            xStartBrush = widthBrush/2
+            yStartBrush = random.uniform(0,heightBrush - heightBrush/4)
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush/4]]
+    
+
+        elif(actionType == "M"):
+
+            #In this case the area is 1/2 of the original
+
+            #Find the starting points
+            xStartBrush = widthBrush/2
+            yStartBrush = random.uniform(0,heightBrush - heightBrush/2)
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush/2]]
+        
+        else:
+
+            #In this case the area is 2/3 of the original
+
+            #Find the starting points
+            xStartBrush = widthBrush/2
+            yStartBrush = random.uniform(0,heightBrush - heightBrush*(2/3))
+
+            #New selection extent
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush*(2/3)]]
+
+    return newSelectionExtent
+"""
+
+#PANNINGBRUSH FUNCTION
+
+"""
+
+def retBrush_PanBrush(actionType,width,height,xStartBrush,xEndBrush,yStartBrush,yEndBrush):
+
+    #It depends by the type of action
+    divisor = None
+
+    #What we must return
+    newSelectionExtent = None
+
+    if(actionType == "L"):
+
+        divisor = 1/2
+    
+    elif(actionType == "M"):
+
+        divisior = 1/4
+
+    else:
+
+        divisior = 2/3
+
+    if(xDirections == "right"):
+    
+            maxMovement = width - xEndBrush
+
+            moveRight = maxMovement*divisor
+
+            if(yDirections == "up"):
+
+                maxMovement = height - xStartBrush
+
+                moveUp = maxMovement*divisor
+
+                #Update in new selection extent position (when going up we substract, while going right we add)
+                newSelectionExtent = [[xStartBrush + moveRight,yStartBrush - moveUp],[xEndBrush + moveRight, yEndBrush - moveUp]]
+
+            #This means we're moving down
+            else:
+
+                maxMovement = height - xEndBrush
+
+                moveDown = maxMovement*divisor
+
+                #Update in new selection extent position (when going down we add, while going right we add)
+                newSelectionExtent = [[xStartBrush + moveRight,yStartBrush + moveDown],[xEndBrush + moveRight, yEndBrush + moveDown]]
+
+        #Means we are going left
+        else:
+            
+            maxMovement = width - xStartBrush
+
+            moveLeft = maxMovement*divisor
+
+            if(yDirections == "up"):
+    
+                maxMovement = height - xStartBrush
+
+                moveUp = maxMovement*divisor
+
+                #Update in new selection extent position (when going up we substract, while going left we substract)
+                newSelectionExtent = [[xStartBrush - moveLeft,yStartBrush - moveUp],[xEndBrush - moveLeft, yEndBrush - moveUp]]
+
+            #This means we're moving down
+            else:
+
+                maxMovement = height - xEndBrush
+
+                moveDown = maxMovement*divisor
+
+                #Update in new selection extent position (when going down we add, while going left we substarct)
+                newSelectionExtent = [[xStartBrush - moveLeft,yStartBrush + moveDown],[xEndBrush - moveLeft, yEndBrush + moveDown]]
+
+    return newSelectionExtent
+
+def PanBrush(brushableInfo):
+    
+    actionType = retTypeAction()
+
+    directions = brushableInfo["directions"]
+
+    brushExtent = brushableInfo["brushExtent"]
+
+    selectionExtent = brushableInfo["selectionExtent"]
+
+    #Variable to update
+    newSelectionExtent = None
+
+    #Dimension of the brushable area
+    width = brushExtent[1][0] - brushExtent[0][0]
+    height = brushExtent[1][1] - brushExtent[0][1]
+
+    #Dimension of the pannable area of the brush
+    widthBrush = brushExtent[1][0] - brushExtent[0][0]
+    heightBrush = brushExtent[1][1] - brushExtent[0][1]
+
+    #Starting,Ending and Middle point of the brushArea
+    xStartBrush = brushExtent[0][0]
+    yStartBrush = brushExtent[0][1]
+
+    xEndBrush = xStartBrush + widthBrush
+    yEndBrush = yStartBrush + heightBrush
+
+    xMiddleBrush = xStartBrush + widthBrush/2
+    yMiddleBrush = yStartBrush + heightBrush/2
+
+    #Here randomly is chosen where moving between "left/right" and "up/down"
+    xMove = random.randint(0,1)
+    yMove = random.randint(0,1)
+
+    xDirections = ["right","left"]
+    yDirections = ["up","down"]
+
+    xMove = xDirections[XMove]
+    yMove = yDirections[yMove]
+
+
+    newSelectionExtent = retBrush_PanBrush(actionType,width,height,xStartBrush,xEndBrush,yStartBrush,yEndBrush)
+
+    print(newSelectionExtent)
+
+    return newSelectionExtent
+
+"""
+
+#ZOOM and PANNINGZOOM FUNCTION
+#This is probably used only in the case of the "wheel", since with "dbclick" we have a fixed scale
+"""
+def Zoom():
+
+    actionType = retTypeAction()
+
+    #Starting point from which zooming 
+    xStart = random.uniform(0,width)
+    yStart = random.uniform(0,height)
+
+    return [actionType,(xStart,yStart)]
+
+#Returns an array with all the information
+def PanZoom(height,width):
+
+    actionType = retTypeAction()
+
+    #Starting point from which panning starts
+    xStart = random.uniform(0,width)
+    yStart = random.uniform(0,height)
+
+    #Here randomly is chosen where moving between "left/right" and "up/down"
+    xMove = random.randint(0,1)
+    yMove = random.randint(0,1)
+
+    xDirections = ["right","left"]
+    yDirections = ["up","down"]
+
+    xMove = xDirections[XMove]
+    yMove = yDirections[yMove]
+
+    return [actionType,(xStart,yStart),(xMove,yMove)]
+
+"""
 
 def retTypeAction():
     typeActions = ["L","M","H"]
