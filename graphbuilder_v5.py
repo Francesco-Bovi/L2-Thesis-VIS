@@ -327,6 +327,19 @@ def PanZoom(height,width):
 
 """
 
+#SLIDER CHANGE D3 (in which we know only the handler)
+
+"""
+
+def SliderD3(sliderInfo):
+
+    minValue = sliderInfo["aria-valuemin"]
+    maxValue = sliderInfo["aria-valuemax"]
+    currentValue = sliderInfo["aria-valuenow"]
+
+"""
+
+
 #SLIDER CHANGE HTML
 #This is the case when class = "input" and type = "range"
 """
@@ -355,6 +368,31 @@ def selectDropdownHtml(selectInfo):
     nextValueIndex = random.randint(0,len(possibleValues)-1)
 
     nextValue = possibleValues[nextValueIndex]["value"]
+
+    return nextValue
+
+"""
+
+#CHECKBOX HTML (the event is "change" but what is needed is a simple click)
+
+#INPUT TYPE NUMER HTML
+"""
+
+def inputNumberHtml(inputInfo):
+
+    minValue = inputInfo["min"]
+    maxValue = inputInfo["max"]
+    currentValue = inputInfo["value"]
+
+    step = inputInfo["step"]
+
+    possibleValues = []
+    for i in range(minValue,maxValue,step):
+        possibleValues.append(i)
+    
+    possibleValues.append(maxValue)
+
+    nextValue = random.randint(0,len(possibleValues)-1)
 
     return nextValue
 

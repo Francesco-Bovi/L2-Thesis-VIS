@@ -5,6 +5,9 @@ Slider html (input type="range") : https://bl.ocks.org/d3noob/raw/147791d51cf651
 Slider with path cursor : https://bl.ocks.org/johnwalley/raw/e1d256b81e51da68f7feb632a53c3518/?raw=true
 Tree with click on nodes : https://bl.ocks.org/d3noob/raw/8375092/?raw=true
 Map with clickable regions : https://namra00.github.io/Lending_Tree_Visualization/
+Select dropdown html: https://bl.ocks.org/patiencehaggin/raw/ffc6522a844cea9f0712282ba6d3cbeb/?raw=true
+Checkbox html : https://bl.ocks.org/almsuarez/raw/fc04cba1594938e5a10017af8a88d3af/?raw=true
+Input type number html : https://bl.ocks.org/d3noob/raw/10633704/?raw=true
 Dario Benvenuti's brexitVisualization : localhost:8000/brexitVisualization.html
 
 -----------D3 GRAPH GALLERY---------------------

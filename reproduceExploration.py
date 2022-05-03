@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.support.ui import Select
 
 
 consoleScript = "eventsList = ['click', 'dbclick','change','keydown','mousemove','mousedown','mouseup', 'mouseover','mouseleave','wheel'];\n\
@@ -198,9 +198,42 @@ if __name__ == "__main__":
         except:
             print("Element not found")
         else:
-            element = driver.find_element(by=By.CSS_SELECTOR, value="#ddSel")
+            element = Select(driver.find_element(by=By.CSS_SELECTOR, value="#ddSel"))
 
-            driver.execute_script('element = document.querySelector("#ddSel")')
-            driver.execute_script('element.value = "Kenya"')
+            element.select_by_visible_text('Kenya')
+
+    elif(inputString == "checkbox"):
+
+        driver.get("https://bl.ocks.org/almsuarez/raw/fc04cba1594938e5a10017af8a88d3af/?raw=true")
+
+        #Explicit wait
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR,"body > input:nth-child(7)"))
+            )
+        except:
+            print("Element not found")
+        else:
+            element = driver.find_element(by=By.CSS_SELECTOR, value="body > input:nth-child(7)")
+
+            actions = ActionChains(driver)
+            actions.move_to_element(element).click().release().perform()
+
+    elif(inputString == "number"):
+
+        driver.get("https://bl.ocks.org/d3noob/raw/10633704/?raw=true")
+
+        #Explicit wait
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR,"#nValue"))
+            )
+        except:
+            print("Element not found")
+        else:
+            element = driver.find_element(by=By.CSS_SELECTOR, value="#nValue")
+
+            element.clear()
+            element.send_keys("200")
 
     #driver.close()
