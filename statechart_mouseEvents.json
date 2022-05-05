@@ -3,7 +3,7 @@
       "stateId": 0,
       "ieo": [
         {
-          "nodeSelector": "#svgID",
+          "nodeSelector": "body svg",
           "tag": "svg",
           "attributes": [
             {
@@ -36,7 +36,7 @@
           "leadsToState": 0
         },
         {
-          "nodeSelector": "#svgID circle",
+          "nodeSelector": "body svg circle",
           "tag": "circle",
           "attributes": [
             {
@@ -82,7 +82,7 @@
           "leadsToState": 1
         },
         {
-          "nodeSelector": "#svgID circle",
+          "nodeSelector": "body svg circle",
           "tag": "circle",
           "attributes": [
             {
@@ -133,7 +133,7 @@
       "stateId": 1,
       "ieo": [
         {
-          "nodeSelector": "#svgID",
+          "nodeSelector": "body svg",
           "tag": "svg",
           "attributes": [
             {
@@ -166,7 +166,7 @@
           "leadsToState": 1
         },
         {
-          "nodeSelector": "#svgID circle",
+          "nodeSelector": "body svg circle",
           "tag": "circle",
           "attributes": [
             {
@@ -216,7 +216,7 @@
           "leadsToState": -1
         },
         {
-          "nodeSelector": "#svgID circle",
+          "nodeSelector": "body svg circle",
           "tag": "circle",
           "attributes": [
             {
@@ -271,7 +271,7 @@
       "stateId": 2,
       "ieo": [
         {
-          "nodeSelector": "#svgID",
+          "nodeSelector": "body svg",
           "tag": "svg",
           "attributes": [
             {
@@ -304,7 +304,7 @@
           "leadsToState": 2
         },
         {
-          "nodeSelector": "#svgID circle",
+          "nodeSelector": "body svg circle",
           "tag": "circle",
           "attributes": [
             {
@@ -354,7 +354,7 @@
           "leadsToState": 1
         },
         {
-          "nodeSelector": "#svgID circle",
+          "nodeSelector": "body svg circle",
           "tag": "circle",
           "attributes": [
             {

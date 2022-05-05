@@ -1,46 +1,40 @@
 [
     {
-        "selector": "#svgID",
+        "selector": "body svg",
         "event": "click",
         "info": [
-            [
-                231,
-                736
-            ]
+            465,
+            437
         ]
     },
     {
-        "selector": "#svgID circle",
+        "selector": "body svg circle",
         "event": "mouseover",
         "info": null
     },
     {
-        "selector": "#svgID",
+        "selector": "body svg",
         "event": "click",
         "info": [
-            [
-                364,
-                482
-            ]
+            244,
+            447
         ]
     },
     {
-        "selector": "#svgID circle",
+        "selector": "body svg circle",
         "event": "mouseout",
-        "info": null
+        "info": "12"
     },
     {
-        "selector": "#svgID",
+        "selector": "body svg",
         "event": "click",
         "info": [
-            [
-                219,
-                570
-            ]
+            78,
+            187
         ]
     },
     {
-        "selector": "#svgID circle",
+        "selector": "body svg circle",
         "event": "mouseover",
         "info": null
     }

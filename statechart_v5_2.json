@@ -1,7 +1,7 @@
 {
     "0": [
         {
-            "id": "#svgID",
+            "id": "body svg",
             "tag": "svg",
             "data": null,
             "event": "click",
@@ -18,7 +18,7 @@
             }
         },
         {
-            "id": "#svgID circle",
+            "id": "body svg circle",
             "tag": "circle",
             "data": [
                 {
@@ -45,7 +45,7 @@
             }
         },
         {
-            "id": "#svgID circle",
+            "id": "body svg circle",
             "tag": "circle",
             "data": [
                 {
@@ -74,7 +74,7 @@
     ],
     "1": [
         {
-            "id": "#svgID",
+            "id": "body svg",
             "tag": "svg",
             "data": null,
             "event": "click",
@@ -91,7 +91,7 @@
             }
         },
         {
-            "id": "#svgID circle",
+            "id": "body svg circle",
             "tag": "circle",
             "data": [
                 {
@@ -119,7 +119,7 @@
             }
         },
         {
-            "id": "#svgID circle",
+            "id": "body svg circle",
             "tag": "circle",
             "data": [
                 {
@@ -149,7 +149,7 @@
     ],
     "2": [
         {
-            "id": "#svgID",
+            "id": "body svg",
             "tag": "svg",
             "data": null,
             "event": "click",
@@ -166,7 +166,7 @@
             }
         },
         {
-            "id": "#svgID circle",
+            "id": "body svg circle",
             "tag": "circle",
             "data": [
                 {
@@ -194,7 +194,7 @@
             }
         },
         {
-            "id": "#svgID circle",
+            "id": "body svg circle",
             "tag": "circle",
             "data": [
                 {

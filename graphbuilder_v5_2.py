@@ -36,11 +36,11 @@ def Click(height,width):
         xClick = random.randint(0,height-1)
         yClick = random.randint(0,width-1)
 
-        return [(xClick,yClick)]
+        return (xClick,yClick)
 
     else:
 
-        return 0
+        return None
 
 #BRUSH FUNCTION
 def Brush(brushableInfo):
@@ -485,14 +485,15 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
     if(currentState["leadsToState"]==-1):
         return
 
-    idState = currentState["id"]
-    eventState  = currentState["event"]
+    idNode = currentState["id"]
+    eventNode  = currentState["event"]
     stylesNode = currentState["styles"]
     attributeNode = currentState["attributes"]
+    tagNode = currentState["tag"]
 
-    print("STATE: "+ stateNumber + "| ID: "+ idState)
+    print("STATE: "+ stateNumber + "| ID: "+ idNode)
 
-    if(eventState == "click"):
+    if(eventNode == "click"):
 
         height = None
         width = None
@@ -504,23 +505,37 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         infoClick = Click(height,width)
 
-        explorationState = {"selector":idState,"event":eventState,"info":infoClick}
+        explorationState = {"selector":idNode,"event":eventNode,"info":infoClick}
 
         explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idState)
+        UpdateScore(graphVisit,stateNumber,idNode)
 
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
-    else:
+    elif(eventNode == "mouseover"):
 
-        explorationState = {"selector":idState,"event":eventState,"info":None}
+        explorationState = {"selector":idNode,"event":eventNode,"info":None}
 
         explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idState)
+        UpdateScore(graphVisit,stateNumber,idNode)
 
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
+
+    elif(eventNode == "mouseout"):
+
+        infoOut = None
+
+        #If it's a circle we know its radius
+        if(tagNode == "circle"):
+
+            infoOut = attributeNode["r"]
+
+        explorationState = {"selector":idNode,"event":eventNode,"info":infoOut}
+
+        explorationSequence.append(explorationState)
+        UpdateScore(graphVisit,stateNumber,idNode)
 
 
 
