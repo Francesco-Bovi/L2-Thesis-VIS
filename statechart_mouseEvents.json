@@ -1,0 +1,408 @@
+[
+    {
+      "stateId": 0,
+      "ieo": [
+        {
+          "nodeSelector": "#svgID",
+          "tag": "svg",
+          "attributes": [
+            {
+              "name": "width",
+              "value": "800"
+            },
+            {
+              "name": "height",
+              "value": "600"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "600px"
+            },
+            {
+              "name": "width",
+              "value": "800px"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": null,
+          "event": "click",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": 0
+        },
+        {
+          "nodeSelector": "#svgID circle",
+          "tag": "circle",
+          "attributes": [
+            {
+              "name": "cx",
+              "value": "712.7272727272727"
+            },
+            {
+              "name": "cy",
+              "value": "535"
+            },
+            {
+              "name": "r",
+              "value": "6"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "auto"
+            },
+            {
+              "name": "width",
+              "value": "auto"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": [
+            {
+              "name": "x",
+              "value": 100
+            },
+            {
+              "name": "y",
+              "value": 110
+            }
+          ],
+          "event": "mouseover",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": 1
+        },
+        {
+          "nodeSelector": "#svgID circle",
+          "tag": "circle",
+          "attributes": [
+            {
+              "name": "cx",
+              "value": "712.7272727272727"
+            },
+            {
+              "name": "cy",
+              "value": "535"
+            },
+            {
+              "name": "r",
+              "value": "6"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "auto"
+            },
+            {
+              "name": "width",
+              "value": "auto"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": [
+            {
+              "name": "x",
+              "value": 100
+            },
+            {
+              "name": "y",
+              "value": 110
+            }
+          ],
+          "event": "mouseout",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": -1
+        }
+      ]
+    },
+    {
+      "stateId": 1,
+      "ieo": [
+        {
+          "nodeSelector": "#svgID",
+          "tag": "svg",
+          "attributes": [
+            {
+              "name": "width",
+              "value": "800"
+            },
+            {
+              "name": "height",
+              "value": "600"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "600px"
+            },
+            {
+              "name": "width",
+              "value": "800px"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": null,
+          "event": "click",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": 1
+        },
+        {
+          "nodeSelector": "#svgID circle",
+          "tag": "circle",
+          "attributes": [
+            {
+              "name": "cx",
+              "value": "712.7272727272727"
+            },
+            {
+              "name": "cy",
+              "value": "535"
+            },
+            {
+              "name": "r",
+              "value": "12"
+            },
+            {
+              "name": "fill",
+              "value": "orange"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "auto"
+            },
+            {
+              "name": "width",
+              "value": "auto"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": [
+            {
+              "name": "x",
+              "value": 100
+            },
+            {
+              "name": "y",
+              "value": 110
+            }
+          ],
+          "event": "mouseover",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": -1
+        },
+        {
+          "nodeSelector": "#svgID circle",
+          "tag": "circle",
+          "attributes": [
+            {
+              "name": "cx",
+              "value": "712.7272727272727"
+            },
+            {
+              "name": "cy",
+              "value": "535"
+            },
+            {
+              "name": "r",
+              "value": "12"
+            },
+            {
+              "name": "fill",
+              "value": "orange"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "auto"
+            },
+            {
+              "name": "width",
+              "value": "auto"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": [
+            {
+              "name": "x",
+              "value": 100
+            },
+            {
+              "name": "y",
+              "value": 110
+            }
+          ],
+          "event": "mouseout",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": 2
+        }
+      ]
+    },
+    {
+      "stateId": 2,
+      "ieo": [
+        {
+          "nodeSelector": "#svgID",
+          "tag": "svg",
+          "attributes": [
+            {
+              "name": "width",
+              "value": "800"
+            },
+            {
+              "name": "height",
+              "value": "600"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "600px"
+            },
+            {
+              "name": "width",
+              "value": "800px"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": null,
+          "event": "click",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": 2
+        },
+        {
+          "nodeSelector": "#svgID circle",
+          "tag": "circle",
+          "attributes": [
+            {
+              "name": "cx",
+              "value": "712.7272727272727"
+            },
+            {
+              "name": "cy",
+              "value": "535"
+            },
+            {
+              "name": "r",
+              "value": "6"
+            },
+            {
+              "name": "fill",
+              "value": "black"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "auto"
+            },
+            {
+              "name": "width",
+              "value": "auto"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": [
+            {
+              "name": "x",
+              "value": 100
+            },
+            {
+              "name": "y",
+              "value": 110
+            }
+          ],
+          "event": "mouseover",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": 1
+        },
+        {
+          "nodeSelector": "#svgID circle",
+          "tag": "circle",
+          "attributes": [
+            {
+              "name": "cx",
+              "value": "712.7272727272727"
+            },
+            {
+              "name": "cy",
+              "value": "535"
+            },
+            {
+              "name": "r",
+              "value": "6"
+            },
+            {
+              "name": "fill",
+              "value": "black"
+            }
+          ],
+          "styles": [
+            {
+              "name": "height",
+              "value": "auto"
+            },
+            {
+              "name": "width",
+              "value": "auto"
+            },
+            {
+              "name": "background-color",
+              "value": "rgba(0, 0, 0, 0)"
+            }
+          ],
+          "data": [
+            {
+              "name": "x",
+              "value": 100
+            },
+            {
+              "name": "y",
+              "value": 110
+            }
+          ],
+          "event": "mouseout",
+          "brushable": null,
+          "zoomable": null,
+          "leadsToState": -1
+        }
+      ]
+    }
+  ]

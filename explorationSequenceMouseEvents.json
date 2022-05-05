@@ -1,0 +1,47 @@
+[
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            [
+                231,
+                736
+            ]
+        ]
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            [
+                364,
+                482
+            ]
+        ]
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseout",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            [
+                219,
+                570
+            ]
+        ]
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseover",
+        "info": null
+    }
+]

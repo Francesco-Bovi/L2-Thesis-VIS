@@ -40,7 +40,8 @@ if __name__ == "__main__":
     if(inputString == "brush"):
         #BRUSH
 
-        driver.get("https://bl.ocks.org/cmgiven/raw/abca90f6ba5f0a14c54d1eb952f8949c/?raw=true") 
+        driver.get("https://bl.ocks.org/cmgiven/raw/abca90f6ba5f0a14c54d1eb952f8949c/?raw=true")
+        driver.maximize_window()
 
         #Explicit wait
         try:
@@ -81,6 +82,8 @@ if __name__ == "__main__":
         #SLIDER
 
         driver.get("https://bl.ocks.org/johnwalley/raw/e1d256b81e51da68f7feb632a53c3518/?raw=true")
+        driver.maximize_window()
+
         element = driver.find_element(by=By.CSS_SELECTOR, value="#slider-fill > svg > g > g.slider > g > path")
 
         #pixelsToMove = GetPixelsToMove(element,0.0125,0.025,0)
@@ -95,6 +98,8 @@ if __name__ == "__main__":
         #SLIDER2
 
         driver.get("https://bl.ocks.org/d3noob/raw/147791d51cf6516715914c49cb869f57/?raw=true")
+        driver.maximize_window()
+
         element = driver.find_element(by=By.CSS_SELECTOR, value="#nRadius")
 
         pixelsToMove = GetPixelsToMove(element,72,150,1)
@@ -115,6 +120,8 @@ if __name__ == "__main__":
         #ZOOM
     
         driver.get("https://bl.ocks.org/aleereza/raw/d2be3d62a09360a770b79f4e5527eea8/?raw=true")
+        driver.maximize_window()
+
         element = driver.find_element(by=By.CSS_SELECTOR,value="body > svg > rect")
         dimElement = [400,400]
         actions = ActionChains(driver)
@@ -140,6 +147,8 @@ if __name__ == "__main__":
         #ZOOM2
 
         driver.get("https://bl.ocks.org/kkdd/raw/c13a7d51b2f2afe297dbd7712853ebbb/?raw=true")
+        driver.maximize_window()
+
         actions = ActionChains(driver)
         element = driver.find_element(by=By.CSS_SELECTOR,value="#canvas > svg")
         #actions.move_to_element(element).double_click().perform()  #Raddoppia lo scale
@@ -166,6 +175,8 @@ if __name__ == "__main__":
         #CROSSFILTER
 
         driver.get("https://bl.ocks.org/micahstubbs/raw/66db7c01723983ff028584b6f304a54a/?raw=true")
+        driver.maximize_window()
+
         elements_selector = ["#hour-chart > svg > g > g.brush","#delay-chart > svg > g > g.brush","#distance-chart > svg > g > g.brush","#date-chart > svg > g > g.brush"]
         dimensions_histo = {
             "#hour-chart > svg > g > g.brush":240,
@@ -189,6 +200,7 @@ if __name__ == "__main__":
     elif(inputString == "select_dd"):
 
         driver.get("https://bl.ocks.org/patiencehaggin/raw/ffc6522a844cea9f0712282ba6d3cbeb/?raw=true")
+        driver.maximize_window()
 
         #Explicit wait
         try:
@@ -205,6 +217,7 @@ if __name__ == "__main__":
     elif(inputString == "checkbox"):
 
         driver.get("https://bl.ocks.org/almsuarez/raw/fc04cba1594938e5a10017af8a88d3af/?raw=true")
+        driver.maximize_window()
 
         #Explicit wait
         try:
@@ -222,6 +235,7 @@ if __name__ == "__main__":
     elif(inputString == "number"):
 
         driver.get("https://bl.ocks.org/d3noob/raw/10633704/?raw=true")
+        driver.maximize_window()
 
         #Explicit wait
         try:

@@ -1,0 +1,225 @@
+{
+    "0": [
+        {
+            "id": "#svgID",
+            "tag": "svg",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "width": 800,
+                "height": 600
+            },
+            "styles": {
+                "height": 600,
+                "width": 800
+            }
+        },
+        {
+            "id": "#svgID circle",
+            "tag": "circle",
+            "data": [
+                {
+                    "name": "x",
+                    "value": 100
+                },
+                {
+                    "name": "y",
+                    "value": 110
+                }
+            ],
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 1,
+            "attributes": {
+                "cx": "712.7272727272727",
+                "cy": "535",
+                "r": "6"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#svgID circle",
+            "tag": "circle",
+            "data": [
+                {
+                    "name": "x",
+                    "value": 100
+                },
+                {
+                    "name": "y",
+                    "value": 110
+                }
+            ],
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": -1,
+            "attributes": {
+                "cx": "712.7272727272727",
+                "cy": "535",
+                "r": "6"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "1": [
+        {
+            "id": "#svgID",
+            "tag": "svg",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 1,
+            "attributes": {
+                "width": 800,
+                "height": 600
+            },
+            "styles": {
+                "height": 600,
+                "width": 800
+            }
+        },
+        {
+            "id": "#svgID circle",
+            "tag": "circle",
+            "data": [
+                {
+                    "name": "x",
+                    "value": 100
+                },
+                {
+                    "name": "y",
+                    "value": 110
+                }
+            ],
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": -1,
+            "attributes": {
+                "cx": "712.7272727272727",
+                "cy": "535",
+                "r": "12",
+                "fill": "orange"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#svgID circle",
+            "tag": "circle",
+            "data": [
+                {
+                    "name": "x",
+                    "value": 100
+                },
+                {
+                    "name": "y",
+                    "value": 110
+                }
+            ],
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 2,
+            "attributes": {
+                "cx": "712.7272727272727",
+                "cy": "535",
+                "r": "12",
+                "fill": "orange"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "2": [
+        {
+            "id": "#svgID",
+            "tag": "svg",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 2,
+            "attributes": {
+                "width": 800,
+                "height": 600
+            },
+            "styles": {
+                "height": 600,
+                "width": 800
+            }
+        },
+        {
+            "id": "#svgID circle",
+            "tag": "circle",
+            "data": [
+                {
+                    "name": "x",
+                    "value": 100
+                },
+                {
+                    "name": "y",
+                    "value": 110
+                }
+            ],
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 1,
+            "attributes": {
+                "cx": "712.7272727272727",
+                "cy": "535",
+                "r": "6",
+                "fill": "black"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#svgID circle",
+            "tag": "circle",
+            "data": [
+                {
+                    "name": "x",
+                    "value": 100
+                },
+                {
+                    "name": "y",
+                    "value": 110
+                }
+            ],
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": -1,
+            "attributes": {
+                "cx": "712.7272727272727",
+                "cy": "535",
+                "r": "6",
+                "fill": "black"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ]
+}
