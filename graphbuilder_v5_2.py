@@ -411,10 +411,14 @@ def updateValue(graph,state,newValue):
 def CheckScore(graphVisit):
 
     for state in graphVisit:
-
+        
+        #print(state)
         for node in graphVisit[state]:
-            if(node["visit"]!=None and node["visit"]==0):
-                return 0
+
+            if(node["visit"]!=None):
+                print("STATE: "+state + " NODE: " + node["id"] + " visit: " + str(node["visit"]))
+                if(node["visit"]==0):
+                    return 0
     
     return 1
 
@@ -442,9 +446,9 @@ def retVisitNode(graphVisit,state,idNode):
 def ExplorationState(graph,graphVisit,state,stateNumber):
     global explorationSequence
 
-    """"
     print(graphVisit)
 
+    """
     if(CheckScore(graphVisit)):
         return
 
@@ -474,24 +478,19 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
             #-1 if the event cannot be triggered there
             if(str(currentState["leadsToState"]) != "-1"):
                 stateOk = 1
-
     """
 
-    print(graphVisit)
-
-    #To change
-    currentState = node
-
-    if(currentState["leadsToState"]==-1):
-        return
+    currentState = state
 
     idNode = currentState["id"]
     eventNode  = currentState["event"]
     stylesNode = currentState["styles"]
     attributeNode = currentState["attributes"]
     tagNode = currentState["tag"]
+    brushableNode = currentState["brushable"]
+    zoomableNode = currentState["zoomable"]
 
-    print("STATE: "+ stateNumber + "| ID: "+ idNode)
+    #print("STATE: "+ stateNumber + "| ID: "+ idNode)
 
     if(eventNode == "click"):
 
@@ -513,7 +512,8 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
-    elif(eventNode == "mouseover"):
+    #For the moment we try to not distinguish them "mouseover" and "mouseleave"
+    elif(eventNode == "mouseover" or eventNode == "mouseenter"):
 
         explorationState = {"selector":idNode,"event":eventNode,"info":None}
 
@@ -523,24 +523,59 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
-    elif(eventNode == "mouseout"):
+    elif(eventNode == "mouseout" or eventNode=="mouseleave"):
 
         infoOut = None
 
         #If it's a circle we know its radius
         if(tagNode == "circle"):
 
-            infoOut = attributeNode["r"]
+            infoOut = int(attributeNode["r"])
+
+        elif(stylesNode["height"]!=None or stylesNode["width"]!=None):
+
+            infoOut = (stylesNode["height"],stylesNode["width"])
 
         explorationState = {"selector":idNode,"event":eventNode,"info":infoOut}
+
+        #explorationSequence.append(explorationState)
+        UpdateScore(graphVisit,stateNumber,idNode)
+        #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
+
+
+    elif(eventNode == "mousedown"):
+
+        if(brushableNode==None and zoomableNode==None):
+
+            explorationState = {"selector":idNode,"event":eventNode,"info":None}
+
+            explorationSequence.append(explorationState)
+            UpdateScore(graphVisit,stateNumber,idNode)
+
+            #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
+
+    elif(eventNode == "mouseup"):
+
+        explorationState = {"selector":idNode,"event":eventNode,"info":None}
 
         explorationSequence.append(explorationState)
         UpdateScore(graphVisit,stateNumber,idNode)
 
+        #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
+    #elif(eventNode == "facsimile_back"):
 
-    return
-                    
+        #Since this is not a real event but just to go back to a state
+
+        #explorationState = {"selector":idNode,"event":eventNode,"info":None}
+
+        #explorationSequence.append(explorationState)
+        #UpdateScore(graphVisit,stateNumber,idNode)
+
+        #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
+        
+    return  
+
 
 #Here we make a preprocessing of the JSON statechart
 def statechartPreProcessing(statechart):
@@ -660,6 +695,8 @@ if(__name__=="__main__"):
 
     #Exploration of the graph
     #We know that "0" is the rest state, so the initial one
+    #ExplorationState(graph,graphVisit,graph["0"],"0")
+
     #ExplorationState(graph,graphVisit,graph["0"],"0")
 
     for state in graph:

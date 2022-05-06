@@ -1,41 +1,170 @@
 [
     {
-        "selector": "body svg",
+        "selector": "#svgID",
         "event": "click",
         "info": [
-            465,
-            437
+            126,
+            324
         ]
     },
     {
-        "selector": "body svg circle",
+        "selector": "#svgID",
+        "event": "mouseenter",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
         "event": "mouseover",
         "info": null
     },
     {
-        "selector": "body svg",
+        "selector": "#svgID circle",
+        "event": "mousedown",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseup",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
         "event": "click",
         "info": [
-            244,
-            447
+            194,
+            217
         ]
     },
     {
-        "selector": "body svg circle",
-        "event": "mouseout",
-        "info": "12"
+        "selector": "#svgID",
+        "event": "mouseenter",
+        "info": null
     },
     {
-        "selector": "body svg",
-        "event": "click",
-        "info": [
-            78,
-            187
-        ]
-    },
-    {
-        "selector": "body svg circle",
+        "selector": "#svgID circle",
         "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mousedown",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseup",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            543,
+            416
+        ]
+    },
+    {
+        "selector": "#svgID",
+        "event": "mouseenter",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mousedown",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseup",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            268,
+            378
+        ]
+    },
+    {
+        "selector": "#svgID",
+        "event": "mouseenter",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mousedown",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseup",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            192,
+            541
+        ]
+    },
+    {
+        "selector": "#svgID",
+        "event": "mouseenter",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mousedown",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseup",
+        "info": null
+    },
+    {
+        "selector": "#svgID",
+        "event": "click",
+        "info": [
+            355,
+            524
+        ]
+    },
+    {
+        "selector": "#svgID",
+        "event": "mouseenter",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mousedown",
+        "info": null
+    },
+    {
+        "selector": "#svgID circle",
+        "event": "mouseup",
         "info": null
     }
 ]

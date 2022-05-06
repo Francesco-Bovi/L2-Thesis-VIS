@@ -1,19 +1,23 @@
+We extract the final state chart for the next step from the global list 'states' and then write it in a json file
 
-The final structure will be a list of objects whose fields are:
- - stateId:  An integer uniquely identifying the state. The rest state has stateId 0.
- - ieo:      A list of objects for all the listeners of this state, each object fields are:
+  The final structure will be a list of objects whose fields are:
+  - stateId:  An integer uniquely identifying the state. The rest state has stateId 0.
+  - ieo:      A list of objects for all the listeners of this state, each object fields are:
 
- 	- nodeSelector: String of the selector for the current node
- 	- tag:          String of the element tag name
+    - nodeSelector: String of the selector for the current node
+    - tag:          String of the element tag name
 
- 	- attributes:   List of objects {name, value} for each element attribute (excluded 'id', 'class' and 'style') 
+    - attributes:   List of objects {name, value} for each element attribute (excluded 'id', 'class' and 'style') 
                     [null if there is none]
- 	- styles:       List of objects {name, value} for each relevant element style ('height', 'width')
- 	- data:         List of objects {name, value} for each element attached data [null if there is none]
+    - styles:       List of objects {name, value} for each relevant element style ('height', 'width')
+    - data:         List of objects {name, value} for each element attached data [null if there is none]
 
- 	- event:        String of the currently considered event of the element
- 	- brushable:    Object {handles, directions, brush_extent, selection_extent} with brush informations [null if the event is 
+    - event:        String of the currently considered event of the element. There could be special cases in which this field is
+                    'facsimile_back' (an event that does not exist), meaning that the arc was added later as a mean to go back
+                    from an "in" event that did not have a corresponding "out" event and did not trigger the creation of new
+                    listeners. The 'facsimile_back' arcs can then be crossed without triggering any event
+    - brushable:    Object {handles, directions, brush_extent, selection_extent} with brush informations [null if the event is 
                     not brush-related]
- 	- zoomable:     Object {scale, translate_x, translate_y} with zoom informations [null if the event is not zoom-related]
- 	- leadsToState: Integer indicating to which state triggering this event will bring you to, with respect to the stateId 
+    - zoomable:     Object {scale, translate_x, translate_y} with zoom informations [null if the event is not zoom-related]
+    - leadsToState: Integer indicating to which state triggering this event will bring you to, with respect to the stateId 
                     fields, or -1 if the event cannot be triggered there

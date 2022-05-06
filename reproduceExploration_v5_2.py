@@ -24,19 +24,45 @@ def GetPixelsToMove(Slider,Amount,SliderMax,SliderMin):
     return pixels
 
 
+def Mouseout(element,driver):
+
+    actions = ActionChains(driver)
+
+    actions.move_to_element(element).release().perform()
+
+    return
+
+def Mousedown(element,driver):
+
+    actions = ActionChains(driver)
+
+    actions.move_to_element(element).click_and_hold().perform()
+
+    return
+
 def Mouseout(element,infoOut,driver):
 
     if(infoOut!=None):
 
-        actions = ActionChains(driver)
+        #Case in which we know the height and width
+        if(type(infoOut) is tuple or type(infoOut) is list):
 
-        actions.move_by_offset(infoOut*2,infoOut*2)
+            actions = ActionChains(driver)
+
+            actions.move_by_offset(infoOut[0]+1,infoOut[0]+1).perform()
+
+        else:
+
+            actions = ActionChains(driver)
+
+            actions.move_by_offset(infoOut+1,infoOut+1).perform()
+            
     
     else:
 
         actions = ActionChains(driver)
 
-        actions.move_by_offset(100,100)
+        actions.move_by_offset(100,100).perform()
 
     return
 
@@ -76,7 +102,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get("http://bl.ocks.org/WilliamQLiu/raw/76ae20060e19bf42d774/?raw=true")
+    driver.get("http://127.0.0.1:5501/mouseEvents.html")
     driver.maximize_window()
 
     for state in explorationSequence:
@@ -95,17 +121,28 @@ if __name__ == "__main__":
             print("Element not found")
         else:
 
+            print("STATE: " + selector + " EVENT: " + event)
+            print(state["info"])
+
             if(event == "click"):
 
                 Click(element,state["info"],driver)
 
-            elif(event == "mouseover"):
+            elif(event == "mouseover" or event == "mouseenter"):
 
                 Mouseover(element,driver)
 
-            elif(event == "mouseout"):
+            elif(event == "mouseout" or event == "mouseleave"):
 
                 Mouseout(element,state["info"],driver)
+
+            elif(event == "mousedown"):
+
+                Mousedown(element,driver)
+            
+            elif(event == "mouseout"):
+
+                Mouseout(element,driver)
 
             actionSequence.append(event)
 
