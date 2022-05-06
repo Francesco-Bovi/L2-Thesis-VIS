@@ -1,0 +1,1422 @@
+[
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#map",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#resultsButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#ageButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#bothButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#selectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#deselectAllButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#path_E06000001",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#mapBar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#bar_0",
+        "event": "mouseover",
+        "info": null
+    },
+    {
+        "selector": "#plotButton",
+        "event": "click",
+        "info": null
+    },
+    {
+        "selector": "#circle_E06000031",
+        "event": "mouseover",
+        "info": null
+    }
+]

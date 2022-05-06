@@ -30,11 +30,11 @@ explorationSequence = []
 #Otherwise we click on the element at the middle (Selenium will do this)
 def Click(height,width):
 
-    if(height!=None and width!=None):
+    if(height!="auto" and width!="auto"):
 
         #Choose randomly a point to click
-        xClick = random.randint(0,height-1)
-        yClick = random.randint(0,width-1)
+        xClick = random.uniform(0,height-1)
+        yClick = random.uniform(0,width-1)
 
         return (xClick,yClick)
 
@@ -494,20 +494,25 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
     if(eventNode == "click"):
 
-        height = None
-        width = None
+        #If the tag is button we don't need any other information
+        if(tagNode == "button"):
 
-        if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+            explorationState = {"selector":idNode,"event":eventNode,"info":None}
+
+            explorationSequence.append(explorationState)
+            UpdateScore(graphVisit,stateNumber,idNode)
+
+        else:
 
             width = stylesNode["width"]
             height = stylesNode["height"]
 
-        infoClick = Click(height,width)
+            infoClick = Click(height,width)
 
-        explorationState = {"selector":idNode,"event":eventNode,"info":infoClick}
+            explorationState = {"selector":idNode,"event":eventNode,"info":infoClick}
 
-        explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idNode)
+            explorationSequence.append(explorationState)
+            UpdateScore(graphVisit,stateNumber,idNode)
 
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
@@ -530,7 +535,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
         #If it's a circle we know its radius
         if(tagNode == "circle"):
 
-            infoOut = int(attributeNode["r"])
+            infoOut = float(attributeNode["r"])
 
         elif(stylesNode["height"]!=None or stylesNode["width"]!=None):
 
@@ -608,7 +613,7 @@ def statechartPreProcessing(statechart):
                 
                 if(key["name"] == "height" or key["name"] == "width"):
                 
-                    newNode["attributes"][key["name"]] = int(key["value"])
+                    newNode["attributes"][key["name"]] = float(key["value"])
                 
                 else:
 
@@ -624,7 +629,7 @@ def statechartPreProcessing(statechart):
 
                     if(key["value"] != "auto"):
                 
-                        newNode["styles"][key["name"]] = int(key["value"][:len(key["value"])-2])
+                        newNode["styles"][key["name"]] = float(key["value"][:len(key["value"])-2])
 
                     else:
 
@@ -670,7 +675,7 @@ def createGraphVisit(graph):
 if(__name__=="__main__"):
     
     #open the statechart json file
-    statechart_j=open('statechart_mouseEvents.json')
+    statechart_j=open('statechart_brexit.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -687,7 +692,7 @@ if(__name__=="__main__"):
     print("GraphVisit:",json.dumps(graphVisit,indent=4))
 
     #Save graph on a file
-    with open('statechart_v5_2.json', 'w') as fp:
+    with open('statechart_v5Brexit.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
     print(transitionsList)
@@ -708,7 +713,7 @@ if(__name__=="__main__"):
     print(explorationSequence)
     
     #Save exploration sequence that will be passed to Selenium
-    with open('explorationSequenceMouseEvents.json', 'w') as fp:
+    with open('explorationBrexit.json', 'w') as fp:
         json.dump(explorationSequence, fp,  indent=4)
 
     print("------------------------------------------------------------------------------")

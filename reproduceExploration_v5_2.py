@@ -93,7 +93,7 @@ def Click(element,clickInfo,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorationSequenceMouseEvents.json')
+    explorationSequence = open('explorationBrexit.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -102,7 +102,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get("http://127.0.0.1:5501/mouseEvents.html")
+    driver.get("http://localhost:8000/brexitVisualization.html")
     driver.maximize_window()
 
     for state in explorationSequence:
