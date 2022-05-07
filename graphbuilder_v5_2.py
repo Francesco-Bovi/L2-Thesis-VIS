@@ -352,13 +352,15 @@ def SliderHtml(sliderInfo):
 
     minValue = sliderInfo["min"]
     maxValue = sliderInfo["max"]
-    currentValue = sliderInfo["value"]
+    
+    #Per ora escludiamo di averlo
+    # currentValue = sliderInfo["value"]
 
     width = sliderInfo["width"]
 
     actionType = retTypeAction()
 
-    return [actionType,minValue,maxValue,currentValue,width]
+    return ["range",actionType,(minValue,maxValue,width)]
 
 
 #SELECT DROPDOWN HTML
@@ -568,6 +570,19 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
+    elif(eventNode == "input"):
+
+        if(attributeNode["type"]!=None):
+
+            if(attributeNode["type"]=="range"):
+
+                sliderHtmlInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"width":stylesNode["width"]}
+
+                explorationState = {"selector":idNode,"event":eventNode,"info": SliderHtml(sliderHtmlInfo)}
+
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
+
     #elif(eventNode == "facsimile_back"):
 
         #Since this is not a real event but just to go back to a state
@@ -675,7 +690,7 @@ def createGraphVisit(graph):
 if(__name__=="__main__"):
     
     #open the statechart json file
-    statechart_j=open('statechart_brexit.json')
+    statechart_j=open('C:/Users/Fran/Desktop/SAPIENZA/Engineering in Computer Science/Master Thesis/MatteoScript/material/statechart.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -692,7 +707,7 @@ if(__name__=="__main__"):
     print("GraphVisit:",json.dumps(graphVisit,indent=4))
 
     #Save graph on a file
-    with open('statechart_v5Brexit.json', 'w') as fp:
+    with open('statechart_v5_sliderhtml.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
     print(transitionsList)
@@ -713,7 +728,7 @@ if(__name__=="__main__"):
     print(explorationSequence)
     
     #Save exploration sequence that will be passed to Selenium
-    with open('explorationBrexit.json', 'w') as fp:
+    with open('explorationSliderHtml.json', 'w') as fp:
         json.dump(explorationSequence, fp,  indent=4)
 
     print("------------------------------------------------------------------------------")

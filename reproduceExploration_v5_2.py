@@ -10,19 +10,47 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 
-def GetPixelsToMove(Slider,Amount,SliderMax,SliderMin):
-    pixels = 0
-    tempPixels = 129
+def GetPixelsBack(min,max,width):
 
-    """
-    tempPixels = tempPixels / (SliderMax - SliderMin)
-    tempPixels = tempPixels * (Amount - SliderMin)
-    pixels = tempPixels
-    """
+    return -width/2
 
-    pixels = (tempPixels*Amount)/SliderMax
+def GetPixelsToMove(min,max,width,actionType):
+
+    divisor = None
+    if(actionType == "L"):
+
+        divisor = 1/3
+    
+    elif(actionType == "M"):
+
+        divisor = 1/2
+
+    else:
+
+        divisor = 2/3
+
+    pixels = width*divisor
     return pixels
 
+
+def Input(element,infoInput,driver):
+
+    actionType = infoInput[1]
+
+    if(infoInput[0] == "range"):
+
+        tupleInfo = infoInput[2]
+
+        pixelsOffsetBack = GetPixelsBack(tupleInfo[0],tupleInfo[1],tupleInfo[2])
+
+        pixelsOffset = GetPixelsToMove(tupleInfo[0],tupleInfo[1],tupleInfo[2],actionType)
+
+        actions = ActionChains(driver)
+
+        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release().click_and_hold().move_by_offset(pixelsOffset,0).release().perform()
+
+    return
+        
 
 def Mouseout(element,driver):
 
@@ -93,7 +121,7 @@ def Click(element,clickInfo,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorationBrexit.json')
+    explorationSequence = open('explorationSliderHtml.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -102,7 +130,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get("http://localhost:8000/brexitVisualization.html")
+    driver.get('http://127.0.0.1:5501/MatteoScript/sliderhtml.html')
     driver.maximize_window()
 
     for state in explorationSequence:
@@ -143,6 +171,10 @@ if __name__ == "__main__":
             elif(event == "mouseout"):
 
                 Mouseout(element,driver)
+
+            elif(event == "input"):
+
+                Input(element,state["info"],driver)
 
             actionSequence.append(event)
 

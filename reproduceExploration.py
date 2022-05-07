@@ -20,7 +20,7 @@ consoleScript = "eventsList = ['click', 'dbclick','change','keydown','mousemove'
 
 def GetPixelsToMove(Slider,Amount,SliderMax,SliderMin):
     pixels = 0
-    tempPixels = 129
+    tempPixels = 133
 
     """
     tempPixels = tempPixels / (SliderMax - SliderMin)
@@ -35,7 +35,9 @@ def GetPixelsToMove(Slider,Amount,SliderMax,SliderMin):
 if __name__ == "__main__":
     driver = webdriver.Chrome()
 
-    inputString = input("Inserisci tipo di visualizzazione da testare: ")
+    #inputString = input("Inserisci tipo di visualizzazione da testare: ")
+
+    inputString = "slider2"
 
     if(inputString == "brush"):
         #BRUSH
@@ -102,7 +104,7 @@ if __name__ == "__main__":
 
         element = driver.find_element(by=By.CSS_SELECTOR, value="#nRadius")
 
-        pixelsToMove = GetPixelsToMove(element,72,150,1)
+        pixelsToMove = GetPixelsToMove(element,81,150,1)
         print(pixelsToMove)
 
         pixelsToMove2 = GetPixelsToMove(element,120,150,1)
