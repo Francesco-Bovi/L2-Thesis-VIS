@@ -49,9 +49,9 @@ def Brush(brushableInfo):
 
     directions = brushableInfo["directions"]
 
-    brushExtent = brushableInfo["brushExtent"]
+    brushExtent = brushableInfo["brush_extent"]
 
-    selectionExtent = brushableInfo["selectionExtent"]
+    selectionExtent = brushableInfo["selection_extent"]
 
     #Object to return with the new selection extent
     newSelectionExtent = None
@@ -175,7 +175,7 @@ def Brush(brushableInfo):
             yStartBrush = random.uniform(0,heightBrush - heightBrush*(2/3))
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush*(2/3)]]
+            newSelectionExtent = [xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush*(2/3)]
 
     return newSelectionExtent
 
@@ -561,6 +561,16 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
+        elif(brushableNode!=None):
+
+            newSelectionExtent = Brush(brushableNode)
+
+            explorationState = {"selector":idNode,"event":eventNode,"info":newSelectionExtent}
+
+            explorationSequence.append(explorationState)
+            UpdateScore(graphVisit,stateNumber,idNode)
+
+
     elif(eventNode == "mouseup"):
 
         explorationState = {"selector":idNode,"event":eventNode,"info":None}
@@ -582,6 +592,21 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 explorationSequence.append(explorationState)
                 UpdateScore(graphVisit,stateNumber,idNode)
+
+            elif(attributeNode["type"]=="number"):
+
+                numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
+
+                explorationState = {"selector":idNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
+    
+    #elif(eventNode == "change"):
+
+    #    if(tagNode=="select"):
+
+
 
     #elif(eventNode == "facsimile_back"):
 
@@ -707,7 +732,7 @@ if(__name__=="__main__"):
     print("GraphVisit:",json.dumps(graphVisit,indent=4))
 
     #Save graph on a file
-    with open('statechart_v5_sliderhtml.json', 'w') as fp:
+    with open('statechart_v5_brushmorescatter.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
     print(transitionsList)
@@ -728,7 +753,7 @@ if(__name__=="__main__"):
     print(explorationSequence)
     
     #Save exploration sequence that will be passed to Selenium
-    with open('explorationSliderHtml.json', 'w') as fp:
+    with open('explorationBrushMoreScatter.json', 'w') as fp:
         json.dump(explorationSequence, fp,  indent=4)
 
     print("------------------------------------------------------------------------------")

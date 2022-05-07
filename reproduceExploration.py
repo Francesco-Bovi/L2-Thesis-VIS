@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     #inputString = input("Inserisci tipo di visualizzazione da testare: ")
 
-    inputString = "slider2"
+    inputString = "slider"
 
     if(inputString == "brush"):
         #BRUSH

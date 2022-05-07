@@ -1,0 +1,10 @@
+[
+    {
+        "selector": "#nValue",
+        "event": "input",
+        "info": [
+            "number",
+            30
+        ]
+    }
+]

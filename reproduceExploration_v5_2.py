@@ -49,6 +49,11 @@ def Input(element,infoInput,driver):
 
         actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release().click_and_hold().move_by_offset(pixelsOffset,0).release().perform()
 
+    elif(infoInput[0] == "number"):
+
+        element.clear()
+        element.send_keys(str(infoInput[1]))
+    
     return
         
 
@@ -118,10 +123,25 @@ def Click(element,clickInfo,driver):
 
     return
 
+def Brush(element,infoBrush,driver):
+
+    Start = infoBrush[0]
+    End = infoBrush[1]
+
+    xStart = Start[0]
+    yStart = Start[1]
+
+    xEnd = End[0]
+    yEnd = End[1]
+
+    actions = ActionChains(driver)
+
+    actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().move_by_offset(xEnd-xStart,yEnd-yStart).release().perform()
+
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorationSliderHtml.json')
+    explorationSequence = open('explorationBrushMoreScatter.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -130,7 +150,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/MatteoScript/sliderhtml.html')
+    driver.get('http://127.0.0.1:5501/MatteoScript/brushmorescatter.html')
     driver.maximize_window()
 
     for state in explorationSequence:
@@ -166,7 +186,13 @@ if __name__ == "__main__":
 
             elif(event == "mousedown"):
 
-                Mousedown(element,driver)
+                if(state["info"]!=None):
+
+                    Brush(element,state["info"],driver)
+
+                else:
+
+                    Mousedown(element,driver)
             
             elif(event == "mouseout"):
 
