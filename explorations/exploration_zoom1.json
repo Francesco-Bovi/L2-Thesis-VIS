@@ -1,0 +1,35 @@
+[
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "H",
+            [
+                94,
+                299
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "mousedown",
+        "info": [
+            "zoom",
+            [
+                "M",
+                [
+                    400.0,
+                    400.0
+                ],
+                [
+                    109,
+                    354
+                ],
+                [
+                    "left",
+                    "up"
+                ]
+            ]
+        ]
+    }
+]

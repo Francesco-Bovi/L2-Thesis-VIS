@@ -32,6 +32,84 @@ def GetPixelsToMove(min,max,width,actionType):
     pixels = width*divisor
     return pixels
 
+def PanZoom(element,zoomInfo,driver):
+
+    actionType = zoomInfo[0]
+
+    divisor = None
+    if(actionType == "L"):
+
+        divisor = 1/3
+    
+    elif(actionType == "M"):
+
+        divisor = 1/2
+
+    else:
+
+        divisor = 2/3
+
+    #Retrieve all the information for performing the panning
+    height = zoomInfo[1][0]
+    width = zoomInfo[1][1]
+
+    xStart = zoomInfo[2][0]
+    yStart = zoomInfo[2][1]
+
+    xMove = zoomInfo[3][0]
+    yMove = zoomInfo[3][1]
+
+    #Here we calculate the space that we have horizontally
+    #and vertically in order to perform the panning
+    if(xMove == "right"):
+
+        spaceHorizontal = width - xStart
+    
+    else:
+
+        spaceHorizontal = -xStart
+
+    if(yMove == "down"):
+
+        spaceVertical = height - yStart
+
+    else:
+
+        spaceVertical = -yStart
+
+    actions = ActionChains(driver)
+    actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().move_by_offset(spaceHorizontal*divisor,spaceVertical*divisor).release().perform()
+
+    return
+    
+
+
+def Zoom(element,infoInput,driver):
+
+    actionType = infoInput[0]
+
+    xPoint=infoInput[1][0]
+    yPoint=infoInput[1][1]
+
+    scrollSize = None
+
+    if(actionType == "L"):
+
+        scrollSize = -100
+
+    elif(actionType == "M"):
+
+        scrollSize = -200
+    
+    else:
+
+        scrollSize = -300
+
+    actions = ActionChains(driver)
+
+    actions.move_to_element(element).scroll(xPoint,yPoint,0,scrollSize).release().perform()
+
+    return
 
 def Input(element,infoInput,driver):
 
@@ -53,6 +131,12 @@ def Input(element,infoInput,driver):
 
         element.clear()
         element.send_keys(str(infoInput[1]))
+
+    elif(infoInput[0] == "checkbox" or infoInput[0] == "radio"):
+
+        actions = ActionChains(driver)
+
+        actions.move_to_element(element).click().release().perform()
     
     return
         
@@ -141,7 +225,7 @@ def Brush(element,infoBrush,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorationBrushMoreScatter.json')
+    explorationSequence = open('explorations/exploration_zoom1.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -150,7 +234,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/MatteoScript/brushmorescatter.html')
+    driver.get('http://127.0.0.1:5501/MatteoScript/zoomablescatter1.html')
     driver.maximize_window()
 
     for state in explorationSequence:
@@ -186,14 +270,22 @@ if __name__ == "__main__":
 
             elif(event == "mousedown"):
 
-                if(state["info"]!=None):
+                if(state["info"][0] == "brush"):
 
-                    Brush(element,state["info"],driver)
+                    Brush(element,state["info"][1],driver)
+
+                elif(state["info"][0] == "zoom"):
+
+                    PanZoom(element,state["info"][1],driver)
 
                 else:
 
                     Mousedown(element,driver)
-            
+
+            elif(event == "wheel"):
+
+                Zoom(element,state["info"],driver)
+
             elif(event == "mouseout"):
 
                 Mouseout(element,driver)

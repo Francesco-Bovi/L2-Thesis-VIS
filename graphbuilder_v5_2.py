@@ -308,34 +308,43 @@ def Zoom(zoomInfo):
     actionType = retTypeAction()
 
     width = zoomInfo["width"]
-    height = zoomInfo["hieght"]
+    height = zoomInfo["height"]
 
     #Starting point from which zooming 
-    xStart = random.uniform(0,width)
-    yStart = random.uniform(0,height)
+    xStart = random.randint(0,width)
+    yStart = random.randint(0,height)
 
     return [actionType,(xStart,yStart)]
 
 #Returns an array with all the information
-def PanZoom(height,width):
+def PanZoom(panZoomInfo):
 
     actionType = retTypeAction()
 
-    #Starting point from which panning starts
-    xStart = random.uniform(0,width)
-    yStart = random.uniform(0,height)
+    if(panZoomInfo==None):
 
-    #Here randomly is chosen where moving between "left/right" and "up/down"
-    xMove = random.randint(0,1)
-    yMove = random.randint(0,1)
+        return [actionType,None]
 
-    xDirections = ["right","left"]
-    yDirections = ["up","down"]
+    else:
 
-    xMove = xDirections[xMove]
-    yMove = yDirections[yMove]
+        height = panZoomInfo["height"]
+        width = panZoomInfo["width"]
 
-    return [actionType,(xStart,yStart),(xMove,yMove)]
+        #Starting point from which panning starts
+        xStart = random.randint(0,width)
+        yStart = random.randint(0,height)
+
+        #Here randomly is chosen where moving between "left/right" and "up/down"
+        xMove = random.randint(0,1)
+        yMove = random.randint(0,1)
+
+        xDirections = ["right","left"]
+        yDirections = ["up","down"]
+
+        xMove = xDirections[xMove]
+        yMove = yDirections[yMove]
+
+        return [actionType,(height,width),(xStart,yStart),(xMove,yMove)]
 
 
 #SLIDER CHANGE D3 (in which we know only the handler)
@@ -565,11 +574,45 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             newSelectionExtent = Brush(brushableNode)
 
-            explorationState = {"selector":idNode,"event":eventNode,"info":newSelectionExtent}
+            explorationState = {"selector":idNode,"event":eventNode,"info":["brush",newSelectionExtent]}
 
             explorationSequence.append(explorationState)
             UpdateScore(graphVisit,stateNumber,idNode)
 
+        elif(zoomableNode!=None):
+
+            if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+        
+                panZoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
+
+            else: 
+
+                    panZoomInfo = None
+                
+            retInfo = PanZoom(panZoomInfo)
+
+            explorationState = {"selector":idNode,"event":eventNode,"info":["zoom",retInfo]}
+
+            explorationSequence.append(explorationState)
+            UpdateScore(graphVisit,stateNumber,idNode)
+
+        
+    elif(eventNode == "wheel"):
+
+        if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+    
+                zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
+
+        else: 
+
+                zoomInfo = None
+            
+        retInfo = Zoom(zoomInfo)
+
+        explorationState = {"selector":idNode,"event":eventNode,"info":retInfo}
+
+        explorationSequence.append(explorationState)
+        UpdateScore(graphVisit,stateNumber,idNode)
 
     elif(eventNode == "mouseup"):
 
@@ -601,21 +644,36 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 explorationSequence.append(explorationState)
                 UpdateScore(graphVisit,stateNumber,idNode)
+
+            #We treat this case like it was a button
+            elif(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
+
+                explorationState = {"selector":idNode,"event":eventNode,"info":[attributeNode["type"],None]}
+
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
     
-    #elif(eventNode == "change"):
+    elif(eventNode == "change"):
 
-    #    if(tagNode=="select"):
+        if(tagNode=="input"):
+
+            if(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
+    
+                explorationState = {"selector":idNode,"event":eventNode,"info":[attributeNode["type"],None]}
+
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
 
 
 
-    #elif(eventNode == "facsimile_back"):
+    elif(eventNode == "facsimile_back"):
 
         #Since this is not a real event but just to go back to a state
 
-        #explorationState = {"selector":idNode,"event":eventNode,"info":None}
+        explorationState = {"selector":idNode,"event":eventNode,"info":None}
 
-        #explorationSequence.append(explorationState)
-        #UpdateScore(graphVisit,stateNumber,idNode)
+        explorationSequence.append(explorationState)
+        UpdateScore(graphVisit,stateNumber,idNode)
 
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
         
@@ -713,9 +771,11 @@ def createGraphVisit(graph):
     return newGraph
 
 if(__name__=="__main__"):
+
+    nameVis = input("Insert name of the visualization: ")
     
     #open the statechart json file
-    statechart_j=open('C:/Users/Fran/Desktop/SAPIENZA/Engineering in Computer Science/Master Thesis/MatteoScript/material/statechart.json')
+    statechart_j=open('statecharts/statechart_'+nameVis+'.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -732,7 +792,7 @@ if(__name__=="__main__"):
     print("GraphVisit:",json.dumps(graphVisit,indent=4))
 
     #Save graph on a file
-    with open('statechart_v5_brushmorescatter.json', 'w') as fp:
+    with open('postprocess_statecharts/ppstatehcart_'+nameVis+'.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
     print(transitionsList)
@@ -753,7 +813,7 @@ if(__name__=="__main__"):
     print(explorationSequence)
     
     #Save exploration sequence that will be passed to Selenium
-    with open('explorationBrushMoreScatter.json', 'w') as fp:
+    with open('explorations/exploration_'+nameVis+'.json', 'w') as fp:
         json.dump(explorationSequence, fp,  indent=4)
 
     print("------------------------------------------------------------------------------")
