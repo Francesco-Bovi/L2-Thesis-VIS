@@ -43,10 +43,8 @@ def Click(height,width):
         return None
 
 #BRUSH FUNCTION
-def Brush(brushableInfo):
+def Brush(actionType,brushableInfo):
     
-    actionType = retTypeAction()
-
     directions = brushableInfo["directions"]
 
     brushExtent = brushableInfo["brush_extent"]
@@ -179,133 +177,9 @@ def Brush(brushableInfo):
 
     return newSelectionExtent
 
-#PANNINGBRUSH FUNCTION
-def retBrush_PanBrush(actionType,width,height,xStartBrush,xEndBrush,yStartBrush,yEndBrush,xDirections,yDirections):
-
-    #It depends by the type of action
-    divisor = None
-
-    #What we must return
-    newSelectionExtent = None
-
-    if(actionType == "L"):
-
-        divisor = 1/2
-    
-    elif(actionType == "M"):
-
-        divisor = 1/4
-
-    else:
-
-        divisor = 2/3
-
-    if(xDirections == "right"):
-    
-            maxMovement = width - xEndBrush
-
-            moveRight = maxMovement*divisor
-
-            if(yDirections == "up"):
-
-                maxMovement = height - xStartBrush
-
-                moveUp = maxMovement*divisor
-
-                #Update in new selection extent position (when going up we substract, while going right we add)
-                newSelectionExtent = [[xStartBrush + moveRight,yStartBrush - moveUp],[xEndBrush + moveRight, yEndBrush - moveUp]]
-
-            #This means we're moving down
-            else:
-
-                maxMovement = height - xEndBrush
-
-                moveDown = maxMovement*divisor
-
-                #Update in new selection extent position (when going down we add, while going right we add)
-                newSelectionExtent = [[xStartBrush + moveRight,yStartBrush + moveDown],[xEndBrush + moveRight, yEndBrush + moveDown]]
-
-        #Means we are going left
-    else:
-            
-            maxMovement = width - xStartBrush
-
-            moveLeft = maxMovement*divisor
-
-            if(yDirections == "up"):
-    
-                maxMovement = height - xStartBrush
-
-                moveUp = maxMovement*divisor
-
-                #Update in new selection extent position (when going up we substract, while going left we substract)
-                newSelectionExtent = [[xStartBrush - moveLeft,yStartBrush - moveUp],[xEndBrush - moveLeft, yEndBrush - moveUp]]
-
-            #This means we're moving down
-            else:
-
-                maxMovement = height - xEndBrush
-
-                moveDown = maxMovement*divisor
-
-                #Update in new selection extent position (when going down we add, while going left we substarct)
-                newSelectionExtent = [[xStartBrush - moveLeft,yStartBrush + moveDown],[xEndBrush - moveLeft, yEndBrush + moveDown]]
-
-    return newSelectionExtent
-
-def PanBrush(brushableInfo):
-    
-    actionType = retTypeAction()
-
-    directions = brushableInfo["directions"]
-
-    brushExtent = brushableInfo["brushExtent"]
-
-    selectionExtent = brushableInfo["selectionExtent"]
-
-    #Variable to update
-    newSelectionExtent = None
-
-    #Dimension of the brushable area
-    width = brushExtent[1][0] - brushExtent[0][0]
-    height = brushExtent[1][1] - brushExtent[0][1]
-
-    #Dimension of the pannable area of the brush
-    widthBrush = brushExtent[1][0] - brushExtent[0][0]
-    heightBrush = brushExtent[1][1] - brushExtent[0][1]
-
-    #Starting,Ending and Middle point of the brushArea
-    xStartBrush = brushExtent[0][0]
-    yStartBrush = brushExtent[0][1]
-
-    xEndBrush = xStartBrush + widthBrush
-    yEndBrush = yStartBrush + heightBrush
-
-    xMiddleBrush = xStartBrush + widthBrush/2
-    yMiddleBrush = yStartBrush + heightBrush/2
-
-    #Here randomly is chosen where moving between "left/right" and "up/down"
-    xMove = random.randint(0,1)
-    yMove = random.randint(0,1)
-
-    xDirections = ["right","left"]
-    yDirections = ["up","down"]
-
-    xMove = xDirections[xMove]
-    yMove = yDirections[yMove]
-
-
-    newSelectionExtent = retBrush_PanBrush(actionType,width,height,xStartBrush,xEndBrush,yStartBrush,yEndBrush,xMove,yMove)
-
-    print(newSelectionExtent)
-
-    return newSelectionExtent
-
 #ZOOM and PANNINGZOOM FUNCTION
 #This is probably used only in the case of the "wheel", since with "dbclick" we have a fixed scale
-def Zoom(zoomInfo):
-
-    actionType = retTypeAction()
+def Zoom(actionType,zoomInfo):
 
     width = zoomInfo["width"]
     height = zoomInfo["height"]
@@ -317,9 +191,7 @@ def Zoom(zoomInfo):
     return [actionType,(xStart,yStart)]
 
 #Returns an array with all the information
-def PanZoom(panZoomInfo):
-
-    actionType = retTypeAction()
+def PanZoom(actionType,panZoomInfo):
 
     if(panZoomInfo==None):
 
@@ -346,9 +218,8 @@ def PanZoom(panZoomInfo):
 
         return [actionType,(height,width),(xStart,yStart),(xMove,yMove)]
 
-
-#SLIDER CHANGE D3 (in which we know only the handler)
 """
+#SLIDER CHANGE D3 (in which we know only the handler)
 def SliderD3(sliderInfo):
 
     minValue = sliderInfo["aria-valuemin"]
@@ -368,9 +239,7 @@ def SliderHtml(sliderInfo):
 
     width = sliderInfo["width"]
 
-    actionType = retTypeAction()
-
-    return ["range",actionType,(minValue,maxValue,width)]
+    return ["range",None,(minValue,maxValue,width)]
 
 
 #SELECT DROPDOWN HTML
@@ -404,12 +273,6 @@ def inputNumberHtml(inputInfo):
     nextValue = random.randint(0,len(possibleValues)-1)
 
     return nextValue
-
-
-def retTypeAction():
-    typeActions = ["L","M","H"]
-
-    return typeActions[random.randint(0,2)]
 
 #Check when interrupt the exploration
 def CheckScore(graphVisit):
@@ -450,39 +313,7 @@ def retVisitNode(graphVisit,state,idNode):
 def ExplorationState(graph,graphVisit,state,stateNumber):
     global explorationSequence
 
-    print(graphVisit)
-
-    """
-    if(CheckScore(graphVisit)):
-        return
-
-    nStates = len(state)
-
-    currentState = None
-
-    #We give priority to non visited nodes
-    for node in state:
-        idNode = node["id"]
-        if(retVisitNode(graphVisit,stateNumber,idNode) == 0 and str(node["leadsToState"]) != "-1"):
-
-            currentState = node
-
-    #We must go random if we have already visited all the nodes in a state
-    if(currentState==None):
-
-        stateOk = 0
-        while(not stateOk):
-
-            #Go randomly
-            randomState = random.randint(0,nStates-1)
-
-            #current State by going randomly
-            currentState = state[randomState]
-
-            #-1 if the event cannot be triggered there
-            if(str(currentState["leadsToState"]) != "-1"):
-                stateOk = 1
-    """
+    typeActions = ["L","M","H"]
 
     currentState = state
 
@@ -565,12 +396,33 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         elif(brushableNode!=None):
 
-            newSelectionExtent = Brush(brushableNode)
+            for size in typeActions:
 
-            explorationState = {"selector":idNode,"event":eventNode,"info":["brush",newSelectionExtent]}
+                for i in range(0,10):
 
-            explorationSequence.append(explorationState)
-            UpdateScore(graphVisit,stateNumber,idNode)
+                    newSelectionExtent = Brush(size,brushableNode)
+
+                    print(newSelectionExtent)
+
+                    explorationState = {"selector":idNode,"event":eventNode,"info":["brush",newSelectionExtent]}
+
+                    explorationSequence.append(explorationState)
+                    #UpdateScore(graphVisit,stateNumber,idNode)
+
+                    brushableNode["selection_extent"] = newSelectionExtent
+
+                    newBrushableNode = {}
+                    newBrushableNode["directions"] = brushableNode["directions"]
+                    newBrushableNode["brush_extent"] = brushableNode["brush_extent"]
+                    newBrushableNode["selection_extent"] = newSelectionExtent
+
+                    print(brushableNode)
+
+                    #Info for panning the brushed area
+                    explorationState = {"selector":idNode,"event":"panbrush","info":newBrushableNode}
+
+                    explorationSequence.append(explorationState)
+                    #UpdateScore(graphVisit,stateNumber,idNode)
 
         elif(zoomableNode!=None):
 
@@ -580,32 +432,39 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             else: 
 
-                    panZoomInfo = None
+                panZoomInfo = None
+
+            for size in typeActions:
                 
-            retInfo = PanZoom(panZoomInfo)
+                retInfo = PanZoom(size,panZoomInfo)
 
-            explorationState = {"selector":idNode,"event":eventNode,"info":["zoom",retInfo]}
+                explorationState = {"selector":idNode,"event":eventNode,"info":["zoom",retInfo]}
 
-            explorationSequence.append(explorationState)
-            UpdateScore(graphVisit,stateNumber,idNode)
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
 
         
     elif(eventNode == "wheel"):
 
-        if(stylesNode["height"]!=None or stylesNode["width"]!=None):
-    
-                zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
+        for size in typeActions:
 
-        else: 
+            for i in range(0,10):
 
-                zoomInfo = None
+                if(stylesNode["height"]!=None or stylesNode["width"]!=None):
             
-        retInfo = Zoom(zoomInfo)
+                        zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
 
-        explorationState = {"selector":idNode,"event":eventNode,"info":retInfo}
+                else: 
 
-        explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idNode)
+                        zoomInfo = None
+                    
+
+                retInfo = Zoom(size,zoomInfo)
+
+                explorationState = {"selector":idNode,"event":eventNode,"info":retInfo}
+
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
 
     elif(eventNode == "mouseup"):
 
@@ -622,21 +481,31 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             if(attributeNode["type"]=="range"):
 
-                sliderHtmlInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"width":stylesNode["width"]}
+                for size in typeActions:
 
-                explorationState = {"selector":idNode,"event":eventNode,"info": SliderHtml(sliderHtmlInfo)}
+                    for i in range(0,10):
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                        sliderHtmlInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"width":stylesNode["width"]}
+
+                        retInfo = SliderHtml(sliderHtmlInfo)
+
+                        retInfo[1]=size
+
+                        explorationState = {"selector":idNode,"event":eventNode,"info": retInfo}
+
+                        explorationSequence.append(explorationState)
+                        UpdateScore(graphVisit,stateNumber,idNode)
 
             elif(attributeNode["type"]=="number"):
 
-                numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
+                for i in range(0,10):
 
-                explorationState = {"selector":idNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+                    numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                    explorationState = {"selector":idNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+
+                    explorationSequence.append(explorationState)
+                    UpdateScore(graphVisit,stateNumber,idNode)
 
             #We treat this case like it was a button
             elif(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
@@ -783,7 +652,7 @@ if(__name__=="__main__"):
     #print("Graph:",json.dumps(graph,indent=4))
 
     graphVisit = createGraphVisit(graph)
-    print("GraphVisit:",json.dumps(graphVisit,indent=4))
+    #print("GraphVisit:",json.dumps(graphVisit,indent=4))
 
     #Save graph on a file
     with open('postprocess_statecharts/ppstatehcart_'+nameVis+'.json', 'w') as fp:
@@ -804,7 +673,7 @@ if(__name__=="__main__"):
 
             ExplorationState(graph,graphVisit,node,state)
 
-    print(explorationSequence)
+    #print(explorationSequence)
     
     #Save exploration sequence that will be passed to Selenium
     with open('explorations/exploration_'+nameVis+'.json', 'w') as fp:

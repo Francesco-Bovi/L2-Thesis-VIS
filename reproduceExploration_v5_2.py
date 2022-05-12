@@ -1,3 +1,4 @@
+from re import S
 from xml.dom.minidom import Element
 from selenium import webdriver
 import time
@@ -78,11 +79,14 @@ def PanZoom(element,zoomInfo,driver):
         spaceVertical = -yStart
 
     actions = ActionChains(driver)
-    actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().move_by_offset(spaceHorizontal*divisor,spaceVertical*divisor).release().perform()
-
-    return
+    actions.move_to_element_with_offset(element,xStart,yStart)
     
+    start = time.time()
+    actions.click_and_hold().move_by_offset(spaceHorizontal*divisor,spaceVertical*divisor).release().perform()
+    end = time.time()
 
+    return end-start
+    
 
 def Zoom(element,infoInput,driver):
 
@@ -107,9 +111,13 @@ def Zoom(element,infoInput,driver):
 
     actions = ActionChains(driver)
 
-    actions.move_to_element(element).scroll(xPoint,yPoint,0,scrollSize).release().perform()
+    actions.move_to_element(element)
+    
+    start = time.time()
+    actions.scroll(xPoint,yPoint,0,scrollSize).release().perform()
+    end = time.time()
 
-    return
+    return end-start
 
 def Input(element,infoInput,driver):
 
@@ -125,30 +133,35 @@ def Input(element,infoInput,driver):
 
         actions = ActionChains(driver)
 
-        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release().click_and_hold().move_by_offset(pixelsOffset,0).release().perform()
+        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release()
+
+        start = time.time()
+        actions.click_and_hold().move_by_offset(pixelsOffset,0).release().perform()
+        end = time.time()
 
     elif(infoInput[0] == "number"):
 
         element.clear()
+
+        start = time.time()
         element.send_keys(str(infoInput[1]))
+        end = time.time()
 
     elif(infoInput[0] == "checkbox" or infoInput[0] == "radio"):
 
         actions = ActionChains(driver)
 
-        actions.move_to_element(element).click().release().perform()
+        actions.move_to_element(element)
+        
+        start = time.time()
+        actions.click().release().perform()
+        end = time.time()
     
-    return
+    return end-start
         
 
-def Mouseout(element,driver):
-
-    actions = ActionChains(driver)
-
-    actions.move_to_element(element).release().perform()
-
-    return
-
+#For now we don't consider the "mousedown" when we don't have any other information
+"""
 def Mousedown(element,driver):
 
     actions = ActionChains(driver)
@@ -156,6 +169,7 @@ def Mousedown(element,driver):
     actions.move_to_element(element).click_and_hold().perform()
 
     return
+"""
 
 def Mouseout(element,infoOut,driver):
 
@@ -166,30 +180,38 @@ def Mouseout(element,infoOut,driver):
 
             actions = ActionChains(driver)
 
+            start = time.time()
             actions.move_by_offset(infoOut[0]+1,infoOut[0]+1).perform()
+            end = time.time()
 
         else:
 
             actions = ActionChains(driver)
 
+            start = time.time()
             actions.move_by_offset(infoOut+1,infoOut+1).perform()
-            
+            end = time.time()
     
+    #For now we don't consider the "mouseout" when we don't have any other information
+    """
     else:
 
         actions = ActionChains(driver)
 
         actions.move_by_offset(100,100).perform()
+    """
 
-    return
+    return end-start
 
 def Mouseover(element,driver):
 
     actions = ActionChains(driver)
 
-    actions.move_to_element(element).perform()        
+    start = time.time()
+    actions.move_to_element(element).perform()
+    end = time.time()     
 
-    return
+    return end-start
 
 def Click(element,clickInfo,driver):
 
@@ -197,15 +219,28 @@ def Click(element,clickInfo,driver):
 
         actions = ActionChains(driver)
 
-        actions.move_to_element(element).click().release().perform()
+        #At first we go on the element
+        actions.move_to_element(element)
+        
+        #Then we perform the click on that element
+        start = time.time()
+        actions.click().release().perform()
+        end = time.time()
 
     else:
 
         actions = ActionChains(driver)
 
-        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).click().release().perform()
+        #At first we go on the element
+        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1])
+        
+        #Then we perform the click on that element
+        start = time.time()
+        actions.click().release().perform()
+        end = time.time()
 
-    return
+    #Return the latency time
+    return end-start
 
 def Brush(element,infoBrush,driver):
 
@@ -220,12 +255,131 @@ def Brush(element,infoBrush,driver):
 
     actions = ActionChains(driver)
 
-    actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().move_by_offset(xEnd-xStart,yEnd-yStart).release().perform()
+    actions.move_to_element_with_offset(element,xStart,yStart).perform()
+
+    start = time.time()
+    actions.click_and_hold().move_by_offset(xEnd-xStart,yEnd-yStart).release().perform()
+    end = time.time()
+
+    #In order to refresh the brush
+    #actions.move_to_element_with_offset(element,0,0).click().release().perform()
+
+    return end-start
+
+def PanBrush(element,infoBrush,driver):
+    
+    directions = infoBrush["directions"]
+
+    brushExtent = infoBrush["brush_extent"]
+
+    selectionExtent = infoBrush["selection_extent"]
+
+    #Dimension of the brushable area
+    width = brushExtent[1][0] - brushExtent[0][0]
+    height = brushExtent[1][1] - brushExtent[0][1]
+
+    #Dimension of the pannable area of the brush
+    widthBrush = selectionExtent[1][0] - selectionExtent[0][0]
+    heightBrush = selectionExtent[1][1] - selectionExtent[0][1]
+
+    #Starting,Ending and Middle point of the brushArea
+    xStartBrush = selectionExtent[0][0]
+    yStartBrush = selectionExtent[0][1]
+
+    xEndBrush = xStartBrush + widthBrush
+    yEndBrush = yStartBrush + heightBrush
+
+    xMiddleBrush = xStartBrush + widthBrush/2
+    yMiddleBrush = yStartBrush + heightBrush/2
+
+    #print("xMiddle " + str(xMiddleBrush))
+
+    xMove = None
+    yMove = None
+
+    if(directions == "xy"):
+
+        #Here randomly is chosen where moving between "left/right" and "up/down"
+        xMove = random.randint(0,1)
+        yMove = random.randint(0,1)
+
+        xDirections = ["right","left"]
+        yDirections = ["up","down"]
+
+        xMove = xDirections[xMove]
+        yMove = yDirections[yMove]
+    
+    elif(directions == "x"):
+
+        xMove = random.randint(0,1)
+
+        xDirections = ["right","left"]
+
+        xMove = xDirections[xMove]
+
+    else:
+
+        yMove = random.randint(0,1)
+
+        yDirections = ["up","down"]
+
+        yMove = yDirections[yMove]
+
+
+    actions = ActionChains(driver)
+
+    #actions.move_to_element_with_offset(element,xStartBrush,yStartBrush).click_and_hold().move_by_offset(xEndBrush-xStartBrush,yEndBrush-yStartBrush).release().perform()
+
+    if(xMove == "right"):
+        
+        maxMovement = width - xEndBrush
+
+        moveX = random.uniform(0,maxMovement)
+    
+    elif(xMove == "left"):
+
+        maxMovement = -xStartBrush
+
+        moveX = random.uniform(maxMovement,0)
+    
+    else:
+
+        moveX = 0
+
+
+    if(yMove == "up"):
+
+        maxMovement = -yStartBrush
+
+        moveY = random.uniform(maxMovement,0)
+
+    #This means we're moving down
+    elif(yMove == "down"):
+
+        maxMovement = height - yEndBrush
+
+        moveY = random.uniform(0,maxMovement)
+
+    else: 
+
+        moveY = 0
+
+    #actions.move_to_element_with_offset(element,0,0).perform()
+    actions.move_to_element_with_offset(element,xMiddleBrush,yMiddleBrush).perform()
+
+    start = time.time()
+    actions.click_and_hold().move_by_offset(moveX,moveY).release().perform()
+    end = time.time()
+
+    #In order to refresh the brush
+    #actions.move_to_element_with_offset(element,0,0).click().perform()
+
+    return end-start
 
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_zoom1.json')
+    explorationSequence = open('explorations/exploration_brush.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -234,12 +388,19 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/MatteoScript/zoomablescatter1.html')
+    driver.get('http://127.0.0.1:5501/MatteoScript/brushmorescatter.html')
     driver.maximize_window()
+    
+    finalSummary = {}
 
     for state in explorationSequence:
 
         time.sleep(2)
+
+        #driver.refresh()
+
+        latency = None
+        #time.sleep(2)
 
         selector = state["selector"]
         event = state["event"]
@@ -254,46 +415,60 @@ if __name__ == "__main__":
         else:
 
             print("STATE: " + selector + " EVENT: " + event)
-            print(state["info"])
+            #print(state["info"])
+
+            if(selector not in finalSummary):
+                finalSummary[selector] = {}
+
+            if(event not in finalSummary[selector]):
+                finalSummary[selector][event] = []
 
             if(event == "click"):
 
-                Click(element,state["info"],driver)
+                latency = Click(element,state["info"],driver)
 
             elif(event == "mouseover" or event == "mouseenter"):
 
-                Mouseover(element,driver)
+                latency = Mouseover(element,driver)
 
             elif(event == "mouseout" or event == "mouseleave"):
 
-                Mouseout(element,state["info"],driver)
+                latency = Mouseout(element,state["info"],driver)
 
             elif(event == "mousedown"):
 
                 if(state["info"][0] == "brush"):
 
-                    Brush(element,state["info"][1],driver)
+                    latency = Brush(element,state["info"][1],driver)
 
                 elif(state["info"][0] == "zoom"):
 
-                    PanZoom(element,state["info"][1],driver)
-
-                else:
-
-                    Mousedown(element,driver)
+                    latency = PanZoom(element,state["info"][1],driver)
 
             elif(event == "wheel"):
 
-                Zoom(element,state["info"],driver)
+                latency = Zoom(element,state["info"],driver)
 
             elif(event == "mouseout"):
 
-                Mouseout(element,driver)
+                latency = Mouseout(element,driver)
 
             elif(event == "input"):
 
-                Input(element,state["info"],driver)
+                latency = Input(element,state["info"],driver)
+            
+            elif(event == "panbrush"):
 
-            actionSequence.append(event)
+               latency = PanBrush(element,state["info"],driver)
+               driver.refresh()
 
+            print(latency)
+            actionSequence.append([event,latency])
+            finalSummary[selector][event].append([state["info"],latency])
+
+    
+    with open('summaries/summary_brush.json', 'w') as fp:
+        json.dump(finalSummary, fp,  indent=4)
+    
+    driver.close()
     print(actionSequence)
