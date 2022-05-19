@@ -5,6 +5,7 @@ import time
 import random
 import json
 
+
 import scipy.interpolate as si
 import numpy as np
 from selenium.webdriver.common.by import By
@@ -64,6 +65,8 @@ def PanZoom(element,zoomInfo,driver):
     xMove = zoomInfo[3][0]
     yMove = zoomInfo[3][1]
 
+    print("StartingX: " + str(xStart) + " " + "StartingY: " + str(yStart))
+
     #Here we calculate the space that we have horizontally
     #and vertically in order to perform the panning
     if(xMove == "right"):
@@ -82,20 +85,67 @@ def PanZoom(element,zoomInfo,driver):
 
         spaceVertical = -yStart
 
-    actions = ActionChains(driver)
+    actions = ActionChains(driver,duration=10)
     actions.move_to_element_with_offset(element,xStart,yStart).perform()
 
-    actions.reset_actions()
-
-    actions.click_and_hold().move_by_offset(spaceHorizontal*divisor,spaceVertical*divisor).release()
+    actions.click_and_hold()
     
+    moveX = int(spaceHorizontal*divisor)
+    moveY = int(spaceVertical*divisor)
+
+    xStart = 0
+    yStart = 0
+    while(xStart != moveX or yStart != moveY):
+        #print("Cicling...")
+        
+        if(xStart == moveX):
+
+            if(yStart < moveY):
+                yStart+=1
+                actions.move_by_offset(0,1)
+            else:
+                yStart-=1
+                actions.move_by_offset(0,-1)
+
+        elif(xStart < moveX):
+
+            if(yStart < moveY):
+                yStart+=1
+                xStart+=1
+                actions.move_by_offset(1,1)
+            elif(yStart > moveY):
+                yStart-=1
+                xStart+=1
+                actions.move_by_offset(1,-1)
+            else:
+                xStart+=1
+                actions.move_by_offset(1,0)
+
+        else:
+
+            if(yStart < moveY):
+                yStart+=1
+                xStart-=1
+                actions.move_by_offset(-1,1)
+            elif(yStart > moveY):
+                yStart-=1
+                xStart-=1
+                actions.move_by_offset(-1,-1)
+            else:
+                xStart-=1
+                actions.move_by_offset(-1,0)
+
+        #print("moveX :" + str(xStart) + " moveY: " +str(yStart))
+
     start = time.time()
-    actions.perform()
+    actions.release().perform()
     end = time.time()
+
+    print("arriveX :" + str(moveX) + " arriveY: " +str(moveY))
+    time.sleep(5)
 
     return end-start
     
-
 def Zoom(element,infoInput,driver):
 
     #Check if zoom in or zoom out
@@ -137,7 +187,7 @@ def Zoom(element,infoInput,driver):
 
             scrollSize = +300
 
-    actions = ActionChains(driver)
+    actions = ActionChains(driver,duration = 0)
 
     actions.move_to_element(element).perform()
 
@@ -148,6 +198,8 @@ def Zoom(element,infoInput,driver):
     start = time.time()
     actions.perform()
     end = time.time()
+
+    time.sleep(0.2)
 
     return end-start
 
@@ -190,18 +242,6 @@ def Input(element,infoInput,driver):
         end = time.time()
     
     return end-start
-        
-
-#For now we don't consider the "mousedown" when we don't have any other information
-"""
-def Mousedown(element,driver):
-
-    actions = ActionChains(driver)
-
-    actions.move_to_element(element).click_and_hold().perform()
-
-    return
-"""
 
 def Mouseout(element,infoOut,driver):
 
@@ -366,8 +406,6 @@ def PanBrush(element,infoBrush,driver):
 
     actions = ActionChains(driver,duration=10)
 
-    #actions.move_to_element_with_offset(element,xStartBrush,yStartBrush).click_and_hold().move_by_offset(xEndBrush-xStartBrush,yEndBrush-yStartBrush).release().perform()
-
     if(xMove == "right"):
         
         maxMovement = width - xEndBrush
@@ -462,7 +500,7 @@ def PanBrush(element,infoBrush,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brush.json')
+    explorationSequence = open('explorations/exploration_zoom2.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -471,7 +509,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/MatteoScript/brushmorescatter.html')
+    driver.get('http://127.0.0.1:5501/MatteoScript/zommable2.html')
     driver.maximize_window()
     
     finalSummary = {}
@@ -541,7 +579,7 @@ if __name__ == "__main__":
             elif(event == "panbrush"):
 
                latency = PanBrush(element,state["info"],driver)
-               driver.refresh()
+               #driver.refresh()
 
             if(latency != None):
                 #Convert in milliseconds

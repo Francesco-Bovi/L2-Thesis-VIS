@@ -1,880 +1,880 @@
 [
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
                 "L",
                 [
-                    286,
-                    67
+                    766,
+                    41
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
                 "L",
-                [
-                    389,
-                    56
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    290,
-                    306
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    82,
-                    328
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    114,
-                    252
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    60,
-                    149
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    275,
-                    229
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    63,
-                    135
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    269,
-                    38
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    245,
-                    320
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    336,
-                    337
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    369,
-                    38
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    60,
-                    89
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    237,
-                    279
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    202,
-                    18
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    317,
-                    134
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    65,
-                    246
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    212,
-                    222
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    142,
-                    240
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    198,
-                    101
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    364,
-                    28
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    281,
-                    46
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    230,
-                    136
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
                 [
                     386,
-                    327
+                    238
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
-                "M",
+                "L",
                 [
-                    5,
-                    31
+                    660,
+                    22
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
-                "M",
+                "L",
                 [
-                    235,
-                    309
+                    298,
+                    317
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
-                "M",
+                "L",
                 [
-                    285,
-                    7
+                    156,
+                    406
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
-                "M",
+                "L",
                 [
-                    248,
-                    116
+                    436,
+                    400
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
-                "M",
+                "L",
                 [
-                    381,
-                    173
+                    807,
+                    499
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "in",
             [
-                "M",
+                "L",
                 [
-                    30,
-                    104
+                    804,
+                    5
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    704,
+                    193
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    266,
+                    203
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
-                "M",
+                "L",
                 [
-                    358,
-                    350
+                    788,
+                    122
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
-                "M",
+                "L",
                 [
-                    231,
-                    377
+                    605,
+                    121
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
-                "M",
+                "L",
                 [
-                    202,
-                    368
+                    919,
+                    431
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
-                "M",
+                "L",
                 [
-                    244,
-                    185
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    13,
-                    281
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    202,
-                    348
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    242,
-                    361
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    133,
-                    115
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    67,
-                    326
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    5,
-                    61
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    93,
-                    372
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    54,
-                    79
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    182,
-                    247
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    316,
-                    399
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    379,
-                    89
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    216,
-                    257
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    171,
-                    377
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    348,
-                    283
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    147,
-                    249
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    183,
-                    29
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    221,
-                    97
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    281,
-                    371
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    351,
-                    249
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    387,
-                    269
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    113,
+                    49,
                     214
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    764,
+                    1
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    722,
+                    100
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    872,
+                    65
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    860,
+                    309
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    80,
+                    308
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    899,
+                    306
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    488,
+                    148
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    644,
+                    58
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    301,
+                    150
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    128,
+                    33
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    276,
+                    200
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    859,
+                    125
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    8,
+                    260
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    138,
+                    194
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    509,
+                    273
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    518,
+                    386
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    507,
+                    122
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    34,
+                    371
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    830,
+                    345
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    249,
+                    466
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    61,
+                    18
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    112,
+                    479
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    160,
+                    194
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    706,
+                    81
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    827,
+                    246
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    547,
+                    367
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    132,
+                    478
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    477,
+                    445
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    551,
+                    134
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    291,
+                    219
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    411,
+                    261
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    449,
+                    201
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    597,
+                    406
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    674,
+                    148
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    683,
+                    299
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    786,
+                    488
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
                 "H",
                 [
-                    354,
-                    326
+                    194,
+                    45
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
                 "H",
                 [
-                    83,
-                    271
+                    478,
+                    9
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
                 "H",
                 [
-                    139,
-                    235
+                    79,
+                    353
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
                 "H",
                 [
-                    156,
-                    106
+                    936,
+                    82
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "wheel",
         "info": [
             "out",
             [
                 "H",
                 [
-                    141,
-                    294
+                    650,
+                    78
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    413,
+                    242
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    174,
+                    213
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    740,
+                    465
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    357,
+                    214
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    628,
+                    417
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "canvas",
         "event": "mousedown",
         "info": [
             "zoom",
             [
                 "L",
                 [
-                    400.0,
-                    400.0
+                    500.0,
+                    960.0
                 ],
                 [
-                    36,
-                    319
+                    464,
+                    156
                 ],
                 [
-                    "right",
+                    "left",
                     "up"
                 ]
             ]
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "mousedown",
         "info": [
             "zoom",
             [
                 "M",
                 [
-                    400.0,
-                    400.0
+                    500.0,
+                    960.0
                 ],
                 [
-                    70,
-                    91
+                    698,
+                    56
                 ],
                 [
                     "right",
@@ -884,23 +884,23 @@
         ]
     },
     {
-        "selector": "body svg rect",
+        "selector": "canvas",
         "event": "mousedown",
         "info": [
             "zoom",
             [
                 "H",
                 [
-                    400.0,
-                    400.0
+                    500.0,
+                    960.0
                 ],
                 [
-                    265,
-                    29
+                    956,
+                    71
                 ],
                 [
                     "right",
-                    "up"
+                    "down"
                 ]
             ]
         ]
