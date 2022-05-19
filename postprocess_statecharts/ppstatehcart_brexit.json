@@ -51,7 +51,7 @@
             },
             "styles": {
                 "height": 20.0,
-                "width": 36.9688
+                "width": 36.9844
             }
         }
     ],
@@ -85,7 +85,7 @@
             },
             "styles": {
                 "height": 20.0,
-                "width": 73.2812
+                "width": 73.2969
             }
         },
         {
@@ -101,7 +101,7 @@
             },
             "styles": {
                 "height": 20.0,
-                "width": 76.9844
+                "width": 77.0
             }
         },
         {
@@ -137,7 +137,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -335,7 +335,7 @@
     ],
     "5": [
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -391,7 +391,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -447,7 +447,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -505,7 +505,7 @@
     ],
     "6": [
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -561,7 +561,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -617,7 +617,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -675,7 +675,7 @@
     ],
     "7": [
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -731,7 +731,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -787,7 +787,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -937,23 +937,23 @@
             "event": "click",
             "brushable": null,
             "zoomable": null,
-            "leadsToState": 10,
+            "leadsToState": 20,
             "attributes": {
                 "type": "button"
             },
             "styles": {
                 "height": 20.0,
-                "width": 36.9688
+                "width": 36.9844
             }
         },
         {
-            "id": "#circle_E06000031",
+            "id": "#E06000031",
             "tag": "circle",
             "data": null,
             "event": "mouseover",
             "brushable": null,
             "zoomable": null,
-            "leadsToState": 20,
+            "leadsToState": 31,
             "attributes": {
                 "r": "3",
                 "stroke": "#000",
@@ -998,7 +998,7 @@
             },
             "styles": {
                 "height": 20.0,
-                "width": 73.2812
+                "width": 73.2969
             }
         },
         {
@@ -1014,7 +1014,7 @@
             },
             "styles": {
                 "height": 20.0,
-                "width": 76.9844
+                "width": 77.0
             }
         },
         {
@@ -1050,7 +1050,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1248,7 +1248,7 @@
     ],
     "15": [
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1304,7 +1304,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1360,7 +1360,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1418,7 +1418,7 @@
     ],
     "16": [
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1474,7 +1474,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1530,7 +1530,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1588,7 +1588,7 @@
     ],
     "17": [
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1644,7 +1644,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1700,7 +1700,7 @@
             }
         },
         {
-            "id": "#path_E06000001",
+            "id": "#E06000001",
             "tag": "path",
             "data": [
                 {
@@ -1806,7 +1806,963 @@
     ],
     "20": [
         {
-            "id": "#circle_E06000031",
+            "id": "#map",
+            "tag": "div",
+            "data": null,
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "align": "left"
+            },
+            "styles": {
+                "height": 700.0,
+                "width": 400.0
+            }
+        },
+        {
+            "id": "#bar_0",
+            "tag": "rect",
+            "data": null,
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 29,
+            "attributes": {
+                "x": "10",
+                "y": "54.86486486486487",
+                "width": 10.0,
+                "stroke": "#000",
+                "stroke-width": "0.5",
+                "height": 120.13513513513513,
+                "fill": "#bae4b3"
+            },
+            "styles": {
+                "height": 120.135,
+                "width": 10.0
+            }
+        },
+        {
+            "id": "#plotButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 20,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 36.9844
+            }
+        },
+        {
+            "id": "#E06000031",
+            "tag": "circle",
+            "data": null,
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 30,
+            "attributes": {
+                "r": "3",
+                "stroke": "#000",
+                "stroke-width": "0.5",
+                "cx": "105",
+                "cy": "309.7385226763155",
+                "fill": "#fc8d59"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "21": [
+        {
+            "id": "#resultsButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 92.3125
+            }
+        },
+        {
+            "id": "#ageButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 73.2969
+            }
+        },
+        {
+            "id": "#bothButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 77.0
+            }
+        },
+        {
+            "id": "#selectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 22,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 68.0938
+            }
+        },
+        {
+            "id": "#deselectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 24,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 82.9062
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 25,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#mapBar_0",
+            "tag": "rect",
+            "data": null,
+            "event": "mouseover",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 28,
+            "attributes": {
+                "x": "10",
+                "y": "27.240586287256235",
+                "width": 10.0,
+                "stroke": "#000",
+                "stroke-width": "0.5",
+                "height": 147.75941371274376,
+                "fill": "#bae4b3"
+            },
+            "styles": {
+                "height": 147.759,
+                "width": 10.0
+            }
+        },
+        {
+            "id": "#map",
+            "tag": "div",
+            "data": null,
+            "event": "facsimile_back",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 20,
+            "attributes": {
+                "align": "left"
+            },
+            "styles": {
+                "height": 700.0,
+                "width": 400.0
+            }
+        }
+    ],
+    "22": [
+        {
+            "id": "#selectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 23,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 68.0938
+            }
+        },
+        {
+            "id": "#selectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "facsimile_back",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 68.0938
+            }
+        }
+    ],
+    "23": [
+        {
+            "id": "#selectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 23,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 68.0938
+            }
+        },
+        {
+            "id": "#selectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "facsimile_back",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 68.0938
+            }
+        }
+    ],
+    "24": [
+        {
+            "id": "#deselectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 82.9062
+            }
+        },
+        {
+            "id": "#deselectAllButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 24,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 82.9062
+            }
+        }
+    ],
+    "25": [
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 26,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "contextmenu",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 27,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "facsimile_back",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "26": [
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 26,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "contextmenu",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 26,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "facsimile_back",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "27": [
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 27,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "contextmenu",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 25,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#E06000001",
+            "tag": "path",
+            "data": [
+                {
+                    "name": "type",
+                    "value": "Feature"
+                },
+                {
+                    "name": "geometry",
+                    "value": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ],
+                                [
+                                    -1.250768975230502,
+                                    54.62529733471889
+                                ],
+                                [
+                                    -1.380884877436341,
+                                    54.64390615171294
+                                ],
+                                [
+                                    -1.242825023970778,
+                                    54.72225343469755
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "name": "properties",
+                    "value": {
+                        "LAD13CD": "E06000001",
+                        "LAD13CDO": "00EB",
+                        "LAD13NM": "Hartlepool",
+                        "LAD13NMW": null
+                    }
+                }
+            ],
+            "event": "facsimile_back",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "d": "M225.7715282638312,263.09447656958855L225.42490800108084,267.32498450588946L219.74753074434375,266.51302168977145Z",
+                "cy": "333.9475962950936",
+                "fill": "rgb(252, 141, 89)"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "28": [
+        {
+            "id": "#mapBar_0",
+            "tag": "rect",
+            "data": null,
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 21,
+            "attributes": {
+                "x": "10",
+                "y": "27.240586287256235",
+                "width": 10.0,
+                "stroke": "#000",
+                "stroke-width": "2",
+                "height": 147.75941371274376,
+                "fill": "#bae4b3"
+            },
+            "styles": {
+                "height": 147.759,
+                "width": 10.0
+            }
+        }
+    ],
+    "29": [
+        {
+            "id": "#bar_0",
+            "tag": "rect",
+            "data": null,
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 20,
+            "attributes": {
+                "x": "10",
+                "y": "54.86486486486487",
+                "width": 10.0,
+                "stroke": "#000",
+                "stroke-width": "2",
+                "height": 120.13513513513513,
+                "fill": "#bae4b3"
+            },
+            "styles": {
+                "height": 120.135,
+                "width": 10.0
+            }
+        }
+    ],
+    "30": [
+        {
+            "id": "#E06000031",
+            "tag": "circle",
+            "data": null,
+            "event": "mouseout",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 20,
+            "attributes": {
+                "r": "3",
+                "stroke": "#000",
+                "stroke-width": "0.5",
+                "cx": "105",
+                "cy": "309.7385226763155",
+                "fill": "#fc8d59"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ],
+    "31": [
+        {
+            "id": "#E06000031",
             "tag": "circle",
             "data": null,
             "event": "mouseout",
@@ -1816,7 +2772,7 @@
             "attributes": {
                 "r": "3",
                 "stroke": "#000",
-                "stroke-width": "2",
+                "stroke-width": "0.5",
                 "cx": "105",
                 "cy": "309.7385226763155",
                 "fill": "#fc8d59"

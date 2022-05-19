@@ -37,9 +37,43 @@ if __name__ == "__main__":
 
     #inputString = input("Inserisci tipo di visualizzazione da testare: ")
 
-    inputString = "slider"
+    inputString = "prova"
 
-    if(inputString == "brush"):
+    if(inputString == "prova"):
+
+        driver.get("http://localhost:8000/brexitVisualization.html")
+        driver.maximize_window()
+
+        #Explicit wait
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR,"#bothButton"))
+            )
+        except:
+            print("Element not found")
+        else:
+
+            actions = ActionChains(driver)
+
+            #At first we go on the element
+            actions.move_to_element(element).perform()
+
+            for i in range(0,5):
+
+                #actions.reset_actions()
+
+                actions.click()
+                
+                #Then we perform the click on that element
+                start = time.time()
+                actions.perform()
+                end = time.time()
+
+                print("Latency: " + str((end-start)*1000))
+                driver.implicitly_wait(10)
+
+
+    elif(inputString == "brush"):
         #BRUSH
 
         driver.get("https://bl.ocks.org/cmgiven/raw/abca90f6ba5f0a14c54d1eb952f8949c/?raw=true")

@@ -1,0 +1,513 @@
+{
+    "0": [
+        {
+            "id": "#hour-chart svg g",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        240,
+                        100
+                    ]
+                ],
+                "selection_extent": null
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "transform": "translate(10,10)",
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#hour-chart svg g g.brush",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        240,
+                        100
+                    ]
+                ],
+                "selection_extent": null
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#delay-chart svg g",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        210,
+                        100
+                    ]
+                ],
+                "selection_extent": null
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "transform": "translate(10,10)",
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#delay-chart svg g g.brush",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        210,
+                        100
+                    ]
+                ],
+                "selection_extent": null
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#distance-chart svg g",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        400,
+                        100
+                    ]
+                ],
+                "selection_extent": null
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "transform": "translate(10,10)",
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#distance-chart svg g g.brush",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        400,
+                        100
+                    ]
+                ],
+                "selection_extent": null
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        },
+        {
+            "id": "#date-chart svg g g.brush",
+            "tag": "g",
+            "data": [
+                {
+                    "name": "margin",
+                    "value": {}
+                },
+                {
+                    "name": "x",
+                    "value": {}
+                },
+                {
+                    "name": "y",
+                    "value": {}
+                },
+                {
+                    "name": "dimension",
+                    "value": {}
+                },
+                {
+                    "name": "filter",
+                    "value": {}
+                },
+                {
+                    "name": "group",
+                    "value": {}
+                },
+                {
+                    "name": "round",
+                    "value": {}
+                },
+                {
+                    "name": "gBrush",
+                    "value": {}
+                }
+            ],
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        900,
+                        100
+                    ]
+                ],
+                "selection_extent": [
+                    [
+                        310,
+                        0
+                    ],
+                    [
+                        590,
+                        100
+                    ]
+                ]
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            }
+        }
+    ]
+}

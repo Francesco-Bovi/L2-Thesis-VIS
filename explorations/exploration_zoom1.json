@@ -3,31 +3,838 @@
         "selector": "svg rect",
         "event": "wheel",
         "info": [
-            "H",
+            "in",
             [
-                94,
-                299
+                "L",
+                [
+                    111,
+                    209
+                ]
             ]
         ]
     },
     {
         "selector": "svg rect",
-        "event": "mousedown",
+        "event": "wheel",
         "info": [
-            "zoom",
+            "in",
+            [
+                "L",
+                [
+                    85,
+                    102
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    154,
+                    117
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    79,
+                    201
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    95,
+                    207
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    220,
+                    80
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    109,
+                    291
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    245,
+                    117
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    91,
+                    224
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "L",
+                [
+                    190,
+                    305
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    225,
+                    277
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    123,
+                    275
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    80,
+                    195
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    42,
+                    83
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    153,
+                    129
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    341,
+                    317
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    53,
+                    292
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    50,
+                    318
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    70,
+                    287
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "L",
+                [
+                    181,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
             [
                 "M",
                 [
-                    400.0,
-                    400.0
-                ],
+                    88,
+                    35
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
                 [
-                    109,
-                    354
-                ],
+                    105,
+                    214
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
                 [
-                    "left",
-                    "up"
+                    236,
+                    314
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    395,
+                    101
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    217,
+                    244
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    147,
+                    219
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    114,
+                    11
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    388,
+                    162
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    268,
+                    219
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "M",
+                [
+                    160,
+                    261
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    308,
+                    251
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    85,
+                    170
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    206,
+                    231
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    400,
+                    67
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    24,
+                    291
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    352,
+                    46
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    243,
+                    273
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    242,
+                    115
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    236,
+                    8
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "M",
+                [
+                    184,
+                    85
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    196,
+                    50
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    291,
+                    243
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    328,
+                    281
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    71,
+                    356
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    24,
+                    361
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    53,
+                    208
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    171,
+                    124
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    358,
+                    193
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    286,
+                    83
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "in",
+            [
+                "H",
+                [
+                    132,
+                    372
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    319,
+                    251
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    274,
+                    135
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    148,
+                    82
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    357,
+                    211
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    160,
+                    62
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    260,
+                    143
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    278,
+                    342
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    253,
+                    180
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    207,
+                    232
+                ]
+            ]
+        ]
+    },
+    {
+        "selector": "svg rect",
+        "event": "wheel",
+        "info": [
+            "out",
+            [
+                "H",
+                [
+                    350,
+                    384
                 ]
             ]
         ]

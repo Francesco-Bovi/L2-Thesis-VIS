@@ -5,11 +5,15 @@ import time
 import random
 import json
 
+import scipy.interpolate as si
+import numpy as np
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
+#Intro-backgorund-requirements-implementazione-parte chiave
 
 def GetPixelsBack(min,max,width):
 
@@ -79,10 +83,14 @@ def PanZoom(element,zoomInfo,driver):
         spaceVertical = -yStart
 
     actions = ActionChains(driver)
-    actions.move_to_element_with_offset(element,xStart,yStart)
+    actions.move_to_element_with_offset(element,xStart,yStart).perform()
+
+    actions.reset_actions()
+
+    actions.click_and_hold().move_by_offset(spaceHorizontal*divisor,spaceVertical*divisor).release()
     
     start = time.time()
-    actions.click_and_hold().move_by_offset(spaceHorizontal*divisor,spaceVertical*divisor).release().perform()
+    actions.perform()
     end = time.time()
 
     return end-start
@@ -90,6 +98,10 @@ def PanZoom(element,zoomInfo,driver):
 
 def Zoom(element,infoInput,driver):
 
+    #Check if zoom in or zoom out
+    typeZoom = infoInput[0]
+
+    infoInput = infoInput[1]
     actionType = infoInput[0]
 
     xPoint=infoInput[1][0]
@@ -97,24 +109,44 @@ def Zoom(element,infoInput,driver):
 
     scrollSize = None
 
-    if(actionType == "L"):
+    if(typeZoom == "in"):
 
-        scrollSize = -100
+        if(actionType == "L"):
 
-    elif(actionType == "M"):
+            scrollSize = -100
 
-        scrollSize = -200
+        elif(actionType == "M"):
+
+            scrollSize = -200
+        
+        else:
+
+            scrollSize = -300
     
     else:
 
-        scrollSize = -300
+        if(actionType == "L"):
+    
+            scrollSize = +100
+
+        elif(actionType == "M"):
+
+            scrollSize = +200
+        
+        else:
+
+            scrollSize = +300
 
     actions = ActionChains(driver)
 
-    actions.move_to_element(element)
+    actions.move_to_element(element).perform()
+
+    actions.reset_actions()
+
+    actions.scroll(xPoint,yPoint,0,scrollSize)
     
     start = time.time()
-    actions.scroll(xPoint,yPoint,0,scrollSize).release().perform()
+    actions.perform()
     end = time.time()
 
     return end-start
@@ -131,7 +163,7 @@ def Input(element,infoInput,driver):
 
         pixelsOffset = GetPixelsToMove(tupleInfo[0],tupleInfo[1],tupleInfo[2],actionType)
 
-        actions = ActionChains(driver)
+        actions = ActionChains(driver,duration=10)
 
         actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release()
 
@@ -154,7 +186,7 @@ def Input(element,infoInput,driver):
         actions.move_to_element(element)
         
         start = time.time()
-        actions.click().release().perform()
+        actions.click().perform()
         end = time.time()
     
     return end-start
@@ -207,8 +239,10 @@ def Mouseover(element,driver):
 
     actions = ActionChains(driver)
 
+    actions.move_to_element(element)
+
     start = time.time()
-    actions.move_to_element(element).perform()
+    actions.perform()
     end = time.time()     
 
     return end-start
@@ -216,15 +250,10 @@ def Mouseover(element,driver):
 def Click(element,clickInfo,driver):
 
     if(clickInfo == None):
-
-        actions = ActionChains(driver)
-
-        #At first we go on the element
-        actions.move_to_element(element)
         
         #Then we perform the click on that element
         start = time.time()
-        actions.click().release().perform()
+        element.click()
         end = time.time()
 
     else:
@@ -232,11 +261,15 @@ def Click(element,clickInfo,driver):
         actions = ActionChains(driver)
 
         #At first we go on the element
-        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1])
+        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
+
+        actions.reset_actions()
+        
+        actions.click()
         
         #Then we perform the click on that element
         start = time.time()
-        actions.click().release().perform()
+        actions.perform()
         end = time.time()
 
     #Return the latency time
@@ -247,18 +280,23 @@ def Brush(element,infoBrush,driver):
     Start = infoBrush[0]
     End = infoBrush[1]
 
-    xStart = Start[0]
-    yStart = Start[1]
+    xStart = int(Start[0])
+    yStart = int(Start[1])
 
-    xEnd = End[0]
-    yEnd = End[1]
+    xEnd = int(End[0])
+    yEnd = int(End[1])
 
-    actions = ActionChains(driver)
+    actions = ActionChains(driver,duration=10)
 
-    actions.move_to_element_with_offset(element,xStart,yStart).perform()
+    actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().perform()
+
+    while(xStart<xEnd and yStart<yEnd):
+        xStart+=1
+        yStart+=1
+        actions.move_by_offset(1,1)
 
     start = time.time()
-    actions.click_and_hold().move_by_offset(xEnd-xStart,yEnd-yStart).release().perform()
+    actions.pause(1).release().perform()
     end = time.time()
 
     #In order to refresh the brush
@@ -326,7 +364,7 @@ def PanBrush(element,infoBrush,driver):
         yMove = yDirections[yMove]
 
 
-    actions = ActionChains(driver)
+    actions = ActionChains(driver,duration=10)
 
     #actions.move_to_element_with_offset(element,xStartBrush,yStartBrush).click_and_hold().move_by_offset(xEndBrush-xStartBrush,yEndBrush-yStartBrush).release().perform()
 
@@ -365,14 +403,59 @@ def PanBrush(element,infoBrush,driver):
         moveY = 0
 
     #actions.move_to_element_with_offset(element,0,0).perform()
-    actions.move_to_element_with_offset(element,xMiddleBrush,yMiddleBrush).perform()
+    actions.move_to_element_with_offset(element,xMiddleBrush,yMiddleBrush).click_and_hold()
+
+    moveX = int(moveX)
+    moveY = int(moveY)
+
+    xStart = 0
+    yStart = 0
+    while(xStart != moveX or yStart != moveY):
+        
+        if(xStart == moveX):
+
+            if(yStart < moveY):
+                yStart+=1
+                actions.move_by_offset(0,1)
+            else:
+                yStart-=1
+                actions.move_by_offset(0,-1)
+
+        elif(xStart < moveX):
+
+            if(yStart < moveY):
+                yStart+=1
+                xStart+=1
+                actions.move_by_offset(1,1)
+            elif(yStart > moveY):
+                yStart-=1
+                xStart+=1
+                actions.move_by_offset(1,-1)
+            else:
+                xStart+=1
+                actions.move_by_offset(1,0)
+
+        else:
+
+            if(yStart < moveY):
+                yStart+=1
+                xStart-=1
+                actions.move_by_offset(-1,1)
+            elif(yStart > moveY):
+                yStart-=1
+                xStart-=1
+                actions.move_by_offset(-1,-1)
+            else:
+                xStart-=1
+                actions.move_by_offset(-1,0)
+
+        #print("moveX :" + str(xStart) + " moveY: " +str(yStart))
 
     start = time.time()
-    actions.click_and_hold().move_by_offset(moveX,moveY).release().perform()
+    actions.pause(1).release().perform()
     end = time.time()
 
-    #In order to refresh the brush
-    #actions.move_to_element_with_offset(element,0,0).click().perform()
+    print("Brushing... " + str(moveX) + " " + str(moveY))
 
     return end-start
 
@@ -395,7 +478,7 @@ if __name__ == "__main__":
 
     for state in explorationSequence:
 
-        time.sleep(2)
+        #time.sleep(2)
 
         #driver.refresh()
 
@@ -413,8 +496,6 @@ if __name__ == "__main__":
         except:
             print("Element not found")
         else:
-
-            print("STATE: " + selector + " EVENT: " + event)
             #print(state["info"])
 
             if(selector not in finalSummary):
@@ -462,13 +543,21 @@ if __name__ == "__main__":
                latency = PanBrush(element,state["info"],driver)
                driver.refresh()
 
-            print(latency)
-            actionSequence.append([event,latency])
-            finalSummary[selector][event].append([state["info"],latency])
+            if(latency != None):
+                #Convert in milliseconds
+                print("STATE: " + selector + " EVENT: " + event + " LATENCY: " + str(latency*1000))
+                actionSequence.append([event,latency*1000])
+                finalSummary[selector][event].append([state["info"],latency*1000])
+
+            else:
+
+                print("STATE: " + selector + " EVENT: " + event + " LATENCY: None" )
+                actionSequence.append([event,latency])
+                finalSummary[selector][event].append([state["info"],latency])
 
     
-    with open('summaries/summary_brush.json', 'w') as fp:
+    with open('summaries/summary_brexit.json', 'w') as fp:
         json.dump(finalSummary, fp,  indent=4)
     
-    driver.close()
+    #driver.close()
     print(actionSequence)

@@ -427,6 +427,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
         elif(zoomableNode!=None):
 
             if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+
         
                 panZoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
 
@@ -448,6 +449,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         for size in typeActions:
 
+            #We make 10 for zoom in and 10 for zoom out handled directly in Selenium
             for i in range(0,10):
 
                 if(stylesNode["height"]!=None or stylesNode["width"]!=None):
@@ -461,7 +463,25 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 retInfo = Zoom(size,zoomInfo)
 
-                explorationState = {"selector":idNode,"event":eventNode,"info":retInfo}
+                explorationState = {"selector":idNode,"event":eventNode,"info":["in",retInfo]}
+
+                explorationSequence.append(explorationState)
+                UpdateScore(graphVisit,stateNumber,idNode)
+
+            for i in range(0,10):
+    
+                if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+            
+                        zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
+
+                else: 
+
+                        zoomInfo = None
+                    
+
+                retInfo = Zoom(size,zoomInfo)
+
+                explorationState = {"selector":idNode,"event":eventNode,"info":["out",retInfo]}
 
                 explorationSequence.append(explorationState)
                 UpdateScore(graphVisit,stateNumber,idNode)

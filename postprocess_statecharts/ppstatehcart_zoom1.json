@@ -26,28 +26,6 @@
             "id": "svg rect",
             "tag": "rect",
             "data": null,
-            "event": "mousedown",
-            "brushable": null,
-            "zoomable": {
-                "scale": 1,
-                "translate_x": 0,
-                "translate_y": 0
-            },
-            "leadsToState": -1,
-            "attributes": {
-                "width": 400.0,
-                "height": 400.0,
-                "transform": "translate(40,40)"
-            },
-            "styles": {
-                "height": 400.0,
-                "width": 400.0
-            }
-        },
-        {
-            "id": "svg rect",
-            "tag": "rect",
-            "data": null,
             "event": "dblclick",
             "brushable": null,
             "zoomable": {
