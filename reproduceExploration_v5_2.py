@@ -218,10 +218,15 @@ def Input(element,infoInput,driver):
 
         actions = ActionChains(driver,duration=10)
 
-        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release()
+        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release().click_and_hold().perform()
 
+        pixelStart=0
+        while(pixelStart<int(pixelsOffset)):
+            pixelStart+=1
+            actions.move_by_offset(1,0)
+            
         start = time.time()
-        actions.click_and_hold().move_by_offset(pixelsOffset,0).release().perform()
+        actions.release().perform()
         end = time.time()
 
     elif(infoInput[0] == "number"):
@@ -437,7 +442,7 @@ def PanBrush(element,infoPan,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brush.json')
+    explorationSequence = open('explorations/exploration_slider.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -446,7 +451,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/MatteoScript/brushmorescatter.html')
+    driver.get('http://127.0.0.1:5501/MatteoScript/sliderhtml.html')
     driver.maximize_window()
     
     finalSummary = {}

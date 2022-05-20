@@ -1,0 +1,22 @@
+{
+    "0": [
+        {
+            "id": "#nRadius",
+            "tag": "input",
+            "data": null,
+            "event": "input",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 0,
+            "attributes": {
+                "type": "range",
+                "min": "1",
+                "max": "150"
+            },
+            "styles": {
+                "height": 16.0,
+                "width": 129.0
+            }
+        }
+    ]
+}
