@@ -3,6 +3,7 @@ from xml.dom.minidom import Element
 from selenium import webdriver
 import time
 import random
+from random import choice
 import json
 
 
@@ -326,6 +327,8 @@ def Brush(element,infoBrush,driver):
     xEnd = int(End[0])
     yEnd = int(End[1])
 
+    print("Brushed: [" + str(xStart)+","+str(yStart)+"],["+str(xEnd)+","+str(yEnd)+"]" )
+
     actions = ActionChains(driver,duration=10)
 
     actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().perform()
@@ -344,107 +347,24 @@ def Brush(element,infoBrush,driver):
 
     return end-start
 
-def PanBrush(element,infoBrush,driver):
-    
-    directions = infoBrush["directions"]
+def PanBrush(element,infoPan,driver):
 
-    brushExtent = infoBrush["brush_extent"]
+    newBrushAfterPan = infoPan[1]
+    infoPan = infoPan[0]
 
-    selectionExtent = infoBrush["selection_extent"]
+    width = infoPan[4]
+    height = infoPan[5]
 
-    #Dimension of the brushable area
-    width = brushExtent[1][0] - brushExtent[0][0]
-    height = brushExtent[1][1] - brushExtent[0][1]
-
-    #Dimension of the pannable area of the brush
-    widthBrush = selectionExtent[1][0] - selectionExtent[0][0]
-    heightBrush = selectionExtent[1][1] - selectionExtent[0][1]
-
-    #Starting,Ending and Middle point of the brushArea
-    xStartBrush = selectionExtent[0][0]
-    yStartBrush = selectionExtent[0][1]
-
-    xEndBrush = xStartBrush + widthBrush
-    yEndBrush = yStartBrush + heightBrush
-
-    xMiddleBrush = xStartBrush + widthBrush/2
-    yMiddleBrush = yStartBrush + heightBrush/2
-
-    #print("xMiddle " + str(xMiddleBrush))
-
-    xMove = None
-    yMove = None
-
-    if(directions == "xy"):
-
-        #Here randomly is chosen where moving between "left/right" and "up/down"
-        xMove = random.randint(0,1)
-        yMove = random.randint(0,1)
-
-        xDirections = ["right","left"]
-        yDirections = ["up","down"]
-
-        xMove = xDirections[xMove]
-        yMove = yDirections[yMove]
-    
-    elif(directions == "x"):
-
-        xMove = random.randint(0,1)
-
-        xDirections = ["right","left"]
-
-        xMove = xDirections[xMove]
-
-    else:
-
-        yMove = random.randint(0,1)
-
-        yDirections = ["up","down"]
-
-        yMove = yDirections[yMove]
-
+    xMiddleBrush = infoPan[2]
+    yMiddleBrush = infoPan[3]
 
     actions = ActionChains(driver,duration=10)
-
-    if(xMove == "right"):
-        
-        maxMovement = width - xEndBrush
-
-        moveX = random.uniform(0,maxMovement)
-    
-    elif(xMove == "left"):
-
-        maxMovement = -xStartBrush
-
-        moveX = random.uniform(maxMovement,0)
-    
-    else:
-
-        moveX = 0
-
-
-    if(yMove == "up"):
-
-        maxMovement = -yStartBrush
-
-        moveY = random.uniform(maxMovement,0)
-
-    #This means we're moving down
-    elif(yMove == "down"):
-
-        maxMovement = height - yEndBrush
-
-        moveY = random.uniform(0,maxMovement)
-
-    else: 
-
-        moveY = 0
 
     #actions.move_to_element_with_offset(element,0,0).perform()
     actions.move_to_element_with_offset(element,xMiddleBrush,yMiddleBrush).click_and_hold()
 
-    moveX = int(moveX)
-    moveY = int(moveY)
+    moveX = infoPan[0]
+    moveY = infoPan[1]
 
     xStart = 0
     yStart = 0
@@ -493,14 +413,31 @@ def PanBrush(element,infoBrush,driver):
     actions.pause(1).release().perform()
     end = time.time()
 
-    print("Brushing... " + str(moveX) + " " + str(moveY))
+    print("Panning... " + str(moveX) + " " + str(moveY))
 
+    #This part of the code is useful to cancel the brushed zone and prepare a new brush
+    listExcludeX = []
+    listExcludeY = []
+
+    for i in range(int(newBrushAfterPan[0][0]),int(newBrushAfterPan[1][0])):
+        listExcludeX.append(i)
+
+    for j in range(int(newBrushAfterPan[0][1]),int(newBrushAfterPan[1][1])):
+        listExcludeY.append(j)
+
+    xWhereClick = choice(list(set([x for x in range(0,int(width))]) - set(listExcludeX)))
+    yWhereClick = choice(list(set([x for x in range(0,int(height))]) - set(listExcludeY)))
+
+    actions.move_to_element_with_offset(element,xWhereClick,yWhereClick).click().perform()
+    print("X and Y to click: " + str(xWhereClick) + " " + str(yWhereClick))
+
+    print("-------------------------------------------------------")
     return end-start
 
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_zoom2.json')
+    explorationSequence = open('explorations/exploration_brush.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -509,7 +446,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/MatteoScript/zommable2.html')
+    driver.get('http://127.0.0.1:5501/MatteoScript/brushmorescatter.html')
     driver.maximize_window()
     
     finalSummary = {}
