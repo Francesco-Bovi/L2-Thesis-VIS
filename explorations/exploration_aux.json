@@ -1,6 +1,6 @@
 [
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -14,7 +14,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -38,7 +38,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -76,7 +76,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -114,7 +114,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -128,7 +128,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -152,7 +152,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -166,7 +166,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -190,7 +190,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -204,7 +204,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -228,7 +228,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -242,7 +242,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -266,7 +266,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -280,7 +280,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -304,7 +304,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -318,7 +318,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -342,7 +342,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -356,7 +356,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -380,7 +380,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -394,7 +394,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -418,7 +418,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -432,7 +432,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -456,7 +456,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -470,7 +470,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -494,7 +494,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -508,7 +508,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -532,7 +532,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -546,7 +546,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -570,7 +570,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -584,7 +584,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -608,7 +608,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -622,7 +622,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -646,7 +646,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -660,7 +660,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -684,7 +684,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -698,7 +698,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -722,7 +722,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -736,7 +736,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -760,7 +760,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -774,7 +774,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -798,7 +798,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -812,7 +812,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -836,7 +836,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -850,7 +850,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -874,7 +874,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -888,7 +888,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -912,7 +912,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -926,7 +926,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -950,7 +950,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -964,7 +964,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -988,7 +988,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -1002,7 +1002,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -1026,7 +1026,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -1040,7 +1040,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -1064,7 +1064,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -1078,7 +1078,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [
@@ -1102,7 +1102,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "brush",
         "info": [
             [
@@ -1116,7 +1116,7 @@
         ]
     },
     {
-        "selector": "svg g g.cell",
+        "selector": "#dataviz_brushing",
         "event": "panbrush",
         "info": [
             [

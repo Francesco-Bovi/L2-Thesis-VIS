@@ -358,7 +358,7 @@ def Brush(element,infoBrush,driver):
     actions.release().perform()
     end = time.time()
 
-    time.sleep(1)
+    time.sleep(0.1)
     #In order to refresh the brush
     #actions.move_to_element_with_offset(element,0,0).click().release().perform()
 
@@ -453,7 +453,7 @@ def PanBrush(element,infoPan,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brush.json')
+    explorationSequence = open('explorations/exploration_brush2.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -462,7 +462,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome()
 
-    driver.get('https://bl.ocks.org/Fil/raw/6d9de24b31cb870fed2e6178a120b17d/?raw=true')
+    driver.get('http://127.0.0.1:5501/script/brushmorescatter.html')
     driver.maximize_window()
     
     finalSummary = {}
@@ -472,78 +472,84 @@ if __name__ == "__main__":
         latency = None
 
         selector = state["selector"]
-        event = state["event"]
+        events = state["events"]
+    
 
         #Explicit wait
         try:
-            element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR,selector))
-            )
+                elements = WebDriverWait(driver, 10).until(
+                    EC.presence_of_all_elements_located((By.CSS_SELECTOR,selector))
+                )
         except:
             print("Element not found")
         else:
             #print(state["info"])
 
-            if(selector not in finalSummary):
-                finalSummary[selector] = {}
+            for element in elements:
 
-            if(event not in finalSummary[selector]):
-                finalSummary[selector][event] = []
+                for event in events:
+                    eventName = event["event"]
 
-            if(event == "click"):
+                    if(selector not in finalSummary):
+                        finalSummary[selector] = {}
 
-                latency = Click(element,state["info"],driver)
+                    if(eventName not in finalSummary[selector]):
+                        finalSummary[selector][eventName] = []
 
-            elif(event == "mouseover" or event == "mouseenter"):
+                    if(eventName == "click"):
 
-                latency = Mouseover(element,driver)
+                        latency = Click(element,event["info"],driver)
 
-            elif(event == "mouseout" or event == "mouseleave"):
+                    elif(eventName == "mouseover" or eventName == "mouseenter"):
 
-                latency = Mouseout(element,state["info"],driver)
+                        latency = Mouseover(element,driver)
 
-            elif(event == "mousedown"):
+                    elif(eventName == "mouseout" or eventName == "mouseleave"):
 
-                #Do nothing here, since we don't know what doing if we don't have info
-                time.sleep(0.1)
+                        latency = Mouseout(element,event["info"],driver)
+
+                    elif(eventName == "mousedown"):
+
+                        #Do nothing here, since we don't know what doing if we don't have info
+                        time.sleep(0.1)
+                    
+                    elif(eventName == "brush"):
+
+                        latency = Brush(element,event["info"],driver)
+
+                    elif(eventName == "panzoom"):
+
+                        latency = PanZoom(element,event["info"],driver)
+
+                    elif(eventName == "wheel"):
+
+                        latency = Zoom(element,event["info"],driver)
+
+                    elif(eventName == "mouseout"):
+
+                        latency = Mouseout(element,driver)
+
+                    elif(eventName == "input"):
+
+                        latency = Input(element,event["info"],driver)
+                    
+                    elif(eventName == "panbrush"):
+
+                        latency = PanBrush(element,event["info"],driver)
+
+                    if(latency != None):
+                        #Convert in milliseconds
+                        print("STATE: " + selector + " EVENT: " + eventName + " LATENCY: " + str(latency*1000) + " ms")
+                        actionSequence.append([eventName,latency*1000])
+                        finalSummary[selector][eventName].append([event["info"],latency*1000])
+
+                    else:
+
+                        print("STATE: " + selector + " EVENT: " + eventName + " LATENCY: None" )
+                        actionSequence.append([eventName,latency])
+                        finalSummary[selector][eventName].append([event["info"],latency])
+                print("-------------------------------------------------------")
             
-            elif(event == "brush"):
-
-                latency = Brush(element,state["info"],driver)
-
-            elif(event == "panzoom"):
-
-                latency = PanZoom(element,state["info"],driver)
-
-            elif(event == "wheel"):
-
-                latency = Zoom(element,state["info"],driver)
-
-            elif(event == "mouseout"):
-
-                latency = Mouseout(element,driver)
-
-            elif(event == "input"):
-
-                latency = Input(element,state["info"],driver)
-            
-            elif(event == "panbrush"):
-
-               latency = PanBrush(element,state["info"],driver)
-
-            if(latency != None):
-                #Convert in milliseconds
-                print("STATE: " + selector + " EVENT: " + event + " LATENCY: " + str(latency*1000) + " ms")
-                actionSequence.append([event,latency*1000])
-                finalSummary[selector][event].append([state["info"],latency*1000])
-
-            else:
-
-                print("STATE: " + selector + " EVENT: " + event + " LATENCY: None" )
-                actionSequence.append([event,latency])
-                finalSummary[selector][event].append([state["info"],latency])
-        print("-------------------------------------------------------")
-    
     with open('summaries/summary_brexit.json', 'w') as fp:
         json.dump(finalSummary, fp,  indent=4)
     

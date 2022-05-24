@@ -311,15 +311,6 @@ def PanZoom(actionType,panZoomInfo):
 
         return [actionType,(height,width),(xStart,yStart),(xMove,yMove)]
 
-"""
-#SLIDER CHANGE D3 (in which we know only the handler)
-def SliderD3(sliderInfo):
-
-    minValue = sliderInfo["aria-valuemin"]
-    maxValue = sliderInfo["aria-valuemax"]
-    currentValue = sliderInfo["aria-valuenow"]
-"""
-
 #SLIDER CHANGE HTML
 #This is the case when class = "input" and type = "range"
 def SliderHtml(sliderInfo):
@@ -333,7 +324,6 @@ def SliderHtml(sliderInfo):
     width = sliderInfo["width"]
 
     return ["range",None,(minValue,maxValue,width)]
-
 
 #SELECT DROPDOWN HTML
 def selectDropdownHtml(selectInfo):
@@ -367,41 +357,12 @@ def inputNumberHtml(inputInfo):
 
     return nextValue
 
-#Check when interrupt the exploration
-def CheckScore(graphVisit):
 
-    for state in graphVisit:
-        
-        #print(state)
-        for node in graphVisit[state]:
+def getNode(explSequence,selector):
+    for node in explSequence:
+        if(node["selector"] == selector):
+            return node["events"]
 
-            if(node["visit"]!=None):
-                print("STATE: "+state + " NODE: " + node["id"] + " visit: " + str(node["visit"]))
-                if(node["visit"]==0):
-                    return 0
-    
-    return 1
-
-#Update the graph of the visits
-def UpdateScore(graphVisit,state,idNode):
-
-    for node in graphVisit[state]:
-
-        if(node["id"] == idNode):
-
-            if(node["visit"]!=None):
-
-                node["visit"]+=1
-
-    return
-
-def retVisitNode(graphVisit,state,idNode):
-
-    for node in graphVisit[state]:
-    
-        if(node["id"]== idNode):
-
-            return node["visit"]
 
 def ExplorationState(graph,graphVisit,state,stateNumber):
     global explorationSequence
@@ -418,6 +379,13 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
     brushableNode = currentState["brushable"]
     zoomableNode = currentState["zoomable"]
 
+    checkPresence = 0
+    for element in explorationSequence:
+        if(element["selector"] == idNode):
+            checkPresence = 1
+
+    if(checkPresence == 0):
+        explorationSequence.append({"selector":idNode,"events":[]})
     #print("STATE: "+ stateNumber + "| ID: "+ idNode)
 
     if(eventNode == "click"):
@@ -425,10 +393,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
         #If the tag is button we don't need any other information
         if(tagNode == "button"):
 
-            explorationState = {"selector":idNode,"event":eventNode,"info":None}
+            explorationState = {"event":eventNode,"info":None}
 
-            explorationSequence.append(explorationState)
-            UpdateScore(graphVisit,stateNumber,idNode)
+            getNode(explorationSequence,idNode).append(explorationState)
+            
 
         else:
 
@@ -437,10 +405,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             infoClick = Click(height,width)
 
-            explorationState = {"selector":idNode,"event":eventNode,"info":infoClick}
+            explorationState = {"event":eventNode,"info":infoClick}
 
-            explorationSequence.append(explorationState)
-            UpdateScore(graphVisit,stateNumber,idNode)
+            getNode(explorationSequence,idNode).append(explorationState)
+            
 
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
@@ -448,10 +416,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
     #For the moment we try to not distinguish them "mouseover" and "mouseleave"
     elif(eventNode == "mouseover" or eventNode == "mouseenter"):
 
-        explorationState = {"selector":idNode,"event":eventNode,"info":None}
+        explorationState = {"event":eventNode,"info":None}
 
-        explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idNode)
+        getNode(explorationSequence,idNode).append(explorationState)
+        
 
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
@@ -469,10 +437,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             infoOut = (stylesNode["height"],stylesNode["width"])
 
-        explorationState = {"selector":idNode,"event":eventNode,"info":infoOut}
+        explorationState = {"event":eventNode,"info":infoOut}
 
-        #explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idNode)
+        getNode(explorationSequence,idNode).append(explorationState)
+        
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
 
@@ -480,10 +448,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         if(brushableNode==None and zoomableNode==None):
 
-            explorationState = {"selector":idNode,"event":eventNode,"info":None}
+            explorationState = {"event":eventNode,"info":None}
 
-            explorationSequence.append(explorationState)
-            UpdateScore(graphVisit,stateNumber,idNode)
+            getNode(explorationSequence,idNode).append(explorationState)
+            
 
             #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
@@ -500,10 +468,9 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
                     print("New selection_extent: ",end="")
                     print(newSelectionExtent)
 
-                    explorationState = {"selector":idNode,"event":"brush","info":newSelectionExtent}
+                    explorationState = {"event":"brush","info":newSelectionExtent}
 
-                    explorationSequence.append(explorationState)
-                    #UpdateScore(graphVisit,stateNumber,idNode)
+                    getNode(explorationSequence,idNode).append(explorationState)
 
                     infoPan = PanBrush(brushableNode["directions"],brushableNode["brush_extent"],newSelectionExtent)
                     #print("InfoPan ",end="")
@@ -512,10 +479,9 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
                     newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
 
                     #Info for panning the brushed area
-                    explorationState = {"selector":idNode,"event":"panbrush","info":[infoPan, newBrushPosition]}
+                    explorationState = {"event":"panbrush","info":[infoPan, newBrushPosition]}
 
-                    explorationSequence.append(explorationState)
-                    #UpdateScore(graphVisit,stateNumber,idNode)
+                    getNode(explorationSequence,idNode).append(explorationState)
 
                     #Position after the panning
                     #newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
@@ -537,10 +503,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
                 
                 retInfo = PanZoom(size,panZoomInfo)
 
-                explorationState = {"selector":idNode,"event":"panzoom","info":retInfo}
+                explorationState = {"event":"panzoom","info":retInfo}
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                getNode(explorationSequence,idNode).append(explorationState)
+                
 
         
     elif(eventNode == "wheel"):
@@ -561,10 +527,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 retInfo = Zoom(size,zoomInfo)
 
-                explorationState = {"selector":idNode,"event":eventNode,"info":["in",retInfo]}
+                explorationState = {"event":eventNode,"info":["in",retInfo]}
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                getNode(explorationSequence,idNode).append(explorationState)
+                
 
             for i in range(0,10):
     
@@ -579,17 +545,17 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 retInfo = Zoom(size,zoomInfo)
 
-                explorationState = {"selector":idNode,"event":eventNode,"info":["out",retInfo]}
+                explorationState = {"event":eventNode,"info":["out",retInfo]}
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                getNode(explorationSequence,idNode).append(explorationState)
+                
 
     elif(eventNode == "mouseup"):
 
-        explorationState = {"selector":idNode,"event":eventNode,"info":None}
+        explorationState = {"event":eventNode,"info":None}
 
-        explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idNode)
+        getNode(explorationSequence,idNode).append(explorationState)
+        
 
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
@@ -609,10 +575,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                         retInfo[1]=size
 
-                        explorationState = {"selector":idNode,"event":eventNode,"info": retInfo}
+                        explorationState = {"event":eventNode,"info": retInfo}
 
-                        explorationSequence.append(explorationState)
-                        UpdateScore(graphVisit,stateNumber,idNode)
+                        getNode(explorationSequence,idNode).append(explorationState)
+                        
 
             elif(attributeNode["type"]=="number"):
 
@@ -620,18 +586,18 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                     numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
 
-                    explorationState = {"selector":idNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+                    explorationState = {"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
 
-                    explorationSequence.append(explorationState)
-                    UpdateScore(graphVisit,stateNumber,idNode)
+                    getNode(explorationSequence,idNode).append(explorationState)
+                    
 
             #We treat this case like it was a button
             elif(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
 
-                explorationState = {"selector":idNode,"event":eventNode,"info":[attributeNode["type"],None]}
+                explorationState = {"event":eventNode,"info":[attributeNode["type"],None]}
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                getNode(explorationSequence,idNode).append(explorationState)
+                
     
     elif(eventNode == "change"):
 
@@ -639,10 +605,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             if(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
     
-                explorationState = {"selector":idNode,"event":eventNode,"info":[attributeNode["type"],None]}
+                explorationState = {"event":eventNode,"info":[attributeNode["type"],None]}
 
-                explorationSequence.append(explorationState)
-                UpdateScore(graphVisit,stateNumber,idNode)
+                getNode(explorationSequence,idNode).append(explorationState)
+                
 
 
 
@@ -650,10 +616,10 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         #Since this is not a real event but just to go back to a state
 
-        explorationState = {"selector":idNode,"event":eventNode,"info":None}
+        explorationState = {"event":eventNode,"info":None}
 
-        explorationSequence.append(explorationState)
-        UpdateScore(graphVisit,stateNumber,idNode)
+        getNode(explorationSequence,idNode).append(explorationState)
+        
 
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
         
