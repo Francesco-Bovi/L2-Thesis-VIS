@@ -1,0 +1,1370 @@
+[
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='circle']",
+        "css": "#v-0",
+        "startingPath": 1,
+        "siblings": 177,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "mouseleave",
+                "info": 3.0
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "mouseleave",
+                "info": 3.0
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "mouseleave",
+                "info": 3.0
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[1]/div[1]/span[2]",
+        "css": "#selector-block-Alcohol div.selector-block-title span.undo",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div",
+        "css": "#bargram-interval-Alcohol-0",
+        "startingPath": 1,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    25.74785031549284,
+                    3.4454237321368923
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    7.780476272473422,
+                    2.131330619408959
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    16.2655743962443,
+                    6.017666285813477
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[4]/div",
+        "css": "#bargram-selector-Alcohol div.values-container div.value.slider",
+        "startingPath": 2,
+        "siblings": 4,
+        "events": [
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[1]/div[2]/div[2]/div[2]/div",
+        "css": "#boxplot-interval-Alcohol-0",
+        "startingPath": 3,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    8.002238128997009,
+                    2.2899480099635148
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    8.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    27.495933374436497,
+                    2.799150827393958
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    8.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    12.02272940814403,
+                    3.3018876744904198
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    8.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[3]/div[1]/span[2]",
+        "css": "#selector-block-Malicacid div.selector-block-title span.undo",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[3]/div[2]/div[1]/div[2]/div",
+        "css": "#bargram-interval-Malicacid-0",
+        "startingPath": 1,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    12.658536342949521,
+                    2.9014758800904037
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    7.71419061626054,
+                    2.601206186748613
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    21.83802696040334,
+                    1.3597259968783657
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[3]/div[2]/div[1]/div[4]/div",
+        "css": "#bargram-selector-Malicacid div.values-container div.value.slider",
+        "startingPath": 2,
+        "siblings": 4,
+        "events": [
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[3]/div[2]/div[2]/div[2]/div",
+        "css": "#boxplot-interval-Malicacid-0",
+        "startingPath": 3,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    15.931092967629741,
+                    0.31329939079708513
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    3.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    19.115885751584713,
+                    1.1606511264816943
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    3.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    4.865445176046787,
+                    1.149279572649462
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    3.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[5]/div[1]/span[2]",
+        "css": "#selector-block-Ash div.selector-block-title span.undo",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[5]/div[2]/div[1]/div[2]/div",
+        "css": "#bargram-interval-Ash-0",
+        "startingPath": 1,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    20.64675976987786,
+                    4.109223585394444
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    14.497638924077958,
+                    1.5329205586230255
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.0268114723603494,
+                    5.173490849230486
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[5]/div[2]/div[1]/div[4]/div",
+        "css": "#bargram-selector-Ash div.values-container div.value.slider",
+        "startingPath": 2,
+        "siblings": 4,
+        "events": [
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[5]/div[2]/div[2]/div[2]/div",
+        "css": "#boxplot-interval-Ash-0",
+        "startingPath": 3,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    22.520607857418803,
+                    8.6513778730028
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    11.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    19.449945582549887,
+                    1.0595312403809665
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    11.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    5.053851487007334,
+                    8.079329633230659
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    11.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[7]/div[1]/span[2]",
+        "css": "#selector-block-Alcalinityofash div.selector-block-title span.undo",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[7]/div[2]/div[1]/div[2]/div",
+        "css": "#bargram-interval-Alcalinityofash-0",
+        "startingPath": 1,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    28.932193044841686,
+                    8.214194270704501
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    20.84774361379881,
+                    6.910279187849213
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    24.364984361243376,
+                    7.66297614830247
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    10.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[7]/div[2]/div[1]/div[4]/div",
+        "css": "#bargram-selector-Alcalinityofash div.values-container div.value.slider",
+        "startingPath": 2,
+        "siblings": 4,
+        "events": [
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "facsimile_back",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[4]/div[1]/div[7]/div[2]/div[2]/div[2]/div",
+        "css": "#boxplot-interval-Alcalinityofash-0",
+        "startingPath": 3,
+        "siblings": 5,
+        "events": [
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    20.301821153359068,
+                    0.0033563290053240102
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    5.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    14.602003073964145,
+                    0.917727072476104
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    5.0
+                ]
+            },
+            {
+                "event": "mouseenter",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.6383692465497142,
+                    1.28136287320519
+                ]
+            },
+            {
+                "event": "mouseleave",
+                "info": [
+                    30.0,
+                    5.0
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[6]/button[1]",
+        "css": "#deselect-all",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/span[1]",
+        "css": "#settings",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    0.7785596144828596,
+                    4.16457745096705
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    15.517860473892355,
+                    28.308879939200672
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    24.108828105553197,
+                    14.134856989020856
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]",
+        "css": "#modal-settings",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    435.2102815580779,
+                    558.294525764754
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    232.86288824946723,
+                    553.711870437741
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]",
+        "css": "#modal-settings div.modal-dialog",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mousedown",
+                "info": null
+            },
+            {
+                "event": "mousedown",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[1]/button[1]",
+        "css": "#modal-settings div.modal-dialog div.modal-content div.modal-header button.close",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/select[1]",
+        "css": "#dataset",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": []
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/input[1]",
+        "css": "#blockOperationOr",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "radio",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "radio",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]",
+        "css": "#selectorOperationAnd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "radio",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "radio",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/input[1]",
+        "css": "#feedback-domain",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[2]/input[1]",
+        "css": "#feedback-coverage",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[3]/input[1]",
+        "css": "#feedback-arrows",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[4]/input[1]",
+        "css": "#feedback-tooltip",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/input[1]",
+        "css": "#uniform-selector",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[2]/input[1]",
+        "css": "#boxplot-selector",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[1]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[2]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[3]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[4]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[5]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[6]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[7]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[8]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[9]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[10]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[11]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[12]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[13]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[14]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[2]/div[1]/div[6]/div[1]/div[1]/div[15]/input[1]",
+        "css": "#metrics-list div.form-check input.form-check-input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/main[1]/div[8]/div[1]/div[1]/div[3]/button[1]",
+        "css": "#save-button",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    }
+]

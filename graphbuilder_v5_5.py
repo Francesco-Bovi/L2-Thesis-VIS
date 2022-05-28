@@ -358,9 +358,9 @@ def inputNumberHtml(inputInfo):
     return nextValue
 
 
-def getNode(explSequence,selector):
+def getNode(explSequence,xpath):
     for node in explSequence:
-        if(node["selector"] == selector):
+        if(node["xpath"] == xpath):
             return node["events"]
 
 
@@ -372,6 +372,9 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
     currentState = state
 
     idNode = currentState["id"]
+    xpathNode = currentState["xpath"]
+    siblingsNode = currentState["siblings"]
+    startingPathNode = currentState["startingPath"]
     eventNode  = currentState["event"]
     stylesNode = currentState["styles"]
     attributeNode = currentState["attributes"]
@@ -381,22 +384,21 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
     checkPresence = 0
     for element in explorationSequence:
-        if(element["selector"] == idNode):
+        if(element["xpath"] == xpathNode):
             checkPresence = 1
 
     if(checkPresence == 0):
-        explorationSequence.append({"selector":idNode,"events":[]})
+        explorationSequence.append({"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"events":[]})
     #print("STATE: "+ stateNumber + "| ID: "+ idNode)
 
-    if(eventNode == "click"):
+    if(eventNode == "click" or eventNode == "contextmenu"):
 
         #If the tag is button we don't need any other information
         if(tagNode == "button"):
 
             explorationState = {"event":eventNode,"info":None}
 
-            getNode(explorationSequence,idNode).append(explorationState)
-            
+            getNode(explorationSequence,xpathNode).append(explorationState)
 
         else:
 
@@ -407,20 +409,14 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             explorationState = {"event":eventNode,"info":infoClick}
 
-            getNode(explorationSequence,idNode).append(explorationState)
-            
-
-        #Now go to new state
-        #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
+            getNode(explorationSequence,xpathNode).append(explorationState)
 
     #For the moment we try to not distinguish them "mouseover" and "mouseleave"
     elif(eventNode == "mouseover" or eventNode == "mouseenter"):
 
         explorationState = {"event":eventNode,"info":None}
 
-        getNode(explorationSequence,idNode).append(explorationState)
-        
-
+        getNode(explorationSequence,xpathNode).append(explorationState)
         #Now go to new state
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
@@ -439,10 +435,9 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         explorationState = {"event":eventNode,"info":infoOut}
 
-        getNode(explorationSequence,idNode).append(explorationState)
+        getNode(explorationSequence,xpathNode).append(explorationState)
         
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
-
 
     elif(eventNode == "mousedown"):
 
@@ -450,7 +445,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
             explorationState = {"event":eventNode,"info":None}
 
-            getNode(explorationSequence,idNode).append(explorationState)
+            getNode(explorationSequence,xpathNode).append(explorationState)
             
 
             #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
@@ -470,7 +465,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                     explorationState = {"event":"brush","info":newSelectionExtent}
 
-                    getNode(explorationSequence,idNode).append(explorationState)
+                    getNode(explorationSequence,xpathNode).append(explorationState)
 
                     infoPan = PanBrush(brushableNode["directions"],brushableNode["brush_extent"],newSelectionExtent)
                     #print("InfoPan ",end="")
@@ -481,7 +476,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
                     #Info for panning the brushed area
                     explorationState = {"event":"panbrush","info":[infoPan, newBrushPosition]}
 
-                    getNode(explorationSequence,idNode).append(explorationState)
+                    getNode(explorationSequence,xpathNode).append(explorationState)
 
                     #Position after the panning
                     #newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
@@ -505,10 +500,8 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 explorationState = {"event":"panzoom","info":retInfo}
 
-                getNode(explorationSequence,idNode).append(explorationState)
-                
-
-        
+                getNode(explorationSequence,xpathNode).append(explorationState)
+                      
     elif(eventNode == "wheel"):
 
         for size in typeActions:
@@ -529,7 +522,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 explorationState = {"event":eventNode,"info":["in",retInfo]}
 
-                getNode(explorationSequence,idNode).append(explorationState)
+                getNode(explorationSequence,xpathNode).append(explorationState)
                 
 
             for i in range(0,10):
@@ -547,16 +540,14 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 explorationState = {"event":eventNode,"info":["out",retInfo]}
 
-                getNode(explorationSequence,idNode).append(explorationState)
+                getNode(explorationSequence,xpathNode).append(explorationState)
                 
-
     elif(eventNode == "mouseup"):
 
         explorationState = {"event":eventNode,"info":None}
 
-        getNode(explorationSequence,idNode).append(explorationState)
+        getNode(explorationSequence,xpathNode).append(explorationState)
         
-
         #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
 
     elif(eventNode == "input"):
@@ -577,7 +568,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                         explorationState = {"event":eventNode,"info": retInfo}
 
-                        getNode(explorationSequence,idNode).append(explorationState)
+                        getNode(explorationSequence,xpathNode).append(explorationState)
                         
 
             elif(attributeNode["type"]=="number"):
@@ -588,7 +579,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                     explorationState = {"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
 
-                    getNode(explorationSequence,idNode).append(explorationState)
+                    getNode(explorationSequence,xpathNode).append(explorationState)
                     
 
             #We treat this case like it was a button
@@ -596,21 +587,17 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
                 explorationState = {"event":eventNode,"info":[attributeNode["type"],None]}
 
-                getNode(explorationSequence,idNode).append(explorationState)
-                
-    
+                getNode(explorationSequence,xpathNode).append(explorationState)
+                    
     elif(eventNode == "change"):
 
-        if(tagNode=="input"):
+        if(tagNode == "input"):
 
             if(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
     
                 explorationState = {"event":eventNode,"info":[attributeNode["type"],None]}
 
-                getNode(explorationSequence,idNode).append(explorationState)
-                
-
-
+                getNode(explorationSequence,xpathNode).append(explorationState)
 
     elif(eventNode == "facsimile_back"):
 
@@ -618,10 +605,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
 
         explorationState = {"event":eventNode,"info":None}
 
-        getNode(explorationSequence,idNode).append(explorationState)
-        
-
-        #ExplorationState(graph,graphVisit,graph[str(currentState["leadsToState"])],str(currentState["leadsToState"]))
+        getNode(explorationSequence,xpathNode).append(explorationState)
         
     return  
 
@@ -650,7 +634,18 @@ def statechartPreProcessing(statechart):
                 newNode["brushable"] = node["brushable"]
                 newNode["zoomable"] = node["zoomable"]
                 newNode["leadsToState"] = node["leadsToState"]
+                newNode["siblings"] = node["siblings"]
                 
+
+                if(node["siblings"] != 0):
+                 
+                    positionXPath = node["nodeXPath"].rfind("[")
+                    newNode["xpath"] = node["nodeXPath"][0:positionXPath]
+                    newNode["startingPath"] = node["nodeXPath"][positionXPath:][1:-1]
+
+                else:
+                    newNode["xpath"] = node["nodeXPath"]
+                    newNode["startingPath"] = -1
 
                 if(node["selectValue"]!=None):
                     newNode["selectValue"] = node["selectValue"]
@@ -659,15 +654,18 @@ def statechartPreProcessing(statechart):
                 #So creating a dictionary with as key their name
                 #Convert to integer if height or width
                 newNode["attributes"] = {}
-                for key in node["attributes"]:
-                    
-                    if(key["name"] == "height" or key["name"] == "width"):
-                    
-                        newNode["attributes"][key["name"]] = float(key["value"])
-                    
-                    else:
 
-                        newNode["attributes"][key["name"]] = key["value"]
+                if(node["attributes"]!=None):
+
+                    for key in node["attributes"]:
+                        
+                        if(key["name"] == "height" or key["name"] == "width"):
+                        
+                            newNode["attributes"][key["name"]] = float(key["value"])
+                        
+                        else:
+
+                            newNode["attributes"][key["name"]] = key["value"]
 
 
                 #Same for the styles but we need to remove "px"

@@ -18,15 +18,12 @@ from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEven
 #Intro-backgorund-requirements-implementazione-parte chiave
 
 #According to https://drive.google.com/drive/u/0/folders/1ARGI_CIR3V3FvrhttgFNfXWiIpaFqNeV
-clickLatency = 200.0
-mouseOverLatency = 200.0
-mouseLeaveLatency = 1000.0
-mouseMoveLatency = 200.0
-zoomLatency = 1000.0
 
 #Referring to Pan/Drag/Brush
 StartLatency = 200.0
 EndLatency = 1000.0
+
+latencyLimits = {"click":200.0, "change":200.0, "contextclick": 200.0, "mouseover":200.0 , "mouseenter": 200.0, "mousemove": 200.0 , "mouseleave": 1000.0 , "mouseout": 1000.0, "wheel": 1000.0, "dbclick": 1000.0}
 
 def GetPixelsBack(min,max,width):
 
@@ -154,7 +151,6 @@ def PanZoom(element,zoomInfo,driver):
     end = time.time()
 
     print("arriveX :" + str(moveX) + " arriveY: " +str(moveY))
-    time.sleep(5)
 
     return end-start
     
@@ -203,15 +199,11 @@ def Zoom(element,infoInput,driver):
 
     actions.move_to_element(element).perform()
 
-    actions.reset_actions()
-
     actions.scroll(xPoint,yPoint,0,scrollSize)
     
     start = time.time()
     actions.perform()
     end = time.time()
-
-    time.sleep(0.2)
 
     return end-start
 
@@ -296,31 +288,39 @@ def Mouseover(element,driver):
 
     actions = ActionChains(driver)
 
+    #It's like a jump
     actions.move_to_element(element)
 
     start = time.time()
     actions.perform()
     end = time.time()     
 
-    return end-start
+    return (end-start) - 0.250
 
 def Click(element,clickInfo,driver):
 
     if(clickInfo == None):
+
+        actions = ActionChains(driver)
         
+        actions.move_to_element(element).perform()
+
+        actions.click()
+
         #Then we perform the click on that element
         start = time.time()
-        element.click()
+        actions.perform()
         end = time.time()
 
     else:
 
         actions = ActionChains(driver)
 
-        #At first we go on the element
-        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
+        xClick = random.randint(0,element.size["width"]) 
+        yClick = random.randint(0,element.size["height"])
 
-        actions.reset_actions()
+        #At first we go on the element
+        actions.move_to_element_with_offset(element,xClick,yClick).perform()
         
         actions.click()
         
@@ -330,7 +330,39 @@ def Click(element,clickInfo,driver):
         end = time.time()
 
     #Return the latency time
-    return end-start
+    return (end-start)
+
+def ContextClick(element,clickInfo,driver):
+    
+    if(clickInfo == None):
+
+        actions = ActionChains(driver)
+        
+        actions.move_to_element(element).perform()
+
+        actions.context_click()
+
+        #Then we perform the click on that element
+        start = time.time()
+        actions.perform()
+        end = time.time()
+
+    else:
+
+        actions = ActionChains(driver)
+
+        #At first we go on the element
+        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
+        
+        actions.context_click()
+
+        #Then we perform the click on that element
+        start = time.time()
+        actions.perform()
+        end = time.time()
+
+    #Return the latency time
+    return (end-start)
 
 def Brush(element,infoBrush,driver):
 
@@ -345,24 +377,26 @@ def Brush(element,infoBrush,driver):
 
     #print("Brushed: [" + str(xStart)+","+str(yStart)+"],["+str(xEnd)+","+str(yEnd)+"]" )
 
-    actions = ActionChains(driver,duration=10)
+    actions = ActionChains(driver,duration=1)
 
     actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().perform()
+
+    listMoveLatency = [] 
 
     while(xStart<xEnd and yStart<yEnd):
         xStart+=1
         yStart+=1
         actions.move_by_offset(1,1)
+        start = time.time()
+        actions.perform()
+        end = time.time()
+        listMoveLatency.append(str((end-start)*1000))
 
-    start = time.time()
     actions.release().perform()
-    end = time.time()
-
-    time.sleep(0.1)
     #In order to refresh the brush
     #actions.move_to_element_with_offset(element,0,0).click().release().perform()
 
-    return end-start
+    return listMoveLatency
 
 def PanBrush(element,infoPan,driver):
 
@@ -427,7 +461,7 @@ def PanBrush(element,infoPan,driver):
         #print("moveX :" + str(xStart) + " moveY: " +str(yStart))
 
     start = time.time()
-    actions.pause(1).release().perform()
+    actions.release().perform()
     end = time.time()
 
     #print("Panning... " + str(moveX) + " " + str(moveY))
@@ -453,52 +487,85 @@ def PanBrush(element,infoPan,driver):
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brush2.json')
+    explorationSequence = open('explorations/exploration_nemesis.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
 
     actionSequence = []
 
+    violationRespected = "V"
+    violationNotRespected = "X"
+
     driver = webdriver.Chrome()
 
-    driver.get('http://127.0.0.1:5501/script/brushmorescatter.html')
+    driver.get('http://awareserver.dis.uniroma1.it/nemesis/')
     driver.maximize_window()
     
     finalSummary = {}
 
     for state in explorationSequence:
 
-        latency = None
-
-        selector = state["selector"]
+        xpath = state["xpath"]
         events = state["events"]
+        siblings = state["siblings"]
+        starting = state["startingPath"]
+
+        #css = state["id"]
     
 
-        #Explicit wait
-        try:
-                elements = WebDriverWait(driver, 10).until(
-                    EC.presence_of_all_elements_located((By.CSS_SELECTOR,selector))
-                )
-        except:
-            print("Element not found")
-        else:
-            #print(state["info"])
+        for i in range(siblings + 1):
 
-            for element in elements:
+            latency = None
 
+            #Explicit wait
+            try:
+
+                if(siblings != 0):
+                    
+                    element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,xpath + "[" + str(starting + i) + "]")))
+                
+                else:
+
+                    element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,xpath)))
+
+            except:
+
+                if(siblings == 0):
+
+                    print("Element not found :" + xpath)
+
+                else:
+
+                    print("Element not found :" + xpath + "[" + str(starting + i) + "]")
+            else:
+
+                if(siblings == 0):
+
+                    print("----------ANALYZING " + xpath + "------------")
+
+                else:
+                    
+                    print("----------ANALYZING " + xpath + "[" + str(starting + i) + "]------------")
+                
                 for event in events:
+
                     eventName = event["event"]
 
-                    if(selector not in finalSummary):
-                        finalSummary[selector] = {}
+                    if(xpath not in finalSummary):
+                        finalSummary[xpath] = {}
 
-                    if(eventName not in finalSummary[selector]):
-                        finalSummary[selector][eventName] = []
+                    if(eventName not in finalSummary[xpath]):
+                        finalSummary[xpath][eventName] = []
 
                     if(eventName == "click"):
 
                         latency = Click(element,event["info"],driver)
+
+                    if(eventName == "contextmenu"):
+
+                        #latency = ContextClick(element,event["info"],driver)
+                        latency = None
 
                     elif(eventName == "mouseover" or eventName == "mouseenter"):
 
@@ -506,7 +573,8 @@ if __name__ == "__main__":
 
                     elif(eventName == "mouseout" or eventName == "mouseleave"):
 
-                        latency = Mouseout(element,event["info"],driver)
+                        #latency = Mouseout(element,event["info"],driver)
+                        latency = None
 
                     elif(eventName == "mousedown"):
 
@@ -537,20 +605,40 @@ if __name__ == "__main__":
 
                         latency = PanBrush(element,event["info"],driver)
 
+                    elif(eventName == "facsimile_back"):
+
+                        latency = None
+
                     if(latency != None):
-                        #Convert in milliseconds
-                        print("STATE: " + selector + " EVENT: " + eventName + " LATENCY: " + str(latency*1000) + " ms")
-                        actionSequence.append([eventName,latency*1000])
-                        finalSummary[selector][eventName].append([event["info"],latency*1000])
+
+                        if(type(latency) is not list):
+
+                            #Convert in milliseconds
+                            latency = latency * 1000
+                            
+                            print("STATE: " + xpath + " EVENT: " + eventName + " LATENCY: " + str(latency) + " ms")
+                            actionSequence.append([eventName,latency])
+                            finalSummary[xpath][eventName].append([event["info"],latency, violationRespected if latencyLimits[eventName] > latency else violationNotRespected])
+
+                        #Case of brushing
+                        else:
+
+                            for latencyTime in latency:
+                                #Convert in milliseconds
+                                print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + latencyTime + " ms")
+                                actionSequence.append([eventName,latencyTime])
+                                finalSummary[xpath][eventName].append([event["info"],latencyTime , violationRespected if latencyLimits["mousemove"] > latency else violationNotRespected])
+
 
                     else:
 
-                        print("STATE: " + selector + " EVENT: " + eventName + " LATENCY: None" )
+                        print("STATE: " + xpath + " EVENT: " + eventName + " LATENCY: None")
                         actionSequence.append([eventName,latency])
-                        finalSummary[selector][eventName].append([event["info"],latency])
+                        #finalSummary[xpath][eventName].append([event["info"],latency])
+
                 print("-------------------------------------------------------")
             
-    with open('summaries/summary_brexit.json', 'w') as fp:
+    with open('summaries/summary_nemesis.json', 'w') as fp:
         json.dump(finalSummary, fp,  indent=4)
     
     driver.close()

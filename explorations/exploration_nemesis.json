@@ -1,0 +1,1246 @@
+[
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='rect']",
+        "css": "#131-125",
+        "startingPath": 1,
+        "siblings": 100,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    2.77778,
+                    1.93827
+                ]
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    6.16438,
+                    4.30137
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[2]/*[name()='svg'][1]/*[name()='rect']",
+        "css": "#svgM rect.legendSquare",
+        "startingPath": 1,
+        "siblings": 1,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    5.99237408617294,
+                    10.485211424841161
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    12.801629734281896,
+                    18.387096525579
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[3]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='circle']",
+        "css": "#svgS g circle.dot",
+        "startingPath": 1,
+        "siblings": 10,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": 1.1636363636363636
+            },
+            {
+                "event": "click",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": 4.0
+            },
+            {
+                "event": "click",
+                "info": null
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/input[1]",
+        "css": "#all-only",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    1.204688319736658,
+                    8.23676885199036
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    7.956443296670715,
+                    0.28769813023264135
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    4.130592060868058,
+                    1.8608077729663148
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.0257437697729066,
+                    6.092660879826868
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/input[1]",
+        "css": "#list-area input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    6.031456560622857,
+                    65.60941702983385
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    10.610989709650651,
+                    39.491180616933626
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    11.34484926657873,
+                    36.593030864617994
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    8.819070220747884,
+                    49.296400613148485
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/input[2]",
+        "css": "#list-area input",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    4.698548243252423,
+                    14.646543473511523
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    18.505742868559697,
+                    44.74423410605246
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    16.127499052365664,
+                    17.662550590386395
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    6.5520779874460295,
+                    83.91081123184226
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[1]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.1353619493740121,
+                    104.47408103112161
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    10.484707534053767,
+                    8.66629784528087
+                ]
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    2.757597129390498,
+                    102.57789869563021
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    11.798207276222131,
+                    80.9937970941436
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[2]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    10.106832407691046,
+                    102.45747059448539
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    10.493320849716499,
+                    45.76572860280283
+                ]
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    27.37932092853718,
+                    59.394757586538226
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    3.1880769746670383,
+                    76.00990469235455
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[3]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    2.802917198948994,
+                    104.24294038568813
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    21.312826582303032,
+                    97.1271189971683
+                ]
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    21.707017807730267,
+                    111.65696616277752
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    32.39103938817526,
+                    156.84055891875752
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[4]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    7.31867785182884,
+                    149.74015248981954
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    37.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    28.944928853386845,
+                    48.809667913215854
+                ]
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.8728771820018466,
+                    134.53203655732264
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    14.045335728129233,
+                    104.94212886075928
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[5]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    11.716313936658008,
+                    83.95027300882782
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    8.784645165594846,
+                    151.51681474660404
+                ]
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    11.706492256863983,
+                    169.6276147597932
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    173.469
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    16.889345992741564,
+                    35.44617020294636
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[6]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    14.502033578096219,
+                    101.97664722275096
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    10.581683983759659,
+                    104.24676785565266
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[7]/td[1]",
+        "css": "#list-area table tbody tr td.atd",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseover",
+                "info": null
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    4.710586276802639,
+                    120.29250615161898
+                ]
+            },
+            {
+                "event": "mouseout",
+                "info": [
+                    19.0,
+                    169.953
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.9095518164623579,
+                    68.82783443141362
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/div[2]/div[1]/input[1]",
+        "css": "#cancdis",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    5.553084595555792,
+                    55.12310469436308
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    2.509179085021293,
+                    55.56115912839065
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    7.258699778517346,
+                    27.88022460131083
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    31.017291404707915,
+                    23.775144951106643
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/div[2]/input[1]",
+        "css": "#t5d1",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    32.58541641310168,
+                    55.21963232276292
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    5.629432283251631,
+                    20.145999464986588
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    9.51279064581066,
+                    30.516289725796312
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    23.913940051563156,
+                    49.661747087469685
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/div[2]/input[2]",
+        "css": "#t5d2",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    32.32014142228379,
+                    53.38279730967005
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.8332718735908604,
+                    56.102045703473586
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    12.621574550596979,
+                    31.313862713380853
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    20.93336847728602,
+                    41.349395952669234
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/div[2]/input[3]",
+        "css": "#t5s",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    11.645307535467909,
+                    68.04013345027646
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    29.748223457418565,
+                    4.13463236589031
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    21.522872926806166,
+                    1.3193606131600963
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    19.60112777163563,
+                    11.327319905717692
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/input[1]",
+        "css": "#breast neoplasms ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    8.25066144072348,
+                    5.466164441688088
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    2.050299949436813,
+                    1.64154600632099
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.387392847055156,
+                    0.3500953058419358
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    7.919659280540307,
+                    9.43566884461876
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[2]/td[1]/input[1]",
+        "css": "#carcinoma renal cell ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    9.889008263927828,
+                    8.623897721239338
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    8.379603768691759,
+                    7.927556728029339
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    9.857936258596961,
+                    4.163837782091459
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.2315164852364715,
+                    3.6764439276210727
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[3]/td[1]/input[1]",
+        "css": "#colorectal neoplasms ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    10.756385067541071,
+                    1.4715210239885486
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    11.189208022733292,
+                    2.113009957912358
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    2.999629263556413,
+                    7.99599863055361
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.967736781853878,
+                    3.165128466557062
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[4]/td[1]/input[1]",
+        "css": "#head and neck neoplasms ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    4.46552837995306,
+                    3.2259588777422774
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    10.331017781929244,
+                    9.75848719152544
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    8.159128874477961,
+                    7.080655412759665
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.9376605416448913,
+                    3.4714058491308877
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[5]/td[1]/input[1]",
+        "css": "#leukemia b-cell ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    7.688648038705967,
+                    7.30521331729174
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    11.809585259191392,
+                    4.871554287904939
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    0.6696505243353617,
+                    9.782072659554666
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.6611079384597018,
+                    6.326204675568815
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[6]/td[1]/input[1]",
+        "css": "#leukemia myeloid ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    4.388190263610328,
+                    1.6409113403027966
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    2.7165632877468617,
+                    8.461623329478748
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    },
+    {
+        "xpath": "/html[1]/body[1]/div[2]/div[4]/table[1]/tbody[1]/tr[7]/td[1]/input[1]",
+        "css": "#lymphoma ",
+        "startingPath": -1,
+        "siblings": 0,
+        "events": [
+            {
+                "event": "click",
+                "info": [
+                    3.659674898338211,
+                    6.872328943122396
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            },
+            {
+                "event": "click",
+                "info": [
+                    1.392939842137571,
+                    4.814888877364355
+                ]
+            },
+            {
+                "event": "change",
+                "info": [
+                    "checkbox",
+                    null
+                ]
+            }
+        ]
+    }
+]
