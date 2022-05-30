@@ -316,11 +316,8 @@ def Click(element,clickInfo,driver):
 
         actions = ActionChains(driver)
 
-        xClick = random.randint(0,element.size["width"]) 
-        yClick = random.randint(0,element.size["height"])
-
         #At first we go on the element
-        actions.move_to_element_with_offset(element,xClick,yClick).perform()
+        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
         
         actions.click()
         
@@ -511,7 +508,9 @@ if __name__ == "__main__":
         siblings = state["siblings"]
         starting = state["startingPath"]
 
-        #css = state["id"]
+        css = state["css"]
+
+        pathElement = ""
     
 
         for i in range(siblings + 1):
@@ -522,33 +521,35 @@ if __name__ == "__main__":
             try:
 
                 if(siblings != 0):
-                    
-                    element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,xpath + "[" + str(starting + i) + "]")))
+
+                    pathElement = xpath + "[" + str(starting + i) + "]"
                 
                 else:
 
-                    element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,xpath)))
+                    pathElement = xpath
 
             except:
 
                 if(siblings == 0):
 
-                    print("Element not found :" + xpath)
+                    print("Element not found: " + pathElement)
 
                 else:
 
-                    print("Element not found :" + xpath + "[" + str(starting + i) + "]")
+                    print("Element not found: " + pathElement)
             else:
 
                 if(siblings == 0):
 
-                    print("----------ANALYZING " + xpath + "------------")
+                    print("----------ANALYZING " + css + "------------")
 
                 else:
                     
-                    print("----------ANALYZING " + xpath + "[" + str(starting + i) + "]------------")
+                    print("----------ANALYZING " + css + "]------------")
                 
                 for event in events:
+
+                    element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,pathElement)))
 
                     eventName = event["event"]
 

@@ -34,8 +34,8 @@ def Click(height,width):
     if(height!="auto" and width!="auto"):
 
         #Choose randomly a point to click
-        xClick = random.uniform(0,height-1)
-        yClick = random.uniform(0,width-1)
+        xClick = random.uniform(0,width-1)
+        yClick = random.uniform(0,height-1)
 
         return (xClick,yClick)
 
@@ -382,6 +382,7 @@ def ExplorationState(graph,graphVisit,state,stateNumber):
     brushableNode = currentState["brushable"]
     zoomableNode = currentState["zoomable"]
 
+    
     checkPresence = 0
     for element in explorationSequence:
         if(element["xpath"] == xpathNode):
@@ -738,7 +739,8 @@ if(__name__=="__main__"):
     #print("Graph:",json.dumps(graph,indent=4))
 
     graphVisit = createGraphVisit(graph)
-    #print("GraphVisit:",json.dumps(graphVisit,indent=4))
+    print("GraphVisit:",json.dumps(graphVisit,indent=4))
+    exit
 
     #Save graph on a file
     with open('postprocess_statecharts/ppstatehcart_'+nameVis+'.json', 'w') as fp:

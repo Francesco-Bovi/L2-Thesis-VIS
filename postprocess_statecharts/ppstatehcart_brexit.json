@@ -1,24 +1,5 @@
 {
     "0": [
-		{
-            "id": "#plotButton",
-            "tag": "button",
-            "data": null,
-            "event": "click",
-            "brushable": null,
-            "zoomable": null,
-            "leadsToState": 7,
-            "siblings": 0,
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "startingPath": -1,
-            "attributes": {
-                "type": "button"
-            },
-            "styles": {
-                "height": 20.0,
-                "width": 36.9844
-            }
-        },
         {
             "id": "#map",
             "tag": "div",
@@ -61,6 +42,25 @@
             "styles": {
                 "height": 120.135,
                 "width": 10.0
+            }
+        },
+        {
+            "id": "#plotButton",
+            "tag": "button",
+            "data": null,
+            "event": "click",
+            "brushable": null,
+            "zoomable": null,
+            "leadsToState": 7,
+            "siblings": 0,
+            "xpath": "/html[1]/body[1]/div[4]/button[1]",
+            "startingPath": -1,
+            "attributes": {
+                "type": "button"
+            },
+            "styles": {
+                "height": 20.0,
+                "width": 36.9844
             }
         }
     ],
