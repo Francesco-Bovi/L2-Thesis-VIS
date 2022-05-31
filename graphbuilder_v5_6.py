@@ -28,6 +28,15 @@ eventsList = [
 transitionsList = []
 explorationSequence = []
 
+
+def checkPresenceOfLoop(graph,node):
+
+    for destinations in graph[node]:
+        if(destinations == node):
+            return 1
+
+    return 0
+
 listPaths = []
 '''A recursive function to print all paths from 'u' to 'd'.
 visited[] keeps track of vertices in current path.
@@ -36,7 +45,7 @@ index in path[]'''
 def printAllPathsUtil(u, d, visited, path, newGraph):
 
     # Mark the current node as visited and store in path
-    visited[u]= True
+    visited[u]=True
     path.append(u)
 
     # If current vertex is same as destination, then print
@@ -52,12 +61,12 @@ def printAllPathsUtil(u, d, visited, path, newGraph):
         # If current vertex is not destination
         # Recur for all the vertices adjacent to this vertex
         for i in newGraph[u]:
-            if visited[i]== False:
+            if visited[i]==False:
                 printAllPathsUtil(i, d, visited, path, newGraph)
                     
     # Remove current vertex from path[] and mark it as unvisited
     path.pop()
-    visited[u]= False
+    visited[u]=False
 
 
 # Prints all paths from 's' to 'd'
@@ -436,21 +445,272 @@ allSequences = []
 def ExplorationState(graph,stateCurrent,transition,exploration):
     global explorationSequence
 
-    #print(transition)
+    continueExploration = exploration.copy()
+    
+    if(checkPresenceOfLoop(newGraph,stateCurrent)):
+    
+        for edge in retEdges(graph,str(stateCurrent),stateCurrent):
+
+            typeActions = ["L","M","H"]
+
+            currentState = edge
+
+            idNode = currentState["id"]
+            xpathNode = currentState["xpath"]
+            siblingsNode = currentState["siblings"]
+            startingPathNode = currentState["startingPath"]
+            eventNode  = currentState["event"]
+            stylesNode = currentState["styles"]
+            attributeNode = currentState["attributes"]
+            tagNode = currentState["tag"]
+            brushableNode = currentState["brushable"]
+            zoomableNode = currentState["zoomable"]
+
+            #UpdateScore(graph,state,idNode)
+
+            """
+            checkPresence = 0
+            for element in explorationSequence:
+                if(element["xpath"] == xpathNode):
+                    checkPresence = 1
+
+            if(checkPresence == 0):
+                explorationSequence.append({"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"events":[]})
+            #print("STATE: "+ stateNumber + "| ID: "+ idNode)
+
+            """
+
+            if(eventNode == "click" or eventNode == "contextmenu"):
+
+                #If the tag is button we don't need any other information
+                if(tagNode == "button"):
+
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+
+                    if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
+
+                else:
+
+                    width = stylesNode["width"]
+                    height = stylesNode["height"]
+
+                    infoClick = Click(height,width)
+
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":infoClick}
+                    
+                    if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
+
+            #For the moment we try to not distinguish them "mouseover" and "mouseleave"
+            elif(eventNode == "mouseover" or eventNode == "mouseenter"):
+
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+
+                if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
+
+            elif(eventNode == "mouseout" or eventNode=="mouseleave"):
+
+                infoOut = None
+
+                #If it's a circle we know its radius
+                if(tagNode == "circle"):
+
+                    infoOut = float(attributeNode["r"])
+
+                elif(stylesNode["height"]!=None or stylesNode["width"]!=None):
+
+                    infoOut = (stylesNode["height"],stylesNode["width"])
+
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":infoOut}
+
+                if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
+
+            elif(eventNode == "mousedown"):
+
+                if(brushableNode==None and zoomableNode==None):
+
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+
+                    if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
+
+                elif(brushableNode!=None):
+
+                    newBrushPosition = None
+
+                    for size in typeActions:
+
+                        for i in range(0,10):
+
+                            newSelectionExtent = Brush(size,brushableNode)
+
+                            print("New selection_extent: ",end="")
+                            print(newSelectionExtent)
+
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":newSelectionExtent}
+
+                            if(explorationState not in continueExploration):
+                                continueExploration.append(explorationState)
+
+                            infoPan = PanBrush(brushableNode["directions"],brushableNode["brush_extent"],newSelectionExtent)
+                            #print("InfoPan ",end="")
+                            #print(infoPan)
+
+                            newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
+
+                            #Info for panning the brushed area
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panbrush","info":[infoPan, newBrushPosition]}
+
+                            if(explorationState not in continueExploration):
+                                continueExploration.append(explorationState)
+
+                            #Position after the panning
+                            #newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
+                            #print("New brush pos ",end="")
+                            #print(newBrushPosition)
+
+                elif(zoomableNode!=None):
+
+                    if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+
+                
+                        panZoomInfo = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"height":stylesNode["height"],"width":stylesNode["width"]}
+
+                    else: 
+
+                        panZoomInfo = None
+
+                    for size in typeActions:
+                        
+                        retInfo = PanZoom(size,panZoomInfo)
+
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panzoom","info":retInfo}
+
+                        if(explorationState not in continueExploration):
+                            continueExploration.append(explorationState)
+                            
+            elif(eventNode == "wheel"):
+
+                for size in typeActions:
+
+                    #We make 10 for zoom in and 10 for zoom out handled directly in Selenium
+                    for i in range(0,10):
+
+                        if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+                    
+                                zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
+
+                        else: 
+
+                                zoomInfo = None
+                            
+
+                        retInfo = Zoom(size,zoomInfo)
+
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["in",retInfo]}
+
+                        if(explorationState not in continueExploration):
+                            continueExploration.append(explorationState)
+                        
+
+                    for i in range(0,10):
+            
+                        if(stylesNode["height"]!=None or stylesNode["width"]!=None):
+                    
+                                zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
+
+                        else: 
+
+                                zoomInfo = None
+                            
+
+                        retInfo = Zoom(size,zoomInfo)
+
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["out",retInfo]}
+
+                        if(explorationState not in continueExploration):
+                            continueExploration.append(explorationState)
+                        
+            elif(eventNode == "mouseup"):
+
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+
+                if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
+
+            elif(eventNode == "input"):
+
+                if(attributeNode["type"]!=None):
+
+                    if(attributeNode["type"]=="range"):
+
+                        for size in typeActions:
+
+                            for i in range(0,10):
+
+                                sliderHtmlInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"width":stylesNode["width"]}
+
+                                retInfo = SliderHtml(sliderHtmlInfo)
+
+                                retInfo[1]=size
+
+                                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": retInfo}
+
+                                if(explorationState not in continueExploration):
+                                    continueExploration.append(explorationState)
+                                
+
+                    elif(attributeNode["type"]=="number"):
+
+                        for i in range(0,10):
+
+                            numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
+
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+
+                            if(explorationState not in continueExploration):
+                                continueExploration.append(explorationState)
+                            
+
+                    #We treat this case like it was a button
+                    elif(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
+
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None]}
+
+                        if(explorationState not in continueExploration):
+                            continueExploration.append(explorationState)
+                            
+            elif(eventNode == "change"):
+
+                if(tagNode == "input"):
+
+                    if(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
+            
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None]}
+
+                        if(explorationState not in continueExploration):
+                            continueExploration.append(explorationState)
+
+            elif(eventNode == "facsimile_back"):
+
+                #Since this is not a real event but just to go back to a state
+
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+
+                if(explorationState not in continueExploration):
+                        continueExploration.append(explorationState)
 
     if(transition==[]):
-        #print(exploration)
         if(exploration not in allSequences):
-            allSequences.append(exploration)
+            allSequences.append(continueExploration)
         return
 
     nextState = transition[0]
 
-    print(retEdges(graph,str(stateCurrent),nextState))
-
     for edge in retEdges(graph,str(stateCurrent),nextState):
-
-        continueExploration = exploration.copy()
 
         typeActions = ["L","M","H"]
 

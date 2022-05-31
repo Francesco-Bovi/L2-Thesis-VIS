@@ -23,7 +23,7 @@ from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEven
 StartLatency = 200.0
 EndLatency = 1000.0
 
-latencyLimits = {"click":200.0, "change":200.0, "contextclick": 200.0, "mouseover":200.0 , "mouseenter": 200.0, "mousemove": 200.0 , "mouseleave": 1000.0 , "mouseout": 1000.0, "wheel": 1000.0, "dbclick": 1000.0}
+latencyLimits = {"click":200.0, "change":200.0, "contextmenu": 200.0,"mousedown":200.0, "mouseup":1000.0, "mouseover":200.0 , "mouseenter": 200.0, "mousemove": 200.0 , "mouseleave": 1000.0 , "mouseout": 1000.0, "wheel": 1000.0, "dbclick": 1000.0}
 
 def GetPixelsBack(min,max,width):
 
@@ -352,6 +352,38 @@ def ContextClick(element,clickInfo,driver):
         actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
         
         actions.context_click()
+        
+        #Then we perform the click on that element
+        start = time.time()
+        actions.perform()
+        end = time.time()
+
+    #Return the latency time
+    return (end-start)
+
+def ContextClick(element,clickInfo,driver):
+    
+    if(clickInfo == None):
+
+        actions = ActionChains(driver)
+        
+        actions.move_to_element(element).perform()
+
+        actions.context_click()
+
+        #Then we perform the click on that element
+        start = time.time()
+        actions.perform()
+        end = time.time()
+
+    else:
+
+        actions = ActionChains(driver)
+
+        #At first we go on the element
+        actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
+        
+        actions.context_click()
 
         #Then we perform the click on that element
         start = time.time()
@@ -374,11 +406,19 @@ def Brush(element,infoBrush,driver):
 
     #print("Brushed: [" + str(xStart)+","+str(yStart)+"],["+str(xEnd)+","+str(yEnd)+"]" )
 
+    listMoveLatency = []
+
     actions = ActionChains(driver,duration=1)
 
-    actions.move_to_element_with_offset(element,xStart,yStart).click_and_hold().perform()
+    actions.move_to_element_with_offset(element,xStart,yStart).perform()
+    
+    actions.click_and_hold()
+    
+    start = time.time()
+    actions.perform() 
+    end = time.time()
 
-    listMoveLatency = [] 
+    listMoveLatency.append((end-start)*1000)
 
     while(xStart<xEnd and yStart<yEnd):
         xStart+=1
@@ -387,9 +427,15 @@ def Brush(element,infoBrush,driver):
         start = time.time()
         actions.perform()
         end = time.time()
-        listMoveLatency.append(str((end-start)*1000))
+        listMoveLatency.append((end-start)*1000)
 
-    actions.release().perform()
+    actions.release()
+    
+    start = time.time()
+    actions.perform()
+    end = time.time()
+
+    listMoveLatency.append((end-start)*1000)
     #In order to refresh the brush
     #actions.move_to_element_with_offset(element,0,0).click().release().perform()
 
@@ -406,10 +452,20 @@ def PanBrush(element,infoPan,driver):
     xMiddleBrush = infoPan[2]
     yMiddleBrush = infoPan[3]
 
-    actions = ActionChains(driver,duration=10)
+    actions = ActionChains(driver,duration=1)
+
+    listLatency = []
 
     #actions.move_to_element_with_offset(element,0,0).perform()
-    actions.move_to_element_with_offset(element,xMiddleBrush,yMiddleBrush).click_and_hold()
+    actions.move_to_element_with_offset(element,xMiddleBrush,yMiddleBrush).perform()
+    
+    actions.click_and_hold()
+
+    start = time.time()
+    actions.perform()
+    end = time.time()
+
+    listLatency.append((end-start)*1000)
 
     moveX = infoPan[0]
     moveY = infoPan[1]
@@ -455,11 +511,19 @@ def PanBrush(element,infoPan,driver):
                 xStart-=1
                 actions.move_by_offset(-1,0)
 
-        #print("moveX :" + str(xStart) + " moveY: " +str(yStart))
+        start = time.time()
+        actions.perform()
+        end = time.time()
+        listLatency.append((end-start)*1000)
+
+
+    actions.release()
 
     start = time.time()
-    actions.release().perform()
+    actions.perform()
     end = time.time()
+
+    listLatency.append((end-start)*1000)
 
     #print("Panning... " + str(moveX) + " " + str(moveY))
 
@@ -479,12 +543,12 @@ def PanBrush(element,infoPan,driver):
     actions.move_to_element_with_offset(element,xWhereClick,yWhereClick).click().perform()
     #print("X and Y to click: " + str(xWhereClick) + " " + str(yWhereClick))
 
-    return end-start
+    return listLatency
 
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brexit.json')
+    explorationSequence = open('explorations/exploration_brush2.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -495,23 +559,22 @@ if __name__ == "__main__":
     violationNotRespected = "X"
 
     driver = webdriver.Chrome()
-    
+
     finalSummary = {}
 
-    count = 0
+    paths = 0
     for path in explorationSequence:
         
-        driver.get('http://localhost:8000/brexitVisualization.html')
+        driver.get('http://127.0.0.1:5501/script/brushmorescatter.html')
         driver.maximize_window()
         
-        print("PATH: " + str(count))
+        finalSummary[paths] = []
+        print("PATH: " + str(paths))
 
         if(path == None):
             print("None found")
-            count+=1
 
         else:
-            count+=1
 
             for state in path:
 
@@ -557,20 +620,13 @@ if __name__ == "__main__":
 
                         eventName = event
 
-                        if(xpath not in finalSummary):
-                            finalSummary[xpath] = {}
-
-                        if(eventName not in finalSummary[xpath]):
-                            finalSummary[xpath][eventName] = []
-
-                        if(eventName == "click"):
+                        if(eventName == "click" or eventName == "change"):
 
                             latency = Click(element,state["info"],driver)
 
                         if(eventName == "contextmenu"):
 
-                            #latency = ContextClick(element,state["info"],driver)
-                            latency = None
+                            latency = ContextClick(element,state["info"],driver)
 
                         elif(eventName == "mouseover" or eventName == "mouseenter"):
 
@@ -623,16 +679,27 @@ if __name__ == "__main__":
                                 
                                 print("STATE: " + xpath + " EVENT: " + eventName + " LATENCY: " + str(latency) + " ms")
                                 actionSequence.append([eventName,latency])
-                                finalSummary[xpath][eventName].append([state["info"],latency, violationRespected if latencyLimits[eventName] > latency else violationNotRespected])
+                                finalSummary[paths].append([state["info"],latency, violationRespected if latencyLimits[eventName] > latency else violationNotRespected])
 
                             #Case of brushing
                             else:
 
-                                for latencyTime in latency:
+                                print(eventName + " start")
+
+                                print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
+                                actionSequence.append(["mousedown",latency[1]])
+                                finalSummary[paths].append([state["info"],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
+
+
+                                for latencyTime in latency[1:-1]:
                                     #Convert in milliseconds
-                                    print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + latencyTime + " ms")
-                                    actionSequence.append([eventName,latencyTime])
-                                    finalSummary[xpath][eventName].append([state["info"],latencyTime , violationRespected if latencyLimits["mousemove"] > latency else violationNotRespected])
+                                    print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
+                                    actionSequence.append(["mousemove",latencyTime])
+                                    finalSummary[paths].append([state["info"],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
+
+                                print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
+                                actionSequence.append(["mouseup",latency[-1]])
+                                finalSummary[paths].append([state["info"],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
 
                         else:
@@ -642,8 +709,11 @@ if __name__ == "__main__":
                             #finalSummary[xpath][eventName].append([state["info"],latency])
 
                     print("-------------------------------------------------------")
-            
-    with open('summaries/summary_brexit.json', 'w') as fp:
+
+        paths+=1
+        #driver.close()
+
+    with open('summaries/summary_brush.json', 'w') as fp:
         json.dump(finalSummary, fp,  indent=4)
     
     driver.close()

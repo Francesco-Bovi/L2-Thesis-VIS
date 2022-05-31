@@ -64,6 +64,9 @@
             },
             "zoomable": null,
             "leadsToState": 0,
+            "siblings": 15,
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='g']",
+            "startingPath": "9",
             "attributes": {
                 "transform": "translate(690,0)",
                 "fill": "none",
