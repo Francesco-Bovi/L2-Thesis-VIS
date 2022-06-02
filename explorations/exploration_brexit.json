@@ -555,11 +555,20 @@
             "event": "click",
             "info": null
         },
+		{
+			
+            "xpath": "/html[1]/body[1]/div[4]/button[1]",
+            "css": "#plotButton",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "click",
+            "info": null
+        },
         {
             "xpath": "/html[1]/body[1]/div[4]/*[name()='svg'][1]/*[name()='svg'][1]/*[name()='g'][3]/*[name()='circle']",
             "css": "#E06000031",
             "startingPath": 1,
-            "siblings": 319,
+            "siblings": 10,
             "event": "mouseover",
             "info": null
         }

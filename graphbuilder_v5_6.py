@@ -550,11 +550,6 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                             print("New selection_extent: ",end="")
                             print(newSelectionExtent)
 
-                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":newSelectionExtent}
-
-                            if(explorationState not in continueExploration):
-                                continueExploration.append(explorationState)
-
                             infoPan = PanBrush(brushableNode["directions"],brushableNode["brush_extent"],newSelectionExtent)
                             #print("InfoPan ",end="")
                             #print(infoPan)
@@ -562,7 +557,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                             newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
 
                             #Info for panning the brushed area
-                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panbrush","info":[infoPan, newBrushPosition]}
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":[newSelectionExtent,[infoPan, newBrushPosition]]}
 
                             if(explorationState not in continueExploration):
                                 continueExploration.append(explorationState)
