@@ -99,13 +99,14 @@ def DFS(graphN,state,graphVisit):
 
 #Click, if we have height and width we check where to click
 #Otherwise we click on the element at the middle (Selenium will do this)
+#CHECKBOX HTML (the event is "change" but what is needed is a simple click)
 def Click(height,width):
 
     if(height!="auto" and width!="auto"):
 
         #Choose randomly a point to click
-        xClick = random.uniform(0,width-1)
-        yClick = random.uniform(0,height-1)
+        xClick = random.randint(0,width-1)
+        yClick = random.randint(0,height-1)
 
         return (xClick,yClick)
 
@@ -171,13 +172,13 @@ def PanBrush(directions,brushExtent,selectionExtent):
         
         maxMovement = width - xEndBrush
 
-        moveX = random.uniform(0,maxMovement)
+        moveX = random.randint(0,maxMovement)
     
     elif(xMove == "left"):
 
         maxMovement = -xStartBrush
 
-        moveX = random.uniform(maxMovement,0)
+        moveX = random.randint(maxMovement,0)
     
     else:
 
@@ -188,14 +189,14 @@ def PanBrush(directions,brushExtent,selectionExtent):
 
         maxMovement = -yStartBrush
 
-        moveY = random.uniform(maxMovement,0)
+        moveY = random.randint(maxMovement,0)
 
     #This means we're moving down
     elif(yMove == "down"):
 
         maxMovement = height - yEndBrush
 
-        moveY = random.uniform(0,maxMovement)
+        moveY = random.randint(0,maxMovement)
 
     else: 
 
@@ -215,7 +216,6 @@ def Brush(actionType,brushableInfo):
     #Object to return with the new selection extent
     newSelectionExtent = None
 
-
     #Case when the brushing can be done in all the dimensions
     if(directions == "xy"):
 
@@ -228,11 +228,11 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 1/4 of the original
 
             #Find the starting points
-            xStartBrush = random.uniform(0,widthBrush - widthBrush/4)
-            yStartBrush = random.uniform(0,heightBrush - heightBrush/4)
+            xStartBrush = random.randint(0,widthBrush - int(widthBrush/4))
+            yStartBrush = random.randint(0,heightBrush - int(heightBrush/4))
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/4,yStartBrush + heightBrush/4]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + int(widthBrush/4),yStartBrush + int(heightBrush/4)]]
     
 
         elif(actionType == "M"):
@@ -240,22 +240,22 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 1/2 of the original
 
             #Find the starting points
-            xStartBrush = random.uniform(0,widthBrush - widthBrush/2)
-            yStartBrush = random.uniform(0,heightBrush - heightBrush/2)
+            xStartBrush = random.randint(0,widthBrush - int(widthBrush/2))
+            yStartBrush = random.randint(0,heightBrush - int(heightBrush/2))
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/2,yStartBrush + heightBrush/2]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + int(widthBrush/2),yStartBrush + int(heightBrush/2)]]
         
         else:
 
             #In this case the area is 2/3 of the original
 
             #Find the starting points
-            xStartBrush = random.uniform(0,widthBrush - widthBrush*(2/3))
-            yStartBrush = random.uniform(0,heightBrush - heightBrush*(2/3))
+            xStartBrush = random.randint(0,widthBrush - int(widthBrush*(2/3)))
+            yStartBrush = random.randint(0,heightBrush - int(heightBrush*(2/3)))
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush*(2/3),yStartBrush + heightBrush*(2/3)]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + int(widthBrush*(2/3)),yStartBrush + int(heightBrush*(2/3))]]
 
     elif(directions == "x"):
 
@@ -268,11 +268,11 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 1/4 of the original
 
             #Find the starting points
-            xStartBrush = random.uniform(0,widthBrush - widthBrush/4)
-            yStartBrush = heightBrush/2
+            xStartBrush = random.randint(0,widthBrush - int(widthBrush/4))
+            yStartBrush = int(heightBrush/2)
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/4,yStartBrush]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + int(widthBrush/4),yStartBrush]]
     
 
         elif(actionType == "M"):
@@ -280,8 +280,8 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 1/2 of the original
 
             #Find the starting points
-            xStartBrush = random.uniform(0,widthBrush - widthBrush/2)
-            yStartBrush = heightBrush/2
+            xStartBrush = random.randint(0,widthBrush - int(widthBrush/2))
+            yStartBrush = int(heightBrush/2)
 
             #New selection extent
             newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush/2,yStartBrush]]
@@ -291,11 +291,11 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 2/3 of the original
 
             #Find the starting points
-            xStartBrush = random.uniform(0,widthBrush - widthBrush*(2/3))
-            yStartBrush = heightBrush/2
+            xStartBrush = random.randint(0,widthBrush - int(widthBrush*(2/3)))
+            yStartBrush = int(heightBrush/2)
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + widthBrush*(2/3),yStartBrush]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush + int(widthBrush*(2/3)),yStartBrush]]
 
     else:
 
@@ -308,11 +308,11 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 1/4 of the original
 
             #Find the starting points
-            xStartBrush = widthBrush/2
-            yStartBrush = random.uniform(0,heightBrush - heightBrush/4)
+            xStartBrush = int(widthBrush/2)
+            yStartBrush = random.randint(0,heightBrush - int(heightBrush/4))
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush/4]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + int(heightBrush/4)]]
     
 
         elif(actionType == "M"):
@@ -320,22 +320,22 @@ def Brush(actionType,brushableInfo):
             #In this case the area is 1/2 of the original
 
             #Find the starting points
-            xStartBrush = widthBrush/2
-            yStartBrush = random.uniform(0,heightBrush - heightBrush/2)
+            xStartBrush = int(widthBrush/2)
+            yStartBrush = random.randint(0,heightBrush - int(heightBrush/2))
 
             #New selection extent
-            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush/2]]
+            newSelectionExtent = [[xStartBrush,yStartBrush],[xStartBrush,yStartBrush + int(heightBrush/2)]]
         
         else:
 
             #In this case the area is 2/3 of the original
 
             #Find the starting points
-            xStartBrush = widthBrush/2
-            yStartBrush = random.uniform(0,heightBrush - heightBrush*(2/3))
+            xStartBrush = int(widthBrush/2)
+            yStartBrush = random.randint(0,heightBrush - int(heightBrush*(2/3)))
 
             #New selection extent
-            newSelectionExtent = [xStartBrush,yStartBrush],[xStartBrush,yStartBrush + heightBrush*(2/3)]
+            newSelectionExtent = [xStartBrush,yStartBrush],[xStartBrush,yStartBrush + int(heightBrush*(2/3))]
     
     
     return newSelectionExtent
@@ -406,8 +406,6 @@ def selectDropdownHtml(selectInfo):
 
     return nextValue
 
-#CHECKBOX HTML (the event is "change" but what is needed is a simple click)
-
 #INPUT TYPE NUMER HTML
 def inputNumberHtml(inputInfo):
 
@@ -451,7 +449,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
     
         for edge in retEdges(graph,str(stateCurrent),stateCurrent):
 
-            typeActions = ["L","M","H"]
+            typeActions = ["L","M","B"]
 
             currentState = edge
 
@@ -540,6 +538,17 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                 elif(brushableNode!=None):
 
                     newBrushPosition = None
+
+                    print(brushableNode["brush_extent"])
+                    print(brushableNode["selection_extent"])
+
+                    if(brushableNode["brush_extent"] == brushableNode["selection_extent"]):
+
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"reset_brush","info":brushableNode["selection_extent"]}
+
+                        continueExploration.append(explorationState)
+
+                        brushableNode["selection_extent"] = None
 
                     for size in typeActions:
 
@@ -707,7 +716,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
     for edge in retEdges(graph,str(stateCurrent),nextState):
 
-        typeActions = ["L","M","H"]
+        typeActions = ["L","M","B"]
 
         currentState = edge
 
@@ -791,6 +800,17 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
             elif(brushableNode!=None):
 
                 newBrushPosition = None
+
+                print(brushableNode["brush_extent"])
+                print(brushableNode["selection_extent"])
+
+                if(brushableNode["brush_extent"] == brushableNode["selection_extent"]):
+
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"reset_brush","info":brushableNode["selection_extent"]}
+
+                    continueExploration.append(explorationState)
+
+                    brushableNode["selection_extent"] = None
 
                 for size in typeActions:
 
@@ -968,7 +988,6 @@ def statechartPreProcessing(statechart):
                 
                 newNode["id"] = node["nodeSelector"]
                 newNode["tag"] = node["tag"]
-                newNode["data"] = node["data"]
                 newNode["event"] = node["event"]
                 newNode["brushable"] = node["brushable"]
                 newNode["zoomable"] = node["zoomable"]
@@ -1000,7 +1019,7 @@ def statechartPreProcessing(statechart):
                         
                         if(key["name"] == "height" or key["name"] == "width"):
                         
-                            newNode["attributes"][key["name"]] = float(key["value"])
+                            newNode["attributes"][key["name"]] = int(key["value"])
                         
                         else:
 
@@ -1016,14 +1035,22 @@ def statechartPreProcessing(statechart):
 
                         if(key["value"] != "auto"):
                     
-                            newNode["styles"][key["name"]] = float(key["value"][:len(key["value"])-2])
+                            newNode["styles"][key["name"]] = int(key["value"][:len(key["value"])-2])
 
                         else:
 
                             newNode["styles"][key["name"]] = key["value"]
 
+                if(node["data"] == None):
+                    newNode["data"] = None
+                
+                else:
 
-                print(newNode)
+                    newNode["data"] = {}
+                    for key in node["data"]:
+                        newNode["data"][key["name"]] = key["value"]
+
+                #print(newNode)
 
                 #Add this node to the state
                 newGraph[str(state["stateId"])].append(newNode)

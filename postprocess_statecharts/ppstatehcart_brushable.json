@@ -1,0 +1,54 @@
+{
+    "0": [
+        {
+            "id": "svg g.context g.brush",
+            "tag": "g",
+            "event": "mousedown",
+            "brushable": {
+                "handles": [
+                    {
+                        "type": "e"
+                    },
+                    {
+                        "type": "w"
+                    }
+                ],
+                "directions": "x",
+                "brush_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        800,
+                        40
+                    ]
+                ],
+                "selection_extent": [
+                    [
+                        0,
+                        0
+                    ],
+                    [
+                        800,
+                        40
+                    ]
+                ]
+            },
+            "zoomable": null,
+            "leadsToState": 0,
+            "siblings": 0,
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "startingPath": -1,
+            "attributes": {
+                "fill": "none",
+                "pointer-events": "all"
+            },
+            "styles": {
+                "height": "auto",
+                "width": "auto"
+            },
+            "data": null
+        }
+    ]
+}

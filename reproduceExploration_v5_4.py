@@ -26,11 +26,11 @@ EndLatency = 1000.0
 
 latencyLimits = {"click":200.0, "change":200.0, "contextmenu": 200.0,"mousedown":200.0, "mouseup":1000.0, "mouseover":200.0 , "mouseenter": 200.0, "mousemove": 200.0 , "mouseleave": 1000.0 , "mouseout": 1000.0, "wheel": 1000.0, "dbclick": 1000.0}
 
-def GetPixelsBack(min,max,width):
+def GetPixelsBack(width):
 
     return -width/2
 
-def GetPixelsToMove(min,max,width,actionType):
+def GetPixelsToMove(width,actionType):
 
     divisor = None
     if(actionType == "L"):
@@ -216,22 +216,43 @@ def Input(element,infoInput,driver):
 
         tupleInfo = infoInput[2]
 
-        pixelsOffsetBack = GetPixelsBack(tupleInfo[0],tupleInfo[1],tupleInfo[2])
+        pixelsOffsetBack = GetPixelsBack(tupleInfo[2])
 
-        pixelsOffset = GetPixelsToMove(tupleInfo[0],tupleInfo[1],tupleInfo[2],actionType)
+        pixelsOffset = GetPixelsToMove(tupleInfo[2],actionType)
 
         actions = ActionChains(driver,duration=10)
 
-        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release().click_and_hold().perform()
+        actions.move_to_element(element).click_and_hold().move_by_offset(pixelsOffsetBack,0).release().perform()
+        
+        actions.click_and_hold()
 
         pixelStart=0
+
+        listMoveLatency = []
+
+        start = time.time()
+        actions.perform()
+        end = time.time()
+
+        listMoveLatency.append((end-start)*1000)
+
         while(pixelStart<int(pixelsOffset)):
             pixelStart+=1
             actions.move_by_offset(1,0)
-            
+
+            start = time.time()
+            actions.perform()
+            end = time.time()
+
+            listMoveLatency.append((end-start)*1000)
+
+        actions.release()
+
         start = time.time()
-        actions.release().perform()
+        actions.perform()
         end = time.time()
+
+        return listMoveLatency
 
     elif(infoInput[0] == "number"):
 
@@ -243,12 +264,14 @@ def Input(element,infoInput,driver):
 
     elif(infoInput[0] == "checkbox" or infoInput[0] == "radio"):
 
-        actions = ActionChains(driver)
+        actions = ActionChains(driver,duration = 0)
 
-        actions.move_to_element(element)
+        actions.move_to_element(element).perform()
+
+        actions.click()
         
         start = time.time()
-        actions.click().perform()
+        actions.perform()
         end = time.time()
     
     return end-start
@@ -302,7 +325,7 @@ def Click(element,clickInfo,driver):
 
     if(clickInfo == None):
 
-        actions = ActionChains(driver)
+        actions = ActionChains(driver, duration = 0)
         
         actions.move_to_element(element).perform()
 
@@ -330,7 +353,7 @@ def Click(element,clickInfo,driver):
 
     else:
 
-        actions = ActionChains(driver)
+        actions = ActionChains(driver, duration = 0)
 
         #At first we go on the element
         actions.move_to_element_with_offset(element,clickInfo[0],clickInfo[1]).perform()
@@ -524,10 +547,23 @@ def PanBrush(element,infoPan,driver):
     xWhereClick = choice(list(set([x for x in range(0,int(width))]) - set(listExcludeX)))
     yWhereClick = choice(list(set([x for x in range(0,int(height))]) - set(listExcludeY)))
 
+    print("Perform here")
     actions.move_to_element_with_offset(element,xWhereClick,yWhereClick).click().perform()
     #print("X and Y to click: " + str(xWhereClick) + " " + str(yWhereClick))
 
     return listLatency
+
+def ResetBrush(element,infoReset,driver):
+
+    actions = ActionChains(driver,duration = 10)
+
+    #Dimension of the brushable area
+    widthBrush = infoReset[1][0] - infoReset[0][0]
+    heightBrush = infoReset[1][1] - infoReset[0][1]
+
+    actions.move_to_element_with_offset(element,widthBrush,heightBrush/2).click_and_hold().move_by_offset(-widthBrush/2,0).perform()
+
+    actions.move_to_element_with_offset(element,widthBrush*2/3,heightBrush/2).click().perform
 
 def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
 
@@ -607,9 +643,30 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
 
         latency = Mouseout(element,driver)
 
+    elif(eventName == "reset_brush"):
+
+        ResetBrush(element,state["info"],driver)
+
     elif(eventName == "input"):
 
         latency = Input(element,state["info"],driver)
+
+        if(type(latency) is list):
+
+            #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
+            actionSequence.append(["mousedown",latency[1]])
+            finalSummary[pathNumber].append([pathElement,"mousedown",state["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
+
+
+            for latencyTime in latency[1:-1]:
+                #Convert in milliseconds
+                #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
+                actionSequence.append(["mousemove",latencyTime])
+                finalSummary[pathNumber].append([pathElement,"mousemove",state["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
+
+            #print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
+            actionSequence.append(["mouseup",latency[-1]])
+            finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
     elif(eventName == "facsimile_back"):
 
@@ -631,7 +688,6 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
 
         print("STATE: " + xpath + " EVENT: " + eventName + " LATENCY: None")
         actionSequence.append([eventName,latency])
-        #finalSummary[xpath][eventName].append([state["info"],latency])
 
 
 actionSequence = []
@@ -642,7 +698,7 @@ violationNotRespected = "X"
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brexit.json')
+    explorationSequence = open('explorations/exploration_brushable.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -654,13 +710,11 @@ if __name__ == "__main__":
     problemsFound = []
     for path in explorationSequence:
 
-        driver.get('http://127.0.0.1:5500/brexitVisualization.html')
+        driver.get('http://127.0.0.1:5501/brushable.html')
         driver.maximize_window()
         
         finalSummary[pathNumber] = []
         print("PATH: " + str(pathNumber))
-
-        path = explorationSequence[14]
 
         if(path == None):
             print("None found")
@@ -669,8 +723,6 @@ if __name__ == "__main__":
 
             indexState = 0
             for state in path:
-
-                time.sleep(2)
 
                 """
                 elementsInPage = driver.find_elements(By.CSS_SELECTOR,"*")
@@ -691,6 +743,8 @@ if __name__ == "__main__":
             
 
                 for i in range(siblings + 1):
+
+                    time.sleep(2)
 
                     if(siblings != 0):
 
@@ -727,7 +781,7 @@ if __name__ == "__main__":
         pathNumber+=1
     
 
-    with open('summaries/summary_brexit.json', 'w') as fp:
+    with open('summaries/summary_brushable.json', 'w') as fp:
         json.dump(finalSummary, fp,  indent=4)
     
     print(actionSequence)
@@ -792,4 +846,4 @@ if __name__ == "__main__":
                 indexState+=1
     """
 
-    #driver.close()
+    driver.close()

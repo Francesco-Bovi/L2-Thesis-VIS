@@ -1,0 +1,1191 @@
+[
+    [
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "reset_brush",
+            "info": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    800,
+                    40
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        377,
+                        20
+                    ],
+                    [
+                        577,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        12,
+                        0,
+                        477.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            389,
+                            20
+                        ],
+                        [
+                            589,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        35,
+                        20
+                    ],
+                    [
+                        235,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -7,
+                        0,
+                        135.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            28,
+                            20
+                        ],
+                        [
+                            228,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        274,
+                        20
+                    ],
+                    [
+                        474,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -189,
+                        0,
+                        374.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            85,
+                            20
+                        ],
+                        [
+                            285,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        347,
+                        20
+                    ],
+                    [
+                        547,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        147,
+                        0,
+                        447.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            494,
+                            20
+                        ],
+                        [
+                            694,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        250,
+                        20
+                    ],
+                    [
+                        450,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        96,
+                        0,
+                        350.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            346,
+                            20
+                        ],
+                        [
+                            546,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        13,
+                        20
+                    ],
+                    [
+                        213,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -1,
+                        0,
+                        113.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            12,
+                            20
+                        ],
+                        [
+                            212,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        64,
+                        20
+                    ],
+                    [
+                        264,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -63,
+                        0,
+                        164.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            1,
+                            20
+                        ],
+                        [
+                            201,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        145,
+                        20
+                    ],
+                    [
+                        345,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        360,
+                        0,
+                        245.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            505,
+                            20
+                        ],
+                        [
+                            705,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        146,
+                        20
+                    ],
+                    [
+                        346,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        392,
+                        0,
+                        246.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            538,
+                            20
+                        ],
+                        [
+                            738,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        250,
+                        20
+                    ],
+                    [
+                        450,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        171,
+                        0,
+                        350.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            421,
+                            20
+                        ],
+                        [
+                            621,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        286,
+                        20
+                    ],
+                    [
+                        686.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -24,
+                        0,
+                        486.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            262,
+                            20
+                        ],
+                        [
+                            662.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        121,
+                        20
+                    ],
+                    [
+                        521.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        25,
+                        0,
+                        321.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            146,
+                            20
+                        ],
+                        [
+                            546.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        95,
+                        20
+                    ],
+                    [
+                        495.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -35,
+                        0,
+                        295.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            60,
+                            20
+                        ],
+                        [
+                            460.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        247,
+                        20
+                    ],
+                    [
+                        647.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        138,
+                        0,
+                        447.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            385,
+                            20
+                        ],
+                        [
+                            785.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        115,
+                        20
+                    ],
+                    [
+                        515.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -101,
+                        0,
+                        315.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            14,
+                            20
+                        ],
+                        [
+                            414.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        43,
+                        20
+                    ],
+                    [
+                        443.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        120,
+                        0,
+                        243.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            163,
+                            20
+                        ],
+                        [
+                            563.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        269,
+                        20
+                    ],
+                    [
+                        669.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -221,
+                        0,
+                        469.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            48,
+                            20
+                        ],
+                        [
+                            448.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        229,
+                        20
+                    ],
+                    [
+                        629.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        162,
+                        0,
+                        429.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            391,
+                            20
+                        ],
+                        [
+                            791.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        134,
+                        20
+                    ],
+                    [
+                        534.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -77,
+                        0,
+                        334.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            57,
+                            20
+                        ],
+                        [
+                            457.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        55,
+                        20
+                    ],
+                    [
+                        455.0,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        32,
+                        0,
+                        255.0,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            87,
+                            20
+                        ],
+                        [
+                            487.0,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        154,
+                        20
+                    ],
+                    [
+                        687,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        64,
+                        0,
+                        420.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            218,
+                            20
+                        ],
+                        [
+                            751,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        170,
+                        20
+                    ],
+                    [
+                        703,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -135,
+                        0,
+                        436.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            35,
+                            20
+                        ],
+                        [
+                            568,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        250,
+                        20
+                    ],
+                    [
+                        783,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        11,
+                        0,
+                        516.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            261,
+                            20
+                        ],
+                        [
+                            794,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        202,
+                        20
+                    ],
+                    [
+                        735,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        58,
+                        0,
+                        468.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            260,
+                            20
+                        ],
+                        [
+                            793,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        112,
+                        20
+                    ],
+                    [
+                        645,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        114,
+                        0,
+                        378.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            226,
+                            20
+                        ],
+                        [
+                            759,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        77,
+                        20
+                    ],
+                    [
+                        610,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -45,
+                        0,
+                        343.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            32,
+                            20
+                        ],
+                        [
+                            565,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        94,
+                        20
+                    ],
+                    [
+                        627,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        126,
+                        0,
+                        360.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            220,
+                            20
+                        ],
+                        [
+                            753,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        121,
+                        20
+                    ],
+                    [
+                        654,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -98,
+                        0,
+                        387.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            23,
+                            20
+                        ],
+                        [
+                            556,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        9,
+                        20
+                    ],
+                    [
+                        542,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        275.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            9,
+                            20
+                        ],
+                        [
+                            542,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/*[name()='svg'][1]/*[name()='g'][2]/*[name()='g'][2]",
+            "css": "svg g.context g.brush",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "brush",
+            "info": [
+                [
+                    [
+                        27,
+                        20
+                    ],
+                    [
+                        560,
+                        20
+                    ]
+                ],
+                [
+                    [
+                        -2,
+                        0,
+                        293.5,
+                        20.0,
+                        800,
+                        40
+                    ],
+                    [
+                        [
+                            25,
+                            20
+                        ],
+                        [
+                            558,
+                            20
+                        ]
+                    ]
+                ]
+            ]
+        }
+    ]
+]

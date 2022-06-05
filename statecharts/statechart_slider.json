@@ -4,6 +4,7 @@
       "ieo":[
          {
             "nodeSelector":"#nRadius",
+            "nodeXPath":"/html[1]/body[1]/p[1]/input[1]",
             "tag":"input",
             "attributes":[
                {
@@ -30,10 +31,12 @@
                }
             ],
             "data":null,
+            "selectValue":null,
             "event":"input",
             "brushable":null,
             "zoomable":null,
-            "leadsToState":0
+            "leadsToState":0,
+            "siblings":0
          }
       ]
    }

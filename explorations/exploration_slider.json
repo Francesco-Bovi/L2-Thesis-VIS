@@ -1,392 +1,52 @@
 [
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
+    [
+        {
+            "xpath": "/html[1]/body[1]/p[1]/input[1]",
+            "css": "#nRadius",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "input",
+            "info": [
+                "range",
+                "L",
+                [
+                    1,
+                    150,
+                    129
+                ]
             ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
+        },
+        {
+            "xpath": "/html[1]/body[1]/p[1]/input[1]",
+            "css": "#nRadius",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "input",
+            "info": [
+                "range",
+                "M",
+                [
+                    1,
+                    150,
+                    129
+                ]
             ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
+        },
+        {
+            "xpath": "/html[1]/body[1]/p[1]/input[1]",
+            "css": "#nRadius",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "input",
+            "info": [
+                "range",
+                "B",
+                [
+                    1,
+                    150,
+                    129
+                ]
             ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "L",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "M",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    },
-    {
-        "selector": "#nRadius",
-        "event": "input",
-        "info": [
-            "range",
-            "H",
-            [
-                1,
-                150,
-                129.0
-            ]
-        ]
-    }
+        }
+    ]
 ]

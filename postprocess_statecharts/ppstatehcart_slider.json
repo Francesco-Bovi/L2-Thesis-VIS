@@ -3,20 +3,23 @@
         {
             "id": "#nRadius",
             "tag": "input",
-            "data": null,
             "event": "input",
             "brushable": null,
             "zoomable": null,
             "leadsToState": 0,
+            "siblings": 0,
+            "xpath": "/html[1]/body[1]/p[1]/input[1]",
+            "startingPath": -1,
             "attributes": {
                 "type": "range",
                 "min": "1",
                 "max": "150"
             },
             "styles": {
-                "height": 16.0,
-                "width": 129.0
-            }
+                "height": 16,
+                "width": 129
+            },
+            "data": null
         }
     ]
 }
