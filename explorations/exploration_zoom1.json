@@ -1,908 +1,1090 @@
 [
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
+    [
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        900,
+                        497
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        900,
+                        497
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        9,
+                        15
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        9,
+                        15
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        840,
+                        479
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        840,
+                        479
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        565,
+                        122
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        565,
+                        122
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        748,
+                        477
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        748,
+                        477
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        196,
+                        232
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        196,
+                        232
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        920,
+                        32
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        920,
+                        32
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        460,
+                        328
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        460,
+                        328
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        880,
+                        278
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        880,
+                        278
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        533,
+                        167
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        533,
+                        167
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        576,
+                        131
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        576,
+                        131
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        271,
+                        375
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        271,
+                        375
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        58,
+                        318
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        58,
+                        318
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        716,
+                        193
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        716,
+                        193
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        958,
+                        449
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        958,
+                        449
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        277,
+                        81
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        277,
+                        81
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        871,
+                        270
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        871,
+                        270
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        477,
+                        170
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        477,
+                        170
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        491,
+                        68
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        491,
+                        68
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        791,
+                        347
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        791,
+                        347
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        38,
+                        327
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        38,
+                        327
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        719,
+                        55
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        719,
+                        55
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        149,
+                        308
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        149,
+                        308
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        743,
+                        345
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        743,
+                        345
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        194,
+                        21
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        194,
+                        21
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        214,
+                        315
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        214,
+                        315
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        773,
+                        460
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        773,
+                        460
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "L",
+                    [
+                        296,
+                        489
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "L",
+                    [
+                        296,
+                        489
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "M",
+                    [
+                        363,
+                        38
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "M",
+                    [
+                        363,
+                        38
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "in",
+                [
+                    "B",
+                    [
+                        28,
+                        76
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "wheel",
+            "info": [
+                "out",
+                [
+                    "B",
+                    [
+                        28,
+                        76
+                    ]
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "panzoom",
+            "info": [
                 "L",
                 [
-                    286,
-                    67
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    389,
-                    56
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    290,
-                    306
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    82,
-                    328
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    114,
-                    252
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    60,
-                    149
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    275,
-                    229
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    63,
-                    135
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    269,
-                    38
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "L",
-                [
-                    245,
-                    320
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    336,
-                    337
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    369,
-                    38
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    60,
-                    89
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    237,
-                    279
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    202,
-                    18
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    317,
-                    134
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    65,
-                    246
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    212,
-                    222
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    142,
-                    240
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "L",
-                [
-                    198,
-                    101
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    364,
-                    28
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    281,
-                    46
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    230,
-                    136
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    386,
-                    327
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    5,
-                    31
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    235,
-                    309
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    285,
-                    7
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    248,
-                    116
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    381,
-                    173
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "M",
-                [
-                    30,
-                    104
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    358,
-                    350
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    231,
-                    377
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    202,
-                    368
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    244,
-                    185
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    13,
-                    281
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    202,
-                    348
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    242,
-                    361
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    133,
-                    115
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    67,
-                    326
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "M",
-                [
-                    5,
-                    61
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    93,
-                    372
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    54,
-                    79
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    182,
-                    247
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    316,
-                    399
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    379,
-                    89
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    216,
-                    257
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    171,
-                    377
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    348,
-                    283
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    147,
-                    249
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "in",
-            [
-                "H",
-                [
-                    183,
-                    29
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    221,
-                    97
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    281,
-                    371
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    351,
-                    249
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    387,
-                    269
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    113,
-                    214
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    354,
-                    326
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    83,
-                    271
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    139,
-                    235
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    156,
-                    106
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "wheel",
-        "info": [
-            "out",
-            [
-                "H",
-                [
-                    141,
-                    294
-                ]
-            ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "mousedown",
-        "info": [
-            "zoom",
-            [
-                "L",
-                [
-                    400.0,
-                    400.0
+                    500,
+                    960
                 ],
                 [
-                    36,
-                    319
+                    349,
+                    141
                 ],
                 [
                     "right",
                     "up"
                 ]
             ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "mousedown",
-        "info": [
-            "zoom",
-            [
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "panzoom",
+            "info": [
                 "M",
                 [
-                    400.0,
-                    400.0
+                    500,
+                    960
                 ],
                 [
-                    70,
-                    91
+                    391,
+                    488
+                ],
+                [
+                    "left",
+                    "up"
+                ]
+            ]
+        },
+        {
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "css": "canvas",
+            "startingPath": -1,
+            "siblings": 0,
+            "event": "panzoom",
+            "info": [
+                "B",
+                [
+                    500,
+                    960
+                ],
+                [
+                    232,
+                    265
                 ],
                 [
                     "right",
                     "up"
                 ]
             ]
-        ]
-    },
-    {
-        "selector": "body svg rect",
-        "event": "mousedown",
-        "info": [
-            "zoom",
-            [
-                "H",
-                [
-                    400.0,
-                    400.0
-                ],
-                [
-                    265,
-                    29
-                ],
-                [
-                    "right",
-                    "up"
-                ]
-            ]
-        ]
-    }
+        }
+    ]
 ]

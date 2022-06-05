@@ -95,10 +95,18 @@ def PanZoom(element,zoomInfo,driver):
 
         spaceVertical = -yStart
 
-    actions = ActionChains(driver,duration=10)
+    actions = ActionChains(driver,duration=1)
     actions.move_to_element_with_offset(element,xStart,yStart).perform()
 
     actions.click_and_hold()
+
+    listMoveLatency = []
+
+    start = time.time()
+    actions.perform()
+    end = time.time()
+
+    listMoveLatency.append((end-start)*1000)
     
     moveX = int(spaceHorizontal*divisor)
     moveY = int(spaceVertical*divisor)
@@ -106,7 +114,6 @@ def PanZoom(element,zoomInfo,driver):
     xStart = 0
     yStart = 0
     while(xStart != moveX or yStart != moveY):
-        #print("Cicling...")
         
         if(xStart == moveX):
 
@@ -145,15 +152,20 @@ def PanZoom(element,zoomInfo,driver):
                 xStart-=1
                 actions.move_by_offset(-1,0)
 
-        #print("moveX :" + str(xStart) + " moveY: " +str(yStart))
+        start = time.time()
+        actions.perform()
+        end = time.time()
+        listMoveLatency.append((end-start)*1000)
+
+    actions.release()
 
     start = time.time()
-    actions.release().perform()
+    actions.perform()
     end = time.time()
 
-    print("arriveX :" + str(moveX) + " arriveY: " +str(moveY))
+    listMoveLatency.append((end-start)*1000)
 
-    return end-start
+    return listMoveLatency
     
 def Zoom(element,infoInput,driver):
 
@@ -186,27 +198,51 @@ def Zoom(element,infoInput,driver):
 
         if(actionType == "L"):
     
-            scrollSize = +100
+            scrollSize = 100
 
         elif(actionType == "M"):
 
-            scrollSize = +200
+            scrollSize = 200
         
         else:
 
-            scrollSize = +300
+            scrollSize = 300
 
-    actions = ActionChains(driver,duration = 0)
+    actions = ActionChains(driver,duration = 1)
 
     actions.move_to_element(element).perform()
 
-    actions.scroll(xPoint,yPoint,0,scrollSize)
-    
-    start = time.time()
-    actions.perform()
-    end = time.time()
+    listWheelLatency = []
 
-    return end-start
+    countScroll = 0
+
+    if(scrollSize > 0):
+
+        while(countScroll < scrollSize):
+            actions.scroll(xPoint,yPoint,0,10)
+
+            start = time.time()
+            actions.perform()
+            end = time.time()
+
+            listWheelLatency.append((end-start)*1000)
+
+            countScroll+=1
+
+    else:
+
+        while(countScroll > scrollSize):
+            actions.scroll(xPoint,yPoint,0,-10)
+
+            start = time.time()
+            actions.perform()
+            end = time.time()
+
+            listWheelLatency.append((end-start)*1000)
+
+            countScroll-=1
+
+    return listWheelLatency
 
 def Input(element,infoInput,driver):
 
@@ -405,11 +441,11 @@ def Brush(element,infoBrush,driver):
     Start = infoBrush[0]
     End = infoBrush[1]
 
-    xStart = int(Start[0])
-    yStart = int(Start[1])
+    xStart = Start[0]
+    yStart = Start[1]
 
-    xEnd = int(End[0])
-    yEnd = int(End[1])
+    xEnd = End[0]
+    yEnd = End[1]
 
     listMoveLatency = []
 
@@ -425,16 +461,44 @@ def Brush(element,infoBrush,driver):
 
     listMoveLatency.append((end-start)*1000)
 
-    while(xStart<xEnd and yStart<yEnd):
-        xStart+=1
-        yStart+=1
-        actions.move_by_offset(1,1)
+    if(xStart != xEnd and yStart != yEnd):
 
-        start = time.time()
-        actions.perform()
-        end = time.time()
-        
-        listMoveLatency.append((end-start)*1000)
+        while(xStart<xEnd and yStart<yEnd):
+            xStart+=1
+            yStart+=1
+            actions.move_by_offset(1,1)
+
+            start = time.time()
+            actions.perform()
+            end = time.time()
+            
+            listMoveLatency.append((end-start)*1000)
+
+    #This is the case in which we move only in the "x" direction
+    elif(xStart != xEnd and yStart == yEnd):
+
+        while(xStart<xEnd):
+            xStart+=1
+            actions.move_by_offset(1,0)
+
+            start = time.time()
+            actions.perform()
+            end = time.time()
+            
+            listMoveLatency.append((end-start)*1000)
+
+    #Case in which we move only in the "y" direction
+    else:
+
+        while(yStart<yEnd):
+            yStart+=1
+            actions.move_by_offset(0,1)
+
+            start = time.time()
+            actions.perform()
+            end = time.time()
+            
+            listMoveLatency.append((end-start)*1000)
 
     actions.release()
     
@@ -547,7 +611,6 @@ def PanBrush(element,infoPan,driver):
     xWhereClick = choice(list(set([x for x in range(0,int(width))]) - set(listExcludeX)))
     yWhereClick = choice(list(set([x for x in range(0,int(height))]) - set(listExcludeY)))
 
-    print("Perform here")
     actions.move_to_element_with_offset(element,xWhereClick,yWhereClick).click().perform()
     #print("X and Y to click: " + str(xWhereClick) + " " + str(yWhereClick))
 
@@ -593,9 +656,9 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
     
     elif(eventName == "brush"):
 
-        latency = Brush(element,state["info"][0],driver)
-        
         print("brush start")
+
+        latency = Brush(element,state["info"][0],driver)
 
         #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
         actionSequence.append(["mousedown",latency[1]])
@@ -612,9 +675,9 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
         actionSequence.append(["mouseup",latency[-1]])
         finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][0],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
-        latency = PanBrush(element,state["info"][1],driver)
-
         print("panning start")
+
+        latency = PanBrush(element,state["info"][1],driver)
 
         #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
         actionSequence.append(["mousedown",latency[1]])
@@ -639,6 +702,12 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
 
         latency = Zoom(element,state["info"],driver)
 
+        for latencyTime in latency:
+
+            #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
+            actionSequence.append([eventName,latencyTime])
+            finalSummary[pathNumber].append([pathElement,eventName,state["info"],latencyTime , violationRespected if latencyLimits[eventName] > latencyTime else violationNotRespected])
+
     elif(eventName == "mouseout"):
 
         latency = Mouseout(element,driver)
@@ -650,23 +719,6 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
     elif(eventName == "input"):
 
         latency = Input(element,state["info"],driver)
-
-        if(type(latency) is list):
-
-            #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
-            actionSequence.append(["mousedown",latency[1]])
-            finalSummary[pathNumber].append([pathElement,"mousedown",state["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
-
-
-            for latencyTime in latency[1:-1]:
-                #Convert in milliseconds
-                #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
-                actionSequence.append(["mousemove",latencyTime])
-                finalSummary[pathNumber].append([pathElement,"mousemove",state["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
-
-            #print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
-            actionSequence.append(["mouseup",latency[-1]])
-            finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
     elif(eventName == "facsimile_back"):
 
@@ -683,6 +735,22 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
             actionSequence.append([eventName,latency])
             finalSummary[pathNumber].append([pathElement,eventName,state["info"],latency, violationRespected if latencyLimits[eventName] > latency else violationNotRespected])
 
+        elif(eventName in ["panzoom","input"]):
+    
+            #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
+            actionSequence.append(["mousedown",latency[1]])
+            finalSummary[pathNumber].append([pathElement,"mousedown",state["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
+
+
+            for latencyTime in latency[1:-1]:
+                #Convert in milliseconds
+                #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
+                actionSequence.append(["mousemove",latencyTime])
+                finalSummary[pathNumber].append([pathElement,"mousemove",state["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
+
+            #print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
+            actionSequence.append(["mouseup",latency[-1]])
+            finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
     else:
 
@@ -698,7 +766,7 @@ violationNotRespected = "X"
 if __name__ == "__main__":
 
     #open the statechart json file
-    explorationSequence = open('explorations/exploration_brushable.json')
+    explorationSequence = open('explorations/exploration_zoom1.json')
 
     #returns the JSON object as a dictionary
     explorationSequence = json.load(explorationSequence)
@@ -710,7 +778,7 @@ if __name__ == "__main__":
     problemsFound = []
     for path in explorationSequence:
 
-        driver.get('http://127.0.0.1:5501/brushable.html')
+        driver.get('http://127.0.0.1:5500/zommable2.html')
         driver.maximize_window()
         
         finalSummary[pathNumber] = []
@@ -744,8 +812,6 @@ if __name__ == "__main__":
 
                 for i in range(siblings + 1):
 
-                    time.sleep(2)
-
                     if(siblings != 0):
 
                         pathElement = xpath + "[" + str(starting + i) + "]"
@@ -770,9 +836,9 @@ if __name__ == "__main__":
 
                     else:
 
-                        eventName = event
+                        print("Event: " + event)
 
-                        EventHandle(element,eventName,state,driver,pathNumber,pathElement)
+                        EventHandle(element,event,state,driver,pathNumber,pathElement)
 
                     print("-------------------------------------------------------")
                 
@@ -781,7 +847,7 @@ if __name__ == "__main__":
         pathNumber+=1
     
 
-    with open('summaries/summary_brushable.json', 'w') as fp:
+    with open('summaries/summary_zoom1.json', 'w') as fp:
         json.dump(finalSummary, fp,  indent=4)
     
     print(actionSequence)

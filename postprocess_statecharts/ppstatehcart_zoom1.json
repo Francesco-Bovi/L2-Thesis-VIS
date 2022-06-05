@@ -1,9 +1,8 @@
 {
     "0": [
         {
-            "id": "svg rect",
-            "tag": "rect",
-            "data": null,
+            "id": "canvas",
+            "tag": "canvas",
             "event": "wheel",
             "brushable": null,
             "zoomable": {
@@ -12,20 +11,22 @@
                 "translate_y": 0
             },
             "leadsToState": 0,
+            "siblings": 0,
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "startingPath": -1,
             "attributes": {
-                "width": 400.0,
-                "height": 400.0,
-                "transform": "translate(40,40)"
+                "width": 960,
+                "height": 500
             },
             "styles": {
-                "height": 400.0,
-                "width": 400.0
-            }
+                "height": 500,
+                "width": 960
+            },
+            "data": null
         },
         {
-            "id": "svg rect",
-            "tag": "rect",
-            "data": null,
+            "id": "canvas",
+            "tag": "canvas",
             "event": "mousedown",
             "brushable": null,
             "zoomable": {
@@ -34,20 +35,22 @@
                 "translate_y": 0
             },
             "leadsToState": 0,
+            "siblings": 0,
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "startingPath": -1,
             "attributes": {
-                "width": 400.0,
-                "height": 400.0,
-                "transform": "translate(40,40)"
+                "width": 960,
+                "height": 500
             },
             "styles": {
-                "height": 400.0,
-                "width": 400.0
-            }
+                "height": 500,
+                "width": 960
+            },
+            "data": null
         },
         {
-            "id": "svg rect",
-            "tag": "rect",
-            "data": null,
+            "id": "canvas",
+            "tag": "canvas",
             "event": "dblclick",
             "brushable": null,
             "zoomable": {
@@ -56,15 +59,18 @@
                 "translate_y": 0
             },
             "leadsToState": 0,
+            "siblings": 0,
+            "xpath": "/html[1]/body[1]/canvas[1]",
+            "startingPath": -1,
             "attributes": {
-                "width": 400.0,
-                "height": 400.0,
-                "transform": "translate(40,40)"
+                "width": 960,
+                "height": 500
             },
             "styles": {
-                "height": 400.0,
-                "width": 400.0
-            }
+                "height": 500,
+                "width": 960
+            },
+            "data": null
         }
     ]
 }

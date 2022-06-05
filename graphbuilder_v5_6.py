@@ -132,8 +132,8 @@ def PanBrush(directions,brushExtent,selectionExtent):
     xEndBrush = xStartBrush + widthBrush
     yEndBrush = yStartBrush + heightBrush
 
-    xMiddleBrush = xStartBrush + widthBrush/2
-    yMiddleBrush = yStartBrush + heightBrush/2
+    xMiddleBrush = xStartBrush + int(widthBrush/2)
+    yMiddleBrush = yStartBrush + int(heightBrush/2)
 
     #print("xMiddle " + str(xMiddleBrush))
 
@@ -464,8 +464,6 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
             brushableNode = currentState["brushable"]
             zoomableNode = currentState["zoomable"]
 
-            #UpdateScore(graph,state,idNode)
-
             """
             checkPresence = 0
             for element in explorationSequence:
@@ -560,8 +558,8 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                             print(newSelectionExtent)
 
                             infoPan = PanBrush(brushableNode["directions"],brushableNode["brush_extent"],newSelectionExtent)
-                            #print("InfoPan ",end="")
-                            #print(infoPan)
+                            print("InfoPan ",end="")
+                            print(infoPan)
 
                             newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
 
@@ -598,10 +596,10 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                             
             elif(eventNode == "wheel"):
 
-                for size in typeActions:
+                for i in range(0,10):
 
                     #We make 10 for zoom in and 10 for zoom out handled directly in Selenium
-                    for i in range(0,10):
+                    for size in typeActions:
 
                         if(stylesNode["height"]!=None or stylesNode["width"]!=None):
                     
@@ -618,20 +616,6 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                         if(explorationState not in continueExploration):
                             continueExploration.append(explorationState)
-                        
-
-                    for i in range(0,10):
-            
-                        if(stylesNode["height"]!=None or stylesNode["width"]!=None):
-                    
-                                zoomInfo = {"height":stylesNode["height"],"width":stylesNode["width"]}
-
-                        else: 
-
-                                zoomInfo = None
-                            
-
-                        retInfo = Zoom(size,zoomInfo)
 
                         explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["out",retInfo]}
 

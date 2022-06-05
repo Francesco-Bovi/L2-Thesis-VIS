@@ -3,33 +3,31 @@
       "stateId":0,
       "ieo":[
          {
-            "nodeSelector":"svg rect",
-            "tag":"rect",
+            "nodeSelector":"canvas",
+            "nodeXPath":"/html[1]/body[1]/canvas[1]",
+            "tag":"canvas",
             "attributes":[
                {
                   "name":"width",
-                  "value":"400"
+                  "value":"960"
                },
                {
                   "name":"height",
-                  "value":"400"
-               },
-               {
-                  "name":"transform",
-                  "value":"translate(40,40)"
+                  "value":"500"
                }
             ],
             "styles":[
                {
                   "name":"height",
-                  "value":"400px"
+                  "value":"500px"
                },
                {
                   "name":"width",
-                  "value":"400px"
+                  "value":"960px"
                }
             ],
             "data":null,
+            "selectValue":null,
             "event":"wheel",
             "brushable":null,
             "zoomable":{
@@ -37,36 +35,35 @@
                "translate_x":0,
                "translate_y":0
             },
-            "leadsToState":0
+            "leadsToState":0,
+            "siblings":0
          },
          {
-            "nodeSelector":"svg rect",
-            "tag":"rect",
+            "nodeSelector":"canvas",
+            "nodeXPath":"/html[1]/body[1]/canvas[1]",
+            "tag":"canvas",
             "attributes":[
                {
                   "name":"width",
-                  "value":"400"
+                  "value":"960"
                },
                {
                   "name":"height",
-                  "value":"400"
-               },
-               {
-                  "name":"transform",
-                  "value":"translate(40,40)"
+                  "value":"500"
                }
             ],
             "styles":[
                {
                   "name":"height",
-                  "value":"400px"
+                  "value":"500px"
                },
                {
                   "name":"width",
-                  "value":"400px"
+                  "value":"960px"
                }
             ],
             "data":null,
+            "selectValue":null,
             "event":"mousedown",
             "brushable":null,
             "zoomable":{
@@ -74,36 +71,35 @@
                "translate_x":0,
                "translate_y":0
             },
-            "leadsToState":0
+            "leadsToState":0,
+            "siblings":0
          },
          {
-            "nodeSelector":"svg rect",
-            "tag":"rect",
+            "nodeSelector":"canvas",
+            "nodeXPath":"/html[1]/body[1]/canvas[1]",
+            "tag":"canvas",
             "attributes":[
                {
                   "name":"width",
-                  "value":"400"
+                  "value":"960"
                },
                {
                   "name":"height",
-                  "value":"400"
-               },
-               {
-                  "name":"transform",
-                  "value":"translate(40,40)"
+                  "value":"500"
                }
             ],
             "styles":[
                {
                   "name":"height",
-                  "value":"400px"
+                  "value":"500px"
                },
                {
                   "name":"width",
-                  "value":"400px"
+                  "value":"960px"
                }
             ],
             "data":null,
+            "selectValue":null,
             "event":"dblclick",
             "brushable":null,
             "zoomable":{
@@ -111,7 +107,8 @@
                "translate_x":0,
                "translate_y":0
             },
-            "leadsToState":0
+            "leadsToState":0,
+            "siblings":0
          }
       ]
    }
