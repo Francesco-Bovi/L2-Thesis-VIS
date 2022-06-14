@@ -1,576 +1,800 @@
-[
-    [],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
+{
+    "0": [
+        [],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[1]",
+                "css": "#resultsButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 1
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[2]",
+                "css": "#ageButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 1
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[3]",
+                "css": "#bothButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 1
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[4]",
+                "css": "#selectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 2
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[4]",
+                "css": "#selectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 2
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[4]",
+                "css": "#selectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 2
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 3
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 3
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 3
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 4
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "click",
+                "info": null,
+                "leadsToState": 4
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 4
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "contextmenu",
+                "info": null,
+                "leadsToState": 4
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 4
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 1
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][4]/*[name()='rect']",
+                "css": "#mapBar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 5
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[3]/*[name()='svg'][1]/*[name()='g'][7]/*[name()='rect']",
+                "css": "#bar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 6
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[1]",
+                "css": "#resultsButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 8
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[2]",
+                "css": "#ageButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 8
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[3]",
+                "css": "#bothButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 8
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[4]",
+                "css": "#selectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 9
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[4]",
+                "css": "#selectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 9
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[4]",
+                "css": "#selectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 9
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 10
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 10
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 10
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 11
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "click",
+                "info": null,
+                "leadsToState": 11
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 11
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "contextmenu",
+                "info": null,
+                "leadsToState": 11
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
+                "css": "#E06000001",
+                "startingPath": 1,
+                "siblings": 10,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 11
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]",
+                "css": "#map",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 8
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][4]/*[name()='rect']",
+                "css": "#mapBar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 12
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[3]/*[name()='svg'][1]/*[name()='g'][7]/*[name()='rect']",
+                "css": "#bar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 13
+            }
+        ],
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/button[1]",
+                "css": "#plotButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "click",
+                "info": null,
+                "leadsToState": 7
+            },
+            {
+                "xpath": "/html[1]/body[1]/div[4]/*[name()='svg'][1]/*[name()='svg'][1]/*[name()='g'][3]/*[name()='circle']",
+                "css": "#E06000031",
+                "startingPath": 1,
+                "siblings": 319,
+                "event": "mouseover",
+                "info": null,
+                "leadsToState": 14
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[4]",
-            "css": "#selectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[4]",
-            "css": "#selectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
+    "3": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 1
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[5]",
-            "css": "#deselectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[5]",
-            "css": "#deselectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
+    "5": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][4]/*[name()='rect']",
+                "css": "#mapBar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 1
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
-            "css": "#E06000001",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
-            "css": "#E06000001",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
-            "css": "#E06000001",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "contextmenu",
-            "info": null
-        }
+    "6": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[3]/*[name()='svg'][1]/*[name()='g'][7]/*[name()='rect']",
+                "css": "#bar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 0
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][4]/*[name()='rect']",
-            "css": "#mapBar_0",
-            "startingPath": 1,
-            "siblings": 16,
-            "event": "mouseover",
-            "info": null
-        }
+    "10": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]/button[5]",
+                "css": "#deselectAllButton",
+                "startingPath": -1,
+                "siblings": 0,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 8
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[3]/*[name()='svg'][1]/*[name()='g'][7]/*[name()='rect']",
-            "css": "#bar_0",
-            "startingPath": 1,
-            "siblings": 16,
-            "event": "mouseover",
-            "info": null
-        }
+    "12": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][4]/*[name()='rect']",
+                "css": "#mapBar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 8
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
+    "13": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[3]/*[name()='svg'][1]/*[name()='g'][7]/*[name()='rect']",
+                "css": "#bar_0",
+                "startingPath": 1,
+                "siblings": 16,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 7
+            }
+        ]
     ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
-    ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[4]",
-            "css": "#selectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[4]",
-            "css": "#selectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
-    ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[5]",
-            "css": "#deselectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[5]",
-            "css": "#deselectAllButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        }
-    ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
-            "css": "#E06000001",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
-            "css": "#E06000001",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='path']",
-            "css": "#E06000001",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "contextmenu",
-            "info": null
-        }
-    ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]",
-            "css": "#map",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "mouseover",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[1]",
-            "css": "#resultsButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[2]",
-            "css": "#ageButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/button[3]",
-            "css": "#bothButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[2]/*[name()='svg'][1]/*[name()='g'][4]/*[name()='rect']",
-            "css": "#mapBar_0",
-            "startingPath": 1,
-            "siblings": 16,
-            "event": "mouseover",
-            "info": null
-        }
-    ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[3]/*[name()='svg'][1]/*[name()='g'][7]/*[name()='rect']",
-            "css": "#bar_0",
-            "startingPath": 1,
-            "siblings": 16,
-            "event": "mouseover",
-            "info": null
-        }
-    ],
-    [
-        {
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-		{
-			
-            "xpath": "/html[1]/body[1]/div[4]/button[1]",
-            "css": "#plotButton",
-            "startingPath": -1,
-            "siblings": 0,
-            "event": "click",
-            "info": null
-        },
-        {
-            "xpath": "/html[1]/body[1]/div[4]/*[name()='svg'][1]/*[name()='svg'][1]/*[name()='g'][3]/*[name()='circle']",
-            "css": "#E06000031",
-            "startingPath": 1,
-            "siblings": 10,
-            "event": "mouseover",
-            "info": null
-        }
+    "14": [
+        [
+            {
+                "xpath": "/html[1]/body[1]/div[4]/*[name()='svg'][1]/*[name()='svg'][1]/*[name()='g'][3]/*[name()='circle']",
+                "css": "#E06000031",
+                "startingPath": 1,
+                "siblings": 319,
+                "event": "mouseout",
+                "info": null,
+                "leadsToState": 7
+            }
+        ]
     ]
-]
+}

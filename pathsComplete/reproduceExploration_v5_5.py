@@ -20,6 +20,10 @@ from selenium.common.exceptions import ElementClickInterceptedException, Element
 
 #According to https://drive.google.com/drive/u/0/folders/1ARGI_CIR3V3FvrhttgFNfXWiIpaFqNeV
 
+#Referring to Pan/Drag/Brush
+StartLatency = 200.0
+EndLatency = 1000.0
+
 latencyLimits = {"click":200.0, "change":200.0, "contextmenu": 200.0,"mousedown":200.0, "mouseup":1000.0, "mouseover":200.0 , "mouseenter": 200.0, "mousemove": 200.0 , "mouseleave": 1000.0 , "mouseout": 1000.0, "wheel": 1000.0, "dbclick": 1000.0}
 
 def GetPixelsBack(width):
@@ -317,7 +321,7 @@ def Mouseout(driver):
     actions.perform()
     end = time.time()
 
-    return end-start
+    return (end-start) - timeOut
 
 def Mouseover(element,driver):
 
@@ -603,17 +607,17 @@ def ResetBrush(element,infoReset,driver):
 
     actions.move_to_element_with_offset(element,widthBrush*2/3,heightBrush/2).click().perform
 
-def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
+def EventHandle(element,eventName,transition,driver,pathNumber,pathElement):
 
     latency = None
 
     if(eventName == "click" or eventName == "change"):
     
-        latency = Click(element,state["info"],driver)
+        latency = Click(element,transition["info"],driver)
 
     elif(eventName == "contextmenu"):
 
-        latency = ContextClick(element,state["info"],driver)
+        latency = ContextClick(element,transition["info"],driver)
 
     elif(eventName == "mouseover" or eventName == "mouseenter"):
 
@@ -632,55 +636,55 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
 
         print("brush start")
 
-        latency = Brush(element,state["info"][0],driver)
+        latency = Brush(element,transition["info"][0],driver)
 
         #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
         actionSequence.append(["mousedown",latency[1]])
-        finalSummary[pathNumber].append([pathElement,"mousedown",state["info"][0],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
+        finalSummary[pathNumber].append([pathElement,"mousedown",transition["info"][0],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
 
 
         for latencyTime in latency[1:-1]:
             #Convert in milliseconds
             #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
             actionSequence.append(["mousemove",latencyTime])
-            finalSummary[pathNumber].append([pathElement,"mousemove",state["info"][0],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
+            finalSummary[pathNumber].append([pathElement,"mousemove",transition["info"][0],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
 
         #print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
         actionSequence.append(["mouseup",latency[-1]])
-        finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][0],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
+        finalSummary[pathNumber].append([pathElement,"mouseup",transition["info"][0],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
         print("panning start")
 
-        latency = PanBrush(element,state["info"][1],driver)
+        latency = PanBrush(element,transition["info"][1],driver)
 
         #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
         actionSequence.append(["mousedown",latency[1]])
-        finalSummary[pathNumber].append([pathElement,"mousedown",state["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
+        finalSummary[pathNumber].append([pathElement,"mousedown",transition["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
 
 
         for latencyTime in latency[1:-1]:
             #Convert in milliseconds
             #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
             actionSequence.append(["mousemove",latencyTime])
-            finalSummary[pathNumber].append([pathElement,"mousemove",state["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
+            finalSummary[pathNumber].append([pathElement,"mousemove",transition["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
 
         #print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
         actionSequence.append(["mouseup",latency[-1]])
-        finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
+        finalSummary[pathNumber].append([pathElement,"mouseup",transition["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
     elif(eventName == "panzoom"):
 
-        latency = PanZoom(element,state["info"],driver)
+        latency = PanZoom(element,transition["info"],driver)
 
     elif(eventName == "wheel"):
 
-        latency = Zoom(element,state["info"],driver)
+        latency = Zoom(element,transition["info"],driver)
 
         for latencyTime in latency:
 
             #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
             actionSequence.append([eventName,latencyTime])
-            finalSummary[pathNumber].append([pathElement,eventName,state["info"],latencyTime , violationRespected if latencyLimits[eventName] > latencyTime else violationNotRespected])
+            finalSummary[pathNumber].append([pathElement,eventName,transition["info"],latencyTime , violationRespected if latencyLimits[eventName] > latencyTime else violationNotRespected])
 
     elif(eventName == "mouseout"):
 
@@ -688,11 +692,11 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
 
     elif(eventName == "reset_brush"):
 
-        ResetBrush(element,state["info"],driver)
+        ResetBrush(element,transition["info"],driver)
 
     elif(eventName == "input"):
 
-        latency = Input(element,state["info"],driver)
+        latency = Input(element,transition["info"],driver)
 
     elif(eventName == "facsimile_back"):
 
@@ -707,24 +711,24 @@ def EventHandle(element,eventName,state,driver,pathNumber,pathElement):
             
             print("STATE: " + xpath + " EVENT: " + eventName + " LATENCY: " + str(latency) + " ms")
             actionSequence.append([eventName,latency])
-            finalSummary[pathNumber].append([pathElement,eventName,state["info"],latency, violationRespected if latencyLimits[eventName] > latency else violationNotRespected])
+            finalSummary[pathNumber].append([pathElement,eventName,transition["info"],latency, violationRespected if latencyLimits[eventName] > latency else violationNotRespected])
 
         elif(eventName in ["panzoom","input"]):
     
             #print("STATE: " + xpath + " EVENT: " + "mousedown" + " LATENCY: " + str(latency[1]) + " ms")
             actionSequence.append(["mousedown",latency[1]])
-            finalSummary[pathNumber].append([pathElement,"mousedown",state["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
+            finalSummary[pathNumber].append([pathElement,"mousedown",transition["info"][1],latency[1] , violationRespected if latencyLimits["mousedown"] > latency[1] else violationNotRespected])
 
 
             for latencyTime in latency[1:-1]:
                 #Convert in milliseconds
                 #print("STATE: " + xpath + " EVENT: " + "mousemove" + " LATENCY: " + str(latencyTime) + " ms")
                 actionSequence.append(["mousemove",latencyTime])
-                finalSummary[pathNumber].append([pathElement,"mousemove",state["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
+                finalSummary[pathNumber].append([pathElement,"mousemove",transition["info"][1],latencyTime , violationRespected if latencyLimits["mousemove"] > latencyTime else violationNotRespected])
 
             #print("STATE: " + xpath + " EVENT: " + "mouseup" + " LATENCY: " + str(latency[-1]) + " ms")
             actionSequence.append(["mouseup",latency[-1]])
-            finalSummary[pathNumber].append([pathElement,"mouseup",state["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
+            finalSummary[pathNumber].append([pathElement,"mouseup",transition["info"][1],latency[-1] , violationRespected if latencyLimits["mouseup"] > latency[-1] else violationNotRespected])
 
     else:
 
@@ -736,6 +740,7 @@ actionSequence = []
 finalSummary = {}
 violationRespected = "V"
 violationNotRespected = "X"
+timeOut = None
 
 if __name__ == "__main__":
 
@@ -754,22 +759,24 @@ if __name__ == "__main__":
     driver.get('http://localhost:8000/brexitVisualization.html')
     driver.maximize_window()
 
-    mouseOutElement = driver.find_element(By.XPATH,"/html/body")
-    actions = ActionChains(driver,duration = 0)
+    for path in explorationSequence["0"]:
 
-    #Move to the 1,1 point of the HTML/BODY
-    actions.move_to_element_with_offset(mouseOutElement,1,1)
-    
-    start = time.time()
-    actions.perform()
-    end = time.time()
-
-    print("Move to 1,1: " + str((end - start)*1000))
-
-    for path in explorationSequence:
+        explorationPerformed = []
 
         driver.get('http://localhost:8000/brexitVisualization.html')
         driver.maximize_window()
+
+        mouseOutElement = driver.find_element(By.XPATH,"/html/body")
+        actions = ActionChains(driver,duration = 0)
+
+        #Move to the 1,1 point of the HTML/BODY
+        actions.move_to_element_with_offset(mouseOutElement,1,1)
+        
+        start = time.time()
+        actions.perform()
+        end = time.time()
+
+        timeOut = end-start
         
         finalSummary[pathNumber] = []
         print("PATH: " + str(pathNumber))
@@ -780,7 +787,9 @@ if __name__ == "__main__":
         else:
 
             indexState = 0
-            for state in path:
+            for transition in path:
+
+                explorationPerformed.append(transition)
 
                 """
                 elementsInPage = driver.find_elements(By.CSS_SELECTOR,"*")
@@ -792,10 +801,13 @@ if __name__ == "__main__":
                 """
 
 
-                xpath = state["xpath"]
-                event = state["event"]
-                siblings = state["siblings"]
-                starting = state["startingPath"]
+                xpath = transition["xpath"]
+                event = transition["event"]
+                siblings = transition["siblings"]
+                starting = transition["startingPath"]
+                nextState = transition["leadsToState"]
+
+                siblings = int((siblings*10)/100)
 
                 pathElement = ""
             
@@ -810,11 +822,11 @@ if __name__ == "__main__":
 
                         pathElement = xpath
                         
-                    print("----------ANALYZING " + pathElement + "------------")
+                    print("---ANALYZING " + pathElement + "---")
 
                     try:
 
-                        element = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH,pathElement)))
+                        element = WebDriverWait(driver, 2).until(EC.visibility_of_element_located((By.XPATH,pathElement)))
 
                     except:
 
@@ -826,13 +838,126 @@ if __name__ == "__main__":
 
                     else:
 
-                        print("Event: " + event)
+                        print("-----Event: " + event)
 
-                        EventHandle(element,event,state,driver,pathNumber,pathElement)
+                        EventHandle(element,event,transition,driver,pathNumber,pathElement)
 
-                    print("-------------------------------------------------------")
-                
-                indexState+=1
+                    indexState+=1
+
+                print("Check")
+                print(str(nextState))
+                #Perform sub explorations
+                if(str(nextState) in explorationSequence and explorationSequence[str(nextState)] != None):
+
+                    for subpath in explorationSequence[str(nextState)]:
+
+                        print()
+                        print("--------SUBPATH OF STATE " +str(nextState))
+
+                        subdriver = webdriver.Chrome()
+                        subdriver.get(driver.current_url)
+                        subdriver.maximize_window()
+
+                        mouseOutElement = subdriver.find_element(By.XPATH,"/html/body")
+                        actions = ActionChains(subdriver,duration = 0)
+
+                        #Move to the 1,1 point of the HTML/BODY
+                        actions.move_to_element_with_offset(mouseOutElement,1,1)
+                        
+                        start = time.time()
+                        actions.perform()
+                        end = time.time()
+
+                        timeOut = end-start
+
+                        for subtransition in explorationPerformed:
+
+                            xpath = subtransition["xpath"]
+                            subevent = subtransition["event"]
+                            siblings = subtransition["siblings"]
+                            starting = subtransition["startingPath"]
+
+                            siblings = int((siblings*10)/100)
+
+                            SubpathElement = ""
+
+                            for i in range(siblings + 1):
+
+                                if(siblings != 0):
+
+                                    SubpathElement = xpath + "[" + str(starting + i) + "]"
+                                
+                                else:
+
+                                    SubpathElement = xpath
+                                    
+                                print("------------ANALYZING ELEMENT" + SubpathElement + "------------")
+
+                                try:
+
+                                    subelement = WebDriverWait(subdriver, 2).until(EC.visibility_of_element_located((By.XPATH,SubpathElement)))
+
+                                except:
+
+                                        print("Element not found: " + SubpathElement)
+
+                                        #Save the paths in which problems arises
+                                        if(pathNumber not in problemsFound):
+                                            problemsFound.append(pathNumber)
+
+                                else:
+
+                                    print("------------Repeat Event: " + subevent)
+
+                                    EventHandle(subelement,subevent,subtransition,subdriver,pathNumber,SubpathElement)
+                                    print()
+
+
+                        for subtransition in subpath:
+
+                            xpath = subtransition["xpath"]
+                            subevent = subtransition["event"]
+                            siblings = subtransition["siblings"]
+                            starting = subtransition["startingPath"]
+
+                            siblings = int((siblings*10)/100)
+
+                            SubpathElement = ""
+
+                            for i in range(siblings + 1):
+
+                                if(siblings != 0):
+
+                                    SubpathElement = xpath + "[" + str(starting + i) + "]"
+                                
+                                else:
+
+                                    SubpathElement = xpath
+                                    
+                                print("------------ANALYZING SUBELEMENT" + SubpathElement + "------------")
+
+                                try:
+
+                                    subelement = WebDriverWait(subdriver, 2).until(EC.visibility_of_element_located((By.XPATH,SubpathElement)))
+
+                                except:
+
+                                        print("Element not found: " + SubpathElement)
+
+                                        #Save the paths in which problems arises
+                                        if(pathNumber not in problemsFound):
+                                            problemsFound.append(pathNumber)
+
+                                else:
+
+                                    print("------------SubEvent: " + subevent)
+
+                                    EventHandle(subelement,subevent,subtransition,subdriver,pathNumber,SubpathElement)
+                                    print()
+
+                        subdriver.close()            
+
+            print("************************************************************")
 
         pathNumber+=1
     

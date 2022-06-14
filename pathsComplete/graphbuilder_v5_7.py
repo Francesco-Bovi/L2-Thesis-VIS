@@ -28,6 +28,12 @@ eventsList = [
 transitionsList = []
 explorationSequence = []
 
+def checkBackNode(start,end,graph):
+
+    for node in graph[start]:
+        if(node == end):
+            return 1
+    return 0
 
 def checkPresenceOfLoop(graph,node):
 
@@ -38,10 +44,6 @@ def checkPresenceOfLoop(graph,node):
     return 0
 
 listPaths = []
-'''A recursive function to print all paths from 'u' to 'd'.
-visited[] keeps track of vertices in current path.
-path[] stores actual vertices and path_index is current
-index in path[]'''
 def printAllPathsUtil(u, d, visited, path, newGraph):
 
     # Mark the current node as visited and store in path
@@ -72,7 +74,7 @@ def printAllPathsUtil(u, d, visited, path, newGraph):
 def printAllPaths(s, d, newGraph):
 
     # Mark all the vertices as not visited
-    visited =[False]*(len(newGraph))
+    visited =[0]*(len(newGraph))
 
     # Create an array to store paths
     path = []
@@ -423,14 +425,14 @@ def retEdges(graph,stateCurr,nextState):
     return listEdges
 
 allSequences = []
-def ExplorationState(graph,stateCurrent,transition,exploration):
+def ExplorationState(graph,stateCurrent,transition,exploration,back=0):
     global explorationSequence
-
-    continueExploration = exploration.copy()
     
-    if(checkPresenceOfLoop(newGraph,stateCurrent)):
+    if(checkPresenceOfLoop(newGraph,stateCurrent) and back == 0):
     
         for edge in retEdges(graph,str(stateCurrent),stateCurrent):
+
+            continueExploration = exploration.copy()
 
             typeActions = ["L","M","B"]
 
@@ -447,24 +449,14 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
             brushableNode = currentState["brushable"]
             zoomableNode = currentState["zoomable"]
 
-            """
-            checkPresence = 0
-            for element in explorationSequence:
-                if(element["xpath"] == xpathNode):
-                    checkPresence = 1
-
-            if(checkPresence == 0):
-                explorationSequence.append({"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"events":[]})
-            #print("STATE: "+ stateNumber + "| ID: "+ idNode)
-
-            """
+            leadsToStateNode = currentState["leadsToState"]
 
             if(eventNode == "click" or eventNode == "contextmenu"):
 
                 #If the tag is button we don't need any other information
                 if(tagNode == "button"):
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                     if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
@@ -476,7 +468,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                     infoClick = Click(height,width)
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":infoClick}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":infoClick,"leadsToState":leadsToStateNode}
                     
                     if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
@@ -484,14 +476,14 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
             #For the moment we try to not distinguish them "mouseover" and "mouseleave"
             elif(eventNode == "mouseover" or eventNode == "mouseenter"):
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                 if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
 
             elif(eventNode == "mouseout" or eventNode=="mouseleave"):
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                 if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
@@ -500,7 +492,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                 if(brushableNode==None and zoomableNode==None):
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                     if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
@@ -514,7 +506,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                     if(brushableNode["brush_extent"] == brushableNode["selection_extent"]):
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"reset_brush","info":brushableNode["selection_extent"]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"reset_brush","info":brushableNode["selection_extent"],"leadsToState":leadsToStateNode}
 
                         continueExploration.append(explorationState)
 
@@ -536,7 +528,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                             newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
 
                             #Info for panning the brushed area
-                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":[newSelectionExtent,[infoPan, newBrushPosition]]}
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":[newSelectionExtent,[infoPan, newBrushPosition]],"leadsToState":leadsToStateNode}
 
                             if(explorationState not in continueExploration):
                                 continueExploration.append(explorationState)
@@ -561,7 +553,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                         
                         retInfo = PanZoom(size,panZoomInfo)
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panzoom","info":retInfo}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panzoom","info":retInfo,"leadsToState":leadsToStateNode}
 
                         if(explorationState not in continueExploration):
                             continueExploration.append(explorationState)
@@ -584,19 +576,19 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                         retInfo = Zoom(size,zoomInfo)
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["in",retInfo]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["in",retInfo],"leadsToState":leadsToStateNode}
 
                         if(explorationState not in continueExploration):
                             continueExploration.append(explorationState)
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["out",retInfo]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["out",retInfo],"leadsToState":leadsToStateNode}
 
                         if(explorationState not in continueExploration):
                             continueExploration.append(explorationState)
                         
             elif(eventNode == "mouseup"):
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                 if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
@@ -617,7 +609,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                                 retInfo[1]=size
 
-                                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": retInfo}
+                                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": retInfo,"leadsToState":leadsToStateNode}
 
                                 if(explorationState not in continueExploration):
                                     continueExploration.append(explorationState)
@@ -629,7 +621,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                             numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
 
-                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)],"leadsToState":leadsToStateNode}
 
                             if(explorationState not in continueExploration):
                                 continueExploration.append(explorationState)
@@ -638,7 +630,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                     #We treat this case like it was a button
                     elif(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None],"leadsToState":leadsToStateNode}
 
                         if(explorationState not in continueExploration):
                             continueExploration.append(explorationState)
@@ -649,7 +641,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                     if(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
             
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None],"leadsToState":leadsToStateNode}
 
                         if(explorationState not in continueExploration):
                             continueExploration.append(explorationState)
@@ -658,19 +650,28 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                 #Since this is not a real event but just to go back to a state
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                 if(explorationState not in continueExploration):
                         continueExploration.append(explorationState)
 
+            if(continueExploration not in allSequences):
+                allSequences.append(continueExploration)
+              
     if(transition==[]):
-        if(exploration not in allSequences):
-            allSequences.append(continueExploration)
+
+        if(exploration not in allSequences and exploration != []):
+            allSequences.append(exploration)
+        
         return
 
     nextState = transition[0]
 
+    ExplorationAux = exploration.copy()
+    
     for edge in retEdges(graph,str(stateCurrent),nextState):
+
+        continueExploration = ExplorationAux.copy()
 
         typeActions = ["L","M","B"]
 
@@ -686,13 +687,14 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
         tagNode = currentState["tag"]
         brushableNode = currentState["brushable"]
         zoomableNode = currentState["zoomable"]
+        leadsToStateNode = currentState["leadsToState"]
 
         if(eventNode == "click" or eventNode == "contextmenu"):
 
             #If the tag is button we don't need any other information
             if(tagNode == "button"):
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                 continueExploration.append(explorationState)
 
@@ -703,20 +705,20 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                 infoClick = Click(height,width)
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":infoClick}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":infoClick,"leadsToState":leadsToStateNode}
                 
                 continueExploration.append(explorationState)
 
         #For the moment we try to not distinguish them "mouseover" and "mouseleave"
         elif(eventNode == "mouseover" or eventNode == "mouseenter"):
 
-            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
             continueExploration.append(explorationState)
 
         elif(eventNode == "mouseout" or eventNode=="mouseleave"):
 
-            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
             continueExploration.append(explorationState)
 
@@ -724,7 +726,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
             if(brushableNode==None and zoomableNode==None):
 
-                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+                explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
                 continueExploration.append(explorationState)
 
@@ -737,7 +739,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                 if(brushableNode["brush_extent"] == brushableNode["selection_extent"]):
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"reset_brush","info":brushableNode["selection_extent"]}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"reset_brush","info":brushableNode["selection_extent"],"leadsToState":leadsToStateNode}
 
                     continueExploration.append(explorationState)
 
@@ -752,7 +754,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                         print("New selection_extent: ",end="")
                         print(newSelectionExtent)
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":newSelectionExtent}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"brush","info":newSelectionExtent,"leadsToState":leadsToStateNode}
 
                         continueExploration.append(explorationState)
 
@@ -763,7 +765,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                         newBrushPosition = [[newSelectionExtent[0][0] + infoPan[0],newSelectionExtent[0][1] + infoPan[1]],[newSelectionExtent[1][0] + infoPan[0],newSelectionExtent[1][1] + infoPan[1]]]
 
                         #Info for panning the brushed area
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panbrush","info":[infoPan, newBrushPosition]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panbrush","info":[infoPan, newBrushPosition],"leadsToState":leadsToStateNode}
 
                         continueExploration.append(explorationState)
 
@@ -782,7 +784,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                     
                     retInfo = PanZoom(size,panZoomInfo)
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panzoom","info":retInfo}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":"panzoom","info":retInfo,"leadsToState":leadsToStateNode}
 
                     continueExploration.append(explorationState)
                         
@@ -804,7 +806,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                     retInfo = Zoom(size,zoomInfo)
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["in",retInfo]}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["in",retInfo],"leadsToState":leadsToStateNode}
 
                     continueExploration.append(explorationState)
                     
@@ -822,13 +824,13 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                     retInfo = Zoom(size,zoomInfo)
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["out",retInfo]}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":["out",retInfo],"leadsToState":leadsToStateNode}
 
                     continueExploration.append(explorationState)
                     
         elif(eventNode == "mouseup"):
 
-            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
             continueExploration.append(explorationState)
 
@@ -848,7 +850,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                             retInfo[1]=size
 
-                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": retInfo}
+                            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": retInfo,"leadsToState":leadsToStateNode}
 
                             continueExploration.append(explorationState)
                             
@@ -859,7 +861,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                         numberInfo = {"min":int(attributeNode["min"]),"max":int(attributeNode["max"]),"value":int(attributeNode["value"]),"step":int(attributeNode["step"])}
 
-                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)]}
+                        explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info": ["number",inputNumberHtml(numberInfo)],"leadsToState":leadsToStateNode}
 
                         continueExploration.append(explorationState)
                         
@@ -867,7 +869,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
                 #We treat this case like it was a button
                 elif(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
 
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None]}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None],"leadsToState":leadsToStateNode}
 
                     continueExploration.append(explorationState)
                         
@@ -877,7 +879,7 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
                 if(attributeNode["type"] == "checkbox" or attributeNode["type"] == "radio"):
         
-                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None]}
+                    explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":[attributeNode["type"],None],"leadsToState":leadsToStateNode}
 
                     continueExploration.append(explorationState)
 
@@ -885,12 +887,12 @@ def ExplorationState(graph,stateCurrent,transition,exploration):
 
             #Since this is not a real event but just to go back to a state
 
-            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None}
+            explorationState = {"xpath":xpathNode,"css":idNode,"startingPath":int(startingPathNode),"siblings":siblingsNode,"event":eventNode,"info":None,"leadsToState":leadsToStateNode}
 
             continueExploration.append(explorationState)
 
         #print(transition)
-        ExplorationState(graph,nextState,transition[1:],continueExploration)
+        ExplorationState(graph,nextState,transition[1:],continueExploration,back)
         
     #return exploration
 
@@ -1010,10 +1012,10 @@ def UpdateScore(graphVisit,state,idNode):
 
 if(__name__=="__main__"):
 
-    nameVis = input("Insert name of the visualization: ")
+    #nameVis = input("Insert name of the visualization: ")
     
     #open the statechart json file
-    statechart_j=open('statecharts/statechart_'+nameVis+'.json')
+    statechart_j=open('statecharts/statechart_brexit.json')
 
     #returns the JSON object as a dictionary
     statechart_dict=json.load(statechart_j)
@@ -1031,7 +1033,7 @@ if(__name__=="__main__"):
 
     exit
     #Save graph on a file
-    with open('postprocess_statecharts/ppstatechart_'+nameVis+'.json', 'w') as fp:
+    with open('postprocess_statecharts/ppstatechart_brexit.json', 'w') as fp:
         json.dump(graph, fp,  indent=4)
 
     print(transitionsList)
@@ -1045,8 +1047,8 @@ if(__name__=="__main__"):
         innerList = []
         for transition in graph[node]:
 
-            #if(transition["leadsToState"] not in innerList):
-            innerList.append(int(transition["leadsToState"]))
+            if(transition["event"] != "facsimile_back"):
+                innerList.append(int(transition["leadsToState"]))
 
         newGraph[counter] = innerList
         counter+=1
@@ -1059,25 +1061,47 @@ if(__name__=="__main__"):
     #DFS(newGraph,0,graphVisit)
     #print(outputEdges)
 
-    for nodeStart in newGraph:
-        for nodeEnd in newGraph:
-            print("From: " + str(nodeStart) +" to destination: " +str(nodeEnd))
-            printAllPaths(nodeStart,nodeEnd,newGraph)
+    explorationGraph = {}
 
-    #print(listPaths)
-    print("-------------------------------------------")
+    for nodeEnd in newGraph:
+        printAllPaths(0,nodeEnd,newGraph)
 
+    print(listPaths)
+        
     for transition in listPaths:
         ExplorationState(graph,0,transition[1:],[])
-    
+        
+    explorationGraph[0] = allSequences
+    listPaths = []
+    allSequences = []
+
+    for nodeStart in newGraph:
+        for nodeEnd in range(0,nodeStart):
+            
+            if(checkBackNode(nodeStart,nodeEnd,newGraph)):
+
+                print("Start " + str(nodeStart) + " To " + str(nodeEnd))
+
+                ExplorationState(graph,nodeStart,[nodeEnd],[],1)
+        
+                print(allSequences)
+                explorationGraph[nodeStart] = allSequences
+                allSequences = []
+    print("------------------------------------------------------------------------------")
+
     """
-    res = ExplorationState(graph,0,listPaths[10][1:],[])
-    print(allSequences)
-    print(len(allSequences))
+    for nodeStart in newGraph:
+        for nodeEnd in newGraph:
+            if(nodeStart != 0):
+                printAllPathsNodes(nodeStart,nodeEnd,newGraph)
     """
 
+    #print(json.dumps(listPaths,indent=4))
+
+    #print(json.dumps(explorationGraph,indent=4))
+
     #Save exploration sequence that will be passed to Selenium
-    with open('explorations/exploration_'+nameVis+'.json', 'w') as fp:
-        json.dump(allSequences, fp,  indent=4)
+    with open('explorations/exploration_brexit.json', 'w') as fp:
+        json.dump(explorationGraph, fp,  indent=4)
 
     print("------------------------------------------------------------------------------")
